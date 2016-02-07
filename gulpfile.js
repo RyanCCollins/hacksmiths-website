@@ -2,9 +2,10 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jshintReporter = require('jshint-stylish');
 var watch = require('gulp-watch');
-var shell = require('gulp-shell')
+var shell = require('gulp-shell');
 
-var stylus = require('gulp-stylus');
+var sass        = require('gulp-sass');
+var bs = require('browser-sync').create();
 
 
 var paths = {
@@ -12,8 +13,7 @@ var paths = {
 
 ,
 	'style': {
-		main: './public/styles/site.styl',
-		all: './public/styles/**/*.styl',
+		all: './public/styles/**/*.scss',
 		output: './public/styles/'
 	}
 
@@ -32,21 +32,30 @@ gulp.task('watch:lint', function () {
 });
 
 
-gulp.task('watch:stylus', function () {
-	gulp.watch(paths.style.all, ['stylus']);
+gulp.task('watch:sass', function () {
+	gulp.watch(paths.style.all, ['sass']);
 });
 
-gulp.task('stylus', function () {
-	gulp.src(paths.style.main)
-		.pipe(stylus())
-		.pipe(gulp.dest(paths.style.output));
+gulp.task('sass', function(){
+    gulp.src(paths.style.all)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(paths.style.output))
+    .pipe(bs.stream());
+});
+
+
+gulp.task('browser-sync', function(){
+  bs.init({
+    proxy: 'http://localhost:3000',
+    port: '4000'
+  });
 });
 
 
 gulp.task('runKeystone', shell.task('node keystone.js'));
 gulp.task('watch', [
 
-  'watch:stylus',
+  'watch:sass',
 
   'watch:lint'
 ]);
