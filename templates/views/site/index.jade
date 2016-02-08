@@ -1,0 +1,117 @@
+extends ../../layouts/default
+
+
+//- INCLUDES
+include ../../mixins/post
+include ../../mixins/meetup-talk
+include ../../mixins/advertisement
+
+
+
+//- INTRO
+block intro
+
+		if !user
+			article#hero.hero-meetup.hero-meetup--next
+				
+				//- Intro
+				section.hero-intro.hero-intro--hasmask
+					.hero-background
+						//-img(src='/images/code.jpg')
+					.hero-intro-content
+						h1(style='color:white') Aspiring developer?
+						h2(style='color:white')  Want to work on creating the next big thing?
+						.row: .col-sm-8.col-sm-offset-2
+							p(style='color:gray').lead uHub is a community built for those of us who are aspiring to be best-in-class in any tech related fields.  It was built to provide you with the resources you need to succeed in the tech industry.  Get involved and get noticed!
+						if !user
+							.row: .col-sm-4.col-sm-offset-4
+								a(href='/join', data-from=page.path).js-auth-trigger.btn.btn-lg.btn-block.btn-primary.mv-1
+									span.text-caps Join uHub now
+						p.mt-1
+							a(href='/about') Learn more about uHub
+							|  &nbsp;&middot;&nbsp; 
+							a(href='/members') Find your friends on uHub
+						p.mt-1: a(href="https://twitter.com/uHub", class="twitter-follow-button", data-show-count="true", data-size="large") Follow @uHub
+		else
+			article#hero.hero-meetup.hero-meetup--next
+				
+				//- Intro
+				section.hero-intro.hero-intro--hasmask
+					.hero-background
+						//-img(src='/images/placeholders/sydney-1.jpg')
+					.hero-intro-content
+						h5.subtitle #{meetup.state == 'active' ? 'Next' : 'Last'} Meetup
+						h1.title= meetup.name
+						p.byline: strong #{meetup._.startDate.format('ddd, DD MMM YYYY')} &#8212; #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('h:mma')}
+						p.byline #{meetup.place} &#8212; 
+							a(href='http://maps.google.com.au/?daddr=' + (meetup.map || meetup.place), target='_blank') Directions
+					if meetup.state === 'active'
+						#react-hero-button
+				//- Details
+				section.hero-details: .container
+					.row: .col-sm-10.col-sm-offset-1: .row
+						
+						//- Description
+						.col-md-5
+							//- h3.mb-1 The meetup
+							.description!= meetup.description
+
+						//- Talks
+						.col-md-6.col-md-offset-1
+							if meetup.talks.length
+								//- h3.mb-1 The talks
+								.meetup-talks
+									ul.list-unstyled.talks-list
+										each talk in meetup.talks
+											li.talk.row
+												.col-xs-3
+													.talk__speakers
+														if talk.who.length
+															each speaker, i in talk.who
+																img(src=speaker.photo.exists ? speaker._.photo.thumbnail(320,320) : speaker.avatarUrl || '/images/avatar.png', width=160, height=160, alt=speaker.name.full, class=talk.who.length > 1 ? 'talk__photo--mini' : null).talk__photo
+														else
+															img(src='/images/avatar.png', width=160, height=160, alt='There is no speaker...').talk__photo
+													//- if talk.who.length
+														.talkers
+															for photo in talk.who
+																img(src='http://fillmurray.com/100/100').img-circle
+												.col-xs-9
+													.talk-summary
+														h5.title= talk.name
+														p.subtitle.mb-1 by 
+															each speaker, i in talk.who
+																if i
+																	| , 
+																if speaker.isPublic 
+																	a(href=speaker.url)=speaker.name.full
+																else
+																	=speaker.name.full
+														.summary!= talk.description
+					//- Attending
+					section.attending
+						#react-attending
+
+//- BODY
+block content
+	.page-content
+		
+		//- About
+		
+
+//- JS
+block js
+
+	if meetup
+		script.
+			uhub.currentMeetupId = !{JSON.stringify(meetup.id)};
+	if user
+		script.
+			uhub.user = !{JSON.stringify(user)};
+	
+	//- REACT SCRIPTS
+	script(src='/js/packages.js')
+	script(src='/js/home.js')
+	script.
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	if google_api_key
+		script(src!='https://maps.googleapis.com/maps/api/js?key=' + google_api_key + '&sensor=false&libraries=places')

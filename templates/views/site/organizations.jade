@@ -1,0 +1,24 @@
+extends ../../layouts/default
+
+include ../../mixins/organization
+
+block intro
+	.page-intro: .container
+		h1 Organizations
+		p.lead The organizations and people who are part of uHub. Should you be here? Join us!
+		//- .buttons
+			if !user
+				a(href='/join').btn.btn-primary Join uHub
+			a(href='/members').btn.btn-default View Members
+			a(href='/members/mentors').btn.btn-default View Mentors
+
+block content
+	.page-content: .container
+		.organizations
+			if organizations.length
+				each org, i in organizations
+					if i
+						hr
+					+organization(org)
+			else
+				h3.text-muted There are no organizations yet.

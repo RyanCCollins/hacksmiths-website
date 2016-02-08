@@ -1,0 +1,29 @@
+extends ../../layouts/default
+
+include ../../mixins/organiser
+
+block intro
+	.page-intro: .container
+		h1.page-title About
+		p.lead uHub is a community of Udacity students working together to become masters of our trade.
+
+block content
+	.page-content
+		.section.highlight: .container
+			//- h2 Organisers
+			//- p.
+			.row.about-organisers
+				each org in organisers
+					.col-sm-3
+						+organiser(org)
+			
+		
+		//- CODE
+		.section: .container-sm
+			h2 About
+			h5 About us
+			p paragraph
+block js
+	// twitter
+	script.
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
