@@ -4,7 +4,7 @@ var moment = require('moment');
 var Types = keystone.Field.Types;
 
 /**
- * Meetups Model
+ * Events Model
  * =============
  */
 
@@ -22,7 +22,7 @@ Event.add({
 	startDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm' },
 	endDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 9:00pm' },
 
-	place: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a location, or a link to an online meetup.' },
+	place: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a location, or a link to an online event.' },
 	map: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a geocode location, or a url.' },
 	description: { type: Types.Html, wysiwyg: true },
 
@@ -39,7 +39,7 @@ Event.add({
 // ------------------------------
 
 Event.relationship({ ref: 'RSVP', refPath: 'event', path: 'rsvps' });
-Event.relationship({ ref: 'ScheduleItems', refPath: 'schedule', path: 'schedules' });
+Event.relationship({ ref: 'Schedule', refPath: 'event', path: 'scheduleitems' });
 
 
 
@@ -47,7 +47,7 @@ Event.relationship({ ref: 'ScheduleItems', refPath: 'schedule', path: 'schedules
 // ------------------------------
 
 Event.schema.virtual('url').get(function() {
-	return '/meetups/' + this.key;
+	return '/events/' + this.key;
 });
 
 Event.schema.virtual('remainingRSVPs').get(function() {

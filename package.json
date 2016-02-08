@@ -6,10 +6,15 @@
     "async": "^1.5.2",
     "crypto": "0.0.3",
     "dotenv": "^1.1.0",
+    "express-graphql": "^0.4.9",
+    "graphql": "^0.4.16",
     "keystone": "https://github.com/keystonejs/keystone.git",
     "moment": "^2.11.2",
     "node-sass-middleware": "^0.9.7",
+    "passport": "^0.3.2",
+    "restful-keystone": "^0.3.0",
     "stylus": "^0.53.0",
+    "subdomain": "^1.2.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

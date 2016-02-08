@@ -7,13 +7,13 @@ var Types = keystone.Field.Types;
  * ===========
  */
 
-var Schedule = new keystone.List('Schedule', {
+var ScheduleItem = new keystone.List('ScheduleItem', {
 	track: true,
 	sortable: true,
-	sortContext: 'Event:schedules'
+	sortContext: 'Event:scheduleItems'
 });
 
-Schedule.add({
+ScheduleItem.add({
 	name: { type: String, required: true, initial: true },
 	event: { type: Types.Relationship, ref: 'Event', required: true, initial: true, index: true },
 	who: { type: Types.Relationship, ref: 'User', many: true, index: true },
@@ -22,7 +22,7 @@ Schedule.add({
 	link: { type: Types.Url }
 });
 
-Schedule.schema.set('toJSON', {
+ScheduleItem.schema.set('toJSON', {
 	virtuals: true,
 	transform: function(doc, rtn, options) {
 		rtn = _.pick(rtn, '_id', 'name', 'place', 'map', 'description', 'slides', 'link');
@@ -44,5 +44,5 @@ Schedule.schema.set('toJSON', {
  * ============
  */
 
-Schedule.defaultColumns = 'name, meetup|20%, who|20%';
-Schedule.register();
+ScheduleItem.defaultColumns = 'name, event|20%, who|20%';
+ScheduleItem.register();
