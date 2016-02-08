@@ -19,6 +19,7 @@ Then to start the server and view the page:
 ```
 gulp
 ```
+Which should open up your browser automatically.  If for some reason it does not, you can navigate to http://localhost:3000 to see the site.
 
 ## Deployment
 
