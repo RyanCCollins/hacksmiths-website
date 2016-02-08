@@ -1,0 +1,14 @@
+mixin paginate(data)
+	if data.totalPages > 1
+		ul.pagination
+			if data.previous
+				li: a(href='?page=' + data.previous): span.entypo.entypo-chevron-thin-left
+			else
+				li.disabled: a(href='?page=' + 1): span.entypo.entypo-chevron-thin-left
+			each p, i in data.pages
+				li(class=data.currentPage == p ? 'active' : null)
+					a(href='?page=' + (p == '...' ? (i ? data.totalPages : 1) : p ))= p
+			if data.next
+				li: a(href='?page=' + data.next): span.entypo.entypo-chevron-thin-right
+			else
+				li.disabled: a(href='?page=' + data.totalPages): span.entypo.entypo-chevron-thin-right

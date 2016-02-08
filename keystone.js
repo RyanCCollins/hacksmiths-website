@@ -41,7 +41,10 @@ keystone.set('locals', {
 	_: require('underscore'),
 	env: keystone.get('env'),
 	utils: keystone.utils,
-	editable: keystone.content.editable
+	plural: keystone.utils.plural,
+	editable: keystone.content.editable,
+	moment: require('moment'),
+	js: 'javascript:;'
 });
 
 // Load your project's Routes
@@ -53,6 +56,7 @@ keystone.set('routes', require('./routes'));
 // default email templates, you may remove them if you're using your own.
 
 keystone.set('email locals', {
+	utils: keystone.utils,
 	logo_src: '/images/logo-email.gif',
 	logo_width: 194,
 	logo_height: 76,
@@ -88,11 +92,15 @@ keystone.set('email tests', require('./routes/emails'));
 // Configure the navigation bar in Keystone's Admin UI
 
 keystone.set('nav', {
-	'posts': ['posts', 'post-categories'],
-	'galleries': 'galleries',
-	'enquiries': 'enquiries',
+	'members': ['users', 'organizations', 'teams'],
+	'events': ['events', 'schedules', 'rsvps'],
+	'posts': ['posts', 'post-categories', 'post-comments'],
+	'links': ['links', 'link-tags', 'link-comments'],
+	'photo gallery': 'galleries',
+	'inquiries': 'enquiries',
 	'users': 'users'
 });
+
 
 // Start Keystone to connect to your database and initialise the web server
 

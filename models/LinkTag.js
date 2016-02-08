@@ -2,16 +2,15 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Post Categories Model
- * =====================
+ * Link Tags Model
+ * ===============
  */
 
-var PostCategory = new keystone.List('PostCategory', {
-	track: true,
+var LinkTag = new keystone.List('LinkTag', {
 	autokey: { from: 'name', path: 'key', unique: true }
 });
 
-PostCategory.add({
+LinkTag.add({
 	name: { type: String, required: true }
 });
 
@@ -21,7 +20,7 @@ PostCategory.add({
  * =============
  */
 
-PostCategory.relationship({ ref: 'Post', refPath: 'categories', path: 'posts' });
+LinkTag.relationship({ ref: 'Link', refPath: 'tags', path: 'links' });
 
 
 /**
@@ -29,4 +28,4 @@ PostCategory.relationship({ ref: 'Post', refPath: 'categories', path: 'posts' })
  * ============
  */
 
-PostCategory.register();
+LinkTag.register();
