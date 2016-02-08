@@ -13,15 +13,15 @@ keystone.init({
 
 	'name': 'Hacksmiths',
 	'brand': 'Hacksmiths',
-	
-	'stylus': 'public',
+
+	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-	
+
 	'emails': 'templates/emails',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,

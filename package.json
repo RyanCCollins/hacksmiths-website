@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "keystone": "https://github.com/keystonejs/keystone.git",
     "async": "^1.5.0",
-    "underscore": "^1.8.3",
+    "dotenv": "^1.1.0",
+    "keystone": "https://github.com/keystonejs/keystone.git",
+    "node-sass-middleware": "^0.9.7",
     "stylus": "^0.53.0",
-    "dotenv": "^1.1.0"
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
