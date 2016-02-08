@@ -35,32 +35,48 @@ html
 	//- HTML BODY
 	body
 
-		//- HEADER
-		#header: .container
+section.navigation-section.show-for-large-up
+  .row
+    .large-12.columns
+      // TOP BAR INITIALIZATION
+      nav.top-bar(data-topbar="")
+        ul.title-area
+          li.name
+            h1
+        // END UL.TITLE-AREA
+        // TOP BAR MENU ELEMENTS
+        section.top-bar-section
+          ul.left
+            li.active
+              a(href="index.html") Home
+            li.has-dropdown
+              a(href="blog.html") Blog
+              ul.dropdown
+                li
+                  a(href="blog.html") Archive
+                li
+                  a(href="post.html") Single
+            li.has-dropdown
+              a(href="page.html") Page
+              ul.dropdown
+                li
+                  a(href="page.html") Full-wdith
+                li
+                  a(href="sidebar-left.html") Left Sidebar
+                li
+                  a(href="sidebar-right.html") Right Sidebar
+            li
+              a(href="portfolio.html") Portfolio
+            li.has-dropdown
+              a(href="#") Dropdown
+              ul.dropdown
+                li
+                  a(href="#") First link in dropdown
+                li
+                  a(href="#") Second link in dropdown
+                li
+                  a(href="#") Third link in dropdown
 
-			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-			//- ... or completely change this header to suit your design.
-
-			div(role="navigation").navbar.navbar-default
-				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') Hacksmiths
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
-							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
 
 		//- BODY
 		#body
@@ -84,7 +100,7 @@ html
 		.container: #footer
 
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+			p By <a href="http://keystonejs.com" target="_blank">Team Hacksmiths</a>.
 
 
 		//- JAVASCRIPT

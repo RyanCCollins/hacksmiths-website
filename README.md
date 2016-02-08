@@ -35,7 +35,9 @@ Deployed to github pages.
 ### Manual Installation
 From the root of the project directory, run:
 ```
-
+npm install && bower install
+```
+to install all dependencies.
 
 ## Authors
 
