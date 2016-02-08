@@ -26,7 +26,7 @@ exports = module.exports = function(req, res) {
 
 	view.on('render', function(next) {
 
-		if (!req.user || !locals.upcomingMeetup) return next();
+		if (!req.user || !locals.upcomingEvent) return next();
 
 		RSVP.model.findOne()
 			.where('who', req.user._id)
@@ -35,7 +35,7 @@ exports = module.exports = function(req, res) {
 				locals.rsvpStatus = {
 					rsvped: rsvp ? true : false,
 					attending: rsvp && rsvp.attending ? true : false
-				}
+				};
 				return next();
 			});
 
@@ -43,4 +43,4 @@ exports = module.exports = function(req, res) {
 
 	view.render('site/events');
 
-}
+};

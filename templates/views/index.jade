@@ -3,13 +3,12 @@ extends ../layouts/default
 block content
 	.container: .jumbotron
 		img(src='/images/', width='160')
-		h1 Welcome to the Hacksmiths Website
-		p This is a test paragraph
+		h1.text-center Welcome to the Hacksmiths Website
 		if user && user.canAccessKeystone
-			p
+			p.text-center
 				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
 		else
-			p
+			p.text-center
 				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
 				|  to use the Admin UI.
 		hr
