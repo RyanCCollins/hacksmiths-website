@@ -136,17 +136,6 @@ User.schema.pre('save', function(next) {
             return done();
         },
         function(done) {
-            keystone.list('Talk').model.count({ who: member.id }).exec(function(err, count) {
-                if (err) {
-                    console.error('===== Error counting user talks =====');
-                    console.error(err);
-                    return done();
-                }
-                member.talkCount = count;
-                return done();
-            });
-        },
-        function(done) {
             keystone.list('RSVP').model.findOne({ who: member.id }).sort('changedAt').exec(function(err, rsvp) {
                 if (err) {
                     console.error("===== Error setting user last RSVP date =====");

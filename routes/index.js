@@ -83,7 +83,7 @@ exports = module.exports = function(app) {
 	app.get('/about', routes.views.about);
 	app.get('/mentoring', routes.views.mentoring);
 	app.get('/privacy', routes.views.privacy);
-	app.get('/teams', routes.views.teams);
+	//app.get('/teams', routes.views.teams);
 
 		// API
 	app.all('/api*', keystone.middleware.api);

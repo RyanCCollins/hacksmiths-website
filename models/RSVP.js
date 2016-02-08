@@ -39,7 +39,7 @@ RSVP.schema.post('remove', function() {
 	keystone.list('Event').model.findById(this.event, function(err, event) {
 		if (event) event.refreshRSVPs();
 	});
-})
+});
 
 
 /**

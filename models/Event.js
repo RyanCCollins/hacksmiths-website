@@ -39,7 +39,7 @@ Event.add({
 // ------------------------------
 
 Event.relationship({ ref: 'RSVP', refPath: 'event', path: 'rsvps' });
-Event.relationship({ ref: 'Schedule', refPath: 'event', path: 'scheduleitems' });
+Event.relationship({ ref: 'ScheduleItem', refPath: 'event', path: 'scheduleItems' });
 
 
 

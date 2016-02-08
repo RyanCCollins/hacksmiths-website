@@ -93,7 +93,7 @@ keystone.set('email tests', require('./routes/emails'));
 
 keystone.set('nav', {
 	'members': ['users', 'organizations', 'teams'],
-	'events': ['events', 'schedules', 'rsvps'],
+	'events': ['events', 'schedule-items', 'rsvps'],
 	'posts': ['posts', 'post-categories', 'post-comments'],
 	'links': ['links', 'link-tags', 'link-comments'],
 	'photo gallery': 'galleries',
