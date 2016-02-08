@@ -59,11 +59,7 @@ Deployed to github pages.
 * Sublime Text
 * Browsersync
 * Gulp
-
-### Manual Installation
-From the root of the project directory, run:
-```
-
+* KeystoneJS
 
 ## Authors
 
