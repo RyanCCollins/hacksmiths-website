@@ -31,7 +31,8 @@
     "npm": ">=1.3.14"
   },
   "scripts": {
-    "start": "node keystone.js"
+    "start": "node keystone.js",
+    "setup": "npm install"
   },
   "main": "keystone.js"
 }

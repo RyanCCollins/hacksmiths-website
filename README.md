@@ -4,12 +4,39 @@ API, CMS, and backend for the Hacksmiths website
 
 ## Getting Started
 
-This project requires NodeJS, Bower and Gulp.
+This project requires NodeJS, NPM, Bower, keystone and Gulp.
+
+Install them globally with this command.
+```
+npm install -g bower gulp keystone
+```
+
+You can move onto the installation section, but if you have any issues, you will want to follow these steps to update npm and use NodeJS version 4.2.4.
+
+Update NPM version with the following command
+```
+npm update -g npm
+```
+
+Use Node Version Manager (NVM) to install any version of NodeJS.
+To download NVM, run this from your terminal.
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
+```
+After the script installs, it will tell you that you need to reboot your terminal.  To get around this and activate the NVM install, run the following command
+```
+. ~/.nvm/nvm.sh
+```
+
+To use a specific NodeJS version, you need to have nvm install the correct version and then you need to tell nvm to use the right version.  Try the commands below
+```
+nvm install 4.2.4
+nvm use 4.2.4
+```
 
 ### Installing
 
-To run with Gulp / Browsersync, you will want to have NodeJS installed.
-
+To run with Gulp / Browsersync, you will want to run the setup script.
 Run the following to install dependencies:
 ```
 npm run setup
