@@ -15,12 +15,8 @@ var User = new keystone.List('User', {
 
 var deps = {
     mentoring: { 'mentoring.available': true },
-
     github: { 'services.github.isConfigured': true },
-    facebook: { 'services.facebook.isConfigured': true },
-    google: { 'services.google.isConfigured': true },
     twitter: { 'services.twitter.isConfigured': true },
-    udacity: { 'services.udacity.isConfigured': true }
 };
 
 User.add({
@@ -31,20 +27,22 @@ User.add({
 }, 'Profile', {
     isPublic: { type: Boolean, default: true },
     isOrganizer: Boolean,
-    organization: { type: Types.Relationship, ref: 'Organization' },
     photo: { type: Types.CloudinaryImage },
     website: { type: Types.Url, note: 'Full website URL, including http://'},
     bio: { type: Types.Markdown },
     gravatar: { type: String, noedit: true },
-    enrollments: { type: Types.Relationship, ref: 'Nanodegree', many: true, filters: {  }},
-    enrollmentStatus: {type: Types.Select, options: ['Student', 'Graduate'], required: true, initial: true, default: 'Student'},
-    teams: { type: Types.Relationship, ref: 'Team', many: true, filters: {group: ':enrollments' }}
 }, 'Notifications', {
     notifications: {
         posts: { type: Boolean },
         events: { type: Boolean, default: true },
         projects: { type: Boolean, default: true }
     }
+},'Memberships', {
+    enrollments: { type: Types.Relationship, ref: 'Nanodegree', many: true, filters: {  }},
+    enrollmentStatus: {type: Types.Select, options: ['Student', 'Graduate'], required: true, initial: true, default: 'Student'},
+    teams: { type: Types.Relationship, ref: 'Team', many: true, filters: {group: ':enrollments' }},
+    groups: {type: Types.Relationship, ref: 'Group', many: true},
+    organization: { type: Types.Relationship, ref: 'Organization', refPath: 'name' },
 }, 'Mentoring', {
     mentoring: {
         available: { type: Boolean, label: 'Is Available', index: true },
@@ -71,28 +69,6 @@ User.add({
             accessToken: { type: String, label: 'Access Token', dependsOn: deps.github },
             refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.github }
         },
-        facebook: {
-            isConfigured: { type: Boolean, label: 'Facebook has been authenticated' },
-
-            profileId: { type: String, label: 'Profile ID', dependsOn: deps.facebook },
-
-            username: { type: String, label: 'Username', dependsOn: deps.facebook },
-            avatar: { type: String, label: 'Image', dependsOn: deps.facebook },
-
-            accessToken: { type: String, label: 'Access Token', dependsOn: deps.facebook },
-            refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.facebook }
-        },
-        google: {
-            isConfigured: { type: Boolean, label: 'Google has been authenticated' },
-
-            profileId: { type: String, label: 'Profile ID', dependsOn: deps.google },
-
-            username: { type: String, label: 'Username', dependsOn: deps.google },
-            avatar: { type: String, label: 'Image', dependsOn: deps.google },
-
-            accessToken: { type: String, label: 'Access Token', dependsOn: deps.google },
-            refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.google }
-        },
         twitter: {
             isConfigured: { type: Boolean, label: 'Twitter has been authenticated' },
 
@@ -104,17 +80,6 @@ User.add({
             accessToken: { type: String, label: 'Access Token', dependsOn: deps.twitter },
             refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.twitter }
         },
-        udacity: {
-            isConfigured: { type: Boolean, label: 'Udacity account has been authenticated' },
-
-            profileId: { type: String, label: 'Profile ID', dependsOn: deps.udacity },
-
-            username: { type: String, label: 'Username', dependsOn: deps.udacity },
-            avatar: { type: String, label: 'Image', dependsOn: deps.udacity },
-
-            accessToken: { type: String, label: 'Access Token', dependsOn: deps.udacity },
-            refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.udacity }
-        }
     }
 },  'Meta', {
     talkCount: { type: Number, default: 0, noedit: true },

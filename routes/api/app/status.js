@@ -20,7 +20,7 @@ exports = module.exports = function(req, res) {
 		function(next) {
 			keystone.list('Event').model.findOne()
 				.where('state', 'past')
-				.sort('-startDate')
+				.sort('-eventStartDate')
 				.exec(function(err, event) {
 					data.events.last = event ? event.toJSON() : false;
 					return next();
@@ -29,7 +29,7 @@ exports = module.exports = function(req, res) {
 		function(next) {
 			keystone.list('Event').model.findOne()
 				.where('state', 'active')
-				.sort('-startDate')
+				.sort('-eventStartDate')
 				.exec(function(err, event) {
 					data.events.next = event ? event.toJSON() : false;
 					return next();
@@ -100,8 +100,8 @@ exports = module.exports = function(req, res) {
 
 				name: event.name,
 
-				starts: event.startDate,
-				ends: event.endDate,
+				starts: event.eventStartDate,
+				ends: event.eventEndDate,
 
 				place: event.place,
 				map: event.map,
@@ -121,7 +121,7 @@ exports = module.exports = function(req, res) {
 			response.events.last = parseEvent(data.events.last);
 		}
 
-		if (data.events.next && moment().isBefore(data.events.next.endDate)) {
+		if (data.events.next && moment().isBefore(data.events.next.eventEndDate)) {
 			response.events.next = parseEvent(data.events.next, true);
 			if (data.user) {
 				response.rsvp.responded = data.rsvp ? true : false;
@@ -141,10 +141,10 @@ exports = module.exports = function(req, res) {
 				},
 				email: data.user.email,
 				avatar: data.user.avatarUrl
-			}
+			};
 		}
 
 		res.apiResponse(response);
 
 	});
-}
+};

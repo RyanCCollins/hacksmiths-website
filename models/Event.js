@@ -15,21 +15,29 @@ var Event = new keystone.List('Event', {
 
 Event.add({
 	name: { type: String, required: true, initial: true },
+	organization: { type: Types.Relationship, ref: 'Organization', many: false, initial: true, required: true, note: 'Enter the name of the organization who we are sponsoring.' },
+	description: { type: Types.Html, wysiwyg: true, initial: true, required: true },
+
+	sponsors: {type: Types.Relationship, ref: 'Organization', many: true},
+	teams: {type: Types.Relationship, ref: 'Team', many: true},
 	publishedDate: { type: Types.Date, index: true },
 
 	state: { type: Types.Select, options: 'draft, scheduled, active, past', noedit: true },
 
-	startDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm' },
-	endDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 9:00pm' },
+	regitrationStartDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm' },
+	regirstionEndDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 9:00pm' },
 
-	place: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a location, or a link to an online event.' },
+	eventStartDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
+	eventEndDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
+
+	place: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a location, if there is a live event.' },
 	map: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a geocode location, or a url.' },
-	description: { type: Types.Html, wysiwyg: true },
 
-	maxRSVPs: { type: Number, default: 100 },
+	groups: { type: Types.Relationship, ref: 'Group', many: true},
+
+	maxRSVPs: { type: Number, default: 20 },
 	totalRSVPs: { type: Number, noedit: true },
 
-	legacy: { type: Boolean, noedit: true, collapse: true },
 });
 
 
@@ -72,7 +80,7 @@ Event.schema.pre('save', function(next) {
 		event.state = 'draft';
 	}
 	// event date plus one day is after today, it's a past event
-	else if (moment().isAfter(moment(event.startDate).add('day', 1))) {
+	else if (moment().isAfter(moment(event.eventStartDate).add('day', 1))) {
 		event.state = 'past';
 	}
 	// publish date is after today, it's an active event

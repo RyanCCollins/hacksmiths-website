@@ -9,7 +9,7 @@ exports = module.exports = function(req, res) {
 		form: req.body,
 
 		newUser: false
-	}
+	};
 
 	// Function to handle signin
 	var doSignIn = function() {
@@ -26,7 +26,7 @@ exports = module.exports = function(req, res) {
 				date: new Date().getTime(),
 				userId: user.id
 			});
-		}
+		};
 
 		var onFail = function(err) {
 			console.log('[api.app.signup]  - Failed signing in.', err);

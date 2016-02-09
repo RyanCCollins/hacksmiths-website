@@ -11,7 +11,7 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 
 	locals.section = 'me';
-	locals.page.title = 'Settings - uHub';
+	locals.page.title = 'Settings - Hacksmiths';
 
 	view.query('nextEvent',
 		Event.model.findOne()
@@ -57,8 +57,6 @@ exports = module.exports = function(req, res) {
 		switch(req.query.disconnect)
 		{
 			case 'github': req.user.services.github.isConfigured = null; serviceName = 'GitHub'; break;
-			case 'facebook': req.user.services.facebook.isConfigured = null; serviceName = 'Facebook'; break;
-			case 'google': req.user.services.google.isConfigured= null; serviceName = 'Google'; break;
 			case 'twitter': req.user.services.twitter.isConfigured = null; serviceName = 'Twitter'; break;
 		}
 
