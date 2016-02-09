@@ -6,18 +6,17 @@ var Types = keystone.Field.Types;
  * =====================
  */
 
-var Group = new keystone.List('Group', {
+var Role = new keystone.List('Role', {
     track: true,
     autokey: { from: 'title', path: 'key', unique: true },
     map: { name: 'title' }
 });
 
-Group.add({
+Role.add({
     title: { type: String, required: true, initial: true },
-    nanodegree: {type: Types.Relationship, ref: 'Nanodegree', many: false, initial: true, required: true},
-    logo: { type: Types.CloudinaryImage },
     description: {type: Types.Markdown, height: 200},
-    link: {type: Types.Url },
+    forProject: {type: Types.Relationship, ref: 'Project', many: true},
+    team: {type: Types.Relationship, ref: 'Team', many: true}
 });
 
 
@@ -26,13 +25,13 @@ Group.add({
  * =============
  */
 
-Group.relationship({ ref: 'User', refPath: 'author', path: 'enrollments'});
+Role.relationship({ref: 'Team', refPath: 'roles', path: 'team'});
 
 /**
  * Registration
  * ============
  */
-Group.defaultSort = 'title';
-Group.defaultColumns = 'title';
+Role.defaultSort = 'title';
+Role.defaultColumns = 'title';
 
-Group.register();
+Role.register();

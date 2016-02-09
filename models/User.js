@@ -17,6 +17,7 @@ var deps = {
     mentoring: { 'mentoring.available': true },
     github: { 'services.github.isConfigured': true },
     twitter: { 'services.twitter.isConfigured': true },
+    isAvailableForEvents: {'availability.isAvailableForEvents': true}
 };
 
 User.add({
@@ -37,12 +38,30 @@ User.add({
         events: { type: Boolean, default: true },
         projects: { type: Boolean, default: true }
     }
-},'Memberships', {
+}, 'Event Involvement', {
+    availability: {
+        isAvailableForEvents: {type: Types.Boolean, default: false, label: 'Available to work on projects.'},
+        daysAvailable: {
+            monday: {type: Types.Boolean, default: false, label: 'Monday', dependsOn: deps.isAvailableForEvents },
+            tuesday: {type: Types.Boolean, default: false, label: 'Tuesday', dependsOn: deps.isAvailableForEvents },
+            wednesday: {type: Types.Boolean, default: false, label: 'Wednesday', dependsOn: deps.isAvailableForEvents },
+            thursday: {type: Types.Boolean, default: false, label: 'Thursday', dependsOn: deps.isAvailableForEvents },
+            friday: {type: Types.Boolean, default: false, label: 'Friday', dependsOn: deps.isAvailableForEvents },
+            saturday: {type: Types.Boolean, default: false, label: 'Saturday', dependsOn: deps.isAvailableForEvents },
+            sunday: {type: Types.Boolean, default: false, label: 'Sunday', dependsOn: deps.isAvailableForEvents },
+        },
+        explanation: {type: Types.Html, note: 'Give a brief description of your availability.', dependsOn: deps.isAvailableForEvents }
+    },
+    areasOfExpertise: {type: Types.Relationship, ref: 'Skill', many: true, note: 'What is the area you are most skilled in?', dependsOn: deps.isAvailableForEvents },
+    skillExplanation: {type: Types.Markdown, dependsOn: deps.isAvailableForEvents  },
+    aBriefCodeTest: {type: Types.Code, dependsOn: deps.isAvailableForEvents },
+    rolesToFill: {type: Types.Relationship, ref: 'Role', many: true, note: 'What role do you see yourself filling?', dependsOn: deps.isAvailableForEvents },
+    projectInterests: {type: Types.Relationship, ref: 'Project', many: true, dependsOn: deps.isAvailableForEvents },
+}, 'Memberships', {
     enrollments: { type: Types.Relationship, ref: 'Nanodegree', many: true, filters: {  }},
     enrollmentStatus: {type: Types.Select, options: ['Student', 'Graduate'], required: true, initial: true, default: 'Student'},
-    teams: { type: Types.Relationship, ref: 'Team', many: true, filters: {group: ':enrollments' }},
-    groups: {type: Types.Relationship, ref: 'Group', many: true},
-    organization: { type: Types.Relationship, ref: 'Organization', refPath: 'name' },
+    teams: { type: Types.Relationship, ref: 'Team', many: true, filters: {}},
+    organization: { type: Types.Relationship, ref: 'Organization', refPath: 'organization' },
 }, 'Mentoring', {
     mentoring: {
         available: { type: Boolean, label: 'Is Available', index: true },
@@ -53,9 +72,9 @@ User.add({
         want: { type: String, label: 'Wants...', dependsOn: deps.mentoring }
     }
 }, 'Permissions', {
-        isAdmin: { type: Boolean, label: 'Can Admin uHub' },
-        canPostProjects: { type: Boolean, label: 'Can post projects', default: true },
-        isVerified: { type: Boolean, label: 'Has a verified email address' }
+        isAdmin: { type: Boolean, label: 'Can Admininstrate the site.' },
+        isTeamLeader: { type: Boolean, label: 'Can create tasks for team.', default: true },
+        isMember: { type: Boolean, label: 'Has a verified email address and is a member.' }
 }, 'Services', {
     services: {
         github: {
@@ -81,9 +100,10 @@ User.add({
             refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.twitter }
         },
     }
-},  'Meta', {
+}, 'Meta', {
     talkCount: { type: Number, default: 0, noedit: true },
     lastRSVP: { type: Date, noedit: true },
+    projectsContributedTo: {type: Types.Relationship, ref: 'Project', many: true, noedit: true, hidden: true},
 });
 
 
@@ -121,7 +141,8 @@ User.schema.pre('save', function(next) {
     =============
 */
 
-User.relationship({ ref: 'Team', refPath: 'author', path: 'projects' });
+User.relationship({ ref: 'Team', refPath: 'members', path: 'teams' });
+User.relationship({ ref: 'Project', refPath: 'contributors', path: 'projectsContributedTo' });
 User.relationship({ ref: 'Post', refPath: 'author', path: 'posts' });
 User.relationship({ ref: 'RSVP', refPath: 'who', path: 'rsvps' });
 

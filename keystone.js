@@ -92,9 +92,9 @@ keystone.set('email tests', require('./routes/emails'));
 // Configure the navigation bar in Keystone's Admin UI
 
 keystone.set('nav', {
-	'members': ['users', 'organizations', 'teams', 'inquiries'],
-	'events': ['events', 'schedule-items', 'rsvps'],
-	'posts': ['posts', 'post-categories', 'post-comments'],
+	'members': ['users', 'organizations', 'teams', 'roles', 'skills'],
+	'projects': ['projects', 'events', 'teams', 'schedules', 'rsvps', 'inquiries'],
+	'blog': ['posts', 'post-categories', 'post-comments'],
 	'links': ['links', 'link-tags', 'link-comments'],
 	'photo gallery': 'galleries',
 });

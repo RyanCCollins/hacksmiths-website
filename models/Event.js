@@ -10,19 +10,17 @@ var Types = keystone.Field.Types;
 
 var Event = new keystone.List('Event', {
 	track: true,
-	autokey: { path: 'key', from: 'name', unique: true }
+	autokey: { path: 'key', from: 'title', unique: true }
 });
 
 Event.add({
-	name: { type: String, required: true, initial: true },
-	organization: { type: Types.Relationship, ref: 'Organization', many: false, initial: true, required: true, note: 'Enter the name of the organization who we are sponsoring.' },
-	description: { type: Types.Html, wysiwyg: true, initial: true, required: true },
+	title: { type: String, required: true, initial: true },
+	organization: { type: Types.Relationship, ref: 'Organization', many: false, initial: true, required: true, note: 'Enter the name of the organization who we are sponsoring. Supports HTML.' },
+	description: { type: Types.Html, wysiwyg: true, initial: true, required: true, note: 'A brief description about what this event is.' },
+	marketingInfo: { type: Types.Html, wysiwyg: true, initial: false, required: false, note: 'Enter some information that you would like to put out there to market this event.  Supports HTML.'},
 
 	sponsors: {type: Types.Relationship, ref: 'Organization', many: true},
 	teams: {type: Types.Relationship, ref: 'Team', many: true},
-	publishedDate: { type: Types.Date, index: true },
-
-	state: { type: Types.Select, options: 'draft, scheduled, active, past', noedit: true },
 
 	regitrationStartDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm' },
 	regirstionEndDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 9:00pm' },
@@ -33,11 +31,11 @@ Event.add({
 	place: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a location, if there is a live event.' },
 	map: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a geocode location, or a url.' },
 
-	groups: { type: Types.Relationship, ref: 'Group', many: true},
-
 	maxRSVPs: { type: Number, default: 20 },
 	totalRSVPs: { type: Number, noedit: true },
 
+	state: { type: Types.Select, options: 'draft, scheduled, active, past', noedit: true },
+	publishedDate: { type: Types.Date, index: true },
 });
 
 
@@ -47,8 +45,8 @@ Event.add({
 // ------------------------------
 
 Event.relationship({ ref: 'RSVP', refPath: 'event', path: 'rsvps' });
-Event.relationship({ ref: 'ScheduleItem', refPath: 'event', path: 'scheduleItems' });
-
+Event.relationship({ ref: 'Schedule', refPath: 'event', path: 'schedule' });
+Event.relationship({ ref: 'Project', refPath: 'event', path: 'project'});
 
 
 // Virtuals
@@ -137,7 +135,7 @@ Event.schema.methods.notifyAttendees = function(req, res, next) {
 
 Event.schema.set('toJSON', {
 	transform: function(doc, rtn, options) {
-		return _.pick(doc, '_id', 'name', 'startDate', 'endDate', 'place', 'map', 'description', 'rsvpsAvailable', 'remainingRSVPs');
+		return _.pick(doc, '_id', 'name', 'eventStartDate', 'eventEndDate', 'place', 'map', 'description', 'rsvpsAvailable', 'remainingRSVPs');
 	}
 });
 

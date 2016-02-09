@@ -4,10 +4,10 @@ var keystone = require('keystone'),
 var User = keystone.list('User');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'members';
 	locals.moment = moment;
 
@@ -21,23 +21,23 @@ exports = module.exports = function(req, res) {
 			if (err) return res.err(err);
 			if (!member) {
 				req.flash('info', 'Sorry, we couldn\'t find a matching member');
-				return res.redirect('/members')
+				return res.redirect('/members');
 			}
 			locals.member = member;
 			next();
 		});
 	});
 
-	
+
 	// Set the page title and populate related documents
-	
+
 	view.on('render', function(next) {
 		if (locals.member) {
 			locals.page.title = locals.member.name.full + ' - uHub';
 			locals.member.populateRelated('posts talks[meetup] projects', next);
 		}
 	});
-	
+
 	view.render('site/member');
 
-}
+};

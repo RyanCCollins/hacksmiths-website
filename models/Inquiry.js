@@ -16,8 +16,10 @@ Inquiry.add({
 	email: { type: Types.Email, required: true },
 	phone: { type: String },
 	inquiryType: { type: Types.Select, options: [
-		{ value: 'message', label: 'Just leaving a message' },
-		{ value: 'question', label: 'I\'ve got a question' },
+		{ value: 'congratulate', label: 'I would like to congratulate you!' },
+		{ value: 'message', label: 'I have a message for you.' },
+		{ value: 'message', label: 'I have a project idea for you.' },
+		{ value: 'join', label: 'I would like to join you!' },
 		{ value: 'other', label: 'Something else...' }
 	] },
 	message: { type: Types.Markdown, required: true },
@@ -41,7 +43,7 @@ Inquiry.schema.methods.sendNotificationEmail = function(callback) {
 		callback = function() {};
 	}
 
-	var enquiry = this;
+	var inquiry = this;
 
 	keystone.list('User').model.find().where('isAdmin', true).exec(function(err, admins) {
 
@@ -54,7 +56,7 @@ Inquiry.schema.methods.sendNotificationEmail = function(callback) {
 				email: 'contact@hacksmiths.com'
 			},
 			subject: 'New Inquiry for Hacksmiths',
-			enquiry: enquiry
+			inquiry: inquiry
 		}, callback);
 
 	});
@@ -62,5 +64,5 @@ Inquiry.schema.methods.sendNotificationEmail = function(callback) {
 };
 
 Inquiry.defaultSort = '-createdAt';
-Inquiry.defaultColumns = 'name, email, enquiryType, createdAt';
+Inquiry.defaultColumns = 'name, email, inquiryType, createdAt';
 Inquiry.register();
