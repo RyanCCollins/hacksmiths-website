@@ -20,9 +20,11 @@ Project.add({
     contributors: {type: Types.Relationship, ref: 'User', many: true, noedit: true},
     rolesNeeded: {type: Types.Relationship, ref: 'Role', many: true},
     location: Types.Location,
-    spotlight: {type: Types.Boolean, default: false, note: 'Should we spotlight this project on the main page?'}
+    spotlight: {type: Types.Boolean, default: false, note: 'Should we spotlight this project on the main page?'},
+    events: {type: Types.Relationship, many: true, ref: 'Event', note: 'Are there any events associated with this project?'}
 });
 
+Project.relationship({path: 'events', ref: 'Event', refPath:'project'});
 Project.relationship({path: 'contributors', ref: 'User', refPath: 'projectsContributedTo'});
 
 Project.defaultColumns = 'title, group, leader';

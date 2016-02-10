@@ -1,0 +1,26 @@
+{
+  "name": "hacksmiths",
+  "description": "The website for the hacksmiths project",
+  "main": "keystone.js",
+  "authors": [
+    "Ryan Collins <rccproductions@mac.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://hacksmiths.io",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fastclick": ">=0.6.11",
+    "jquery-placeholder": "~2.0.7",
+    "foundation-sites": "^6.1.2",
+    "jquery.cookie": "~1.4.0",
+    "modernizr": "2.8.3"
+  }
+}
