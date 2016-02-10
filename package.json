@@ -6,6 +6,7 @@
     "async": "^1.5.2",
     "crypto": "0.0.3",
     "dotenv": "^1.1.0",
+    "elemental": "^0.5.11",
     "express-graphql": "^0.4.9",
     "graphql": "^0.4.16",
     "keystone": "https://github.com/keystonejs/keystone.git",
