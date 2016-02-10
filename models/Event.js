@@ -36,6 +36,7 @@ Event.add({
 
 	state: { type: Types.Select, options: 'draft, scheduled, active, past', noedit: true },
 	publishedDate: { type: Types.Date, index: true },
+	project: {type: Types.Relationship, ref: 'Project', many: false}
 });
 
 
@@ -46,7 +47,7 @@ Event.add({
 
 Event.relationship({ ref: 'RSVP', refPath: 'event', path: 'rsvps' });
 Event.relationship({ ref: 'Schedule', refPath: 'event', path: 'schedule' });
-Event.relationship({ ref: 'Project', refPath: 'event', path: 'project'});
+Event.relationship({ ref: 'Project', refPath: 'events', path: 'project'});
 
 
 // Virtuals
@@ -146,5 +147,5 @@ Event.schema.set('toJSON', {
  */
 
 Event.defaultSort = '-startDate';
-Event.defaultColumns = 'name, state|10%, startDate|15%, publishedDate|15%';
+Event.defaultColumns = 'title, state|10%, startDate|15%, publishedDate|15%';
 Event.register();

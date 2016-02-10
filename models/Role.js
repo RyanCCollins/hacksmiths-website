@@ -25,6 +25,7 @@ Role.add({
  * =============
  */
 
+Role.relationship({ref: 'User', refPath:'roles', path:'members'});
 Role.relationship({ref: 'Team', refPath: 'roles', path: 'team'});
 
 /**

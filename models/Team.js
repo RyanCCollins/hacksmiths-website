@@ -25,7 +25,7 @@ Team.add({
 });
 
 Team.relationship({ ref: 'User', refPath: 'teams', path: 'members'});
-Team.relationship({ ref: 'Role', refPath: 'forTeam', path: 'roles'});
+Team.relationship({ ref: 'Role', refPath: 'team', path: 'roles'});
 
 Team.defaultColumns = 'title, roles, leader';
 Team.register();

@@ -69,7 +69,7 @@ Post.schema.methods.notifyAdmins = function(callback) {
 				}
 			}, done);
 		}, callback);
-	}
+	};
 	// Query data in parallel
 	async.parallel({
 		author: function(next) {

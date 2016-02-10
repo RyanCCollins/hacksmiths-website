@@ -25,7 +25,9 @@ var graphqlHTTP = require('express-graphql');
 var graphQLSchema = require('../graphql/schema');
 var IP = process.env.IP || '192.168.33.10';
 var subdomain = require('subdomain');
-var REST = require('restful-keystone')(keystone);
+var restful = require('restful-keystone')(keystone, {
+    root: '/api/v1'
+});
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -46,6 +48,17 @@ exports = module.exports = function(app) {
 	app.use('/api/graphql', graphqlHTTP({ schema: graphQLSchema, graphiql: true }));
 
 	app.use(subdomain({ base: IP, removeWWW: true}));
+
+	//Restful
+	restful.expose({
+		Event: true,
+		User: true,
+		Project: true,
+		RSVP: true,
+		Team: true,
+		Role: true,
+		Organization: true
+	});
 
 	// Allow cross-domain requests (development only)
 	if (process.env.NODE_ENV !== 'production') {

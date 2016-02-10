@@ -141,6 +141,7 @@ User.schema.pre('save', function(next) {
     =============
 */
 
+User.relationship({ ref: 'Role', refPath: 'team', path: 'rolesToFill'});
 User.relationship({ ref: 'Team', refPath: 'members', path: 'teams' });
 User.relationship({ ref: 'Project', refPath: 'contributors', path: 'projectsContributedTo' });
 User.relationship({ ref: 'Post', refPath: 'author', path: 'posts' });
