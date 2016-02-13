@@ -6,12 +6,18 @@ var shell = require('gulp-shell');
 
 var sass        = require('gulp-sass');
 var bs = require('browser-sync').create();
+var browserify = require('browserify');
+var react = require('gulp-react');
 
 
 var paths = {
-	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json']
+	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json'],
 
-,
+      JS: ['src/js/*.js', 'src/js/**/*.js'],
+      MINIFIED_OUT: 'build.min.js',
+      DEST_SRC: 'dist/src',
+      DEST_BUILD: 'dist/build',
+      DEST: 'dist',
 	'style': {
 		all: './public/styles/**/*.scss',
 		output: './public/styles/'
@@ -60,4 +66,4 @@ gulp.task('watch', [
   'watch:lint'
 ]);
 
-gulp.task('default', ['watch', 'runKeystone', 'browser-sync']);
+gulp.task('default', ['watch', 'runKeystone', 'browser-sync', 'build-foundation-scss']);

@@ -9,12 +9,14 @@
     "elemental": "^0.5.11",
     "express-graphql": "^0.4.9",
     "graphql": "^0.4.16",
+    "jwt-simple": "^0.4.1",
     "keystone": "https://github.com/keystonejs/keystone.git",
     "moment": "^2.11.2",
     "node-sass-middleware": "^0.9.7",
     "passport": "^0.3.2",
     "passport-github": "^1.1.0",
     "restful-keystone": "^0.3.0",
+    "socketio": "^1.0.0",
     "stylus": "^0.53.0",
     "subdomain": "^1.2.0",
     "underscore": "^1.8.3"
@@ -23,6 +25,7 @@
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
     "gulp-jshint": "^1.9.0",
+    "gulp-react": "^3.1.0",
     "gulp-shell": "^0.5.0",
     "gulp-watch": "^4.3.5",
     "jshint-stylish": "^0.1.3"
