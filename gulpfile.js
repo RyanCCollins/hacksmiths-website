@@ -66,4 +66,4 @@ gulp.task('watch', [
   'watch:lint'
 ]);
 
-gulp.task('default', ['watch', 'runKeystone', 'browser-sync', 'build-foundation-scss']);
+gulp.task('default', ['watch', 'runKeystone', 'browser-sync']);
