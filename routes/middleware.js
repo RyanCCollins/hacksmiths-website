@@ -33,6 +33,27 @@ exports.initLocals = function(req, res, next) {
 
 	locals.user = req.user;
 
+		locals.basedir = keystone.get('basedir');
+
+	locals.page = {
+		title: 'Hacksmiths',
+		path: req.url.split("?")[0] // strip the query - handy for redirecting back to the page
+	};
+
+	locals.qs_set = qs_set(req, res);
+
+	if (req.cookies.target && req.cookies.target == locals.page.path) res.clearCookie('target');
+
+	var bowser = require('../lib/node-bowser').detect(req);
+
+	locals.system = {
+		mobile: bowser.mobile,
+		ios: bowser.ios,
+		iphone: bowser.iphone,
+		ipad: bowser.ipad,
+		android: bowser.android
+	}
+
 	next();
 
 };

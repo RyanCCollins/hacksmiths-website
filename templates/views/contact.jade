@@ -3,10 +3,10 @@ extends ../layouts/default
 block intro
 	.container
 		h1 Contact Us
-		
+
 block content
 	.container
-		if enquirySubmitted
+		if inquirySubmitted
 			h3 Thanks for getting in touch.
 		else
 			.row: .col-sm-8.col-md-6
@@ -21,12 +21,15 @@ block content
 					.form-group
 						label Phone
 						input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
-					.form-group(class=validationErrors.enquiryType ? 'has-error' : null)
+					.form-group
+						label Organization
+						input(type='text', name='organization', value=formData.organization, placeholder='(optional)').form-control
+					.form-group(class=validationErrors.inquiryType ? 'has-error' : null)
 						label What are you contacting us about?
-						select(name='enquiryType').form-control
+						select(name='inquiryType').form-control
 							option(value='') (select one)
-							each type in enquiryTypes
-								option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+							each type in inquiryTypes
+								option(value=type.value, selected=formData.inquiryType == type.value)= type.label
 					.form-group(class=validationErrors.message ? 'has-error' : null)
 						label Message
 						textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message

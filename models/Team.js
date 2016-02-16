@@ -21,10 +21,12 @@ Team.add({
 	location: Types.Location,
 	spotlight: {type: Types.Boolean, default: false},
 	roles: { type: Types.Relationship, ref: 'Role', many: true},
-	members: {type: Types.Relationship, ref: 'User', many: true}
+	members: {type: Types.Relationship, ref: 'User', many: true},
+	projects: {type: Types.Relationship, ref: 'Project', many: true, noedit: true}
 });
 
 Team.relationship({ ref: 'User', refPath: 'teams', path: 'members'});
+Team.relationship({ ref: 'Project', refPath: 'teams', path: 'projects'});
 Team.relationship({ ref: 'Role', refPath: 'team', path: 'roles'});
 
 Team.defaultColumns = 'title, roles, leader';

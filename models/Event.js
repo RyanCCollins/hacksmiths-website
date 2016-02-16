@@ -16,6 +16,7 @@ var Event = new keystone.List('Event', {
 Event.add({
 	title: { type: String, required: true, initial: true },
 	organization: { type: Types.Relationship, ref: 'Organization', many: false, initial: true, required: true, note: 'Enter the name of the organization who we are sponsoring. Supports HTML.' },
+	project: {type: Types.Relationship, ref: 'Project', many: false, initial: true, filter:{}},
 	description: { type: Types.Html, wysiwyg: true, initial: true, required: true, note: 'A brief description about what this event is.' },
 	marketingInfo: { type: Types.Html, wysiwyg: true, initial: false, required: false, note: 'Enter some information that you would like to put out there to market this event.  Supports HTML.'},
 
@@ -36,7 +37,6 @@ Event.add({
 
 	state: { type: Types.Select, options: 'draft, scheduled, active, past', noedit: true },
 	publishedDate: { type: Types.Date, index: true },
-	project: {type: Types.Relationship, ref: 'Project', many: false}
 });
 
 

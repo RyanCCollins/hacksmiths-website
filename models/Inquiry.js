@@ -14,12 +14,13 @@ var Inquiry = new keystone.List('Inquiry', {
 Inquiry.add({
 	name: { type: Types.Name, required: true },
 	email: { type: Types.Email, required: true },
-	phone: { type: String },
+	organization: { type: String },
+	phone: {type: String},
 	inquiryType: { type: Types.Select, options: [
-		{ value: 'congratulate', label: 'I would like to congratulate you!' },
+		{ value: 'join', label: 'I would like to join your cause!' },
+		{ value: 'services', label: 'I have a project idea for you.' },
 		{ value: 'message', label: 'I have a message for you.' },
-		{ value: 'message', label: 'I have a project idea for you.' },
-		{ value: 'join', label: 'I would like to join you!' },
+		{ value: 'sponsor', label: 'I would like to sponsor your events.' },
 		{ value: 'other', label: 'Something else...' }
 	] },
 	message: { type: Types.Markdown, required: true },

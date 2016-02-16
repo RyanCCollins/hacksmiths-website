@@ -61,7 +61,7 @@ User.add({
     enrollments: { type: Types.Relationship, ref: 'Nanodegree', many: true, filters: {  }},
     enrollmentStatus: {type: Types.Select, options: ['Student', 'Graduate'], required: true, initial: true, default: 'Student'},
     teams: { type: Types.Relationship, ref: 'Team', many: true, filters: {}},
-    organization: { type: Types.Relationship, ref: 'Organization', refPath: 'organization' },
+    organization: { type: Types.Relationship, ref: 'Organization', refPath: 'organization', note: 'Are you part of an organization?'},
 }, 'Mentoring', {
     mentoring: {
         available: { type: Boolean, label: 'Is Available', index: true },
@@ -141,7 +141,6 @@ User.schema.pre('save', function(next) {
     =============
 */
 
-User.relationship({ ref: 'Role', refPath: 'team', path: 'rolesToFill'});
 User.relationship({ ref: 'Team', refPath: 'members', path: 'teams' });
 User.relationship({ ref: 'Project', refPath: 'contributors', path: 'projectsContributedTo' });
 User.relationship({ ref: 'Post', refPath: 'author', path: 'posts' });

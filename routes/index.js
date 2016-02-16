@@ -25,9 +25,7 @@ var graphqlHTTP = require('express-graphql');
 var graphQLSchema = require('../graphql/schema');
 var IP = process.env.IP || '192.168.33.10';
 var subdomain = require('subdomain');
-var restful = require('restful-keystone')(keystone, {
-    root: '/api/v1'
-});
+keystoneRest = require('keystone-rest');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -48,17 +46,6 @@ exports = module.exports = function(app) {
 	app.use('/api/graphql', graphqlHTTP({ schema: graphQLSchema, graphiql: true }));
 
 	app.use(subdomain({ base: IP, removeWWW: true}));
-
-	//Restful
-	restful.expose({
-		Event: true,
-		User: true,
-		Project: true,
-		RSVP: true,
-		Team: true,
-		Role: true,
-		Organization: true
-	});
 
 	// Allow cross-domain requests (development only)
 	if (process.env.NODE_ENV !== 'production') {
@@ -96,7 +83,21 @@ exports = module.exports = function(app) {
 	app.get('/about', routes.views.about);
 	app.get('/mentoring', routes.views.mentoring);
 	app.get('/privacy', routes.views.privacy);
-	//app.get('/teams', routes.views.teams);
+
+	app.all('/join', routes.views.session.join);
+	app.all('/signin', routes.views.session.signin);
+	app.get('/signout', routes.views.session.signout);
+	app.all('/forgot-password', routes.views.session['forgot-password']);
+	app.all('/reset-password/:key', routes.views.session['reset-password']);
+
+	// Authentication
+	app.all('/auth/confirm', routes.auth.confirm);
+	app.all('/auth/app', routes.auth.app);
+	app.all('/auth/:service', routes.auth.service);
+
+	// User
+	app.all('/me*', middleware.requireUser);
+	app.all('/me', routes.views.me);
 
 		// API
 	app.all('/api*', keystone.middleware.api);
