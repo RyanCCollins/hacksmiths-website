@@ -10,6 +10,7 @@
 
 var _ = require('underscore');
 var keystone = require('keystone');
+var querystring = require('querystring');
 
 /**
 	Initialises the standard view locals
@@ -52,7 +53,7 @@ exports.initLocals = function(req, res, next) {
 		iphone: bowser.iphone,
 		ipad: bowser.ipad,
 		android: bowser.android
-	}
+	};
 
 	next();
 
@@ -114,3 +115,24 @@ exports.requireUser = function(req, res, next) {
 	}
 
 };
+
+/**
+	Returns a closure that can be used within views to change a parameter in the query string
+	while preserving the rest.
+*/
+
+var qs_set = exports.qs_set = function(req, res) {
+	return function qs_set(obj) {
+		var params = _.clone(req.query);
+		for (var i in obj) {
+			if (obj[i] === undefined || obj[i] === null) {
+				delete params[i];
+			} else if (obj.hasOwnProperty(i)) {
+				params[i] = obj[i];
+			}
+		}
+		var qs = querystring.stringify(params);
+		return req.path + (qs ? '?' + qs : '');
+	}
+}
+
