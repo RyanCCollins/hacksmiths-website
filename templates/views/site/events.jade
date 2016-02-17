@@ -1,37 +1,37 @@
 extends ../../layouts/default
-include ../../mixins/meetup
+include ../../mixins/event
 
 block intro
 	.container-sm
 		.page-intro
-			h1.page-title Meetups
-			p.lead Want to get involved?  Meetups are a great way to learn from your peers and collaborate.
+			h1.page-title Events
+			p.lead During each event, we work closely with a non-profit organization to create real software that will be used to help people across the world.  Want to help?
 				p.lead
 					if !user
 						a(href='/join').js-auth-trigger Join&nbsp;us&nbsp;
 					else
 						| RSVP&nbsp
-					| for our next meetup. Stay in the loop - 
-					a(href='http://twitter.com/uHub', target='_blank') follow us on twitter
+					| for our next event. Stay in the loop -
+					a(href='http://twitter.com/teamhacksmiths', target='_blank') follow us on twitter
 
-		if upcomingMeetup
-			+meetup(upcomingMeetup)
+		if upcomingEvent
+			+event(upcomingEvent)
 block content
 	.page-content: .container
 		.timeline
 			.timeline-path
 			.timeline-item--offset
-			each meetup, i in pastMeetups
+			each event, i in pastEvents
 				.timeline-item(class=i % 2 == 1 ? 'timeline-item--even' : 'timeline-item--odd')
 					.timeline-item-node
-					a(href=meetup.url).timeline-item-inner
-						h6.text-caps.text-danger= meetup._.startDate.format('YYYY - MMMM ')
-						h4= meetup.name
-						!=utils.cropString( utils.htmlToText(meetup.description), 240, '...', true )
-						//- !=utils.htmlToText(meetup.description)
-		
-		if !upcomingMeetup && !pastMeetups.length
-			h3.text-muted There are no meetups yet.
+					a(href=event.url).timeline-item-inner
+						h6.text-caps.text-danger= event._.startDate.format('YYYY - MMMM ')
+						h4= event.name
+						!=utils.cropString( utils.htmlToText(event.description), 240, '...', true )
+						//- !=utils.htmlToText(event.description)
+
+		if !upcomingEvent && !pastEvents.length
+			h3.text-muted There are no events yet.
 
 //- block js
 	// twitter

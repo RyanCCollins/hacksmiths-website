@@ -26,8 +26,8 @@ Event.add({
 	regitrationStartDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm' },
 	regirstionEndDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 9:00pm' },
 
-	eventStartDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
-	eventEndDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
+	startDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
+	endDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
 
 	place: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a location, if there is a live event.' },
 	map: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a geocode location, or a url.' },
@@ -79,7 +79,7 @@ Event.schema.pre('save', function(next) {
 		event.state = 'draft';
 	}
 	// event date plus one day is after today, it's a past event
-	else if (moment().isAfter(moment(event.eventStartDate).add('day', 1))) {
+	else if (moment().isAfter(moment(event.startDate).add('day', 1))) {
 		event.state = 'past';
 	}
 	// publish date is after today, it's an active event
@@ -136,7 +136,7 @@ Event.schema.methods.notifyAttendees = function(req, res, next) {
 
 Event.schema.set('toJSON', {
 	transform: function(doc, rtn, options) {
-		return _.pick(doc, '_id', 'name', 'eventStartDate', 'eventEndDate', 'place', 'map', 'description', 'rsvpsAvailable', 'remainingRSVPs');
+		return _.pick(doc, '_id', 'title', 'startDate', 'endDate', 'place', 'map', 'description', 'rsvpsAvailable', 'remainingRSVPs');
 	}
 });
 

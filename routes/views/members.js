@@ -12,30 +12,29 @@ exports = module.exports = function(req, res) {
 	locals.page.title = 'Members - uHub';
 
 
-	// Load Organisers
+	// Load Team Leaders
 	view.on('init', function(next) {
 		User.model.find()
 		.sort('name.first')
 		.where('isPublic', true)
-		.where('isOrganiser', true)
-		.exec(function(err, organisers) {
+		.where('isLeader', true)
+		.exec(function(err, leaders) {
 			if (err) res.err(err);
-			locals.organisers = organisers;
+			locals.leaders = leaders;
 			next();
 		});
 	});
 
 
-	// Load Speakers
+	// Load Leaderboard
 
 	view.on('init', function(next) {
 		User.model.find()
-		.sort('-talkCount name.first')
-		.where('isPublic', true)
-		.where('talkCount').gt(0)
-		.exec(function(err, speakers) {
+		.sort('-rank name.first')
+		.where('istopContributor', true)
+		.exec(function(err, contributors) {
 			if (err) res.err(err);
-			locals.speakers = speakers;
+			locals.topContributors = contributors;
 			next();
 		});
 	});
@@ -44,8 +43,8 @@ exports = module.exports = function(req, res) {
 	// Pluck IDs for filtering Community
 
 	view.on('init', function(next) {
-		locals.organiserIDs = _.pluck(locals.organisers, 'id');
-		locals.speakerIDs = _.pluck(locals.speakers, 'id');
+		locals.leaderIDs = _.pluck(locals.leaders, 'id');
+		locals.topContributorsIDs = _.pluck(locals.topContributors, 'id');
 		next();
 	});
 

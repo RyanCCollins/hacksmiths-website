@@ -15,14 +15,12 @@ exports = module.exports = function(req, res) {
 	view.query('upcomingEvent',
 		Event.model.findOne()
 			.where('state', 'active')
-			.sort('-startDate')
-	, 'talks[who]');
+			.sort('-eventStartDate'), '');
 
 	view.query('pastEvents',
 		Event.model.find()
 			.where('state', 'past')
-			.sort('-startDate')
-	, 'talks[who]');
+			.sort('-eventStartDate'), '');
 
 	view.on('render', function(next) {
 

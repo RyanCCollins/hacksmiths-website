@@ -8,10 +8,8 @@ block content
 				br
 				.text-muted This member has a private profile.
 		else
-			- var udacityUsername = member.udacityUsername || (member.udacity ? member.udacity.replace('@', '') : '');
 			- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');
 			- var githubUsername = member.githubUsername || (member.github ? member.github.replace('@', '') : '');
-			- var googleUsername = member.googleUsername || (member.google ? member.google.replace('@', '') : '');
 			.page-intro
 				.text-left: a(href='/members').text-muted &larr; back to all members
 				//- hr
@@ -26,10 +24,6 @@ block content
 							p.text-muted.mv-1 Member since #{moment(member.createdAt).format('MMMM YYYY')}
 							if twitterUsername || githubUsername
 								.member__accounts.mb-1
-									if udacityUsername
-										a(href='https://udacity.com/' + udacityUsername, target='_blank', data-toggle='tooltip', data-title=udacityUsername, data-placement='top').member__account.member__account--github.btn.btn-default
-											span.entypo-social.entypo-github
-											=udacityUsername
 									if twitterUsername
 										a(href='https://twitter.com/' + twitterUsername, target='_blank', data-toggle='tooltip', data-title='@' + twitterUsername, data-placement='top').member__account.member__account--twitter.btn.btn-default
 											span.entypo-social.entypo-twitter
@@ -53,7 +47,7 @@ block content
 									.media-body
 										h5: a(href=talk.meetup.url)=talk.name
 										!=talk.description
-				
+
 					.member-section.member__additional-info
 						h5.text-caps Projects
 						ul.list-unstyled.mt-1
@@ -68,7 +62,7 @@ block content
 									!=project.about.html
 						else
 							.media-body
-									h5: No projects here yet :(. 
+									h5: No projects here yet :(.
 									if section == 'me'
 									| Why don't you&nbsp
 									a(href='/me/create/project') submit your project.

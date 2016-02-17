@@ -6,7 +6,7 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
-	var data = { events: {}, scheduleItems: {}, rsvp: {} };
+	var data = { events: {}, scheduleItems: {}, teams: {}, rsvp: {} };
 
 	async.series([
 		function(next) {
@@ -20,7 +20,7 @@ exports = module.exports = function(req, res) {
 		function(next) {
 			keystone.list('Event').model.findOne()
 				.where('state', 'past')
-				.sort('-eventStartDate')
+				.sort('-startDate')
 				.exec(function(err, event) {
 					data.events.last = event ? event.toJSON() : false;
 					return next();
@@ -29,7 +29,7 @@ exports = module.exports = function(req, res) {
 		function(next) {
 			keystone.list('Event').model.findOne()
 				.where('state', 'active')
-				.sort('-eventStartDate')
+				.sort('-startDate')
 				.exec(function(err, event) {
 					data.events.next = event ? event.toJSON() : false;
 					return next();
@@ -37,23 +37,23 @@ exports = module.exports = function(req, res) {
 		},
 		function(next) {
 			if (!data.events.last) return next();
-			keystone.list('Talk').model.find()
+			keystone.list('Team').model.find()
 				.where('event', data.events.last)
-				.populate('who')
-				.sort('sortOrder')
-				.exec(function(err, scheduleItems) {
-					data.scheduleItems.last = scheduleItems && scheduleItems.length ? scheduleItems.map(function(i) {
+				.populate('members')
+				.sort('title')
+				.exec(function(err, teams) {
+					data.teams.current = teams.map(function(i) {
 						return i.toJSON();
-					}) : false;
+					});
 					return next();
 				});
 		},
 		function(next) {
 			if (!data.events.next) return next();
-			keystone.list('Talk').model.find()
+			keystone.list('Schedule').model.find()
 				.where('event', data.events.next)
+				.populate('items')
 				.populate('who')
-				.sort('sortOrder')
 				.exec(function(err, scheduleItems) {
 					data.scheduleItems.next = scheduleItems && scheduleItems.length ? scheduleItems.map(function(i) {
 						return i.toJSON();
@@ -100,8 +100,8 @@ exports = module.exports = function(req, res) {
 
 				name: event.name,
 
-				starts: event.eventStartDate,
-				ends: event.eventEndDate,
+				starts: event.startDate,
+				ends: event.endDate,
 
 				place: event.place,
 				map: event.map,
@@ -112,16 +112,16 @@ exports = module.exports = function(req, res) {
 				ticketsRemaining: event.remainingRSVPs,
 
 				scheduleItems: current ? data.scheduleItems.next : data.scheduleItems.last
-			}
+			};
 			eventData.hash = crypto.createHash('md5').update(JSON.stringify(eventData)).digest('hex');
 			return eventData;
-		}
+		};
 
 		if (data.events.last) {
 			response.events.last = parseEvent(data.events.last);
 		}
 
-		if (data.events.next && moment().isBefore(data.events.next.eventEndDate)) {
+		if (data.events.next && moment().isBefore(data.events.next.endDate)) {
 			response.events.next = parseEvent(data.events.next, true);
 			if (data.user) {
 				response.rsvp.responded = data.rsvp ? true : false;

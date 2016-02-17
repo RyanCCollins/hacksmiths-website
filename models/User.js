@@ -27,7 +27,7 @@ User.add({
     resetPasswordKey: { type: String, hidden: true }
 }, 'Profile', {
     isPublic: { type: Boolean, default: true },
-    isOrganizer: Boolean,
+    isLeader: Boolean,
     photo: { type: Types.CloudinaryImage },
     website: { type: Types.Url, note: 'Full website URL, including http://'},
     bio: { type: Types.Markdown },
@@ -101,7 +101,8 @@ User.add({
         },
     }
 }, 'Meta', {
-    talkCount: { type: Number, default: 0, noedit: true },
+    rank: {type: Number, noedit: true},
+    isTopContributor: { type: Boolean, default: false, noedit: true},
     lastRSVP: { type: Date, noedit: true },
     projectsContributedTo: {type: Types.Relationship, ref: 'Project', many: true, noedit: true, hidden: true},
 });
@@ -166,10 +167,8 @@ User.schema.virtual('canAccessKeystone').get(function() {
 User.schema.virtual('avatarUrl').get(function() {
     if (this.photo.exists) return this._.photo.thumbnail(120,120);
     if (this.services.github.isConfigured && this.services.github.avatar) return this.services.github.avatar;
-    if (this.services.facebook.isConfigured && this.services.facebook.avatar) return this.services.facebook.avatar;
-    if (this.services.google.isConfigured && this.services.google.avatar) return this.services.google.avatar;
     if (this.services.twitter.isConfigured && this.services.twitter.avatar) return this.services.twitter.avatar;
-    if (this.gravatar) return 'http://www.gravatar.com/avatar/' + this.gravatar + '?d=http%3A%2F%2Fuhub.io%2Fimages%2Favatar.png&r=pg';
+    if (this.gravatar) return 'http://www.gravatar.com/avatar/' + this.gravatar + '?d=http%3A%2F%2Fhacksmiths.io%2Fimages%2Favatar.png&r=pg';
 });
 
 // Usernames
@@ -178,9 +177,6 @@ User.schema.virtual('twitterUsername').get(function() {
 });
 User.schema.virtual('githubUsername').get(function() {
     return (this.services.github && this.services.github.isConfigured) ? this.services.github.username : '';
-});
-User.schema.virtual('googleUsername').get(function() {
-    return (this.services.google && this.services.google.isConfigured) ? this.services.google.username : '';
 });
 
 /**

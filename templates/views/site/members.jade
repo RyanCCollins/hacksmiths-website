@@ -5,8 +5,8 @@ block flash-messages
 
 block intro
 	.page-intro: .container
-		h1.page-title Members
-		p.lead The people who make up uHub. 
+		h1.page-title Hacksmiths
+		p.lead The wonderful people who make up our community.
 			if !user
 				a(href='/join').js-auth-trigger Add your tile
 
@@ -33,13 +33,13 @@ mixin member(member)
 block content
 	.container
 		+flash-messages(messages)
-		if organisers.length
+		if leaders.length
 			.members-group
-				h3.text-caps.mb-1 Organizers
+				h3.text-caps.mb-1 Team Leaders
 				ul.list-unstyled.members-list
 					li.grid-sizer
-					each organiser in organisers
-						+member(organiser)
+					each leader in leaders
+						+member(leader)
 		if speakers.length
 			.members-group
 				h3.text-caps.mt-2.mb-1 Speakers
@@ -54,7 +54,7 @@ block content
 					li.grid-sizer
 					each member in community
 						+member(member)
-		
+
 		if !organisers.length && !speakers.length && !community.length
 			h3.text-muted There are no members yet.
 

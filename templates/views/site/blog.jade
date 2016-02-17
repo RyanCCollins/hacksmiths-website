@@ -6,7 +6,7 @@ block intro
 	.page-intro: .container
 		h1.page-title=data.category ? data.category.name : 'Blog'
 		p.lead
-			| This is the blog of uHub, contributed by our members and guest authors.&nbsp;
+			| This is the blog of the Hacksmiths, contributed by our members and guest authors.&nbsp;
 			if user && user.isAdmin
 				a(href='/me/create/post') Submit a post to the blog.
 			else if user && !user.isAdmin
@@ -31,7 +31,7 @@ block content
 							h3.text-muted No posts in the category #{data.category.name}.
 						else
 							h3.text-muted There are no posts yet.
-			
+
 			if data.categories.length
 				.col-md-2
 					if data.categories.length
