@@ -24,18 +24,29 @@ Project.add({
     events: {type: Types.Relationship, many: true, ref: 'Event', note: 'Are there any events associated with this project?'}
 }, 'Info', {
     url: { type: Types.Url, note: 'Full website URL for the actual website for the project, including http://'},
-    githubUrl: { type: Types.Url, note: 'Full github project URL, including http://'},
-    stats : {type: Types.Relationship, ref: 'ProjectStats', many: false, noedit: true}
+    repoUrl: { type: Types.Url, note: 'Full github project repo URL, including http://'},
+    stats : {type: Types.Relationship, ref: 'ProjectStats', many: true, noedit: true}
 });
 
 Project.relationship({path: 'stats', ref: 'ProjectStats', refPath:'project'});
 Project.relationship({path: 'events', ref: 'Event', refPath:'project'});
-Project.relationship({path: 'contributors', ref: 'User', refPath: 'projectsContributedTo'});
+Project.relationship({path: 'contributors', ref: 'User', refPath: 'projects'});
 
 // Pull out avatar image
 Project.schema.virtual('logoUrl').get(function() {
     if (this.photo.exists) return this._.photo.thumbnail(120,120);
 });
+
+Project.schema.methods.refreshStats = function(callback) {
+    var project = this;
+    keystone.list('ProjectStats').model.count()
+        .where('project').in([project.id])
+        .exec(function(err, count) {
+            if (err) return callback(err);
+            project.totalContributions = count;
+            project.save(callback);
+        });
+};
 
 Project.defaultColumns = 'title, group, leader';
 Project.register();

@@ -107,7 +107,7 @@ User.add({
     isTopContributor: { type: Boolean, default: false, noedit: true},
     totalHatTips: { type: Number, default: 0},
     lastRSVP: { type: Date, noedit: true },
-    projectsContributedTo: {type: Types.Relationship, ref: 'Project', many: true, noedit: true, hidden: true},
+    projects: {type: Types.Relationship, ref: 'Project', many: true, noedit: true, hidden: true},
 });
 
 User.schema.index({ isPublic: 1, isLeader: 1, isTopContributor: 1 });
@@ -147,7 +147,7 @@ User.schema.pre('save', function(next) {
 */
 
 User.relationship({ ref: 'Team', refPath: 'members', path: 'teams' });
-User.relationship({ ref: 'Project', refPath: 'contributors', path: 'projectsContributedTo' });
+User.relationship({ ref: 'Project', refPath: 'contributors', path: 'projects' });
 User.relationship({ ref: 'Post', refPath: 'author', path: 'posts' });
 User.relationship({ ref: 'RSVP', refPath: 'who', path: 'rsvps' });
 

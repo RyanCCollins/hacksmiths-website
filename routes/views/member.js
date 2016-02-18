@@ -33,8 +33,8 @@ exports = module.exports = function(req, res) {
 
 	view.on('render', function(next) {
 		if (locals.member) {
-			locals.page.title = locals.member.name.full + ' - uHub';
-			locals.member.populateRelated('posts talks[meetup] projects', next);
+			locals.page.title = locals.member.name.full + ' - Hacksmiths';
+			locals.member.populateRelated('posts projects', next);
 		}
 	});
 
