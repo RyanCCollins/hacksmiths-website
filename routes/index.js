@@ -99,11 +99,13 @@ exports = module.exports = function(app) {
 	app.all('/me*', middleware.requireUser);
 	app.all('/me', routes.views.me);
 
+
+
 		// API
 	app.all('/api*', keystone.middleware.api);
 	app.all('/api/me/event', routes.api.me.event);
 
-	//app.all('/api/me/project', routes.api.me.projects);
+
 	app.all('/api/app/');
 	app.all('/api/stats', routes.api.stats);
 	app.all('/api/event/:id', routes.api.event);
@@ -111,6 +113,7 @@ exports = module.exports = function(app) {
 	// API - App
 	app.all('/api/app/status', routes.api.app.status);
 	app.all('/api/app/rsvp', routes.api.app.rsvp);
+	app.all('/api/app/members', routes.api.app.members);
 	app.all('/api/app/signin-email', routes.api.app['signin-email']);
 	app.all('/api/app/signup-email', routes.api.app['signup-email']);
 	app.all('/api/app/signin-service', routes.api.app['signin-service']);

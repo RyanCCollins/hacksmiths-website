@@ -29,6 +29,11 @@ Organization.add({
 Organization.relationship({ ref: 'User', refPath: 'organization', path: 'members' });
 
 
+// Pull out avatar image
+Organization.schema.virtual('logoUrl').get(function() {
+    if (this.logo.exists) return this._.logo.thumbnail(120,120);
+});
+
 /**
  * Registration
  * ============

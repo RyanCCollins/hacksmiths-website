@@ -24,9 +24,9 @@ module.exports = {
 
 		var Inquiry = keystone.list('Inquiry');
 
-		var newEnquiry = new Inquiry.model({
+		var newInquiry = new Inquiry.model({
 			name: { first: 'Test', last: 'User' },
-			email: 'contact@hacksmiths.com',
+			email: 'contact@hacksmiths.io',
 			phone: '+61 2 1234 5678',
 			enquiryType: 'message',
 			message: { md: 'Nice enquiry notification.' }
@@ -35,7 +35,7 @@ module.exports = {
 		callback(null, {
 			admin: 'Admin User',
 			enquiry: newInquiry,
-			enquiry_url: '/keystone/enquiries/'
+			inquiry_url: '/keystone/inquiries/'
 		});
 
 	}

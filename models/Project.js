@@ -20,13 +20,22 @@ Project.add({
     teams: {type: Types.Relationship, ref: 'Team', many: true, required: true, initial: true},
     contributors: {type: Types.Relationship, ref: 'User', many: true, noedit: true},
     rolesNeeded: {type: Types.Relationship, ref: 'Role', many: true},
-    location: Types.Location,
     spotlight: {type: Types.Boolean, default: false, note: 'Should we spotlight this project on the main page?'},
     events: {type: Types.Relationship, many: true, ref: 'Event', note: 'Are there any events associated with this project?'}
+}, 'Info', {
+    url: { type: Types.Url, note: 'Full website URL for the actual website for the project, including http://'},
+    githubUrl: { type: Types.Url, note: 'Full github project URL, including http://'},
+    stats : {type: Types.Relationship, ref: 'ProjectStats', many: false, noedit: true}
 });
 
+Project.relationship({path: 'stats', ref: 'ProjectStats', refPath:'project'});
 Project.relationship({path: 'events', ref: 'Event', refPath:'project'});
 Project.relationship({path: 'contributors', ref: 'User', refPath: 'projectsContributedTo'});
+
+// Pull out avatar image
+Project.schema.virtual('logoUrl').get(function() {
+    if (this.photo.exists) return this._.photo.thumbnail(120,120);
+});
 
 Project.defaultColumns = 'title, group, leader';
 Project.register();

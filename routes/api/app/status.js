@@ -92,7 +92,7 @@ exports = module.exports = function(req, res) {
 				attending: false
 			},
 			user: false
-		}
+		};
 
 		var parseEvent = function(event, current) {
 			var eventData = {

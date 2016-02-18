@@ -1,6 +1,7 @@
 var async = require('async');
 var crypto = require('crypto');
 var keystone = require('keystone');
+var createHash = require('create-hash');
 var Types = keystone.Field.Types;
 
 /**
@@ -24,7 +25,8 @@ User.add({
     name: { type: Types.Name, required: true, index: true },
     email: { type: Types.Email, initial: true, index: true },
     password: { type: Types.Password, initial: true },
-    resetPasswordKey: { type: String, hidden: true }
+    resetPasswordKey: { type: String, hidden: true },
+    authHash: { type: String, default: '', index: true },
 }, 'Profile', {
     isPublic: { type: Boolean, default: true },
     isLeader: Boolean,
@@ -54,7 +56,6 @@ User.add({
     },
     areasOfExpertise: {type: Types.Relationship, ref: 'Skill', many: true, note: 'What is the area you are most skilled in?', dependsOn: deps.isAvailableForEvents },
     skillExplanation: {type: Types.Markdown, dependsOn: deps.isAvailableForEvents  },
-    aBriefCodeTest: {type: Types.Code, dependsOn: deps.isAvailableForEvents },
     rolesToFill: {type: Types.Relationship, ref: 'Role', many: true, note: 'What role do you see yourself filling?', dependsOn: deps.isAvailableForEvents },
     projectInterests: {type: Types.Relationship, ref: 'Project', many: true, dependsOn: deps.isAvailableForEvents },
 }, 'Memberships', {
@@ -101,13 +102,16 @@ User.add({
         },
     }
 }, 'Meta', {
+    sortPriority: { type: Number, size: 'small', default: 10 },
     rank: {type: Number, noedit: true},
     isTopContributor: { type: Boolean, default: false, noedit: true},
+    totalHatTips: { type: Number, default: 0},
     lastRSVP: { type: Date, noedit: true },
     projectsContributedTo: {type: Types.Relationship, ref: 'Project', many: true, noedit: true, hidden: true},
 });
 
-
+User.schema.index({ isPublic: 1, isLeader: 1, isTopContributor: 1 });
+User.schema.index({ isPublic: 1, isLeader: 1, isTopContributor: 1, sortPriority: 1 });
 /**
     Pre-save
     =============

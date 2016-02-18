@@ -4,6 +4,8 @@ require('dotenv').load();
 
 // Require keystone
 var keystone = require('keystone');
+var secrets = require('./lib/auth/secrets');
+
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -51,6 +53,9 @@ keystone.set('locals', {
 
 keystone.set('routes', require('./routes'));
 
+keystone.set('cloudinary config', secrets.cloudinary.uri);
+keystone.set('mandrill api key', secrets.mandrill.API_KEY );
+keystone.set('mandrill username', secrets.mandrill.username );
 
 // Setup common locals for your emails. The following are required by Keystone's
 // default email templates, you may remove them if you're using your own.
@@ -79,10 +84,10 @@ keystone.set('email locals', {
 
 keystone.set('email rules', [{
 	find: '/images/',
-	replace: (keystone.get('env') == 'production') ? 'http://www.your-server.com/images/' : 'http://localhost:3000/images/'
+	replace: (keystone.get('env') == 'production') ? 'http://hacksmiths.io/images/' : 'http://localhost:4000/images/'
 }, {
 	find: '/keystone/',
-	replace: (keystone.get('env') == 'production') ? 'http://www.your-server.com/keystone/' : 'http://localhost:3000/keystone/'
+	replace: (keystone.get('env') == 'production') ? 'http://hacksmiths.io/keystone/' : 'http://localhost:4000/keystone/'
 }]);
 
 // Load your project's email test routes
@@ -94,6 +99,7 @@ keystone.set('email tests', require('./routes/emails'));
 keystone.set('nav', {
 	'members': ['users', 'organizations', 'teams', 'roles', 'skills', 'nanodegrees'],
 	'projects': ['projects', 'events', 'teams', 'schedules', 'rsvps', 'inquiries'],
+	'stats': ['team-stats', 'project-stats'],
 	'blog': ['posts', 'post-categories', 'post-comments'],
 	'links': ['links', 'link-tags', 'link-comments'],
 	'photo gallery': 'galleries',

@@ -22,12 +22,20 @@ Team.add({
 	spotlight: {type: Types.Boolean, default: false},
 	roles: { type: Types.Relationship, ref: 'Role', many: true},
 	members: {type: Types.Relationship, ref: 'User', many: true},
-	projects: {type: Types.Relationship, ref: 'Project', many: true, noedit: true}
+	projects: {type: Types.Relationship, ref: 'Project', many: true, noedit: true},
+	stats: {type: Types.Relationship, ref: 'TeamStats', many: false, noedit: true}
 });
 
+Team.relationship({ ref: 'TeamStats', refPath: 'team', path: 'stats'});
 Team.relationship({ ref: 'User', refPath: 'teams', path: 'members'});
 Team.relationship({ ref: 'Project', refPath: 'teams', path: 'projects'});
 Team.relationship({ ref: 'Role', refPath: 'team', path: 'roles'});
 
-Team.defaultColumns = 'title, roles, leader';
+// Pull out avatar image thumbnail
+Team.schema.virtual('avatarUrl').get(function() {
+    if (this.logo.exists) return this._.logo.thumbnail(120,120);
+});
+
+
+Team.defaultColumns = 'title, roles, leaders';
 Team.register();
