@@ -34,7 +34,7 @@ module.exports = {
 
 		callback(null, {
 			admin: 'Admin User',
-			enquiry: newInquiry,
+			inquiry: newInquiry,
 			inquiry_url: '/keystone/inquiries/'
 		});
 
