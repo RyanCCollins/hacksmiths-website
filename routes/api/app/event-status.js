@@ -30,6 +30,7 @@ exports = module.exports = function(req, res) {
 			keystone.list('Event').model.findOne()
 				.where('state', 'active')
 				.sort('-startDate')
+				.populate('teams project')
 				.exec(function(err, event) {
 					data.events.next = event ? event.toJSON() : false;
 					return next();
