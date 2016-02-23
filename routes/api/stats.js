@@ -19,10 +19,10 @@ exports = module.exports = function(req, res) {
 				.where('startDate').gte(moment().startOf('day').toDate())
 				.where('state', 'published')
 				.sort('startDate')
-				.exec(function(err, meetup) {
+				.exec(function(err, event) {
 
 					RSVP.model.count({
-						meetup: meetup,
+						event: event,
 						attending: true
 					})
 					.exec(function(err, count) {

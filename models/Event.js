@@ -10,6 +10,7 @@ var Types = keystone.Field.Types;
 
 var Event = new keystone.List('Event', {
 	track: true,
+	map: {name: 'title'},
 	autokey: { path: 'key', from: 'title', unique: true }
 });
 
