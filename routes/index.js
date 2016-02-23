@@ -111,7 +111,7 @@ exports = module.exports = function(app) {
 	app.all('/api/event/:id', routes.api.event);
 
 	// API - App
-	app.all('/api/app/status', routes.api.app.status);
+	app.all('/api/app/event-status', routes.api.app['event-status']);
 	app.all('/api/app/rsvp', routes.api.app.rsvp);
 	app.all('/api/app/members', routes.api.app.members);
 	app.all('/api/app/signin-email', routes.api.app['signin-email']);
