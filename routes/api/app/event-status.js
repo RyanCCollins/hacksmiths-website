@@ -33,6 +33,7 @@ exports = module.exports = function(req, res) {
 				.populate('teams project sponsors')
 				.exec(function(err, event) {
 					data.events.next = event ? event.toJSON() : false;
+					console.log(event);
 					return next();
 				});
 		},

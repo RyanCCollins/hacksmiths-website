@@ -37,7 +37,7 @@ Event.add({
 	totalRSVPs: { type: Number, noedit: true },
 
 	state: { type: Types.Select, options: 'draft, scheduled, active, past', noedit: true },
-	publishedDate: { type: Types.Date, index: true },
+	publishedDate: { type: Types.Datetime, index: true },
 });
 
 
