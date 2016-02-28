@@ -1,12 +1,13 @@
-web:
+app:
   build: .
   links:
    - db
   ports:
-   - "3000:3000"
-  environment: 
+   - "4000:400"
+  environment:
    NODE_ENV: development
+  env_file: ./.env
 db:
   image: mongo
-  ports: 
+  ports:
    - "27017:27017"
