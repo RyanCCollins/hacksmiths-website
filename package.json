@@ -12,6 +12,7 @@
     "elemental": "^0.5.11",
     "express-graphql": "^0.4.9",
     "forever": "^0.15.1",
+    "forever-monitor": "^1.7.0",
     "graphql": "^0.4.16",
     "gulp-sass": "^2.2.0",
     "jwt-simple": "^0.4.1",
