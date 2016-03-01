@@ -3,10 +3,12 @@ app:
   links:
    - db
   ports:
-   - "4000:400"
+   - "4000:4000"
   environment:
    NODE_ENV: development
   env_file: ./.env
+  volumes:
+    - ./:/home/mean
 db:
   image: mongo
   ports:

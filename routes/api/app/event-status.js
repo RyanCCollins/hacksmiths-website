@@ -117,8 +117,8 @@ exports = module.exports = function(req, res) {
 				project: event.project,
 				description: keystone.utils.cropString(keystone.utils.htmlToText(event.description), 250, '...', true),
 
-				ticketsAvailable: event.rsvpsAvailable,
-				ticketsRemaining: event.remainingRSVPs,
+				spotsAvailable: event.spotsAvailable,
+				spotsRemaining: event.spotsRemaining,
 
 				scheduleItems: current ? data.scheduleItems.next : data.scheduleItems.last
 			};

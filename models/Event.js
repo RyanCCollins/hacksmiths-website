@@ -58,13 +58,13 @@ Event.schema.virtual('url').get(function() {
 	return '/events/' + this.key;
 });
 
-Event.schema.virtual('remainingRSVPs').get(function() {
+Event.schema.virtual('spotsRemaining').get(function() {
 	if (!this.maxRSVPs) return -1;
 	return Math.max(this.maxRSVPs - (this.totalRSVPs || 0), 0);
 });
 
-Event.schema.virtual('rsvpsAvailable').get(function() {
-	return (this.remainingRSVPs > 0);
+Event.schema.virtual('spotsAvailable').get(function() {
+	return (this.spotsRemaining > 0);
 });
 
 
