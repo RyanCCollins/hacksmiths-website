@@ -1,15 +1,15 @@
-app:
+web:
   build: .
   links:
    - db
   ports:
-   - "4000:4000"
+   - "3000:3000"
+   - "35729:35729"
+  volumes:
+   - ./app:/home/mean/app
   environment:
    NODE_ENV: development
-  env_file: ./.env
-  volumes:
-    - ./:/home/mean
 db:
-  image: mongo
+  image: mongo:latest
   ports:
    - "27017:27017"
