@@ -34,7 +34,7 @@ exports.initLocals = function(req, res, next) {
 
 	locals.user = req.user;
 
-		locals.basedir = keystone.get('basedir');
+	locals.basedir = keystone.get('basedir');
 
 	locals.page = {
 		title: 'Hacksmiths',
