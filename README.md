@@ -13,7 +13,63 @@ npm install -g bower gulp keystone
 
 To get the app running, you will need to setup the environment variables.  You will see that there is a .env_sample file.  This contains all of the needed environment variables.  These variables are needed to run this app, so if you need them, you can follow the [KeystoneJS setup guide](http://keystonejs.com/docs/configuration/) for the Cloudinary and Mandrill APIs.
 
-You can move onto the installation section, but if you have any issues, you will want to follow these steps to update npm and use NodeJS version 4.2.4.
+### Installing
+
+To run with Gulp / Browsersync, you will want to run the setup script.
+Run the following to install dependencies:
+```
+npm run setup
+```
+
+Then to start the server and view the page:
+```
+gulp
+```
+Which should open up your browser automatically.  If for some reason it does not, you can navigate to http://localhost:3000 to see the site.
+
+
+
+## Deployment
+
+Deployment is similiar to setup, except that this app can run inside of its docker container.
+
+To do so, install Docker Compose and run the following from within the root directory of the project.
+```docker-compose up ```
+
+This will build the database and the app container and then network the two together.  If you run into any issues, I recommend installing the app without Docker un Ubuntu.  You can follow the instructions in the Dockerfile.
+
+You will want to set the NodeJS Environment to production by running the following.  This will disable development features, such as browsersync.
+```
+export NODE_ENV=production
+```
+
+In production, it's a good idea to run nginx seperately from within a separate Docker container.  A sample nginx.conf file is included with the repo.  
+
+## Built With
+
+* NodeJS
+* Bower
+* Docker
+* 
+* Gulp
+* KeystoneJS
+
+## Authors
+
+* **Ryan Collins**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+*
+
+## Troubleshooting
+If you have any issues getting setup, there are a few things that you can try.First of all, the app will not run without environment variables.  Follow the steps above in the "Environment Variable Setup" section.
+
+Also, it is always a good idea to get yourself updated to the right versions of npm and NodeJS.  You will want to follow these steps to update npm and use NodeJS version 4.2.4.
 
 Update NPM version with the following command
 ```
@@ -35,42 +91,3 @@ To use a specific NodeJS version, you need to have nvm install the correct versi
 nvm install 4.2.4
 nvm use 4.2.4
 ```
-
-### Installing
-
-To run with Gulp / Browsersync, you will want to run the setup script.
-Run the following to install dependencies:
-```
-npm run setup
-```
-
-Then to start the server and view the page:
-```
-gulp
-```
-Which should open up your browser automatically.  If for some reason it does not, you can navigate to http://localhost:3000 to see the site.
-
-## Deployment
-
-Deployed to github pages.
-
-## Built With
-
-* JQuery
-* NodeJS
-* Sublime Text
-* Browsersync
-* Gulp
-* KeystoneJS
-
-## Authors
-
-* **Ryan Collins**
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-*
