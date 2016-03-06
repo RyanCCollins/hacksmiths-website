@@ -11,6 +11,8 @@ Install them globally with this command.
 npm install -g bower gulp keystone
 ```
 
+To get the app running, you will need to setup the environment variables.  You will see that there is a .env_sample file.  This contains all of the needed environment variables.  These variables are needed to run this app, so if you need them, you can follow the [KeystoneJS setup guide](http://keystonejs.com/docs/configuration/) for the Cloudinary and Mandrill APIs.
+
 You can move onto the installation section, but if you have any issues, you will want to follow these steps to update npm and use NodeJS version 4.2.4.
 
 Update NPM version with the following command
