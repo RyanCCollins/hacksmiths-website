@@ -60,6 +60,4 @@ benchmarks/graphs
 
 bower_components
 
-lib/auth/secrets.js
-
 git_stats
