@@ -5821,16 +5821,479 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-#header {
-  margin-top: 30px; }
-
-#footer {
-  margin-top: 30px;
-  border-top: 1px solid #eeeeee;
-  padding-top: 30px;
-  color: #777777; }
-
 .gallery-image img {
   display: block;
   max-width: 100%;
   height: auto; }
+
+/*
+
+  EXHO TEMPLATE  V1.0 BY SUPVIEW.BE
+
+
+  01. Font Face
+  02. Generals Settings
+  03. Header Section Settings
+  04. Navigation Settings
+  04. Page1 / Header Section Settings
+  05. Media Queries Settings
+
+*/
+/* 01. FONT FACE ================================================== */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 200;
+  src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGEzfSP8PFPIaW8d4wHl9LSw.woff") format("woff"); }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlDLXPPWpYIJRcQ99gLLWTOQ.woff") format("woff"); }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGNF2eBBnhZOFf_rblGEjGiI.woff") format("woff"); }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGBgDywzySrQSFSEUM6OqW_g.woff") format("woff"); }
+
+/* 02. GENERALS SETTINGS ================================================== */
+/* Container  */
+.container {
+  z-index: 9999;
+  position: relative;
+  background: #FFF;
+  overflow: hidden; }
+
+/* Clear floats of children */
+.cbp-so-section:before,
+.cbp-so-section:after {
+  content: " ";
+  display: table;
+  padding: 30px 0; }
+
+.cbp-so-section:after {
+  clear: both; }
+
+/* Sides */
+.cbp-so-side {
+  width: 100%;
+  margin: 0;
+  padding: 3em 2%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  -moz-transition: -moz-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s; }
+
+body, html {
+  background: #E2E4E7;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  -webkit-transition: opacity 400ms;
+  -moz-transition: opacity 400ms;
+  transition: opacity 400ms; }
+
+/* Selected text Color */
+::-moz-selection {
+  background: none;
+  color: #5ac6ff; }
+
+::selection {
+  background: none;
+  color: #5ac6ff; }
+
+.centered {
+  text-align: center; }
+
+b, strong {
+  font-weight: 800; }
+
+/* Make a space */
+.space {
+  padding: 20px 0; }
+
+h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0.75em 0.75em 0.25em;
+  font-size: 2.70em; }
+
+h2 {
+  font-size: 50px;
+  line-height: 46px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 0.33em; }
+
+h3 {
+  font: 38px 'Source Sans Pro', sans-serif;
+  font-weight: 100;
+  padding-bottom: 25px;
+  padding-top: 0px; }
+
+h4 {
+  font: 32px 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  font-weight: 100;
+  padding-bottom: 15px; }
+
+h5 {
+  font: 24px 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  color: #FFF;
+  text-align: center; }
+
+span {
+  color: #303333;
+  font: 1.5em 'Source Sans Pro', sans-serif;
+  opacity: 0.4;
+  padding-top: 0px; }
+
+/* Link */
+a {
+  color: #FFF;
+  text-decoration: none; }
+
+a:hover {
+  color: #FFF;
+  background-color: #59d1fb; }
+
+/* Paragrah */
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 30px; }
+
+p a {
+  border-bottom: 1px dotted #888;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
+
+p a:hover {
+  border-bottom: 1px dotted #FFF; }
+
+/* 03. NAVIGATION SETTINGS ================================================== */
+nav #logo {
+  float: left;
+  z-index: 99999;
+  margin-top: 20px; }
+
+nav {
+  z-index: 999;
+  width: 100%;
+  height: 80px; }
+
+/* Some stylesheet reset */
+#nav, #nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/* The main navigation bar */
+#nav {
+  width: 100%; }
+
+#nav > li {
+  float: right;
+  position: relative;
+  padding: 20px 15px;
+  margin-top: 20px; }
+
+/* The main navigation links */
+#nav > li > a {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #FFF;
+  opacity: 1;
+  text-decoration: none; }
+
+/* The hover state of the links */
+#nav li:hover a, #nav li .selected {
+  color: rgba(255, 255, 255, 0.6); }
+
+/* Navigation Fixed */
+.cbp-af-header {
+  font-family: 'Source Sans Pro', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  height: 140px;
+  overflow: hidden;
+  -webkit-transition: height 0.6s;
+  -moz-transition: height 0.6s;
+  transition: height 0.6s; }
+
+.cbp-af-header #logo img {
+  padding: 40px 20px 0px 0px;
+  max-width: 150px; }
+
+.cbp-af-header #nav a {
+  line-height: 60px; }
+
+/* Button Share */
+.cbp-af-header .button {
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-top: -100px;
+  padding: 5px 15px;
+  letter-spacing: 2px;
+  background: #5ac6ff;
+  font-weight: 600;
+  float: right;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+/* Navigation effect on scroll down */
+.cbp-af-header.cbp-af-header-shrink {
+  height: 80px;
+  float: right;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+/* The button comes to the right place */
+.cbp-af-header.cbp-af-header-shrink .button {
+  margin-top: 30px;
+  display: block; }
+
+/* The links goes up */
+.cbp-af-header.cbp-af-header-shrink #nav a {
+  margin-top: -150px; }
+
+/* 04. PAGE 1 / HEADER SETTINGS ================================================== */
+.page1 {
+  background: url("/images/bg.jpg") #131313;
+  background-size: cover;
+  height: 100%;
+  position: relative; }
+
+.page1 h1 {
+  text-align: center;
+  padding: 0;
+  margin-top: 50px;
+  margin-bottom: 40px; }
+
+.page1 h2 {
+  color: #FFF;
+  letter-spacing: 0px;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  font-weight: 400;
+  font-size: 70px; }
+
+/* Don't display the logo for Phone */
+.logo-phone {
+  display: none; }
+
+/* Huge Title */
+.huge-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 450px; }
+
+/* Go down text & Button */
+.join-button {
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  height: 50px; }
+
+/* Social Ico */
+.social-ico {
+  float: right;
+  margin-top: 40px; }
+
+.h5-main-text {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; }
+
+.page1-logo {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.row-nav {
+  width: 80%; }
+
+.h5-button-join-us {
+  padding-top: 8px;
+  font-weight: 600;
+  background-clip: padding-box;
+  background-color: #5ac6ff;
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 15px auto;
+  height: 50px;
+  letter-spacing: 3px;
+  text-shadow: none;
+  text-transform: uppercase;
+  width: 400px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+.div-button {
+  padding-top: 20px; }
+
+/* 05. MEDIA QUERIES  ============================================ */
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 42px; }
+  h3 {
+    font-size: 32px; }
+  .iphone {
+    display: none; }
+  .cbp-af-header {
+    display: none; }
+  .logo-phone {
+    display: block; }
+  .huge-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 250px;
+    padding: 20px; }
+  .page2 .columns {
+    position: relative;
+    width: 100%; }
+  .has-tooltip .tooltip {
+    pointer-events: none;
+    position: absolute;
+    z-index: 9999;
+    left: auto;
+    bottom: -60px;
+    opacity: 0;
+    -webkit-transition: ease-out opacity 300ms;
+    -webkit-transition-delay: 0ms;
+    -moz-transition: ease-out opacity 300ms 0ms;
+    -o-transition: ease-out opacity 300ms 0ms;
+    transition: ease-out opacity 300ms 0ms; }
+  .has-tooltip .tooltip span {
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    background: white;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    padding: 12px 15px;
+    left: 0%;
+    font-size: 11px;
+    color: #777; }
+  .has-tooltip .tooltip span:after {
+    top: -40%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-bottom-color: white;
+    border-width: 8px;
+    left: 10%;
+    margin-left: -6px; }
+  .page3 .slider-mac {
+    margin-left: 0%;
+    margin-top: 80px;
+    position: relative;
+    max-width: 100%;
+    bottom: 0px;
+    padding-bottom: 0;
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    -moz-transition: -moz-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s; }
+  #dragit img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    bottom: 80px;
+    right: 0; }
+  #testimonial {
+    text-align: center; }
+  #slider2 {
+    margin-top: 20px;
+    padding-right: 0px; }
+  #slider2 p {
+    padding-right: 0px; }
+  #showhide .trigger {
+    display: none;
+    left: -1000px; } }
+
+/* Media Queries for iPad in Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #testimonial .columns {
+    width: 100%; }
+  #testimonial {
+    text-align: center; }
+  .iphone {
+    bottom: 0;
+    right: -180px;
+    position: absolute;
+    display: none;
+    top: 3%; }
+  .page2 .row .six.columns {
+    width: 100%; }
+  .page3 .slider-mac {
+    bottom: -70px; }
+  .page5 {
+    padding: 40px 0; } }
+
+/* Media Queries for iPad in Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .iphone {
+    bottom: 0;
+    right: -180px;
+    position: absolute;
+    top: 3%; } }

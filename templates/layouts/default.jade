@@ -1,17 +1,35 @@
 include ../mixins/flash-messages
+include ../mixins/auth/auth-forms
 
 doctype html
-html
+//if lt IE 7
+	html.no-js.ie6.oldie(lang='en')
+//if IE 7
+	html.no-js.ie7.oldie(lang='en')
+//if IE 8
+	html.no-js.ie8.oldie(lang='en')
+//if IE 9
+	html.no-js.ie9(lang='en')
+// [if gt IE 9] <!
+html.no-js(lang='en', itemscope='', itemtype='http://schema.org/Product')
 
 	//- HTML HEADER
 	head
-		meta(charset="utf-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		// Meta tags & title /
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		title
+			| Hacksmiths - a collection of developers and designers collaborating to build prototypes and products using a unique process in a virtual environment.
+		meta(name='description', content='.')
+		meta(name='keywords', content='')
+		meta(name='author', content='humans.txt')
+		// Favicon /
+		link(rel='shortcut icon', href='favicon.png', type='image/x-icon')
+		// Favicon /
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1')
 
-		title= title || 'Hacksmiths'
-		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
-
+		// Load the gumby framework
+		link(rel='stylesheet', href='/styles/vendor/gumby.css')
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
 
@@ -35,56 +53,23 @@ html
 	//- HTML BODY
 	body
 
-		//- HEADER
-		#header: .container
+		//- NOTE:
+		//- There is no .container wrapping class around body blocks to allow more flexibility in design.
+		//- Remember to include it in your templates when you override the intro and content blocks!
 
-			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-			//- ... or completely change this header to suit your design.
+		//- The Intro block appears above flash messages (used for temporary information display)
+		block intro
 
-			div(role="navigation").navbar.navbar-default
-				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') Hacksmiths
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
-							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+		//- Flash messages allow you to display once-off status messages to users, e.g. form
+		//- validation errors, success messages, etc.
+		+flash-messages(messages)
 
-		//- BODY
-		#body
-
-			//- NOTE:
-			//- There is no .container wrapping class around body blocks to allow more flexibility in design.
-			//- Remember to include it in your templates when you override the intro and content blocks!
-
-			//- The Intro block appears above flash messages (used for temporary information display)
-			block intro
-
-			//- Flash messages allow you to display once-off status messages to users, e.g. form
-			//- validation errors, success messages, etc.
-			+flash-messages(messages)
-
-			//- The content block should contain the body of your template's content
-			block content
+		//- The content block should contain the body of your template's content
+		block content
 
 
 		//- FOOTER
 		.container: #footer
-
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
 
 		//- JAVASCRIPT

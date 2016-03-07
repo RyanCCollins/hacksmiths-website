@@ -1,14 +1,41 @@
 extends ../layouts/default
 
+block intro
+
 block content
-	.container: .jumbotron
-		img(src='/images/', width='160')
-		h1.text-center Welcome to the Hacksmiths Website
-		if user && user.canAccessKeystone
-			p.text-center
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p.text-center
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
-		hr
+	// Preload the Whole Page
+	// NAVIGATION ###############################################
+	.cbp-af-header
+		nav.row.row-nav#nav
+			// Share DIV
+			// End Share dIV
+			// Logo
+			#logo
+				a(href='/')
+					img(alt='Hacksmiths logo', src='/images/hacksmiths-logo-text.png')
+			// Links
+			ul#nav
+				li
+					if user
+						a(href='/login') Login
+					else
+						a(href='/join') Sign up
+	// END NAVIGATION ###############################################
+	// HEADER ###############################################
+
+	section.page1
+		// Huge Title centered
+		.huge-title
+			img.page1-logo(src='/images/hacksmiths-logo.png')
+			// This Logo is only displayed on Tablet/iPhone !
+			h2 HACKSMITHS
+			h5.h5-main-text
+				| We are a collection of developers and designers collaborating to build prototypes and products using a unique process in a virtual environment.
+				br
+			h5.h5-main-text
+				| Hacksmiths are looking for talented developers and designers to help us build digital products that help those less fortunate.
+
+				| Join us for an opportunity to build real software built to help people.  Deepen your experience and portfolio and join a community of people who love helping people who help people.
+			.button-join-us.div-button
+				a(href='/join')
+					h5.h5-button-join-us LEARN MORE

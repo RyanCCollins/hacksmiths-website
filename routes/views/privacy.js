@@ -6,7 +6,7 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 
 	locals.section = 'privacy';
-	locals.page.title = 'uHub Privacy Policy';
+	locals.page.title = 'Hacksmiths Privacy Policy';
 
 	view.render('site/privacy');
 
