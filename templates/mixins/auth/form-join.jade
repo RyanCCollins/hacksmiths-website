@@ -1,11 +1,10 @@
 //-
 	Join
 	------------------------------
-	
+
 	Args
 	* modal  - boolean
 	* initial [default "join"] - accepts "signin" | "join" | "password"
-include ../udacity-btn
 
 mixin form-join(args)
 	.auth-box.modal-pane-join(class=args.modal && args.initial != 'join' ? 'hidden' : null)
@@ -26,13 +25,13 @@ mixin form-join(args)
 						.flash-messages
 							.alert.alert-danger
 								div!= form.error.message || form.error
-								
+
 								//- Field Errors
 								if form.error.errors && !_.isEmpty(form.error.errors)
 									ul
 										each error, key in form.error.errors
 											li!= error.msg
-					
+
 					- var checkFormError = function(key) { return form.error && form.error.errors && form.error.errors[key] ? 'has-error' : null }
 				.form-groups
 					.form-group(class=!args.modal ? checkFormError('email') : null)
@@ -56,13 +55,13 @@ mixin form-join(args)
 									.flash-messages
 										.alert.alert-danger
 											div!= form.error.message || form.error
-											
+
 											//- Field Errors
 											if form.error.errors && !_.isEmpty(form.error.errors)
 												ul
 													each error, key in form.error.errors
 														li!= error.msg
-								
+
 								- var checkFormError = function(key) { return form.error && form.error.errors && form.error.errors[key] ? 'has-error' : null }
 							.form-groups
 								.form-group(class=!args.modal ? checkFormError('firstname') : null)
@@ -84,5 +83,5 @@ mixin form-join(args)
 			p.auth-form-divider: span.auth-form-divider-text or
 				include ../../includes/social-signin
 			p.text-center.text-muted.mt-3
-				| Already have an account? 
+				| Already have an account?
 				a(href=args.modal ? js : '/signin', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'signin' : null) Sign in
