@@ -30,17 +30,10 @@ block content
 			// This Logo is only displayed on Tablet/iPhone !
 			h2 HACKSMITHS
 			.row.row-callout
-				#countdown
-
+				.medium-8.small-12.columns.small-centered.callout
+					h1.callout-text
+						| COMING SOON 04/02/2016
+						br
 			.button-join-us.div-button
 				a(href='/join')
 					h5.h5-button-join-us GET IN TOUCH
-
-block js
-script(type='text/javascript').
-	$("#getting-started")
-	.countdown("2016/01/01", function(event) {
-	$(this).text(
-		event.strftime('%D days %H:%M:%S')
-	);
-});
