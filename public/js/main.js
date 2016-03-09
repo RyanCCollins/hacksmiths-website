@@ -8,3 +8,16 @@ jQuery(window).scroll(function() {
         $('#logo-image').attr('src', 'img/Acme_Colour.png')
     }
 });
+
+$(function(){
+    // this will get the full URL at the address bar
+    var url = window.location.href;
+
+    // passes on every "a" tag
+    $("#nav-right a").each(function() {
+            // checks if its the same on the address bar
+        if(url == (this.href)) {
+            $(this).closest("li").addClass("active");
+        }
+    });
+});

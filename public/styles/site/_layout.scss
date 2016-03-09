@@ -1,5 +1,11 @@
 
+$primary-color:#7acff0;
 
+$text-gray:#bfbebe;
+
+$break-small:600px;
+$break-medium:768px;
+$break-large:1024px;
 /*
 
     EXHO TEMPLATE  V1.0 BY SUPVIEW.BE
@@ -13,6 +19,16 @@
     05. Media Queries Settings
 
 */
+
+
+/* Mixin for vertical alignment */
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 /* 01. FONT FACE ================================================== */
 
@@ -229,7 +245,7 @@ nav
 
 /* Some stylesheet reset */
 
-#nav, #nav ul
+#nav-right, #nav-right ul
 {
     list-style: none;
     margin: 0;
@@ -238,7 +254,7 @@ nav
 
 /* The main navigation bar */
 
-#nav
+#nav-right
 {
     width: 100%;
 }
@@ -247,7 +263,7 @@ nav
     height:  32px;
 }
 
-#nav>li
+#nav-right > li
 {
     float: right;
     position: relative;
@@ -257,7 +273,7 @@ nav
 
 /* The main navigation links */
 
-#nav>li>a
+#nav-right > li > a
 {
     display: block;
     font-size: 14px;
@@ -270,9 +286,13 @@ nav
 
 /* The hover state of the links */
 
-#nav li:hover a, #nav li .selected
+#nav-right li:hover a, #nav li .selected
 {
     color: rgba(255,255,255,0.60);
+}
+
+#nav-right.active {
+    border-bottom: 1px solid transparent;
 }
 
 /* Navigation Fixed */
@@ -379,6 +399,10 @@ nav
     margin: auto;
     width: 100%;
     height: 450px;
+
+    @media screen and (min-width:break-small) {
+        margin-top:10px;
+    }
 }
 
 /* Social Ico */
@@ -410,6 +434,10 @@ nav
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.row-callout {
+    max-height: 300px
 }
 
 .button-join-us {
@@ -460,6 +488,9 @@ nav
     .page1-h2 {
         font-size: 22px;
     }
+    .callout-text {
+        font-size: 16px;
+    }
     .h5-main.text {
         width: 85%;
     }
@@ -489,6 +520,23 @@ nav
     {
         display: none;
         left: -1000px;
+    }
+}
+
+.callout {
+    margin-top:20px;
+
+    background:rgba(15, 31, 56, .3);
+    @include vertical-align();
+}
+
+.callout-text {
+    font-size: 20px;
+    opacity: 1.0;
+    color: white;
+
+    @media screen and (min-width: $break-small) {
+
     }
 }
 

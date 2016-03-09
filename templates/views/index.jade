@@ -6,7 +6,7 @@ block content
 	// Preload the Whole Page
 	// NAVIGATION ###############################################
 	.cbp-af-header
-		nav.row.row-nav#nav
+		nav.row-nav#nav
 			// Share DIV
 			// End Share dIV
 			// Logo
@@ -14,7 +14,7 @@ block content
 				a(href='/')
 					img(alt='Hacksmiths logo', src='/images/hacksmiths-logo-text.png')
 			// Links
-			ul#nav
+			ul#nav-right
 				li
 					if user
 						a(href='/login') Login
@@ -26,16 +26,21 @@ block content
 	section.page1
 		// Huge Title centered
 		.huge-title
-			img.page1-logo(src='/images/hacksmiths-logo.png')
+			img.page1-logo(src='/images/hacksmiths-logo.svg')
 			// This Logo is only displayed on Tablet/iPhone !
 			h2 HACKSMITHS
-			h5.h5-main-text
-				| We are a collection of developers and designers collaborating to build prototypes and products using a unique process in a virtual environment.
-				br
-			h5.h5-main-text
-				| Hacksmiths are looking for talented developers and designers to help us build digital products that help those less fortunate.
+			.row.row-callout
+				#countdown
 
-				| Join us for an opportunity to build real software built to help people.  Deepen your experience and portfolio and join a community of people who love helping people who help people.
 			.button-join-us.div-button
 				a(href='/join')
-					h5.h5-button-join-us LEARN MORE
+					h5.h5-button-join-us GET IN TOUCH
+
+block js
+script(type='text/javascript').
+	$("#getting-started")
+	.countdown("2016/01/01", function(event) {
+	$(this).text(
+		event.strftime('%D days %H:%M:%S')
+	);
+});
