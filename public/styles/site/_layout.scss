@@ -535,13 +535,12 @@ nav
 
 .callout {
     margin-top:20px;
-
     background:rgba(15, 31, 56, .3);
     @include vertical-align();
 }
 
 .callout-text {
-    font-size: 20px;
+    font-size: 40px;
     opacity: 1.0;
     color: white;
 
