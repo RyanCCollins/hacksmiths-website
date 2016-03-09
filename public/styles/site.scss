@@ -1,9 +1,17 @@
-// Bootstrap
-// =========
+/*
+The main SCSS file for everything, yep
+*/
 
-// Bootstrap can be removed entirely by deleting this line.
+@charset 'UTF-8';
+@import 'site/main_settings.scss';
 
-@import "bootstrap/bootstrap";
+@import "../../bower_components/foundation/scss/foundation";
+@import "../../bower_components/foundation-sites/scss/foundation";
+
+@include foundation-everything;
+
+@import 'site/_layout';
+
 
 // The easiest way to customise Bootstrap variables while
 // being able to easily override the source files with new
