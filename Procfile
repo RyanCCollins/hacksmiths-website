@@ -1,1 +1,1 @@
-web: node keystone.js
+web: node node_modules/gulp/bin/gulp build

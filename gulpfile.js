@@ -49,6 +49,13 @@ gulp.task('sass', function(){
     .pipe(bs.stream());
 });
 
+gulp.task('serveprod', function() {
+  connect.server({
+    root: [your_project_path],
+    port: process.env.PORT || 4000, // localhost:4000
+    livereload: false
+  });
+});
 
 gulp.task('browser-sync', function(){
   bs.init({
