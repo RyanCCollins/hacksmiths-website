@@ -25,7 +25,6 @@ var graphqlHTTP = require('express-graphql');
 var graphQLSchema = require('../graphql/schema');
 var IP = process.env.IP || '192.168.33.10';
 var subdomain = require('subdomain');
-keystoneRest = require('keystone-rest');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
