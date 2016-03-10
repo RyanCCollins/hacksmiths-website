@@ -17,7 +17,6 @@ keystone.init({
 	'name': 'Hacksmiths',
 	'brand': 'Hacksmiths',
 
-	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
