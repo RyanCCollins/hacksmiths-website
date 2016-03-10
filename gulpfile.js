@@ -49,12 +49,11 @@ gulp.task('sass', function(){
     .pipe(bs.stream());
 });
 
-gulp.task('serveprod', function() {
-  connect.server({
-    root: [your_project_path],
-    port: process.env.PORT || 4000, // localhost:4000
-    livereload: false
-  });
+// starts a production server
+// runs the build task before,
+// and serves the dist folder
+gulp.task('serve:dist', ['build'], function () {
+  browserSyncInit(paths.dist);
 });
 
 gulp.task('browser-sync', function(){
