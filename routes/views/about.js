@@ -6,10 +6,10 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	locals.section = 'about';
-	locals.page.title = 'About uHub';
+	locals.page.title = 'About Hacksmiths';
 	
 	locals.organisers = [
-		{ name: 'Ryan Collins', image: '/images/ryan.jpg', twitter: 'tech_rapport',       title: 'Udacity student extraordinaire.  Creator of uhub.' }
+		{ name: 'Ryan Collins', image: '/images/ryan.jpg', twitter: 'tech_rapport',       title: 'Udacity student extraordinaire.  Creator of Hacksmiths.' }
 	]
 	
 	view.render('site/about');

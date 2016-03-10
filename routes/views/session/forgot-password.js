@@ -24,7 +24,7 @@ exports = module.exports = function(req, res) {
 				if (err) {
 					console.error('===== ERROR sending reset password email =====');
 					console.error(err);
-					req.flash('error', 'Error sending reset password email. Please <a href="https://github.com/JedWatson/uhub/issues" class="alert-link">let&nbsp;us&nbsp;know</a> about this error');
+					req.flash('error', 'Error sending reset password email. Please <a href="https://github.com/JedWatson/Hacksmiths/issues" class="alert-link">let&nbsp;us&nbsp;know</a> about this error');
 					next();
 				} else {
 					req.flash('success', 'We have emailed you a link to reset your password');

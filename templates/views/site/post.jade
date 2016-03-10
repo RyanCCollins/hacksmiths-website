@@ -9,10 +9,10 @@ block content
 			else
 				header
 					if post.state != 'published' && user.isAdmin
-						.mt-1: .alert.alert-danger This Post has not been published yet. 
+						.mt-1: .alert.alert-danger This Post has not been published yet.
 							a(href='/keystone/posts/' + post.id).alert-link Open Keystone
 							|  to publish it.
-					
+
 					h1.blog-post__title= post.title
 					p.blog-post__byline Posted
 						if post.author
@@ -28,13 +28,13 @@ block content
 									| ,&nbsp;
 								else
 									|&nbsp;
-					
+
 					//- sharing buttons
 					.share-buttons
 						span.share-button
-							.fb-like(data-href="http://www.uHub.io/blog/post/" + post.slug, data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+							.fb-like(data-href="http://www.hacksmiths.io/blog/post/" + post.slug, data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
 						span.share-button
-							a(href="https://twitter.com/share", data-via="uHub", data-hashtags="uHub", data-count="button", data-dnt="true").twitter-share-button Tweet
+							a(href="https://twitter.com/share", data-via="Hacksmiths", data-hashtags="Hacksmiths", data-count="button", data-dnt="true").twitter-share-button Tweet
 						span.share-button
 							.g-plusone(data-size="medium")
 				if post.image.exists

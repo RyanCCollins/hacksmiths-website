@@ -50,11 +50,11 @@ Inquiry.schema.methods.sendNotificationEmail = function(callback) {
 
 		if (err) return callback(err);
 
-		new keystone.Email('enquiry-notification').send({
+		new keystone.Email('inquiry-notification').send({
 			to: admins,
 			from: {
 				name: 'Hacksmiths',
-				email: 'contact@hacksmiths.com'
+				email: 'admin@hacksmiths.io'
 			},
 			subject: 'New Inquiry for Hacksmiths',
 			inquiry: inquiry

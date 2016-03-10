@@ -1,0 +1,24 @@
+extends /layouts/default
+
+block body-contents
+	h1 Hi *|first_name|*,
+	p.text-larger An inquiry was just submitted to #{brand}:
+	if inquiry.name.full || inquiry.email
+		p.text-larger From 
+			if inquiry.name.full
+				| <strong>#{inquiry.name.full}</strong>
+			if inquiry.name.full && inquiry.email
+				|  (
+			if inquiry.email
+				| <a href="mailto:#{inquiry.email}">#{inquiry.email}</a>
+			if inquiry.name.full && inquiry.email
+				| )
+	if inquiry.phone
+		p.text-larger Phone: #{inquiry.phone}
+	if inquiry.inquiryType
+		p.text-larger #{inquiry._.inquiryType.format()}
+	if inquiry.message
+		.text-larger !{inquiry.message.html}
+	p.text-muted Sent #{inquiry._.createdAt.format()}
+	p &nbsp;
+	+button({ url: '/keystone/enquiries/' + inquiry.id, label: 'Open Keystone' })

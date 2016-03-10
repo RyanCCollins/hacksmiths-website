@@ -19,7 +19,7 @@ module.exports = {
 
 	'inquiry-notification': function(req, res, callback) {
 
-		// To test enquiry notifications we create a dummy enquiry that
+		// To test inquiry notifications we create a dummy inquiry that
 		// is not saved to the database, but passed to the template.
 
 		var Inquiry = keystone.list('Inquiry');
@@ -28,8 +28,8 @@ module.exports = {
 			name: { first: 'Test', last: 'User' },
 			email: 'contact@hacksmiths.io',
 			phone: '+61 2 1234 5678',
-			enquiryType: 'message',
-			message: { md: 'Nice enquiry notification.' }
+			inquiryType: 'message',
+			message: { md: 'Nice inquiry notification.' }
 		});
 
 		callback(null, {

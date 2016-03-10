@@ -11,7 +11,7 @@ mixin form-signin(args)
 		if args.modal
 			.modal-header
 				button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
-				h4.modal-title Sign into uHub
+				h4.modal-title Sign into Hacksmiths
 		div(class=args.modal ? 'modal-body' : null)
 			form(method='post', action='/signin', role='signin', novalidate).auth-form
 				input(type='hidden', name='action', value='signin')
@@ -28,6 +28,6 @@ mixin form-signin(args)
 			include ../../includes/social-signin
 			.row.text-muted.mt-3
 				.col-sm-8 Don't have an account? 
-					a(href=args.modal ? js : '/join', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'join' : null) Join uHub
+					a(href=args.modal ? js : '/join', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'join' : null) Join Hacksmiths
 				.col-sm-4.text-right
 					a(href=args.modal ? js : '/forgot-password', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'password' : null) Forgot password?
