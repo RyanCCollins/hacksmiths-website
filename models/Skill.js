@@ -13,11 +13,9 @@ var Skill = new keystone.List('Skill', {
 });
 
 Skill.add({
-    title: { type: String, required: true, initial: true, unique: true, note: 'Create a cool team name.  Pick something unique to you!'},
+    title: { type: String, required: true, initial: true, unique: true, note: 'What type of skill is it?  Frontend, Backend, etc.'},
     matchingRoles: {type: Types.Relationship, ref: 'Role'}
 });
-
-Skill.relationship({ ref: 'User', refPath: 'members', path: 'members'});
 
 Skill.defaultColumns = 'title, group, leader';
 Skill.register();

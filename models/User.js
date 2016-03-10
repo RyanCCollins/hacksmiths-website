@@ -56,7 +56,7 @@ User.add({
     },
     areasOfExpertise: {type: Types.Relationship, ref: 'Skill', many: true, note: 'What is the area you are most skilled in?', dependsOn: deps.isAvailableForEvents },
     skillExplanation: {type: Types.Markdown, dependsOn: deps.isAvailableForEvents  },
-    rolesToFill: {type: Types.Relationship, ref: 'Role', many: true, note: 'What role do you see yourself filling?', dependsOn: deps.isAvailableForEvents },
+    roles: {type: Types.Relationship, ref: 'Role', many: true, note: 'What role do you see yourself filling?', dependsOn: deps.isAvailableForEvents },
     projectInterests: {type: Types.Relationship, ref: 'Project', many: true, dependsOn: deps.isAvailableForEvents },
 }, 'Memberships', {
     enrollments: { type: Types.Relationship, ref: 'Nanodegree', many: true, filters: {  }},

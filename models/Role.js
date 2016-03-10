@@ -14,9 +14,7 @@ var Role = new keystone.List('Role', {
 
 Role.add({
     title: { type: String, required: true, initial: true },
-    description: {type: Types.Markdown, height: 200},
-    forProject: {type: Types.Relationship, ref: 'Project', many: true},
-    team: {type: Types.Relationship, ref: 'Team', many: true}
+    description: {type: Types.Markdown, height: 200}
 });
 
 
