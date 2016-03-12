@@ -5338,6 +5338,11 @@
       "from": "passport-github@>=1.1.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/passport-github/-/passport-github-1.1.0.tgz"
     },
+    "passport-oauth1": {
+      "version": "1.1.0",
+      "from": "passport-oauth1@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/passport-oauth1/-/passport-oauth1-1.1.0.tgz"
+    },
     "passport-oauth2": {
       "version": "1.2.0",
       "from": "passport-oauth2@>=1.0.0 <2.0.0",
@@ -5347,6 +5352,11 @@
       "version": "1.0.0",
       "from": "passport-strategy@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/passport-strategy/-/passport-strategy-1.0.0.tgz"
+    },
+    "passport-twitter": {
+      "version": "1.0.4",
+      "from": "passport-twitter@latest",
+      "resolved": "https://registry.npmjs.org/passport-twitter/-/passport-twitter-1.0.4.tgz"
     },
     "patch-text": {
       "version": "1.0.2",
@@ -7045,6 +7055,11 @@
       "from": "xmlbuilder@0.4.3",
       "resolved": "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-0.4.3.tgz"
     },
+    "xmldom": {
+      "version": "0.1.22",
+      "from": "xmldom@>=0.1.0 <0.2.0",
+      "resolved": "https://registry.npmjs.org/xmldom/-/xmldom-0.1.22.tgz"
+    },
     "xmlhttprequest": {
       "version": "1.5.0",
       "from": "https://github.com/rase-/node-XMLHttpRequest/archive/a6b6f2.tar.gz",
@@ -7059,6 +7074,11 @@
       "version": "4.0.1",
       "from": "xtend@>=4.0.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz"
+    },
+    "xtraverse": {
+      "version": "0.1.0",
+      "from": "xtraverse@>=0.1.0 <0.2.0",
+      "resolved": "https://registry.npmjs.org/xtraverse/-/xtraverse-0.1.0.tgz"
     },
     "y18n": {
       "version": "3.2.0",

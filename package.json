@@ -22,6 +22,7 @@
     "node-sass-middleware": "^0.9.7",
     "passport": "^0.3.2",
     "passport-github": "^1.1.0",
+    "passport-twitter": "^1.0.4",
     "querystring": "^0.2.0",
     "request": "^2.69.0",
     "socketio": "^1.0.0",
