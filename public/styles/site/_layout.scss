@@ -21,7 +21,7 @@ $break-large:1024px;
 */
 
 p {
-  color: #000;
+  color: #000 !important;
 }
 /* Mixin for vertical alignment */
 @mixin vertical-align($position: relative) {

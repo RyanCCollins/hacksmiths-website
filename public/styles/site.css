@@ -15693,6 +15693,9 @@ table.hover tr:nth-of-type(even):hover {
     05. Media Queries Settings
 
 */
+p {
+  color: #000 !important; }
+
 /* Mixin for vertical alignment */
 /* 01. FONT FACE ================================================== */
 @font-face {
@@ -15943,16 +15946,10 @@ p {
   opacity: 1.0;
   color: white; }
 
-/* Media Queries for iPad in Portrait */
-/* Media Queries for iPad in Landscape */
 address {
   margin-bottom: 18px;
   font-style: normal;
   line-height: 1.42857143; }
-
-.icon-Udacity_Logo:before {
-  content: "\e900";
-  color: white; }
 
 .inline {
   display: inline; }
@@ -16554,62 +16551,6 @@ body.sitesection-showbag .site-wrapper {
 
 body.sitesection-showbag .site-footer {
   background-color: #F9F9F9; }
-
-#showbag .showbag-header {
-  padding: 1em 0 3em; }
-
-#showbag .showbag-header .showbag-hero {
-  width: 100%;
-  max-height: 900px;
-  background: url("/images/showbag/sydjsshowbag.png") center center/cover no-repeat; }
-
-#showbag .showbag-header .showbag-hero img {
-  margin: auto; }
-
-#showbag .showbag-main .showbag-createdwith {
-  text-align: center;
-  margin: 1em 0 0; }
-
-#showbag .showbag-main .showbag-createdwith img {
-  display: inline-block;
-  width: 25%; }
-
-#showbag .showbag-main .members-list {
-  margin: 3em 0;
-  text-align: center; }
-
-#showbag .showbag-main .member-item {
-  width: 20%; }
-
-#showbag .showbag-main .member-item .member {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-align: center; }
-
-#showbag .showbag-main .member-item .member__photo {
-  width: 75%;
-  display: block;
-  float: none;
-  margin: auto; }
-
-#showbag .showbag-main .member-item .member__photo img {
-  display: block;
-  max-width: 100%;
-  height: auto; }
-
-@media (max-width: 767px) {
-  #showbag .showbag-main .member-item {
-    float: none;
-    display: inline-block;
-    vertical-align: top;
-    width: 48%;
-    border: none;
-    margin-bottom: 1em; }
-  #showbag .showbag-main .member-item .member__info {
-    margin: 1em 0; } }
-
-#showbag section {
-  padding: 2em 0; }
 
 .links-list h3 {
   margin: 5px 0 0 0; }
@@ -17268,6 +17209,9 @@ cite {
     05. Media Queries Settings
 
 */
+p {
+  color: #000 !important; }
+
 /* Mixin for vertical alignment */
 /* 01. FONT FACE ================================================== */
 @font-face {
@@ -17518,16 +17462,10 @@ p {
   opacity: 1.0;
   color: white; }
 
-/* Media Queries for iPad in Portrait */
-/* Media Queries for iPad in Landscape */
 address {
   margin-bottom: 18px;
   font-style: normal;
   line-height: 1.42857143; }
-
-.icon-Udacity_Logo:before {
-  content: "\e900";
-  color: white; }
 
 .inline {
   display: inline; }
@@ -18129,62 +18067,6 @@ body.sitesection-showbag .site-wrapper {
 
 body.sitesection-showbag .site-footer {
   background-color: #F9F9F9; }
-
-#showbag .showbag-header {
-  padding: 1em 0 3em; }
-
-#showbag .showbag-header .showbag-hero {
-  width: 100%;
-  max-height: 900px;
-  background: url("/images/showbag/sydjsshowbag.png") center center/cover no-repeat; }
-
-#showbag .showbag-header .showbag-hero img {
-  margin: auto; }
-
-#showbag .showbag-main .showbag-createdwith {
-  text-align: center;
-  margin: 1em 0 0; }
-
-#showbag .showbag-main .showbag-createdwith img {
-  display: inline-block;
-  width: 25%; }
-
-#showbag .showbag-main .members-list {
-  margin: 3em 0;
-  text-align: center; }
-
-#showbag .showbag-main .member-item {
-  width: 20%; }
-
-#showbag .showbag-main .member-item .member {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-align: center; }
-
-#showbag .showbag-main .member-item .member__photo {
-  width: 75%;
-  display: block;
-  float: none;
-  margin: auto; }
-
-#showbag .showbag-main .member-item .member__photo img {
-  display: block;
-  max-width: 100%;
-  height: auto; }
-
-@media (max-width: 767px) {
-  #showbag .showbag-main .member-item {
-    float: none;
-    display: inline-block;
-    vertical-align: top;
-    width: 48%;
-    border: none;
-    margin-bottom: 1em; }
-  #showbag .showbag-main .member-item .member__info {
-    margin: 1em 0; } }
-
-#showbag section {
-  padding: 2em 0; }
 
 .links-list h3 {
   margin: 5px 0 0 0; }

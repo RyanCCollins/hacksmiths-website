@@ -42,7 +42,7 @@ block content
 						+member(leader)
 		if topContributors.length
 			.members-group
-				h3.text-caps.mt-2.mb-1 Top Contributores
+				h3.text-caps.mt-2.mb-1 Top Contributors
 				ul.list-unstyled.members-list
 					li.grid-sizer
 					each contributor in topContributors
@@ -61,6 +61,4 @@ block content
 block js
 	script(src='/js/lib/bootstrap/transition.js')
 	script(src='/js/lib/bootstrap/tooltip.js')
-	script(src="/js/lib/masonry/masonry.pkgd.min.js")
-	script(src="/js/lib/masonry/imagesloaded.pkgd.min.js")
 	script(src="/js/views/members.js")
