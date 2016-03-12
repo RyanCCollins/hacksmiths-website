@@ -15,14 +15,14 @@ exports = module.exports = function(req, res) {
 	// Load Team Leaders
 	view.on('init', function(next) {
 		User.model.find()
-		.sort('name.first')
-		.where('isPublic', true)
-		.where('isLeader', true)
-		.exec(function(err, leaders) {
-			if (err) res.err(err);
-			locals.leaders = leaders;
-			next();
-		});
+			.sort('name.first')
+			.where('isPublic', true)
+			.where('isLeader', true)
+			.exec(function(err, leaders) {
+				if (err) res.err(err);
+				locals.leaders = leaders;
+				next();
+			});
 	});
 
 
@@ -30,13 +30,13 @@ exports = module.exports = function(req, res) {
 
 	view.on('init', function(next) {
 		User.model.find()
-		.sort('-rank name.first')
-		.where('istopContributor', true)
-		.exec(function(err, contributors) {
-			if (err) res.err(err);
-			locals.topContributors = contributors;
-			next();
-		});
+			.sort('-rank name.first')
+			.where('istopContributor', true)
+			.exec(function(err, contributors) {
+				if (err) res.err(err);
+				locals.topContributors = contributors;
+				next();
+			});
 	});
 
 
@@ -53,15 +53,15 @@ exports = module.exports = function(req, res) {
 
 	view.on('init', function(next) {
 		User.model.find()
-		.sort('-lastRSVP')
-		.where('isPublic', true)
-		.where('_id').nin(locals.organiserIDs)
-		.where('_id').nin(locals.speakerIDs)
-		.exec(function(err, community) {
-			if (err) res.err(err);
-			locals.community = community;
-			next();
-		});
+			.sort('-lastRSVP')
+			.where('isPublic', true)
+			.where('_id').nin(locals.leaderIDs)
+			.where('_id').nin(locals.topContributorsIDs)
+			.exec(function(err, community) {
+				if (err) res.err(err);
+				locals.community = community;
+				next();
+			});
 	});
 
 
