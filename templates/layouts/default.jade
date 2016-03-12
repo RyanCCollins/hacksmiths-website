@@ -1,4 +1,5 @@
 include ../mixins/flash-messages
+include ../mixins/auth/auth-forms
 
 doctype html
 //if lt IE 7
@@ -69,6 +70,8 @@ html.no-js(lang='en', itemscope='', itemtype='http://schema.org/Product')
 
 	//- HTML BODY
 	body
+		// Site header
+		include ../includes/layout/header
 
 		//- NOTE:
 		//- There is no .container wrapping class around body blocks to allow more flexibility in design.
@@ -79,15 +82,23 @@ html.no-js(lang='en', itemscope='', itemtype='http://schema.org/Product')
 
 		//- Flash messages allow you to display once-off status messages to users, e.g. form
 		//- validation errors, success messages, etc.
-		+flash-messages(messages)
+		block flash-messages
+			+flash-messages(messages)
 
 		//- The content block should contain the body of your template's content
 		block content
 
 
 		//- FOOTER
-		.container: #footer
+		block footer
+			include ../includes/layout/footer
 
+		block modal
+		if !user
+			#modal-auth(tabindex="-1", role="dialog", aria-labelledby="signin", aria-hidden="true").modal.fade
+				.modal-dialog
+					.modal-content
+						+auth-forms({ modal: true, initial: 'signin' })
 
 		//- JAVASCRIPT
 

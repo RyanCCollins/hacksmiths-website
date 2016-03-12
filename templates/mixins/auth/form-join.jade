@@ -40,7 +40,7 @@ mixin form-join(args)
 					.form-group(class=!args.modal ? checkFormError('password') : null)
 						label(for='password').sr-only Password
 						input(type='password', name='password', placeholder='Udacity Password', value=!args.modal ? form.password : null).form-control
-				+udacity-btn("Join with your Udacity Account")
+				//- +udacity-btn("Join with your Udacity Account")
 			p.auth-form-divider: span.auth-form-divider-text or
 			//- p Or use your email, that's okay too:
 			.ui-reveal
@@ -81,7 +81,7 @@ mixin form-join(args)
 									input(type='website', name='website', placeholder='Website (optional)', value=!args.modal ? form.website : null).form-control.form-control--last
 							button(type='submit').btn.btn-block.btn-primary.btn-submit Join
 			p.auth-form-divider: span.auth-form-divider-text or
-				include ../../includes/social-signin
+				//include ../../includes/social-signin
 			p.text-center.text-muted.mt-3
 				| Already have an account?
 				a(href=args.modal ? js : '/signin', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'signin' : null) Sign in
