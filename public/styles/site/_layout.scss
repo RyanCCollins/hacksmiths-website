@@ -1797,3 +1797,472 @@ small,
 cite {
     font-style: normal
 }
+
+
+.member {
+    background-color: white;
+    border-radius: .15em;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px
+}
+
+.member-section {
+    padding: 1em
+}
+
+.member__photo img {
+    border-radius: 50%;
+    display: inline-block;
+    height: auto;
+    max-width: 100%
+}
+
+.member__title {
+    margin: 0
+}
+
+.member__title>a {
+    color: #222
+}
+
+.member__bio {
+    margin-top: .5em;
+    color: #555;
+    font-size: 13px
+}
+
+.members-list {
+    margin-right: -5px;
+    margin-left: -5px
+}
+
+.members-list:before,
+.members-list:after {
+    content: " ";
+    display: table
+}
+
+.members-list:after {
+    clear: both
+}
+
+.members-list:before,
+.members-list:after {
+    content: " ";
+    display: table
+}
+
+.members-list:after {
+    clear: both
+}
+
+.member-item {
+    float: left;
+    padding: 0 5px;
+    width: 100%
+}
+
+.grid-sizer,
+.member-item {
+    width: 33%
+}
+
+.members-group+.members-group {
+    margin-top: 2em
+}
+
+.member.member--card .member__accounts {
+    margin-top: 1em
+}
+
+.member.member--card .member__accounts a {
+    margin-right: 5px;
+    padding: 2px;
+    color: #a6a6a6;
+    text-align: center;
+    font-size: 19.5px
+}
+
+.member.member--card .member__account--twitter:hover {
+    color: #00abec
+}
+
+.member.member--card .member__account--github:hover {
+    color: #333
+}
+
+.member.member--profile .member__info {
+    padding: 1.5em
+}
+
+.member.member--profile .member__byline {
+    margin: .5em 0 0 0
+}
+
+.member.member--profile .member__accounts {
+    margin-top: 1em
+}
+
+.member.member--profile .member__accounts .btn {
+    border-radius: .3em;
+    background: white;
+    color: #333
+}
+
+.member.member--profile .member__accounts .btn span {
+    margin-right: 5px
+}
+
+.member.member--profile .member__accounts .btn+.btn {
+    margin-left: 5px
+}
+
+.member.member--profile .member__accounts .member__account--twitter span {
+    color: #00abec
+}
+
+.member.member--profile .member__accounts .member__account--github span {
+    color: #333
+}
+
+.member.member--profile .member__bio {
+    font-size: 16.25px
+}
+
+.member.member--profile .member__additional-info {
+    margin-top: 1em;
+    padding: 1.5em;
+    border-top: 1px solid #eee
+}
+
+.member.member--profile .date {
+    overflow: hidden;
+    margin-right: 10px;
+    width: 40px;
+    border: 1px solid #999;
+    border-radius: .2em;
+    color: #999;
+    text-align: center
+}
+
+.member.member--profile .date small {
+    background-color: #999;
+    color: white;
+    text-transform: uppercase;
+    font-size: 11.05px
+}
+
+.member.member--profile .date.date--present {
+    border-color: #b50001;
+    color: #b50001
+}
+
+.member.member--profile .date.date--present small {
+    background-color: #b50001
+}
+
+.member.member--profile .date.date--present strong {
+    color: #333
+}
+
+@media (max-width:767px) {
+    .member__info {
+        padding: .5em
+    }
+    .member__title {
+        font-size: 1em
+    }
+    .grid-sizer,
+    .member-item {
+        width: 100%
+    }
+    .member-item:before,
+    .member-item:after {
+        content: " ";
+        display: table
+    }
+    .member-item:after {
+        clear: both
+    }
+    .member-item:before,
+    .member-item:after {
+        content: " ";
+        display: table
+    }
+    .member-item:after {
+        clear: both
+    }
+    .member-item .member {
+        background: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 5px 0
+    }
+    .member-item .member-section {
+        padding: 0
+    }
+    .member-item .member__photo {
+        float: left;
+        width: 50px;
+        border-radius: 50%;
+        overflow: hidden
+    }
+    .member-item .member__info {
+        margin-left: 65px;
+        padding: 5px 0
+    }
+    .member-item .member__info .member__title.member__title-only {
+        margin: .75em 0 0
+    }
+    .member-item+.member-item {
+        border-top: 1px solid #d9d9d9
+    }
+    .member.member--profile .member__accounts .btn {
+        display: block;
+        width: 100%
+    }
+    .member.member--profile .member__accounts .btn+.btn {
+        margin: 10px 0 0 0
+    }
+}
+
+@media (min-width:768px) {
+    .grid-sizer,
+    .member-item {
+        width: 25%
+    }
+    .members-list {
+        margin-right: -15px;
+        margin-left: -15px
+    }
+    .member-item {
+        padding-left: 15px
+    }
+    .member {
+        margin-bottom: 15px
+    }
+}
+
+@media (min-width:992px) {
+    .grid-sizer,
+    .member-item {
+        width: 20%
+    }
+}
+
+@media (min-width:1200px) {
+    .grid-sizer,
+    .member-item {
+        width: 16.667%
+    }
+}
+
+.blog-post {
+    margin-bottom: 40px;
+    text-align: center
+}
+
+.blog-post:before,
+.blog-post:after {
+    content: " ";
+    display: table
+}
+
+.blog-post:after {
+    clear: both
+}
+
+.blog-post:before,
+.blog-post:after {
+    content: " ";
+    display: table
+}
+
+.blog-post:after {
+    clear: both
+}
+
+.blog-post__image {
+    margin-bottom: 20px
+}
+
+.blog-post__content {
+    text-align: left
+}
+
+.blog-post__heading {
+    margin-top: 0
+}
+
+.blog-post__heading a {
+    color: #222
+}
+
+.blog-post__author {
+    color: #959595;
+    font-weight: 200
+}
+
+.blog-post__author a {
+    color: #959595
+}
+
+@media (min-width:768px) {
+    .blog-post__image {
+        float: left;
+        width: 170px
+    }
+    .blog-post__content {
+        margin-left: 190px
+    }
+    .blog-post__content.link {
+        margin-left: 0
+    }
+}
+
+.post-cards .post-card:nth-of-type(3n+1) {
+    clear: both
+}
+
+.post-cards>div:nth-child(1) .post-card,
+.post-cards>div:nth-child(2) .post-card,
+.post-cards>div:nth-child(3) .post-card {
+    margin-top: 0
+}
+
+.post-card {
+    background-color: white;
+    border-radius: .15em;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+    margin-top: 2em;
+    overflow: hidden
+}
+
+.post-card a {
+    color: #222
+}
+
+.post-card .post-summary {
+    padding: 1em
+}
+
+.post-card .post-summary .post-byline {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #222;
+    color: #222;
+    font-size: 11.05px;
+    font-weight: 400
+}
+
+.post-card .post-summary .post-byline:before,
+.post-card .post-summary .post-byline:after {
+    content: " ";
+    display: table
+}
+
+.post-card .post-summary .post-byline:after {
+    clear: both
+}
+
+.post-card .post-summary .post-byline:before,
+.post-card .post-summary .post-byline:after {
+    content: " ";
+    display: table
+}
+
+.post-card .post-summary .post-byline:after {
+    clear: both
+}
+
+.post-card .post-summary .post-byline .post-author {
+    float: left;
+    text-transform: uppercase
+}
+
+.post-card .post-summary .post-byline .date-stamp {
+    float: right
+}
+
+.post-card .post-summary .post-content-brief {
+    font-size: 14.3px
+}
+
+@media (max-width:767px) {
+    .post-card {
+        margin-top: 0
+    }
+}
+
+.full-post .blog-post__title {
+    margin: 0 0 .25em
+}
+
+.share-buttons {
+    margin: 20px 0;
+    height: 30px;
+    position: relative
+}
+
+.share-buttons:before,
+.share-buttons:after {
+    content: " ";
+    display: table
+}
+
+.share-buttons:after {
+    clear: both
+}
+
+.share-buttons:before,
+.share-buttons:after {
+    content: " ";
+    display: table
+}
+
+.share-buttons:after {
+    clear: both
+}
+
+@media (min-width:768px) {
+    .share-buttons.right {
+        float: right
+    }
+    .share-buttons.right .share-button {
+        margin-right: 0;
+        margin-left: 10px
+    }
+}
+
+.share-buttons .share-button {
+    display: block;
+    position: absolute;
+    width: 80px
+}
+
+.share-buttons .share-button:nth-child(1) {
+    left: 0;
+    top: -2px
+}
+
+.share-buttons .share-button:nth-child(2) {
+    left: 100px;
+    top: 0
+}
+
+.share-buttons .share-button:nth-child(3) {
+    left: 200px;
+    top: 0
+}
+
+.comments {
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid #999
+}
+
+.comments .comment h6 span {
+    font-weight: 300
+}
