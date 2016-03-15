@@ -78,7 +78,7 @@ var eventType = new GraphQL.GraphQLObjectType({
 			remainingRSVPs: {
 				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLInt)
 			},
-			rsvpsAvailable: {
+			spotsRemaining: {
 				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLBoolean)
 			},
 			scheduleItems: {

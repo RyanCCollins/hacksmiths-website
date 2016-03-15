@@ -10,45 +10,158 @@ var Types = keystone.Field.Types;
 
 var Event = new keystone.List('Event', {
 	track: true,
-	map: {name: 'title'},
-	autokey: { path: 'key', from: 'title', unique: true }
+	map: {
+		name: 'title'
+	},
+	autokey: {
+		path: 'key',
+		from: 'title',
+		unique: true
+	}
 });
 
 Event.add({
-	title: { type: String, required: true, initial: true },
-	organization: { type: Types.Relationship, ref: 'Organization', many: false, initial: true, required: true, note: 'Enter the name of the organization who we are sponsoring. Supports HTML.' },
-	project: {type: Types.Relationship, ref: 'Project', many: false, initial: true, filter:{}},
-	description: { type: Types.Html, wysiwyg: true, initial: true, required: true, note: 'A brief description about what this event is.' },
-	marketingInfo: { type: Types.Html, wysiwyg: true, initial: false, required: false, note: 'Enter some information that you would like to put out there to market this event.  Supports HTML.'},
+	title: {
+		type: String,
+		required: true,
+		initial: true
+	},
+	organization: {
+		type: Types.Relationship,
+		ref: 'Organization',
+		many: false,
+		initial: true,
+		required: true,
+		note: 'Enter the name of the organization who we are sponsoring. Supports HTML.'
+	},
+	project: {
+		type: Types.Relationship,
+		ref: 'Project',
+		many: false,
+		initial: true,
+		filter: {}
+	},
+	description: {
+		type: Types.Html,
+		wysiwyg: true,
+		initial: true,
+		required: true,
+		note: 'A brief description about what this event is.'
+	},
+	marketingInfo: {
+		type: Types.Html,
+		wysiwyg: true,
+		initial: false,
+		required: false,
+		note: 'Enter some information that you would like to put out there to market this event.  Supports HTML.'
+	},
+	featureImage: {
+		type: Types.CloudinaryImage,
+		initial: true
+	},
 
-	sponsors: {type: Types.Relationship, ref: 'Organization', many: true},
-	teams: {type: Types.Relationship, ref: 'Team', many: true},
+	sponsors: {
+		type: Types.Relationship,
+		ref: 'Organization',
+		many: true
+	},
+	teams: {
+		type: Types.Relationship,
+		ref: 'Team',
+		many: true
+	},
 
-	regitrationStartDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm' },
-	regirstionEndDate: { type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 9:00pm' },
+	regitrationStartDate: {
+		type: Types.Datetime,
+		required: true,
+		initial: true,
+		index: true,
+		width: 'short',
+		note: 'e.g. 2014-07-15 / 6:00pm'
+	},
+	regirstionEndDate: {
+		type: Types.Datetime,
+		required: true,
+		initial: true,
+		index: true,
+		width: 'short',
+		note: 'e.g. 2014-07-15 / 9:00pm'
+	},
 
-	startDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
-	endDate: {type: Types.Datetime, required: true, initial: true, index: true, width: 'short', note: 'e.g. 2014-07-15 / 6:00pm'},
+	startDate: {
+		type: Types.Datetime,
+		required: true,
+		initial: true,
+		index: true,
+		width: 'short',
+		note: 'e.g. 2014-07-15 / 6:00pm'
+	},
+	endDate: {
+		type: Types.Datetime,
+		required: true,
+		initial: true,
+		index: true,
+		width: 'short',
+		note: 'e.g. 2014-07-15 / 6:00pm'
+	},
 
-	place: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a location, if there is a live event.' },
-	map: { type: String, required: false, initial: true, width: 'medium', default: '', note: 'Post a geocode location, or a url.' },
+	place: {
+		type: String,
+		required: false,
+		initial: true,
+		width: 'medium',
+		default: '',
+		note: 'Post a location, if there is a live event.'
+	},
+	map: {
+		type: String,
+		required: false,
+		initial: true,
+		width: 'medium',
+		default: '',
+		note: 'Post a geocode location, or a url.'
+	},
 
-	maxRSVPs: { type: Number, default: 20 },
-	totalRSVPs: { type: Number, noedit: true },
+	maxRSVPs: {
+		type: Number,
+		default: 20
+	},
+	totalRSVPs: {
+		type: Number,
+		noedit: true
+	},
 
-	state: { type: Types.Select, options: 'draft, scheduled, active, past', noedit: true },
-	publishedDate: { type: Types.Datetime, index: true },
+	state: {
+		type: Types.Select,
+		options: 'draft, scheduled, active, past',
+		noedit: true
+	},
+	publishedDate: {
+		type: Types.Datetime,
+		index: true
+	},
 });
-
 
 
 
 // Relationships
 // ------------------------------
 
-Event.relationship({ ref: 'RSVP', refPath: 'event', path: 'rsvps' });
-Event.relationship({ ref: 'Schedule', refPath: 'event', path: 'schedule' });
-Event.relationship({ ref: 'Project', refPath: 'events', path: 'project'});
+Event.relationship({
+	ref: 'RSVP',
+	refPath: 'event',
+	path: 'rsvps'
+});
+Event.relationship({
+	ref: 'Schedule',
+	refPath: 'event',
+	path: 'schedule'
+});
+Event.relationship({
+	ref: 'Project',
+	refPath: 'events',
+	path: 'project'
+});
 
 
 // Virtuals
@@ -66,7 +179,6 @@ Event.schema.virtual('spotsRemaining').get(function() {
 Event.schema.virtual('spotsAvailable').get(function() {
 	return (this.spotsRemaining > 0);
 });
-
 
 
 
@@ -96,7 +208,6 @@ Event.schema.pre('save', function(next) {
 
 
 
-
 // Methods
 // ------------------------------
 
@@ -114,30 +225,32 @@ Event.schema.methods.refreshRSVPs = function(callback) {
 
 Event.schema.methods.notifyAttendees = function(req, res, next) {
 	var event = this;
-	keystone.list('User').model.find().where('notifications.events', true).exec(function(err, attendees) {
-		if (err) return next(err);
-		if (!attendees.length) {
-			next();
-		} else {
-			attendees.forEach(function(attendee) {
-				new keystone.Email('new-event').send({
-					attendee: attendee,
-					event: event,
-					subject: 'New event: ' + event.name,
-					to: attendee.email,
-					from: {
-						name: 'hacksmiths',
-						email: 'event@hacksmiths.com'
-					}
-				}, next);
-			});
-		}
-	});
+	keystone.list('User').model.find().where('notifications.events', true).exec(
+		function(err, attendees) {
+			if (err) return next(err);
+			if (!attendees.length) {
+				next();
+			} else {
+				attendees.forEach(function(attendee) {
+					new keystone.Email('new-event').send({
+						attendee: attendee,
+						event: event,
+						subject: 'New event: ' + event.name,
+						to: attendee.email,
+						from: {
+							name: 'hacksmiths',
+							email: 'event@hacksmiths.com'
+						}
+					}, next);
+				});
+			}
+		});
 };
 
 Event.schema.set('toJSON', {
 	transform: function(doc, rtn, options) {
-		return _.pick(doc, '_id', 'title', 'startDate', 'endDate', 'place', 'map', 'description', 'rsvpsAvailable', 'remainingRSVPs');
+		return _.pick(doc, '_id', 'title', 'startDate', 'endDate', 'place', 'map',
+			'description', 'spotsRemaining', 'remainingRSVPs');
 	}
 });
 
