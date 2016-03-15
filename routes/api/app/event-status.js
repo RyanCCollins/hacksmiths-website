@@ -6,12 +6,18 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
-	var data = { events: {}, scheduleItems: {}, teams: {}, rsvp: {} };
+	var data = {
+		events: {},
+		scheduleItems: {},
+		teams: {},
+		rsvp: {}
+	};
 
 	async.series([
 		function(next) {
 			if (!req.body.user) return next();
-			keystone.list('User').model.findById(req.body.user).exec(function(err, user) {
+			keystone.list('User').model.findById(req.body.user).exec(function(err,
+				user) {
 				if (err || !user) return next();
 				data.user = user;
 				return next();
@@ -57,9 +63,10 @@ exports = module.exports = function(req, res) {
 				.populate('items')
 				.populate('who')
 				.exec(function(err, scheduleItems) {
-					data.scheduleItems.next = scheduleItems && scheduleItems.length ? scheduleItems.map(function(i) {
-						return i.toJSON();
-					}) : false;
+					data.scheduleItems.next = scheduleItems && scheduleItems.length ?
+						scheduleItems.map(function(i) {
+							return i.toJSON();
+						}) : false;
 					return next();
 				});
 		},
@@ -100,7 +107,7 @@ exports = module.exports = function(req, res) {
 			var eventData = {
 				id: event._id,
 
-				name: event.name,
+				title: event.title,
 				organization: event.organization,
 				sponsors: event.sponsors,
 
@@ -115,14 +122,16 @@ exports = module.exports = function(req, res) {
 				teams: event.teams,
 
 				project: event.project,
-				description: keystone.utils.cropString(keystone.utils.htmlToText(event.description), 250, '...', true),
+				description: keystone.utils.cropString(keystone.utils.htmlToText(event
+					.description), 250, '...', true),
 
 				spotsAvailable: event.spotsAvailable,
 				spotsRemaining: event.spotsRemaining,
 
 				scheduleItems: current ? data.scheduleItems.next : data.scheduleItems.last
 			};
-			eventData.hash = crypto.createHash('md5').update(JSON.stringify(eventData)).digest('hex');
+			eventData.hash = crypto.createHash('md5').update(JSON.stringify(
+				eventData)).digest('hex');
 			return eventData;
 		};
 
@@ -134,7 +143,8 @@ exports = module.exports = function(req, res) {
 			response.events.next = parseEvent(data.events.next, true);
 			if (data.user) {
 				response.rsvp.responded = data.rsvp ? true : false;
-				response.rsvp.attending = data.rsvp && data.rsvp.attending ? true : false;
+				response.rsvp.attending = data.rsvp && data.rsvp.attending ? true :
+					false;
 				response.rsvp.date = data.rsvp ? data.rsvp.changedAt : false;
 			}
 		}
