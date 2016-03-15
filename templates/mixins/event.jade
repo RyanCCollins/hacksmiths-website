@@ -3,35 +3,32 @@ mixin event(event)
 	- var today = new Date();
 
 	.tile.ph-1.pv-1
-		.meetup-calendar.calendar.hidden-xs.hidden-sm(class=event.state == 'past' ? 'calendar--past' : null)
+		.event-calendar.calendar.hidden-xs.hidden-sm(class=event.state == 'past' ? 'calendar--past' : null)
 			.calendar__header=event._.startDate.format('MMM')
 			.calendar__body
 				.calendar__date=event._.startDate.format('DD')
 				.calendar__year=event._.startDate.format('YYYY')
-		.meetup-content
+		.event-content
 			h2.mv-5= event.name
 			h5.mb-1=event._.startDate.format('dddd D MMM YYYY')
 				|  from #{event._.startDate.format('h:mma')} - #{event._.endDate.format('h:mma')}
+			if event.featureImage
+				img(src="event.featureImage")
 			if event.description
 				p!= event.description
-			//- if event.talks.length
-			//- 	hr.mv-2
-			//- 	ul.meetup-talks
-			//- 		each talk in meetup.talks
-			//- 			+meetup-talk(talk)
 
 		if event.state == 'active'
 			hr.mv-2
 			if user
 				if event.rsvpsAvailable || rsvpStatus.rsvped && rsvpStatus.attending
-					h4.hero-button-title Are you coming?
+					h4.hero-button-title Are you helping?
 						span.text-thin (#{plural(event.remainingRSVPs, '* spot left', '* spots left')})
 					//include ../includes/attendance-toggle
 				else
-					.alert.alert-success.mb-0.text-center No more tickets...
+					.alert.alert-success.mb-0.text-center No spots available...
 
 			else
-				#next-meetup(data-id=event.id)
+				#next-event(data-id=event.id)
 					if event.rsvpsAvailable
 						a(href='/join', data-from=page.path).btn.btn-primary.btn-lg.btn-block.js-auth-trigger RSVP Now
 							span.text-thin (#{plural(event.remainingRSVPs, '* spot left', '* spots left')})
