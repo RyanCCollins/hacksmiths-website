@@ -4,7 +4,7 @@
     a(href='/')
       img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
   .top-bar-right
-    ul.menu.right
+    ul.menu
       li
         a(href='/events') Events
       li
@@ -16,10 +16,11 @@
          a(href='/signin') Signin
       li
         a(href='/join') Join
-    else 
-      ul.dropdown
-        li
-          a(href='/me') My Profile
-        if user && user.isAdmin
-        li
-          a(href='/keystone') Admin Area
+    else
+      li.has-dropwdown
+        ul.dropdown
+          li
+            a(href='/me') My Profile
+          if user && user.isAdmin
+          li
+            a(href='/keystone') Admin Area
