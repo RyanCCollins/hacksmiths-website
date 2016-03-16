@@ -11,16 +11,16 @@
         a(href='/members') Members
       li
         a(href='/about') About
-      if !user 
-        li
-          a(href='/signin') Signin
-        li
-          a(href='/join') Join
-      else
-        li.has-dropwdown
-          ul.dropdown
-            li
-              a(href='/me') My Profile
+        if !user 
+          li
+            a(href='/signin') Signin
+          li
+            a(href='/join') Join
+        else
+          li.has-dropwdown
+            ul.dropdown
+              li
+                a(href='/me') My Profile
             if user && user.isAdmin
               li
                 a(href='/keystone') Admin Area
