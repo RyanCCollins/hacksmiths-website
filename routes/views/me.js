@@ -15,25 +15,26 @@ exports = module.exports = function(req, res) {
 
 	view.query('nextEvent',
 		Event.model.findOne()
-			.where('state', 'active')
-			.sort('startDate')
-	, 'talks[who]');
+		.where('state', 'active')
+		.sort('startDate'));
 
 	view.query('rsvps.history',
 		RSVP.model.find()
-			.where('who', req.user)
-			.where('attending', true)
-			.populate('event')
-			.sort('-createdAt')
+		.where('who', req.user)
+		.where('attending', true)
+		.populate('event')
+		.sort('-createdAt')
 	);
 
 
-	view.on('post', { action: 'profile.details' }, function(next) {
+	view.on('post', {
+		action: 'profile.details'
+	}, function(next) {
 
 		req.user.getUpdateHandler(req).process(req.body, {
 			fields: 'name, email, notifications.events, notifications.posts,' +
-			'website, isPublic, bio, photo,' +
-			'mentoring.available, mentoring.free, mentoring.paid, mentoring.swap, mentoring.have, mentoring.want',
+				'website, isPublic, bio, photo,' +
+				'mentoring.available, mentoring.free, mentoring.paid, mentoring.swap, mentoring.have, mentoring.want',
 			flashErrors: true
 		}, function(err) {
 
@@ -54,27 +55,36 @@ exports = module.exports = function(req, res) {
 
 		var serviceName = '';
 
-		switch(req.query.disconnect)
-		{
-			case 'github': req.user.services.github.isConfigured = null; serviceName = 'GitHub'; break;
-			case 'twitter': req.user.services.twitter.isConfigured = null; serviceName = 'Twitter'; break;
+		switch (req.query.disconnect) {
+			case 'github':
+				req.user.services.github.isConfigured = null;
+				serviceName = 'GitHub';
+				break;
+			case 'twitter':
+				req.user.services.twitter.isConfigured = null;
+				serviceName = 'Twitter';
+				break;
 		}
 
 		req.user.save(function(err) {
 
 			if (err) {
-				req.flash('success', 'The service could not be disconnected, please try again.');
+				req.flash('success',
+					'The service could not be disconnected, please try again.');
 				return next();
 			}
 
-			req.flash('success', serviceName + ' has been successfully disconnected.');
+			req.flash('success', serviceName +
+				' has been successfully disconnected.');
 			return res.redirect('/me');
 
 		});
 
 	});
 
-	view.on('post', { action: 'profile.password' }, function(next) {
+	view.on('post', {
+		action: 'profile.password'
+	}, function(next) {
 
 		if (!req.body.password || !req.body.password_confirm) {
 			req.flash('error', 'Please enter a password.');

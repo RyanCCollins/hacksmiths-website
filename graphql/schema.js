@@ -75,10 +75,10 @@ var eventType = new GraphQL.GraphQLObjectType({
 			url: {
 				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLString)
 			},
-			remainingRSVPs: {
+			spotsRemaining: {
 				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLInt)
 			},
-			spotsRemaining: {
+			spotsAvailable: {
 				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLBoolean)
 			},
 			scheduleItems: {
@@ -203,7 +203,9 @@ var rsvpType = new GraphQL.GraphQLObjectType({
 				return User.model.findById(source.who).exec();
 			}
 		},
-		attending: { type: GraphQL.GraphQLBoolean },
+		attending: {
+			type: GraphQL.GraphQLBoolean
+		},
 		createdAt: keystoneTypes.datetime(Event.fields.createdAt),
 		changedAt: keystoneTypes.datetime(Event.fields.changedAt)
 	}
@@ -212,12 +214,24 @@ var rsvpType = new GraphQL.GraphQLObjectType({
 var organizationType = new GraphQL.GraphQLObjectType({
 	name: 'Organization',
 	fields: {
-		name: { type: GraphQL.GraphQLString },
-		logo: { type: keystoneTypes.cloudinaryImage },
-		website: { type: GraphQL.GraphQLString },
-		isHiring: { type: GraphQL.GraphQLBoolean },
-		description: { type: keystoneTypes.markdown },
-		location: { type: keystoneTypes.location },
+		name: {
+			type: GraphQL.GraphQLString
+		},
+		logo: {
+			type: keystoneTypes.cloudinaryImage
+		},
+		website: {
+			type: GraphQL.GraphQLString
+		},
+		isHiring: {
+			type: GraphQL.GraphQLBoolean
+		},
+		description: {
+			type: keystoneTypes.markdown
+		},
+		location: {
+			type: keystoneTypes.location
+		},
 		members: {
 			type: new GraphQL.GraphQLList(userType),
 			resolve: function resolve(source) {

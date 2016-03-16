@@ -250,11 +250,21 @@ p
 
 .top-bar {
   height: 80px;
-  // background-color: transparent !important;
+  background: transparent !important;
+  background-color: rgba(0,0,0,0.9);
   #logo {
-    height:  32px;
+    height:  22px;
+    margin-left: 20px;
   }
 
+}
+
+.top-bar-section ul li {
+   background: transparent;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: transparent;
 }
 
 .top-bar-right {

@@ -557,10 +557,14 @@ $tooltip-radius: $global-radius;
 
 // 36. Top Bar
 // -----------
+// _settings.scss
+$topbar-bg-color: rgba(0,0,0,0);
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: rgba(0,0,0,0);
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+
+$topbar-dropdown-bg: rgba(0,0,0,0);

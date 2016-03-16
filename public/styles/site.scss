@@ -6,8 +6,7 @@ The main SCSS file for everything, yep
 
 @import 'bootstrap/bootstrap.scss';
 
-
-@import 'site/main_settings.scss';
+@import 'site/main_settings';
 @import "../../bower_components/foundation/scss/foundation";
 @import "../../bower_components/foundation-sites/scss/foundation";
 
@@ -24,4 +23,4 @@ The main SCSS file for everything, yep
 
 // Add your own site style includes here
 @import "site/layout";
-@import "site/calendar";
+@import "site/_calendar";

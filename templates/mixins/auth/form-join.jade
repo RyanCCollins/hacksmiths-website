@@ -15,7 +15,7 @@ mixin form-join(args)
 		div(class=args.modal ? 'modal-body' : null)
 			p.lead.text-center
 			form(method='post', action='/join', autocomplete='off', novalidate).auth-form
-				input(type='hidden', name='action', value='join-udacity')
+				input(type='hidden', name='action', value='join')
 				input(type='hidden', name='target', value=!args.modal ? form.target : page.path)
 				if !args.modal
 					if form.error
@@ -31,54 +31,24 @@ mixin form-join(args)
 
 					- var checkFormError = function(key) { return form.error && form.error.errors && form.error.errors[key] ? 'has-error' : null }
 				.form-groups
-				//- 	.form-group(class=!args.modal ? checkFormError('email') : null)
-				//- 		label(for='email').sr-only Email
-				//- 		input(type='email', name='email', placeholder='Udacity Email', value=!args.modal ? form.email : null).form-control
-				//- 	.form-group(class=!args.modal ? checkFormError('password') : null)
-				//- 		label(for='password').sr-only Password
-				//- 		input(type='password', name='password', placeholder='Udacity Password', value=!args.modal ? form.password : null).form-control
-				//- //- +udacity-btn("Join with your Udacity Account")
-			p.auth-form-divider: span.auth-form-divider-text
-			//- p Or use your email, that's okay too:
-			.ui-reveal
-					.ui-reveal__initial
-						button(type='button').btn.btn-link.ui-reveal__trigger.text-center Join With Email Instead
-					.ui-reveal__hidden
-						form(method='post', action='/join', autocomplete='off', novalidate).auth-form
-							input(type='hidden', name='action', value='join')
-							input(type='hidden', name='target', value=!args.modal ? form.target : page.path)
-							if !args.modal
-								if form.error
-									.flash-messages
-										.alert.alert-danger
-											div!= form.error.message || form.error
-
-											//- Field Errors
-											if form.error.errors && !_.isEmpty(form.error.errors)
-												ul
-													each error, key in form.error.errors
-														li!= error.msg
-
-								- var checkFormError = function(key) { return form.error && form.error.errors && form.error.errors[key] ? 'has-error' : null }
-							.form-groups
-								.form-group(class=!args.modal ? checkFormError('firstname') : null)
-									label(for='firstname').sr-only First name
-									input(type='text', name='firstname', placeholder='First name', value=!args.modal ? form.firstname : null).form-control.form-control--first
-								.form-group(class=!args.modal ? checkFormError('lastname') : null)
-									label(for='lastname').sr-only Last name
-									input(type='text', name='lastname', placeholder='Last name', value=!args.modal ? form.lastname : null).form-control
-								.form-group(class=!args.modal ? checkFormError('email') : null)
-									label(for='email').sr-only Email
-									input(type='email', name='email', placeholder='Email', value=!args.modal ? form.email : null).form-control
-								.form-group(class=!args.modal ? checkFormError('password') : null)
-									label(for='password').sr-only Password
-									input(type='password', name='password', placeholder='Password', value=!args.modal ? form.password : null).form-control
-								.form-group(class=!args.modal ? checkFormError('website') : null)
-									label(for='website').sr-only Website (optional)
-									input(type='website', name='website', placeholder='Website (optional)', value=!args.modal ? form.website : null).form-control.form-control--last
-							button(type='submit').btn.btn-block.btn-primary.btn-submit Join
+					.form-group(class=!args.modal ? checkFormError('firstname') : null)
+						label(for='firstname').sr-only First name
+						input(type='text', name='firstname', placeholder='First name', value=!args.modal ? form.firstname : null).form-control.form-control--first
+					.form-group(class=!args.modal ? checkFormError('lastname') : null)
+						label(for='lastname').sr-only Last name
+						input(type='text', name='lastname', placeholder='Last name', value=!args.modal ? form.lastname : null).form-control
+					.form-group(class=!args.modal ? checkFormError('email') : null)
+						label(for='email').sr-only Email
+						input(type='email', name='email', placeholder='Email', value=!args.modal ? form.email : null).form-control
+					.form-group(class=!args.modal ? checkFormError('password') : null)
+						label(for='password').sr-only Password
+						input(type='password', name='password', placeholder='Password', value=!args.modal ? form.password : null).form-control
+					.form-group(class=!args.modal ? checkFormError('website') : null)
+						label(for='website').sr-only Website (optional)
+						input(type='website', name='website', placeholder='Website (optional)', value=!args.modal ? form.website : null).form-control.form-control--last
+				button(type='submit').btn.btn-block.btn-primary.btn-submit Join
 			p.auth-form-divider: span.auth-form-divider-text or
-				//include ../../includes/social-signin
+				include ../../includes/social-signin
 			p.text-center.text-muted.mt-3
 				| Already have an account?
 				a(href=args.modal ? js : '/signin', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'signin' : null) Sign in
