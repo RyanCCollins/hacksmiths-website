@@ -28,7 +28,7 @@ block content
 						h6.text-caps.text-danger= event._.startDate.format('YYYY - MMMM ')
 						h4= event.name
 						!=utils.cropString( utils.htmlToText(event.description), 240, '...', true )
-						//- !=utils.htmlToText(event.description)
+						!=utils.htmlToText(event.marketingInfo)
 
 		if !upcomingEvent && !pastEvents.length
 			h3.text-muted There are no events yet.

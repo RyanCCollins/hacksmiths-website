@@ -30,7 +30,7 @@ mixin event(event)
 			else
 				#next-event(data-id=event.id)
 					if event.spotsAvailable
-						a(href='/join', data-from=page.path).btn.btn-primary.btn-lg.btn-block.js-auth-trigger Register Now
+						a(href='/join', data-from=page.path).btn.btn-primary.btn-lg.btn-block.js-auth-trigger Join Now
 							span.text-thin (#{plural(event.spotsRemaining, '* spot left', '* spots left')})
 					else
 						.alert.alert-success.mb-0.text-center No spots left...

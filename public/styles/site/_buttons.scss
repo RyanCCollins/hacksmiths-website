@@ -1,0 +1,464 @@
+//colors
+$color_tuatara_approx: #383838;
+$color_mine_shaft_approx: #2e2e2e;
+$white: white;
+$color_cape_cod_approx: #404040;
+$color_shark_approx: #262626;
+$color_emperor_approx: #4d4d4d;
+$black_12_5: rgba(0, 0, 0, 0.125);
+$color_woodsmoke_approx: #0d0d0d;
+$color_rangoon_green_approx: #1a1a1a;
+$color_azure_approx: #3e5d9e;
+$color_chambray_approx: #385590;
+$color_san_marino_approx: #4264a9;
+$color_indigo_approx: #4c70b9;
+$color_cello_approx: #263960;
+$color_astronaut_approx: #2d4372;
+$color_havelock_blue_approx: #428de6;
+$color_curious_blue_approx: #3083e4;
+$color_mariner_approx: #227ae2;
+$color_cornflower_blue_approx: #66a3eb;
+$color_denim_approx: #1862b9;
+$color_cerulean_approx: #00b2f6;
+$color_dodger_blue_approx: #07bbff;
+$color_scooter_approx: #20c2ff;
+$color_allports_approx: #0074a0;
+$color_bondi_blue_approx: #0086b9;
+
+//@extend-elements
+//original selectors
+//.btn-github:hover, .btn-github:focus
+%extend_1 {
+	background-image: linear-gradient(to bottom, $color_cape_cod_approx 0, $color_mine_shaft_approx 100%);
+	background-repeat: repeat-x;
+	color: $white;
+	background-color: $color_cape_cod_approx;
+	border-color: $color_emperor_approx $color_cape_cod_approx $color_mine_shaft_approx;
+}
+
+//original selectors
+//.btn-github:active, .btn-github.active, .open .dropdown-toggle.btn-github
+%extend_2 {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: inset 0 1px 3px $black_12_5;
+	background-image: none;
+	background-color: $color_shark_approx;
+	border-color: $color_woodsmoke_approx $color_rangoon_green_approx $color_shark_approx;
+}
+
+//original selectors
+//.btn-facebook:hover, .btn-facebook:focus
+%extend_3 {
+	background-image: linear-gradient(to bottom, $color_san_marino_approx 0, $color_azure_approx 100%);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff4264a9', endColorstr='#ff3b5997', GradientType=0);
+	color: $white;
+	background-color: $color_san_marino_approx;
+	border-color: $color_indigo_approx $color_san_marino_approx $color_azure_approx;
+}
+
+//original selectors
+//.btn-facebook:active, .btn-facebook.active, .open .dropdown-toggle.btn-facebook
+%extend_4 {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: inset 0 1px 3px $black_12_5;
+	background-image: none;
+	background-color: $color_chambray_approx;
+	border-color: $color_cello_approx $color_astronaut_approx $color_chambray_approx;
+}
+
+//original selectors
+//.btn-google:hover, .btn-google:focus
+%extend_5 {
+	background-image: linear-gradient(to bottom, $color_havelock_blue_approx 0, $color_havelock_blue_approx 100%);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff5096e8', endColorstr='#ff3988e5', GradientType=0);
+	color: $white;
+	background-color: $color_havelock_blue_approx;
+	border-color: $color_cornflower_blue_approx $color_havelock_blue_approx $color_havelock_blue_approx;
+}
+
+//original selectors
+//.btn-google:active, .btn-google.active, .open .dropdown-toggle.btn-google
+%extend_6 {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: inset 0 1px 3px $black_12_5;
+	background-image: none;
+	background-color: $color_mariner_approx;
+	border-color: $color_denim_approx $color_mariner_approx $color_mariner_approx;
+}
+
+//original selectors
+//.btn-twitter:hover, .btn-twitter:focus
+%extend_7 {
+	background-image: linear-gradient(to bottom, $color_dodger_blue_approx 0, $color_cerulean_approx 100%);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff07bbff', endColorstr='#ff00abec', GradientType=0);
+	color: $white;
+	background-color: $color_dodger_blue_approx;
+	border-color: $color_scooter_approx $color_dodger_blue_approx $color_cerulean_approx;
+}
+
+//original selectors
+//.btn-twitter:active, .btn-twitter.active, .open .dropdown-toggle.btn-twitter
+%extend_8 {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: inset 0 1px 3px $black_12_5;
+	background-image: none;
+	background-color: $color_cerulean_approx;
+	border-color: $color_allports_approx $color_bondi_blue_approx $color_cerulean_approx;
+}
+
+
+.btn-github {
+	background-image: linear-gradient(to bottom, $color_tuatara_approx 0, $color_mine_shaft_approx 100%);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff383838', endColorstr='#ff2e2e2e', GradientType=0);
+	color: $white;
+	background-color: $color_mine_shaft_approx;
+	border-color: $color_cape_cod_approx $color_mine_shaft_approx $color_shark_approx;
+	&:hover {
+		@extend %extend_1;
+	}
+	&:focus {
+		@extend %extend_1;
+	}
+	&:active {
+		@extend %extend_2;
+	}
+	&.active {
+		@extend %extend_2;
+	}
+	&.disabled {
+		background-color: $color_mine_shaft_approx;
+		border-color: $color_mine_shaft_approx;
+		&:hover {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+		&:focus {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+		&:active {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+		&.active {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+	}
+	.badge {
+		color: $color_mine_shaft_approx;
+		background-color: $white;
+	}
+}
+.btn-github[disabled] {
+	background-color: $color_mine_shaft_approx;
+	border-color: $color_mine_shaft_approx;
+	&:hover {
+		background-color: $color_mine_shaft_approx;
+		border-color: $color_mine_shaft_approx;
+	}
+	&:focus {
+		background-color: $color_mine_shaft_approx;
+		border-color: $color_mine_shaft_approx;
+	}
+	&:active {
+		background-color: $color_mine_shaft_approx;
+		border-color: $color_mine_shaft_approx;
+	}
+	&.active {
+		background-color: $color_mine_shaft_approx;
+		border-color: $color_mine_shaft_approx;
+	}
+}
+fieldset[disabled] {
+	.btn-github {
+		background-color: $color_mine_shaft_approx;
+		border-color: $color_mine_shaft_approx;
+		&:hover {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+		&:focus {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+		&:active {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+		&.active {
+			background-color: $color_mine_shaft_approx;
+			border-color: $color_mine_shaft_approx;
+		}
+	}
+	.btn-facebook {
+		background-color: $color_azure_approx;
+		border-color: $color_azure_approx;
+		&:hover {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+		&:focus {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+		&:active {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+		&.active {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+	}
+	.btn-google {
+		background-color: $color_havelock_blue_approx;
+		border-color: $color_havelock_blue_approx;
+		&:hover {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+		&:focus {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+		&:active {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+		&.active {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+	}
+	.btn-twitter {
+		background-color: $color_cerulean_approx;
+		border-color: $color_cerulean_approx;
+		&:hover {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+		&:focus {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+		&:active {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+		&.active {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+	}
+}
+.btn-facebook {
+	background-image: linear-gradient(to bottom, $color_azure_approx 0, $color_chambray_approx 100%);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff3e5d9e', endColorstr='#ff385590', GradientType=0);
+	color: $white;
+	background-color: $color_azure_approx;
+	border-color: $color_san_marino_approx $color_azure_approx $color_chambray_approx;
+	&:hover {
+		@extend %extend_3;
+	}
+	&:focus {
+		@extend %extend_3;
+	}
+	&:active {
+		@extend %extend_4;
+	}
+	&.active {
+		@extend %extend_4;
+	}
+	&.disabled {
+		background-color: $color_azure_approx;
+		border-color: $color_azure_approx;
+		&:hover {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+		&:focus {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+		&:active {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+		&.active {
+			background-color: $color_azure_approx;
+			border-color: $color_azure_approx;
+		}
+	}
+	.badge {
+		color: $color_azure_approx;
+		background-color: $white;
+	}
+}
+.btn-facebook[disabled] {
+	background-color: $color_azure_approx;
+	border-color: $color_azure_approx;
+	&:hover {
+		background-color: $color_azure_approx;
+		border-color: $color_azure_approx;
+	}
+	&:focus {
+		background-color: $color_azure_approx;
+		border-color: $color_azure_approx;
+	}
+	&:active {
+		background-color: $color_azure_approx;
+		border-color: $color_azure_approx;
+	}
+	&.active {
+		background-color: $color_azure_approx;
+		border-color: $color_azure_approx;
+	}
+}
+.btn-google {
+	background-image: linear-gradient(to bottom, $color_havelock_blue_approx 0, $color_curious_blue_approx 100%);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff428de6', endColorstr='#ff3083e4', GradientType=0);
+	color: $white;
+	background-color: $color_havelock_blue_approx;
+	border-color: $color_havelock_blue_approx $color_havelock_blue_approx $color_mariner_approx;
+	&:hover {
+		@extend %extend_5;
+	}
+	&:focus {
+		@extend %extend_5;
+	}
+	&:active {
+		@extend %extend_6;
+	}
+	&.active {
+		@extend %extend_6;
+	}
+	&.disabled {
+		background-color: $color_havelock_blue_approx;
+		border-color: $color_havelock_blue_approx;
+		&:hover {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+		&:focus {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+		&:active {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+		&.active {
+			background-color: $color_havelock_blue_approx;
+			border-color: $color_havelock_blue_approx;
+		}
+	}
+	.badge {
+		color: $color_havelock_blue_approx;
+		background-color: $white;
+	}
+}
+.btn-google[disabled] {
+	background-color: $color_havelock_blue_approx;
+	border-color: $color_havelock_blue_approx;
+	&:hover {
+		background-color: $color_havelock_blue_approx;
+		border-color: $color_havelock_blue_approx;
+	}
+	&:focus {
+		background-color: $color_havelock_blue_approx;
+		border-color: $color_havelock_blue_approx;
+	}
+	&:active {
+		background-color: $color_havelock_blue_approx;
+		border-color: $color_havelock_blue_approx;
+	}
+	&.active {
+		background-color: $color_havelock_blue_approx;
+		border-color: $color_havelock_blue_approx;
+	}
+}
+.btn-twitter {
+	background-image: linear-gradient(to bottom, $color_cerulean_approx 0, $color_cerulean_approx 100%);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff00b2f6', endColorstr='#ff00a4e2', GradientType=0);
+	color: $white;
+	background-color: $color_cerulean_approx;
+	border-color: $color_dodger_blue_approx $color_cerulean_approx $color_cerulean_approx;
+	&:hover {
+		@extend %extend_7;
+	}
+	&:focus {
+		@extend %extend_7;
+	}
+	&:active {
+		@extend %extend_8;
+	}
+	&.active {
+		@extend %extend_8;
+	}
+	&.disabled {
+		background-color: $color_cerulean_approx;
+		border-color: $color_cerulean_approx;
+		&:hover {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+		&:focus {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+		&:active {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+		&.active {
+			background-color: $color_cerulean_approx;
+			border-color: $color_cerulean_approx;
+		}
+	}
+	.badge {
+		color: $color_cerulean_approx;
+		background-color: $white;
+	}
+}
+.btn-twitter[disabled] {
+	background-color: $color_cerulean_approx;
+	border-color: $color_cerulean_approx;
+	&:hover {
+		background-color: $color_cerulean_approx;
+		border-color: $color_cerulean_approx;
+	}
+	&:focus {
+		background-color: $color_cerulean_approx;
+		border-color: $color_cerulean_approx;
+	}
+	&:active {
+		background-color: $color_cerulean_approx;
+		border-color: $color_cerulean_approx;
+	}
+	&.active {
+		background-color: $color_cerulean_approx;
+		border-color: $color_cerulean_approx;
+	}
+}
+.open .dropdown-toggle {
+	&.btn-github {
+		@extend %extend_2;
+	}
+	&.btn-facebook {
+		@extend %extend_4;
+	}
+	&.btn-google {
+		@extend %extend_6;
+	}
+	&.btn-twitter {
+		@extend %extend_8;
+	}
+}

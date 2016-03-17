@@ -24,13 +24,27 @@ exports.initLocals = function(req, res, next) {
 
 	var locals = res.locals;
 
-	locals.navLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Events',		key: 'events',		href: '/events' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Gallery',		key: 'gallery',		href: '/gallery' },
-		{ label: 'Contact',		key: 'contact',		href: '/contact' }
-	];
+	locals.navLinks = [{
+		label: 'Home',
+		key: 'home',
+		href: '/'
+	}, {
+		label: 'Events',
+		key: 'events',
+		href: '/events'
+	}, {
+		label: 'Blog',
+		key: 'blog',
+		href: '/blog'
+	}, {
+		label: 'Gallery',
+		key: 'gallery',
+		href: '/gallery'
+	}, {
+		label: 'Contact',
+		key: 'contact',
+		href: '/contact'
+	}];
 
 	locals.user = req.user;
 
@@ -43,7 +57,8 @@ exports.initLocals = function(req, res, next) {
 
 	locals.qs_set = qs_set(req, res);
 
-	if (req.cookies.target && req.cookies.target == locals.page.path) res.clearCookie('target');
+	if (req.cookies.target && req.cookies.target == locals.page.path) res.clearCookie(
+		'target');
 
 	var bowser = require('../lib/node-bowser').detect(req);
 
@@ -94,7 +109,9 @@ exports.flashMessages = function(req, res, next) {
 		error: req.flash('error')
 	};
 
-	res.locals.messages = _.any(flashMessages, function(msgs) { return msgs.length; }) ? flashMessages : false;
+	res.locals.messages = _.any(flashMessages, function(msgs) {
+		return msgs.length;
+	}) ? flashMessages : false;
 
 	next();
 
@@ -109,7 +126,7 @@ exports.requireUser = function(req, res, next) {
 
 	if (!req.user) {
 		req.flash('error', 'Please sign in to access this page.');
-		res.redirect('/keystone/signin');
+		res.redirect('/signin');
 	} else {
 		next();
 	}
@@ -135,4 +152,3 @@ var qs_set = exports.qs_set = function(req, res) {
 		return req.path + (qs ? '?' + qs : '');
 	}
 }
-
