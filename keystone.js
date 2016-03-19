@@ -50,7 +50,7 @@ keystone.set('locals', {
 });
 
 // Load your project's Routes
-keystone.set('signin logo', '/images/logo-horizontal.png');
+keystone.set('signin logo', '/images/logo-horizontal@2x.png');
 keystone.set('routes', require('./routes'));
 
 keystone.set('cloudinary config', secrets.cloudinary.uri);
