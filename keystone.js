@@ -100,15 +100,15 @@ keystone.set('email tests', require('./routes/emails'));
 
 keystone.set('nav', {
 	'members': ['users', 'organizations', 'teams', 'roles', 'skills',
-		'nanodegrees'
+		'nanodegrees', 'settings'
 	],
-	'projects': ['projects', 'events', 'teams', 'schedules', 'rsvps',
-		'inquiries'
+	'projects': ['projects', 'events', 'teams', 'schedule-items', 'rsvps',
+		'inquiries', 'galleries'
 	],
-	'stats': ['team-stats', 'project-stats'],
+
 	'blog': ['posts', 'post-categories', 'post-comments'],
 	'links': ['links', 'link-tags', 'link-comments'],
-	'photo gallery': 'galleries',
+	'stats': ['team-stats', 'project-stats'],
 });
 
 
