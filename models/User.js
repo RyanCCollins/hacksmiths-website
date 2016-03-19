@@ -64,7 +64,7 @@ User.add({
     default: true
   },
   isLeader: {
-    type: boolean,
+    type: Boolean,
     default: false
   },
   photo: {
