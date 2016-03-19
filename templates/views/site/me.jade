@@ -32,7 +32,7 @@ block content
 					.col-sm-10
 						.checkbox: label
 							input(type='checkbox', name='notifications.events' value='true' checked=user.notifications.events)
-							|  When there is a new meetup
+							|  When there is a new event
 						.checkbox: label
 							input(type='checkbox', name='notifications.posts' value='true' checked=user.notifications.posts)
 							|  When there is a new post
@@ -45,15 +45,6 @@ block content
 					a(href='/privacy') Please read our Privacy Policy for more information.
 				br
 
-
-				//- Unconfigured Services
-				//- if !user.services.udacity.isConfigured
-				//- 	.form-group
-				//- 		label.col-sm-2.control-label Udacity
-				//- 		.col-sm-10
-				//- 			a(href='/auth/udacity', title='Connect your Udacity accont').btn.btn-block.btn-udacity
-				//- 				span.entypo-social
-				//- 				| Connect your Udacity account
 				if !user.services.github.isConfigured
 					.form-group
 						label.col-sm-2.control-label Github
