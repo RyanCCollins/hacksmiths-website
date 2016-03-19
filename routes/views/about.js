@@ -15,8 +15,8 @@ exports = module.exports = function(req, res) {
 		title: 'Udacity student extraordinaire.  Creator of Hacksmiths.'
 	}, {
 		name: 'Sean Craig',
-		image: '/images/sean.jpg'
-		twitter: 'swhc1066'
+		image: '/images/sean.jpg',
+		twitter: 'swhc1066',
 		title: 'UI / UX Designer.'
 	}]
 
