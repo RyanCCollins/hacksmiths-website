@@ -50,7 +50,7 @@ keystone.set('locals', {
 });
 
 // Load your project's Routes
-keystone.set('signin logo', '/images/hacksmiths-logo.svg');
+keystone.set('signin logo', '/images/logo-horizontal.png');
 keystone.set('routes', require('./routes'));
 
 keystone.set('cloudinary config', secrets.cloudinary.uri);
@@ -62,9 +62,9 @@ keystone.set('mandrill username', secrets.mandrill.username);
 
 keystone.set('email locals', {
 	utils: keystone.utils,
-	logo_src: '/images/logo-email.gif',
-	logo_width: 194,
-	logo_height: 76,
+	logo_src: '/images/logo-email.png',
+	logo_width: 200,
+	logo_height: 200,
 	theme: {
 		email_bg: '#f9f9f9',
 		link_color: '#2697de',
