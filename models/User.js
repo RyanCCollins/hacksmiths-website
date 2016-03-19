@@ -63,7 +63,10 @@ User.add({
     type: Boolean,
     default: true
   },
-  isLeader: Boolean,
+  isLeader: {
+    type: boolean,
+    default: false
+  },
   photo: {
     type: Types.CloudinaryImage
   },
@@ -236,11 +239,6 @@ User.add({
   isAdmin: {
     type: Boolean,
     label: 'Can Admininstrate the site.'
-  },
-  isTeamLeader: {
-    type: Boolean,
-    label: 'Can create tasks for team.',
-    default: true
   },
   isMember: {
     type: Boolean,

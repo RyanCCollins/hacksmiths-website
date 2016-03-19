@@ -13,16 +13,17 @@ block content
 			//- h2 Organizers
 			//- p.
 			.row.about-organisers
-				each org in organisers
+				each org in organizers
 					.col-sm-3
-						+organiser(org)
+						+organizer(org)
 
 
 		//- CODE
-		.section: .container-sm
+		.section: .container
 			h2 About
-			h5 About us
-			p paragraph
+			h5 
+			p The hacksmiths are a group of software developers working collaboratively with the goal of solving problems.
+			p We work together in the form of hackathons to create world class software for social good.
 block js
 	// twitter
 	script.
