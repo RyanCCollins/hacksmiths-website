@@ -6,7 +6,6 @@ var keystone = require('keystone'),
 exports = module.exports = function(req, res) {
 
 	var locals = {
-		form: req.body,
 
 		newUser: false
 	};
@@ -19,7 +18,8 @@ exports = module.exports = function(req, res) {
 
 		var onSuccess = function(user) {
 			console.log('[api.app.signup]  - Successfully signed in.');
-			console.log('------------------------------------------------------------');
+			console.log(
+				'------------------------------------------------------------');
 			return res.apiResponse({
 				success: true,
 				session: true,
@@ -30,15 +30,18 @@ exports = module.exports = function(req, res) {
 
 		var onFail = function(err) {
 			console.log('[api.app.signup]  - Failed signing in.', err);
-			console.log('------------------------------------------------------------');
+			console.log(
+				'------------------------------------------------------------');
 			return res.apiResponse({
 				success: false,
 				session: false,
-				message: (err && err.message ? err.message : false) || 'Sorry, there was an issue signing you in, please try again.'
+				message: (err && err.message ? err.message : false) ||
+					'Sorry, there was an issue signing you in, please try again.'
 			});
 		}
 
-		keystone.session.signin(String(locals.newUser._id), req, res, onSuccess, onFail);
+		keystone.session.signin(String(locals.newUser._id), req, res, onSuccess,
+			onFail);
 
 	}
 
@@ -47,9 +50,11 @@ exports = module.exports = function(req, res) {
 		// Perform basic validation
 		function(next) {
 
-			if (!locals.form['name.first'] || !locals.form['name.last'] || !locals.form.email || !locals.form.password || !locals.form.website) {
+			if (!req.body.email || !req.body.password || !req.body['name.first'] || !
+				req.body['name.last']) {
 				console.log('[api.app.siginup] - Failed signing up.');
-				console.log('------------------------------------------------------------');
+				console.log(
+					'------------------------------------------------------------');
 				return res.apiResponse({
 					success: false,
 					session: false
@@ -63,24 +68,34 @@ exports = module.exports = function(req, res) {
 		// Check for user by email
 		function(next) {
 
-			console.log('[api.app.signup]  - Searching for existing users via [' + locals.form.email + '] email address...');
-			console.log('------------------------------------------------------------');
+			console.log('[api.app.signup]  - Searching for existing users via [' +
+				req.body.email + '] email address...');
+			console.log(
+				'------------------------------------------------------------');
 
 			var query = User.model.findOne();
-				query.where('email', locals.form.email);
-				query.exec(function(err, user) {
-					if (err) {
-						console.log('[api.app.signup]  - Error finding existing user via email.', err);
-						console.log('------------------------------------------------------------');
-						return next({ message: 'Sorry, there was an error processing your information, please try again.' });
-					}
-					if (user) {
-						console.log('[api.app.signup]  - Found existing user via email address...');
-						console.log('------------------------------------------------------------');
-						return next({ message: 'There\'s already an account with that email address, please sign-in instead.' });
-					}
-					return next();
-				});
+			query.where('email', req.body.email);
+			query.exec(function(err, user) {
+				if (err) {
+					console.log(
+						'[api.app.signup]  - Error finding existing user via email.', err);
+					console.log(
+						'------------------------------------------------------------');
+					return next({
+						message: 'Sorry, there was an error processing your information, please try again.'
+					});
+				}
+				if (user) {
+					console.log(
+						'[api.app.signup]  - Found existing user via email address...');
+					console.log(
+						'------------------------------------------------------------');
+					return next({
+						message: 'There\'s already an account with that email address, please sign-in instead.'
+					});
+				}
+				return next();
+			});
 
 		},
 
@@ -88,25 +103,26 @@ exports = module.exports = function(req, res) {
 		function(next) {
 
 			console.log('[api.app.signup]  - Creating new user...');
-			console.log('------------------------------------------------------------');
+			console.log(
+				'------------------------------------------------------------');
 
 			var userData = {
 				name: {
-					first: locals.form['name.first'],
-					last: locals.form['name.last']
+					first: req.body['name.first'],
+					last: req.body['name.last']
 				},
-				email: locals.form.email,
-				password: locals.form.password,
+				email: req.body.email,
+				password: req.body.password,
 
 				state: 'enabled',
 
-				website: locals.form.website,
+				website: req.body.website,
 
 				isVerified: false,
 
 				notifications: {
-					posts: locals.form.alertsNotifications,
-					events: locals.form.alertsNotifications
+					posts: req.body.alertsNotifications,
+					events: req.body.alertsNotifications
 				},
 
 				services: {}
@@ -119,11 +135,15 @@ exports = module.exports = function(req, res) {
 			locals.newUser.save(function(err) {
 				if (err) {
 					console.log('[api.app.signup]  - Error saving new user.', err);
-					console.log('------------------------------------------------------------');
-					return next({ message: 'Sorry, there was an error processing your account, please try again.' });
+					console.log(
+						'------------------------------------------------------------');
+					return next({
+						message: 'Sorry, there was an error processing your account, please try again.'
+					});
 				}
 				console.log('[api.app.signup]  - Saved new user.');
-				console.log('------------------------------------------------------------');
+				console.log(
+					'------------------------------------------------------------');
 				return next();
 			});
 
@@ -137,11 +157,13 @@ exports = module.exports = function(req, res) {
 	], function(err) {
 		if (err) {
 			console.log('[api.app.signup]  - Issue signing user in.', err);
-			console.log('------------------------------------------------------------');
+			console.log(
+				'------------------------------------------------------------');
 			return res.apiResponse({
 				success: false,
 				session: false,
-				message: (err && err.message ? err.message : false) || 'Sorry, there was an issue signing you in, please try again.'
+				message: (err && err.message ? err.message : false) ||
+					'Sorry, there was an issue signing you in, please try again.'
 			});
 		}
 	});

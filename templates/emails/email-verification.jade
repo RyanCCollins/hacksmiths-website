@@ -1,0 +1,7 @@
+extends layouts/base
+
+block content
+	p Hi #{user.name.first},
+	p Thanks so much for your interest in the Hacksmiths project!
+	p Please verify your email address by clicking the link below.
+	a(href=host + link)= host + link

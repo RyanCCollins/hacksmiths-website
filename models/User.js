@@ -56,7 +56,8 @@ User.add({
     type: String,
     default: '',
     index: true,
-    noshow: true
+    hidden: true,
+    noedit: true
   },
 }, 'Profile', {
   isPublic: {
@@ -471,12 +472,28 @@ User.schema.methods.resetPassword = function(callback) {
       to: user.email,
       from: {
         name: 'hacksmiths',
-        email: 'contact@hacksmiths.com'
+        email: 'ryan@hacksmiths.com'
       }
     }, callback);
   });
 };
 
+User.schema.method.verifyEmail = function(callback) {
+  var user = this;
+  user.verificationKey = keystone.utils.randomString([16, 24]);
+  user.save(function(err) {
+    new keystone.Email('email-verification').send({
+      user: user,
+      link: '/verify-email/' + user.verificationKey,
+      subject: 'Verify your account at Hacksmiths.io',
+      to: user.email,
+      from: {
+        name: "Ryan at Hacksmiths.io",
+        email: 'ryan@hacksmiths.io'
+      }
+    }, callback);
+  });
+}
 
 /**
  * Registration
