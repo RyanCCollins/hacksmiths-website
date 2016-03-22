@@ -38,8 +38,7 @@ Event.add({
 		type: Types.Relationship,
 		ref: 'Project',
 		many: false,
-		initial: true,
-		filter: {}
+		initial: true
 	},
 	description: {
 		type: Types.Html,
@@ -71,7 +70,7 @@ Event.add({
 		many: true
 	},
 
-	regitrationStartDate: {
+	registrationStartDate: {
 		type: Types.Datetime,
 		required: true,
 		initial: true,
@@ -79,7 +78,7 @@ Event.add({
 		width: 'short',
 		note: 'e.g. 2014-07-15 / 6:00pm'
 	},
-	regirstionEndDate: {
+	registrationEndDate: {
 		type: Types.Datetime,
 		required: true,
 		initial: true,
@@ -152,11 +151,7 @@ Event.relationship({
 	refPath: 'event',
 	path: 'rsvps'
 });
-Event.relationship({
-	ref: 'Schedule',
-	refPath: 'event',
-	path: 'schedule'
-});
+
 Event.relationship({
 	ref: 'Project',
 	refPath: 'events',
