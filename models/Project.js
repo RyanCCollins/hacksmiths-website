@@ -137,5 +137,5 @@ Project.schema.methods.refreshStats = function(callback) {
     });
 };
 
-Project.defaultColumns = 'title, group, leader';
+Project.defaultColumns = 'title, description, url';
 Project.register();
