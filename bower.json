@@ -23,6 +23,7 @@
     "jquery.cookie": "~1.4.0",
     "modernizr": "2.8.3",
     "foundation": "^5.5.3",
-    "jquery.countdown": "^2.1.0"
+    "jquery.countdown": "^2.1.0",
+    "animatewithsass": "^3.2.2"
   }
 }

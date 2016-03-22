@@ -5,6 +5,7 @@ The main SCSS file for everything, yep
 @charset 'UTF-8';
 
 @import 'bootstrap/bootstrap.scss';
+@import "../../bower_components/animatewithsass/animate.scss";
 
 @import 'site/main_settings';
 @import "../../bower_components/foundation/scss/foundation";
