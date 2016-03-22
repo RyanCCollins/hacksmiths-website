@@ -1,456 +1,253 @@
-//colors
-$color_tuatara_approx: #383838;
-$color_mine_shaft_approx: #2e2e2e;
-$white: white;
-$color_cape_cod_approx: #404040;
-$color_shark_approx: #262626;
-$color_emperor_approx: #4d4d4d;
-$black_12_5: rgba(0, 0, 0, 0.125);
-$color_woodsmoke_approx: #0d0d0d;
-$color_rangoon_green_approx: #1a1a1a;
-$color_azure_approx: #3e5d9e;
-$color_chambray_approx: #385590;
-$color_san_marino_approx: #4264a9;
-$color_indigo_approx: #4c70b9;
-$color_cello_approx: #263960;
-$color_astronaut_approx: #2d4372;
-$color_havelock_blue_approx: #428de6;
-$color_curious_blue_approx: #3083e4;
-$color_mariner_approx: #227ae2;
-$color_cornflower_blue_approx: #66a3eb;
-$color_denim_approx: #1862b9;
-$color_cerulean_approx: #00b2f6;
-$color_dodger_blue_approx: #07bbff;
-$color_scooter_approx: #20c2ff;
-$color_allports_approx: #0074a0;
-$color_bondi_blue_approx: #0086b9;
+//
+// Buttons
+// ==============================
 
-//@extend-elements
-//original selectors
-//.btn-github:hover, .btn-github:focus
-%extend_1 {
-	background-image: linear-gradient(to bottom, $color_cape_cod_approx 0, $color_mine_shaft_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_cape_cod_approx;
-	border-color: $color_emperor_approx $color_cape_cod_approx $color_mine_shaft_approx;
+.btn-main {
+  color: #FFFFFF;
+  background-color: #5AC6FF;
+  border-color: #5AC6FF;
 }
 
-//original selectors
-//.btn-github:active, .btn-github.active, .open .dropdown-toggle.btn-github
-%extend_2 {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: inset 0 1px 3px $black_12_5;
-	background-image: none;
-	background-color: $color_shark_approx;
-	border-color: $color_woodsmoke_approx $color_rangoon_green_approx $color_shark_approx;
+.btn-main:hover,
+.btn-main:focus,
+.btn-main:active,
+.btn-main.active,
+.open .dropdown-toggle.btn-main {
+  color: #FFFFFF;
+  background-color: #2AB3FC;
+  border-color: #5AC6FF;
 }
 
-//original selectors
-//.btn-facebook:hover, .btn-facebook:focus
-%extend_3 {
-	background-image: linear-gradient(to bottom, $color_san_marino_approx 0, $color_azure_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_san_marino_approx;
-	border-color: $color_indigo_approx $color_san_marino_approx $color_azure_approx;
+.btn-main:active,
+.btn-main.active,
+.open .dropdown-toggle.btn-main {
+  background-image: none;
 }
 
-//original selectors
-//.btn-facebook:active, .btn-facebook.active, .open .dropdown-toggle.btn-facebook
-%extend_4 {
-	box-shadow: inset 0 1px 3px $black_12_5;
-	background-image: none;
-	background-color: $color_chambray_approx;
-	border-color: $color_cello_approx $color_astronaut_approx $color_chambray_approx;
+.btn-main.disabled,
+.btn-main[disabled],
+fieldset[disabled] .btn-main,
+.btn-main.disabled:hover,
+.btn-main[disabled]:hover,
+fieldset[disabled] .btn-main:hover,
+.btn-main.disabled:focus,
+.btn-main[disabled]:focus,
+fieldset[disabled] .btn-main:focus,
+.btn-main.disabled:active,
+.btn-main[disabled]:active,
+fieldset[disabled] .btn-main:active,
+.btn-main.disabled.active,
+.btn-main[disabled].active,
+fieldset[disabled] .btn-main.active {
+  background-color: #5AC6FF;
+  border-color: #5AC6FF;
 }
 
-//original selectors
-//.btn-google:hover, .btn-google:focus
-%extend_5 {
-	background-image: linear-gradient(to bottom, $color_havelock_blue_approx 0, $color_havelock_blue_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_havelock_blue_approx;
-	border-color: $color_cornflower_blue_approx $color_havelock_blue_approx $color_havelock_blue_approx;
-}
-
-//original selectors
-//.btn-google:active, .btn-google.active, .open .dropdown-toggle.btn-google
-%extend_6 {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: inset 0 1px 3px $black_12_5;
-	background-image: none;
-	background-color: $color_mariner_approx;
-	border-color: $color_denim_approx $color_mariner_approx $color_mariner_approx;
-}
-
-//original selectors
-//.btn-twitter:hover, .btn-twitter:focus
-%extend_7 {
-	background-image: linear-gradient(to bottom, $color_dodger_blue_approx 0, $color_cerulean_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_dodger_blue_approx;
-	border-color: $color_scooter_approx $color_dodger_blue_approx $color_cerulean_approx;
-}
-
-//original selectors
-//.btn-twitter:active, .btn-twitter.active, .open .dropdown-toggle.btn-twitter
-%extend_8 {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: inset 0 1px 3px $black_12_5;
-	background-image: none;
-	background-color: $color_cerulean_approx;
-	border-color: $color_allports_approx $color_bondi_blue_approx $color_cerulean_approx;
+.btn-main .badge {
+  color: #5AC6FF;
+  background-color: #FFFFFF;
 }
 
 
-.btn-github {
-	background-image: linear-gradient(to bottom, $color_tuatara_approx 0, $color_mine_shaft_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_mine_shaft_approx;
-	border-color: $color_cape_cod_approx $color_mine_shaft_approx $color_shark_approx;
-	&:hover {
-		@extend %extend_1;
-	}
-	&:focus {
-		@extend %extend_1;
-	}
-	&:active {
-		@extend %extend_2;
-	}
-	&.active {
-		@extend %extend_2;
-	}
-	&.disabled {
-		background-color: $color_mine_shaft_approx;
-		border-color: $color_mine_shaft_approx;
-		&:hover {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-		&:focus {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-		&:active {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-		&.active {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-	}
-	.badge {
-		color: $color_mine_shaft_approx;
-		background-color: $white;
-	}
+// Base styles
+// ------------------------------
+//
+// .btn {
+// 	//.button-size($padding-base-vertical; $padding-base-horizontal; 1em; 1.6; $border-radius-base);
+// 	@include user-select(none);
+// 	background-image: none; // Reset unusual Firefox-on-Android default style
+// 	border: 1px solid transparent; // For input.btn
+// 	cursor: pointer;
+// 	display: inline-block;
+// 	line-height: $line-height-base;
+// 	margin-bottom: 0; // For input.btn
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	white-space: nowrap;
+//
+// 	// chubby?
+// 	font-weight: 500;
+// 	// text-transform: uppercase;
+//
+//
+// 	&:focus {
+// 		@include tab-focus();
+// 	}
+//
+// 	&:hover,
+// 	&:focus {
+// 		color: $btn-default-color;
+// 		text-decoration: none;
+// 	}
+//
+// 	&:active,
+// 	&.active {
+// 		outline: 0;
+// 		background-image: none;
+// 	}
+//
+// 	&.disabled,
+// 	&[disabled],
+// 	fieldset[disabled] & {
+// 		cursor: not-allowed;
+// 		pointer-events: none; // Future-proof disabling of clicks
+// 		@include opacity(.65);
+// 		@include box-shadow(none);
+// 	}
+// }
+//
+//
+// // Alternate buttons
+// // --------------------------------------------------
+//
+// .btn-default {
+// 	.button-base($btn-default-color; $btn-default-bg; $btn-default-border);
+// }
+// .btn-primary {
+// 	.button-base($btn-primary-color; $btn-primary-bg; $btn-primary-border);
+// }
+// .btn-success {
+// 	.button-base($btn-success-color; $btn-success-bg; $btn-success-border);
+// }
+// .btn-warning {
+// 	.button-base($btn-warning-color; $btn-warning-bg; $btn-warning-border);
+// }
+// .btn-danger {
+// 	.button-base($btn-danger-color; $btn-danger-bg; $btn-danger-border);
+// }
+//
+// // social
+//
+// .btn-github {
+// 	.button-base(white; $brand-github; $brand-github);
+// }
+// .btn-facebook {
+// 	.button-base(white; $brand-facebook; $brand-facebook);
+// }
+// .btn-google {
+// 	.button-base(white; $brand-google; $brand-google);
+// }
+// .btn-twitter {
+// 	.button-base(white; $brand-twitter; $brand-twitter);
+// }
+//
+// .btn-udacity {
+//     background-color: #f08c35;
+//     border-color: #f08c35;
+//     border-radius: 2px;
+//     color: #fff;
+// }
+// .btn-udacity:hover,.btn-udacity:focus,.open .dropdown-toggle.btn-udacity {
+//     background-color: #e5781a;
+//     border-color: #e5781a;
+//     color: #fff;
+// }
+// .btn-udacity:active,.btn-udacity.active {
+//     background-color: linear-gradient(to bottom, #b95d0c, #c3620d);
+//     border-color: #b95d0c;
+//     color: #fff;
+// }
+// // social links
+//
+// .btn-link-github {
+// 	@include btn-link();
+//
+// 	&, &:hover, &:focus {
+// 		color: $brand-github;
+// 	}
+// }
+// .btn-link-facebook {
+// 	@include btn-link();
+//
+// 	&, &:hover, &:focus {
+// 		color: $brand-facebook;
+// 	}
+// }
+// .btn-link-google {
+// 	@include btn-link();
+//
+// 	&, &:hover, &:focus {
+// 		color: $brand-google;
+// 	}
+// }
+// .btn-link-twitter {
+// 	@include btn-link();
+//
+// 	&, &:hover, &:focus {
+// 		color: $brand-twitter;
+// 	}
+// }
+//
+//
+// // Link buttons
+// // -------------------------
+//
+// // Make a button look and behave like a link
+// .btn-link {
+// 	border-radius: 0;
+// 	color: $link-color;
+// 	cursor: pointer;
+// 	font-weight: normal;
+//
+// 	&,
+// 	&:active,
+// 	&[disabled],
+// 	fieldset[disabled] & {
+// 		background-color: transparent;
+// 		@include box-shadow(none);
+// 	}
+// 	&,
+// 	&:hover,
+// 	&:focus,
+// 	&:active {
+// 		border-color: transparent;
+// 	}
+// 	&:hover,
+// 	&:focus {
+// 		background-color: transparent;
+// 		color: $link-hover-color;
+// 		text-decoration: underline;
+// 	}
+// 	&[disabled],
+// 	fieldset[disabled] & {
+// 		&:hover,
+// 		&:focus {
+// 			color: $btn-link-disabled-color;
+// 			text-decoration: none;
+// 		}
+// 	}
+// }
+//
+//
+// // Button Sizes
+// // ------------------------------
+//
+// .btn-lg {
+// 	// line-height: ensure even-numbered height of button next to large input
+// 	.button-size($padding-large-vertical; $padding-large-horizontal; $font-size-large; $line-height-large; $border-radius-large);
+// }
+// .btn-sm {
+// 	// line-height: ensure proper height of button next to small input
+// 	.button-size($padding-small-vertical; $padding-small-horizontal; $font-size-small; $line-height-small; $border-radius-small);
+// }
+// .btn-xs {
+// 	.button-size($padding-xs-vertical; $padding-xs-horizontal; $font-size-small; $line-height-small; $border-radius-small);
+// }
+
+
+// Block button
+// ------------------------------
+
+.btn-block {
+	display: block;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
 }
-.btn-github[disabled] {
-	background-color: $color_mine_shaft_approx;
-	border-color: $color_mine_shaft_approx;
-	&:hover {
-		background-color: $color_mine_shaft_approx;
-		border-color: $color_mine_shaft_approx;
-	}
-	&:focus {
-		background-color: $color_mine_shaft_approx;
-		border-color: $color_mine_shaft_approx;
-	}
-	&:active {
-		background-color: $color_mine_shaft_approx;
-		border-color: $color_mine_shaft_approx;
-	}
-	&.active {
-		background-color: $color_mine_shaft_approx;
-		border-color: $color_mine_shaft_approx;
-	}
-}
-fieldset[disabled] {
-	.btn-github {
-		background-color: $color_mine_shaft_approx;
-		border-color: $color_mine_shaft_approx;
-		&:hover {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-		&:focus {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-		&:active {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-		&.active {
-			background-color: $color_mine_shaft_approx;
-			border-color: $color_mine_shaft_approx;
-		}
-	}
-	.btn-facebook {
-		background-color: $color_azure_approx;
-		border-color: $color_azure_approx;
-		&:hover {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-		&:focus {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-		&:active {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-		&.active {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-	}
-	.btn-google {
-		background-color: $color_havelock_blue_approx;
-		border-color: $color_havelock_blue_approx;
-		&:hover {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-		&:focus {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-		&:active {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-		&.active {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-	}
-	.btn-twitter {
-		background-color: $color_cerulean_approx;
-		border-color: $color_cerulean_approx;
-		&:hover {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-		&:focus {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-		&:active {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-		&.active {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-	}
-}
-.btn-facebook {
-	background-image: linear-gradient(to bottom, $color_azure_approx 0, $color_chambray_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_azure_approx;
-	border-color: $color_san_marino_approx $color_azure_approx $color_chambray_approx;
-	&:hover {
-		@extend %extend_3;
-	}
-	&:focus {
-		@extend %extend_3;
-	}
-	&:active {
-		@extend %extend_4;
-	}
-	&.active {
-		@extend %extend_4;
-	}
-	&.disabled {
-		background-color: $color_azure_approx;
-		border-color: $color_azure_approx;
-		&:hover {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-		&:focus {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-		&:active {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-		&.active {
-			background-color: $color_azure_approx;
-			border-color: $color_azure_approx;
-		}
-	}
-	.badge {
-		color: $color_azure_approx;
-		background-color: $white;
-	}
-}
-.btn-facebook[disabled] {
-	background-color: $color_azure_approx;
-	border-color: $color_azure_approx;
-	&:hover {
-		background-color: $color_azure_approx;
-		border-color: $color_azure_approx;
-	}
-	&:focus {
-		background-color: $color_azure_approx;
-		border-color: $color_azure_approx;
-	}
-	&:active {
-		background-color: $color_azure_approx;
-		border-color: $color_azure_approx;
-	}
-	&.active {
-		background-color: $color_azure_approx;
-		border-color: $color_azure_approx;
-	}
-}
-.btn-google {
-	background-image: linear-gradient(to bottom, $color_havelock_blue_approx 0, $color_curious_blue_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_havelock_blue_approx;
-	border-color: $color_havelock_blue_approx $color_havelock_blue_approx $color_mariner_approx;
-	&:hover {
-		@extend %extend_5;
-	}
-	&:focus {
-		@extend %extend_5;
-	}
-	&:active {
-		@extend %extend_6;
-	}
-	&.active {
-		@extend %extend_6;
-	}
-	&.disabled {
-		background-color: $color_havelock_blue_approx;
-		border-color: $color_havelock_blue_approx;
-		&:hover {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-		&:focus {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-		&:active {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-		&.active {
-			background-color: $color_havelock_blue_approx;
-			border-color: $color_havelock_blue_approx;
-		}
-	}
-	.badge {
-		color: $color_havelock_blue_approx;
-		background-color: $white;
-	}
-}
-.btn-google[disabled] {
-	background-color: $color_havelock_blue_approx;
-	border-color: $color_havelock_blue_approx;
-	&:hover {
-		background-color: $color_havelock_blue_approx;
-		border-color: $color_havelock_blue_approx;
-	}
-	&:focus {
-		background-color: $color_havelock_blue_approx;
-		border-color: $color_havelock_blue_approx;
-	}
-	&:active {
-		background-color: $color_havelock_blue_approx;
-		border-color: $color_havelock_blue_approx;
-	}
-	&.active {
-		background-color: $color_havelock_blue_approx;
-		border-color: $color_havelock_blue_approx;
-	}
-}
-.btn-twitter {
-	background-image: linear-gradient(to bottom, $color_cerulean_approx 0, $color_cerulean_approx 100%);
-	background-repeat: repeat-x;
-	color: $white;
-	background-color: $color_cerulean_approx;
-	border-color: $color_dodger_blue_approx $color_cerulean_approx $color_cerulean_approx;
-	&:hover {
-		@extend %extend_7;
-	}
-	&:focus {
-		@extend %extend_7;
-	}
-	&:active {
-		@extend %extend_8;
-	}
-	&.active {
-		@extend %extend_8;
-	}
-	&.disabled {
-		background-color: $color_cerulean_approx;
-		border-color: $color_cerulean_approx;
-		&:hover {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-		&:focus {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-		&:active {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-		&.active {
-			background-color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
-		}
-	}
-	.badge {
-		color: $color_cerulean_approx;
-		background-color: $white;
-	}
-}
-.btn-twitter[disabled] {
-	background-color: $color_cerulean_approx;
-	border-color: $color_cerulean_approx;
-	&:hover {
-		background-color: $color_cerulean_approx;
-		border-color: $color_cerulean_approx;
-	}
-	&:focus {
-		background-color: $color_cerulean_approx;
-		border-color: $color_cerulean_approx;
-	}
-	&:active {
-		background-color: $color_cerulean_approx;
-		border-color: $color_cerulean_approx;
-	}
-	&.active {
-		background-color: $color_cerulean_approx;
-		border-color: $color_cerulean_approx;
-	}
-}
-.open .dropdown-toggle {
-	&.btn-github {
-		@extend %extend_2;
-	}
-	&.btn-facebook {
-		@extend %extend_4;
-	}
-	&.btn-google {
-		@extend %extend_6;
-	}
-	&.btn-twitter {
-		@extend %extend_8;
-	}
+
+
+// skinny buttons
+
+.btn-narrow {
+	line-height: 1;
 }

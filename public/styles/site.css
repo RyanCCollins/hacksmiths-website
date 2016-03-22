@@ -16432,6 +16432,9 @@ a[class^="dicon"] {
     05. Media Queries Settings
 
 */
+.page1 {
+  overflow: hidden; }
+
 .page1, h1, h2, h3, h4, h5, p {
   font-family: 'Source Sans Pro', sans-serif; }
 
@@ -17753,285 +17756,55 @@ cite {
 .comments .comment h6 span {
   font-weight: 300; }
 
-.btn-github:hover, .btn-github:focus {
-  background-image: linear-gradient(to bottom, #404040 0, #2e2e2e 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #404040;
-  border-color: #4d4d4d #404040 #2e2e2e; }
+.btn-main {
+  color: #FFFFFF;
+  background-color: #5AC6FF;
+  border-color: #5AC6FF; }
 
-.btn-github:active, .btn-github.active, .open .dropdown-toggle.btn-github {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125);
-  background-image: none;
-  background-color: #262626;
-  border-color: #0d0d0d #1a1a1a #262626; }
+.btn-main:hover,
+.btn-main:focus,
+.btn-main:active,
+.btn-main.active,
+.open .dropdown-toggle.btn-main {
+  color: #FFFFFF;
+  background-color: #2AB3FC;
+  border-color: #5AC6FF; }
 
-.btn-facebook:hover, .btn-facebook:focus {
-  background-image: linear-gradient(to bottom, #4264a9 0, #3e5d9e 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #4264a9;
-  border-color: #4c70b9 #4264a9 #3e5d9e; }
+.btn-main:active,
+.btn-main.active,
+.open .dropdown-toggle.btn-main {
+  background-image: none; }
 
-.btn-facebook:active, .btn-facebook.active, .open .dropdown-toggle.btn-facebook {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125);
-  background-image: none;
-  background-color: #385590;
-  border-color: #263960 #2d4372 #385590; }
+.btn-main.disabled,
+.btn-main[disabled],
+fieldset[disabled] .btn-main,
+.btn-main.disabled:hover,
+.btn-main[disabled]:hover,
+fieldset[disabled] .btn-main:hover,
+.btn-main.disabled:focus,
+.btn-main[disabled]:focus,
+fieldset[disabled] .btn-main:focus,
+.btn-main.disabled:active,
+.btn-main[disabled]:active,
+fieldset[disabled] .btn-main:active,
+.btn-main.disabled.active,
+.btn-main[disabled].active,
+fieldset[disabled] .btn-main.active {
+  background-color: #5AC6FF;
+  border-color: #5AC6FF; }
 
-.btn-google:hover, .btn-google:focus {
-  background-image: linear-gradient(to bottom, #428de6 0, #428de6 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #428de6;
-  border-color: #66a3eb #428de6 #428de6; }
+.btn-main .badge {
+  color: #5AC6FF;
+  background-color: #FFFFFF; }
 
-.btn-google:active, .btn-google.active, .open .dropdown-toggle.btn-google {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125);
-  background-image: none;
-  background-color: #227ae2;
-  border-color: #1862b9 #227ae2 #227ae2; }
+.btn-block {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%; }
 
-.btn-twitter:hover, .btn-twitter:focus {
-  background-image: linear-gradient(to bottom, #07bbff 0, #00b2f6 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #07bbff;
-  border-color: #20c2ff #07bbff #00b2f6; }
-
-.btn-twitter:active, .btn-twitter.active, .open .dropdown-toggle.btn-twitter {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125);
-  background-image: none;
-  background-color: #00b2f6;
-  border-color: #0074a0 #0086b9 #00b2f6; }
-
-.btn-github {
-  background-image: linear-gradient(to bottom, #383838 0, #2e2e2e 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #2e2e2e;
-  border-color: #404040 #2e2e2e #262626; }
-  .btn-github.disabled {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-    .btn-github.disabled:hover {
-      background-color: #2e2e2e;
-      border-color: #2e2e2e; }
-    .btn-github.disabled:focus {
-      background-color: #2e2e2e;
-      border-color: #2e2e2e; }
-    .btn-github.disabled:active {
-      background-color: #2e2e2e;
-      border-color: #2e2e2e; }
-    .btn-github.disabled.active {
-      background-color: #2e2e2e;
-      border-color: #2e2e2e; }
-  .btn-github .badge {
-    color: #2e2e2e;
-    background-color: white; }
-
-.btn-github[disabled] {
-  background-color: #2e2e2e;
-  border-color: #2e2e2e; }
-  .btn-github[disabled]:hover {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-  .btn-github[disabled]:focus {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-  .btn-github[disabled]:active {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-  .btn-github[disabled].active {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-
-fieldset[disabled] .btn-github {
-  background-color: #2e2e2e;
-  border-color: #2e2e2e; }
-  fieldset[disabled] .btn-github:hover {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-  fieldset[disabled] .btn-github:focus {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-  fieldset[disabled] .btn-github:active {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-  fieldset[disabled] .btn-github.active {
-    background-color: #2e2e2e;
-    border-color: #2e2e2e; }
-
-fieldset[disabled] .btn-facebook {
-  background-color: #3e5d9e;
-  border-color: #3e5d9e; }
-  fieldset[disabled] .btn-facebook:hover {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-  fieldset[disabled] .btn-facebook:focus {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-  fieldset[disabled] .btn-facebook:active {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-  fieldset[disabled] .btn-facebook.active {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-
-fieldset[disabled] .btn-google {
-  background-color: #428de6;
-  border-color: #428de6; }
-  fieldset[disabled] .btn-google:hover {
-    background-color: #428de6;
-    border-color: #428de6; }
-  fieldset[disabled] .btn-google:focus {
-    background-color: #428de6;
-    border-color: #428de6; }
-  fieldset[disabled] .btn-google:active {
-    background-color: #428de6;
-    border-color: #428de6; }
-  fieldset[disabled] .btn-google.active {
-    background-color: #428de6;
-    border-color: #428de6; }
-
-fieldset[disabled] .btn-twitter {
-  background-color: #00b2f6;
-  border-color: #00b2f6; }
-  fieldset[disabled] .btn-twitter:hover {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-  fieldset[disabled] .btn-twitter:focus {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-  fieldset[disabled] .btn-twitter:active {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-  fieldset[disabled] .btn-twitter.active {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-
-.btn-facebook {
-  background-image: linear-gradient(to bottom, #3e5d9e 0, #385590 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #3e5d9e;
-  border-color: #4264a9 #3e5d9e #385590; }
-  .btn-facebook.disabled {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-    .btn-facebook.disabled:hover {
-      background-color: #3e5d9e;
-      border-color: #3e5d9e; }
-    .btn-facebook.disabled:focus {
-      background-color: #3e5d9e;
-      border-color: #3e5d9e; }
-    .btn-facebook.disabled:active {
-      background-color: #3e5d9e;
-      border-color: #3e5d9e; }
-    .btn-facebook.disabled.active {
-      background-color: #3e5d9e;
-      border-color: #3e5d9e; }
-  .btn-facebook .badge {
-    color: #3e5d9e;
-    background-color: white; }
-
-.btn-facebook[disabled] {
-  background-color: #3e5d9e;
-  border-color: #3e5d9e; }
-  .btn-facebook[disabled]:hover {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-  .btn-facebook[disabled]:focus {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-  .btn-facebook[disabled]:active {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-  .btn-facebook[disabled].active {
-    background-color: #3e5d9e;
-    border-color: #3e5d9e; }
-
-.btn-google {
-  background-image: linear-gradient(to bottom, #428de6 0, #3083e4 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #428de6;
-  border-color: #428de6 #428de6 #227ae2; }
-  .btn-google.disabled {
-    background-color: #428de6;
-    border-color: #428de6; }
-    .btn-google.disabled:hover {
-      background-color: #428de6;
-      border-color: #428de6; }
-    .btn-google.disabled:focus {
-      background-color: #428de6;
-      border-color: #428de6; }
-    .btn-google.disabled:active {
-      background-color: #428de6;
-      border-color: #428de6; }
-    .btn-google.disabled.active {
-      background-color: #428de6;
-      border-color: #428de6; }
-  .btn-google .badge {
-    color: #428de6;
-    background-color: white; }
-
-.btn-google[disabled] {
-  background-color: #428de6;
-  border-color: #428de6; }
-  .btn-google[disabled]:hover {
-    background-color: #428de6;
-    border-color: #428de6; }
-  .btn-google[disabled]:focus {
-    background-color: #428de6;
-    border-color: #428de6; }
-  .btn-google[disabled]:active {
-    background-color: #428de6;
-    border-color: #428de6; }
-  .btn-google[disabled].active {
-    background-color: #428de6;
-    border-color: #428de6; }
-
-.btn-twitter {
-  background-image: linear-gradient(to bottom, #00b2f6 0, #00b2f6 100%);
-  background-repeat: repeat-x;
-  color: white;
-  background-color: #00b2f6;
-  border-color: #07bbff #00b2f6 #00b2f6; }
-  .btn-twitter.disabled {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-    .btn-twitter.disabled:hover {
-      background-color: #00b2f6;
-      border-color: #00b2f6; }
-    .btn-twitter.disabled:focus {
-      background-color: #00b2f6;
-      border-color: #00b2f6; }
-    .btn-twitter.disabled:active {
-      background-color: #00b2f6;
-      border-color: #00b2f6; }
-    .btn-twitter.disabled.active {
-      background-color: #00b2f6;
-      border-color: #00b2f6; }
-  .btn-twitter .badge {
-    color: #00b2f6;
-    background-color: white; }
-
-.btn-twitter[disabled] {
-  background-color: #00b2f6;
-  border-color: #00b2f6; }
-  .btn-twitter[disabled]:hover {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-  .btn-twitter[disabled]:focus {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-  .btn-twitter[disabled]:active {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
-  .btn-twitter[disabled].active {
-    background-color: #00b2f6;
-    border-color: #00b2f6; }
+.btn-narrow {
+  line-height: 1; }
 
 /* Import all of the various partial view
  * Scss files here
