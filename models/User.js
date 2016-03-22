@@ -324,7 +324,8 @@ User.add({
   },
   rank: {
     type: Number,
-    noedit: true
+    noedit: true,
+    default: true
   },
   isTopContributor: {
     type: Boolean,
@@ -493,6 +494,10 @@ User.schema.method.verifyEmail = function(callback) {
       }
     }, callback);
   });
+}
+
+UserSchema.method.setRank = function() {
+
 }
 
 /**
