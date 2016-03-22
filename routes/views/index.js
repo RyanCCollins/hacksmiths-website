@@ -19,7 +19,7 @@ exports = module.exports = function(req, res) {
 		name: 'Sean Craig',
 		image: '/images/sean.jpg',
 		twitter: 'swhc1066',
-		title: 'Sean is a professional User Experience and Interface Designer with years of experience in the industry.  He runs the product design team here at the Hacksmiths project, donating his time to making his vision a reality.'
+		title: 'Sean is a professional User Experience and Interface Designer with years of experience in the industry.  He runs the digital product design team here at the Hacksmiths project, donating his time to expertly crafting the projects the team works on.'
 	}]
 
 	// Render the view

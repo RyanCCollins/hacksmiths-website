@@ -8,9 +8,13 @@
  */
 
 exports.create = {
-	User: [
-		{ 'name.first': 'Admin', 'name.last': 'User', email: 'admin@hacksmiths.com', password: 'admin', isAdmin: true }
-	]
+	User: [{
+		'name.first': 'Admin',
+		'name.last': 'User',
+		email: 'admin@hacksmiths.io',
+		password: 'admin',
+		isAdmin: true
+	}]
 };
 
 /*
