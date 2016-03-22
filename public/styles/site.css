@@ -24585,17 +24585,7 @@ a[class^="dicon"] {
  *
  */
 /*
-
-    EXHO TEMPLATE  V1.0 BY SUPVIEW.BE
-
-
-    01. Font Face
-    02. Generals Settings
-    03. Header Section Settings
-    04. Navigation Settings
-    04. Page1 / Header Section Settings
-    05. Media Queries Settings
-
+* Variables
 */
 .page1 {
   overflow: hidden; }
@@ -24666,6 +24656,84 @@ p {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+
+.footer-section {
+  background-color: #292c2f;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem; }
+  .footer-section li {
+    list-style: none;
+    text-align: center;
+    color: #fff !important;
+    text-decoration: underline; }
+  .footer-section p {
+    line-height: 1rem;
+    padding-top: 2px; }
+    .footer-section p.text-white {
+      color: #fff !important;
+      line-height: 1.0;
+      text-align: justify; }
+    .footer-section p.slogan {
+      color: #8d9093;
+      font-size: 1.8rem;
+      margin: 0 0 1rem; }
+    .footer-section p.follow-me {
+      color: #8f9296;
+      font-size: 0.975rem;
+      margin: 0; }
+    .footer-section p.copyright {
+      color: #8f9296;
+      font-size: 0.875rem;
+      padding-top: 4rem; }
+  .footer-section ul.social-icons {
+    margin: 0;
+    text-align: center;
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 5px; }
+  .footer-section ul.social-icons li {
+    display: inline-block;
+    margin-left: 10px; }
+  .footer-section ul.social-icons > li:hover > .item img {
+    opacity: .7; }
+  .footer-section ul.social-icons > li > .item {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #246A73;
+    border-radius: 4px;
+    box-shadow: 0 3px 0 #212121; }
+  .footer-section ul.social-icons > li > .item > a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.9); }
+  .footer-section ul.social-icons > li > .item > a:hover {
+    color: rgba(255, 255, 255, 0.7); }
+  .footer-section ul.social-icons > li > .item img {
+    margin: 12px auto 0;
+    opacity: .5;
+    transition: all .2s ease-in-out; }
+
+/*! Left here because I will be adding footer icons */
+footer.footer-section-sticky {
+  width: 100%;
+  display: inline-block;
+  height: 100px;
+  z-index: 10000;
+  background-color: #f7f5ed;
+  bottom: 0px;
+  left: 0px;
+  position: fixed; }
+  footer.footer-section-sticky p {
+    color: #fff;
+    margin-top: 50px; }
 
 /* The main layout file contains CSS that was transferred
  * From the uhub site.  A lot of this is important layout stuff

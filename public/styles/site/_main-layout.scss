@@ -2,18 +2,24 @@
  *
  */
 /*
-
-    EXHO TEMPLATE  V1.0 BY SUPVIEW.BE
-
-
-    01. Font Face
-    02. Generals Settings
-    03. Header Section Settings
-    04. Navigation Settings
-    04. Page1 / Header Section Settings
-    05. Media Queries Settings
-
+* Variables
 */
+
+$primary-color:#7acff0;
+
+$text-gray:#bfbebe;
+
+$break-small:600px;
+$break-medium:768px;
+$break-large:1024px;
+
+$primary-color: #00ffcc;
+$green-blue: #119DA4;
+$gray-blue: #246A73;
+$baby-blue: #118AB2;
+$dark-blue: #022F40;
+$light-gray: #C2C6A7;
+
 
 .page1 {
   overflow:hidden;
@@ -25,13 +31,7 @@
 
 
 /* Paragrah */
-$primary-color:#7acff0;
 
-$text-gray:#bfbebe;
-
-$break-small:600px;
-$break-medium:768px;
-$break-large:1024px;
 p {
   color: #000 !important;
 }
@@ -106,4 +106,105 @@ p
 
 .top-bar-left {
   @include vertical-align();
+}
+
+.footer-section {
+  background-color: #292c2f;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem;
+  li {
+    list-style: none;
+    text-align: center;
+    color: #fff !important;
+    text-decoration: underline;
+  }
+  p {
+    line-height: 1rem;
+    padding-top: 2px;
+    &.text-white {
+      color: #fff !important;
+      line-height: 1.0;
+      text-align: justify;
+    }
+    &.slogan {
+      color: #8d9093;
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+    }
+    &.follow-me {
+      color: #8f9296;
+      font-size: 0.975rem;
+      margin: 0;
+    }
+    &.copyright {
+      color: #8f9296;
+      font-size: 0.875rem;
+      padding-top:4rem;
+    }
+  }
+  ul.social-icons {
+    margin: 0;
+    text-align: center;
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+
+  ul.social-icons li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  ul.social-icons>li:hover>.item img {
+    opacity: .7;
+  }
+
+  ul.social-icons>li>.item {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: $gray-blue;
+    border-radius: 4px;
+    box-shadow: 0 3px 0 #212121
+  }
+
+  ul.social-icons>li>.item>a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 25px;
+    color: rgba(255, 255, 255, .9);
+  }
+
+  ul.social-icons>li>.item>a:hover {
+    color: rgba(255, 255, 255, .7)
+  }
+
+  ul.social-icons>li>.item img {
+    margin: 12px auto 0;
+    opacity: .5;
+    transition: all .2s ease-in-out
+  }
+}
+
+
+/*! Left here because I will be adding footer icons */
+footer.footer-section-sticky {
+  width: 100%;
+  display:inline-block;
+  height:100px;
+  z-index:10000;
+  background-color:#f7f5ed;
+  bottom: 0px;
+  left:0px;
+  position:fixed;
+  p {
+    color: #fff;
+    margin-top: 50px;
+  }
 }

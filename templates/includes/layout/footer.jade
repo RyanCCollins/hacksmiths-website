@@ -1,0 +1,48 @@
+footer.footer-section
+  .row    
+    .col-md-3
+      h3.subheader About
+      p.text-white The Hacksmiths are a group of software professionals working collaboratively in a virtual environment in an effort to solve real world problems through the development of software.
+    .col-md-3
+      h3.subheader Community Links
+        ul
+          li
+            a(href='/blog') Our Blog
+          li
+            a(href='/members') Our members
+          li
+            a(href='/links') Community Links
+          li
+            a(href='/mentoring') Community Mentoring
+    .col-md-3
+      h3.subheader Members
+        ul
+          li
+            a(href='/events') Events
+          li
+            a(href='/gallery') Project Gallery
+          if !user
+            li
+              a(href='/signin') Sign in
+            li
+              a(href='/join') Join
+          else if user && !user.canAccessKeystone
+            li
+              a(href='/me') View your profile
+          else if user && user.canAccessKeystone
+            li
+              a(href='/keystone') Admin Area
+    .col-md-3
+      h3.subheader Other
+        ul
+          li
+            a(href='/contact') Contact Us
+          li
+            a(href='/about') About us
+          li
+            a(href='/privacy') Privacy Policy
+          li
+        
+  .row
+    p.slogan Hacksmiths | Helping People Help People
+    p.copyright &copy; Hacksmiths 2016
