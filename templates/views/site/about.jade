@@ -1,29 +1,35 @@
 extends ../../layouts/default
 
-include ../../mixins/organiser
+include ../../mixins/organizer
 
 block intro
 	.page-intro: .container
 		h1.page-title About
-		p.lead The HackSmiths are a group of the best and brightest Software Developers, working together for the good of mankind.
+		p.lead The Hacksmiths are a group of software professionals working collaboratively in a virtual environment in an effort to solve real world problems through the development of software.
+		p.lead.small We build tools designed to help non-profit organizations streamline their philanthropic efforts, utilizing industry best practices and advanced software development methodologies.
 
 block content
 	.page-content
 		.section.highlight: .container
 			//- h2 Organizers
 			//- p.
-			.row.about-organisers
+			h2 Founders
+			p.
+			.row.about-organizers
 				each org in organizers
 					.col-sm-3
 						+organizer(org)
 
 
 		//- CODE
-		.section: .container
-			h2 About
-			h5 
-			p The hacksmiths are a group of software developers working collaboratively with the goal of solving problems.
-			p We work together in the form of hackathons to create world class software for social good.
+		.section
+			.row
+				.small-12.columns
+					h2 
+					
+			.row
+				.small-12.columns
+					
 block js
 	// twitter
 	script.

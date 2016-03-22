@@ -1,5 +1,7 @@
 extends ../layouts/default
 
+include ../mixins/organizer
+
 block intro
 
 block content
@@ -10,6 +12,7 @@ block content
 			img.page1-logo(src='/images/hacksmiths-logo.svg')
 			// This Logo is only displayed on Tablet/iPhone !
 			h2 HACKSMITHS
+			h5 Helping People Help People
 			.row.row-callout
 				.medium-6.small-12.columns.small-centered.callout
 					h1.callout-text
@@ -18,22 +21,37 @@ block content
 			.button-join-us.div-button
 				a(href='/contact')
 					h5.h5-button-join-us GET IN TOUCH
-	section.who-we-are
-		//- div.row
-		//- 	.small-12.columns
-		//- 		h1.text-center Who we are
-		//- div.row
-		//- 	.small-12.medium-6.columns
-		//- 		.small-6.columns
-		//- 			p The Hacksmiths are a group of skilled digital product craftsmen who donate their time to create software for Non Profit Organizations.  We work collaboratively in a digital environment to create apps for social good.  We deliver professionally designed web and mobile software for the benefit of non-profit organizations.
-		//- 			p We work in a highly organized fashion using the latest and greatest technologies and agile software development methodologies in order to deliver end products of the highest quality.  
-		//- 	.small-12.medium-6.columns
-		//- 		.small-6.columns
-		//- 			img.responsive(src='http://placehold.it/400x400')
-			hr
+	.page-intro: .container
+		h1.page-title About
+		p.lead The Hacksmiths are a group of software professionals working collaboratively in a virtual environment in an effort to solve real world problems through the development of software.
+		p.lead.small We build tools designed to help non-profit organizations streamline their philanthropic efforts, utilizing industry best practices and advanced software development methodologies.
+	.page-content
+		.section.highlight: .container
+			h2.text-center Founders
+			.row.about-organizers
+				.col-sm-3
+				each org in organizers
+					.col-sm-3
+						+organizer(org)
+				.col-sm-3
+
+			//- CODE
+			.section
+				.row
+					.small-12.columns
+						h2 
+						
+				.row
+					.small-12.columns
+						
+
 	section.what-we-do
 		div.row
 			.small-12.columns
 				//- h1.text-center What We Do
+block js
+	// twitter
+	script.
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 				

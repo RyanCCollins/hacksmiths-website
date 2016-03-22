@@ -439,6 +439,12 @@ p
     @media screen and (min-width:break-small) {
         margin-top:10px;
     }
+    h5 {
+      text-transform: uppercase;
+      text-align: center;
+      color: white;
+      font-size:26px;
+    }
 }
 
 /* Social Ico */
@@ -1472,7 +1478,7 @@ body.sitesection-showbag .site-footer {
     background-color: white
 }
 
-.about-organisers .organiser .img-wrapper {
+.about-organizers .organizer .img-wrapper {
     width: 40px;
     height: 40px;
     float: left;
@@ -1480,17 +1486,17 @@ body.sitesection-showbag .site-footer {
     margin-right: 9px
 }
 
-.about-organisers .organiser .img-wrapper img {
+.about-organizers .organizer .img-wrapper img {
     display: block;
     max-width: 100%;
     height: auto
 }
 
-.about-organisers .organiser__name {
+.about-organizers .organizer__name {
     margin: 0
 }
 
-.about-organisers .organiser__twitter {
+.about-organizers .organizer__twitter {
     margin-bottom: 9px;
     font-size: 13px
 }

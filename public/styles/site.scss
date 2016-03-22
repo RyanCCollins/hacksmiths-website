@@ -13,7 +13,7 @@ The main SCSS file for everything, yep
 
 @include foundation-everything;
 
-@import 'vendor/entypo';
+@import 'vendor/_entypo';
 @import 'site/_layout';
 @import 'site/_buttons';
 

@@ -51,7 +51,6 @@ $color_bondi_blue_approx: #0086b9;
 %extend_3 {
 	background-image: linear-gradient(to bottom, $color_san_marino_approx 0, $color_azure_approx 100%);
 	background-repeat: repeat-x;
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff4264a9', endColorstr='#ff3b5997', GradientType=0);
 	color: $white;
 	background-color: $color_san_marino_approx;
 	border-color: $color_indigo_approx $color_san_marino_approx $color_azure_approx;
@@ -60,7 +59,6 @@ $color_bondi_blue_approx: #0086b9;
 //original selectors
 //.btn-facebook:active, .btn-facebook.active, .open .dropdown-toggle.btn-facebook
 %extend_4 {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
 	box-shadow: inset 0 1px 3px $black_12_5;
 	background-image: none;
 	background-color: $color_chambray_approx;
@@ -72,7 +70,6 @@ $color_bondi_blue_approx: #0086b9;
 %extend_5 {
 	background-image: linear-gradient(to bottom, $color_havelock_blue_approx 0, $color_havelock_blue_approx 100%);
 	background-repeat: repeat-x;
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff5096e8', endColorstr='#ff3988e5', GradientType=0);
 	color: $white;
 	background-color: $color_havelock_blue_approx;
 	border-color: $color_cornflower_blue_approx $color_havelock_blue_approx $color_havelock_blue_approx;
@@ -93,7 +90,6 @@ $color_bondi_blue_approx: #0086b9;
 %extend_7 {
 	background-image: linear-gradient(to bottom, $color_dodger_blue_approx 0, $color_cerulean_approx 100%);
 	background-repeat: repeat-x;
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff07bbff', endColorstr='#ff00abec', GradientType=0);
 	color: $white;
 	background-color: $color_dodger_blue_approx;
 	border-color: $color_scooter_approx $color_dodger_blue_approx $color_cerulean_approx;
@@ -113,7 +109,6 @@ $color_bondi_blue_approx: #0086b9;
 .btn-github {
 	background-image: linear-gradient(to bottom, $color_tuatara_approx 0, $color_mine_shaft_approx 100%);
 	background-repeat: repeat-x;
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff383838', endColorstr='#ff2e2e2e', GradientType=0);
 	color: $white;
 	background-color: $color_mine_shaft_approx;
 	border-color: $color_cape_cod_approx $color_mine_shaft_approx $color_shark_approx;
@@ -259,7 +254,6 @@ fieldset[disabled] {
 .btn-facebook {
 	background-image: linear-gradient(to bottom, $color_azure_approx 0, $color_chambray_approx 100%);
 	background-repeat: repeat-x;
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff3e5d9e', endColorstr='#ff385590', GradientType=0);
 	color: $white;
 	background-color: $color_azure_approx;
 	border-color: $color_san_marino_approx $color_azure_approx $color_chambray_approx;
@@ -323,7 +317,6 @@ fieldset[disabled] {
 .btn-google {
 	background-image: linear-gradient(to bottom, $color_havelock_blue_approx 0, $color_curious_blue_approx 100%);
 	background-repeat: repeat-x;
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff428de6', endColorstr='#ff3083e4', GradientType=0);
 	color: $white;
 	background-color: $color_havelock_blue_approx;
 	border-color: $color_havelock_blue_approx $color_havelock_blue_approx $color_mariner_approx;
@@ -387,7 +380,6 @@ fieldset[disabled] {
 .btn-twitter {
 	background-image: linear-gradient(to bottom, $color_cerulean_approx 0, $color_cerulean_approx 100%);
 	background-repeat: repeat-x;
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff00b2f6', endColorstr='#ff00a4e2', GradientType=0);
 	color: $white;
 	background-color: $color_cerulean_approx;
 	border-color: $color_dodger_blue_approx $color_cerulean_approx $color_cerulean_approx;
