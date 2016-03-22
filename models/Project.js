@@ -122,7 +122,9 @@ Project.schema.virtual('logoUrl').get(function() {
   if (this.photo.exists) return this._.photo.thumbnail(120, 120);
 });
 
-Project.schema.methods.getStatsFromAPI()
+Project.schema.methods.getStatsFromAPI = function() {
+
+}
 
 Project.schema.methods.refreshStats = function(callback) {
   var project = this;
