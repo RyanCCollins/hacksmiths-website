@@ -496,7 +496,7 @@ User.schema.method.verifyEmail = function(callback) {
   });
 }
 
-UserSchema.method.setRank = function() {
+User.schema.method.setRank = function() {
 
 }
 
