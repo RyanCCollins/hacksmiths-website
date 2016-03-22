@@ -1,59 +1,6 @@
+$break-small: 500px;
+$break-medium: 768px;
 
-/* Navigation Fixed */
-
-.cbp-af-header
-{
-    font-family: 'Source Sans Pro', sans-serif;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99999;
-    height: 140px;
-    overflow: hidden;
-    -webkit-transition: height 0.6s;
-    -moz-transition: height 0.6s;
-    transition: height 0.6s;
-}
-
-.cbp-af-header #logo img
-{
-    padding: 33px 20px 0px 0px;
-    max-width: 150px;
-}
-
-.cbp-af-header #nav a
-{
-    line-height: 60px;
-}
-
-/* Navigation effect on scroll down */
-
-.cbp-af-header.cbp-af-header-shrink
-{
-    height: 80px;
-    float: right;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-/* The button comes to the right place */
-
-.cbp-af-header.cbp-af-header-shrink .button
-{
-    margin-top: 30px;
-    display: block;
-}
-
-/* The links goes up */
-
-.cbp-af-header.cbp-af-header-shrink #nav a
-{
-    margin-top: -150px;
-}
 
 /* 04. PAGE 1 / HEADER SETTINGS ================================================== */
 
@@ -90,39 +37,54 @@ html, body {
 }
 .content-sub {
 	display:table-cell;
-    position:relative;
+  position:relative;
 	vertical-align:middle;
 	text-align:center;
 }
 
-.page1 {
+.main-header {
+
+}
+
+.main-header h4 {
+  color: #FFF;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 24px;
+ // Style from small to medium 500px-768px
+ @media screen and (max-width: $break-small) {
+   font-size: 16px;
+ }
+ // Style from small to medium 500px-768px
+ @media screen and (max-width: $break-medium) {
+   font-size: 20px;
+ }
 
 }
 
 
-.page1 h1 {
-    text-align: center;
-    padding: 0;
-    margin-top: 50px;
-    margin-bottom: 40px;
-}
-
-.page1 h2
-{
+.main-header h2 {
     color: #FFF;
     letter-spacing: 0px;
     text-align: center;
     width: 100%;
     padding-top: 30px;
     font-weight: 400;
-    font-size: 70px;
+    font-size: 88px;
     text-transform: uppercase;
+
+    // Style from small to medium 500px-768px
+    @media screen and (max-width: $break-small) {
+      font-size: 42px;
+    }
+    // Style from small to medium 500px-768px
+    @media screen and (max-width: $break-medium) {
+      font-size: 60px;
+    }
 }
-.page1 h4 {
-  color: #FFF;
-  text-transform: uppercase;
-  margin-top: 5px;
-}
+
+
+.main-header
 
 .h5-main-text
 {
@@ -181,32 +143,6 @@ html, body {
     transition: all 0.2s ease-in-out;
 }
 
-/* 05. MEDIA QUERIES  ============================================ */
-
-@media screen and (max-width: 768px)
-{
-    h2
-    {
-        font-size: 42px;
-    }
-    h3
-    {
-        font-size: 32px;
-    }
-
-    .page1-logo {
-        display: none;
-    }
-    .page1-h2 {
-        font-size: 22px;
-    }
-    .callout-text {
-        font-size: 16px;
-    }
-    .h5-main.text {
-        width: 85%;
-    }
-}
 
 .callout {
     margin-top:20px;
