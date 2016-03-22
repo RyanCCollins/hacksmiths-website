@@ -1,0 +1,62 @@
+{
+  "name": "hacksmiths-website",
+  "description": "",
+  "scripts": {
+  },
+  "env": {
+    "CLOUDINARY_API_KEY": {
+      "required": true
+    },
+    "CLOUDINARY_API_SECRET": {
+      "required": true
+    },
+    "CLOUDINARY_NAME": {
+      "required": true
+    },
+    "CLOUDINARY_URL": {
+      "required": true
+    },
+    "COOKIE_SECRET": {
+      "required": true
+    },
+    "GITHUB_ID": {
+      "required": true
+    },
+    "GITHUB_SECRET": {
+      "required": true
+    },
+    "MANDRILL_API_KEY": {
+      "required": true
+    },
+    "MANDRILL_PASSWORD": {
+      "required": true
+    },
+    "MANDRILL_USERNAME": {
+      "required": true
+    },
+    "NEW_RELIC_KEY": {
+      "required": true
+    },
+    "SESSION_SECRET": {
+      "required": true
+    },
+    "TOKEN_SECRET": {
+      "required": true
+    },
+    "TWITTER_ID": {
+      "required": true
+    },
+    "TWITTER_SECRET": {
+      "required": true
+    }
+  },
+  "addons": [
+    "mongolab",
+    "newrelic"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/nodejs"
+    }
+  ]
+}
