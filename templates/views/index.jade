@@ -5,22 +5,30 @@ include ../mixins/organizer
 block intro
 
 block content
+	.fullscreen.background.parallax
+		.content-main
+			.content-sub
+				.section.page1
+					img.page1-logo(src='/images/hacksmiths-logo.svg')
+					h2 Hacksmiths
+					h4.sub-header Helping People Help People
+					.button-join-us.div-button
+						a(href='/contact')
+							h5.h5-button-join-us GET IN TOUCH
+	//- section.page1
+	//- 	// Huge Title centered
+	//- 	.huge-title
+	//- 		img#bg(src='/images/bg.jpg')
+	//- 		img.page1-logo(src='/images/hacksmiths-logo.svg')
+	//- 		// This Logo is only displayed on Tablet/iPhone !
+	//- 		h2 HACKSMITHS
+	//- 		h5 Helping People Help People
+	//- 		.row.row-callout.hidden-xs
+	//- 			.medium-6.small-12.columns.small-centered.callout
+	//- 				h1.callout-text
+	//- 					| COMING SOON 04/02/2016
+	//- 					br
 
-	section.page1
-		// Huge Title centered
-		.huge-title
-			img.page1-logo(src='/images/hacksmiths-logo.svg')
-			// This Logo is only displayed on Tablet/iPhone !
-			h2 HACKSMITHS
-			h5 Helping People Help People
-			.row.row-callout.hidden-xs
-				.medium-6.small-12.columns.small-centered.callout
-					h1.callout-text
-						| COMING SOON 04/02/2016
-						br
-			.button-join-us.div-button
-				a(href='/contact')
-					h5.h5-button-join-us GET IN TOUCH
 	// Who we are section
 	section.page-1-section.who-we-are
 		.section-intro: .container

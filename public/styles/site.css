@@ -17850,11 +17850,40 @@ fieldset[disabled] .btn-main.active {
   margin-top: -150px; }
 
 /* 04. PAGE 1 / HEADER SETTINGS ================================================== */
-.page1 {
+/* background setup */
+.background {
   background: url("/images/bg.jpg") #131313;
-  background-size: cover;
+  background-repeat: no-repeat;
+  /* custom background-position */
+  background-position: 50% 50%;
+  /* ie8- graceful degradation */
+  background-position: 50% 50% \9  !important; }
+
+/* fullscreen setup */
+html, body {
+  /* give this to all tags from html to .fullscreen */
+  height: 100%; }
+
+.fullscreen,
+.content-main {
+  width: 100%;
   height: 100%;
-  position: relative; }
+  overflow: hidden; }
+
+.fullscreen.overflow,
+.fullscreen.overflow .content-main {
+  height: auto;
+  min-height: 100%; }
+
+/* content centering styles */
+.content-main {
+  display: table; }
+
+.content-sub {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center; }
 
 .page1 h1 {
   text-align: center;
@@ -17869,35 +17898,13 @@ fieldset[disabled] .btn-main.active {
   width: 100%;
   padding-top: 30px;
   font-weight: 400;
-  font-size: 70px; }
+  font-size: 70px;
+  text-transform: uppercase; }
 
-/* Don't display the logo for Phone */
-.logo-phone {
-  display: none; }
-
-/* Huge Title */
-.huge-title {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  width: 100%;
-  height: 450px; }
-  @media screen and (min-width: break-small) {
-    .huge-title {
-      margin-top: 10px; } }
-  .huge-title h5 {
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    font-size: 26px; }
-
-/* Social Ico */
-.social-ico {
-  float: right;
-  margin-top: 40px; }
+.page1 h4 {
+  color: #FFF;
+  text-transform: uppercase;
+  margin-top: 5px; }
 
 .h5-main-text {
   width: 50%;
@@ -17959,27 +17966,7 @@ fieldset[disabled] .btn-main.active {
   .callout-text {
     font-size: 16px; }
   .h5-main.text {
-    width: 85%; }
-  .huge-title {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 100%;
-    height: 250px;
-    padding: 20px; }
-  #dragit img {
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    bottom: 80px;
-    right: 0; }
-  #showhide .trigger {
-    display: none;
-    left: -1000px; } }
+    width: 85%; } }
 
 .callout {
   margin-top: 20px;
