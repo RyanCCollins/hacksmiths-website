@@ -22,6 +22,6 @@ The main SCSS file for everything, yep
 /* Import all of the various partial view
  * Scss files here
  */
-@import "site/views/_index";
+@import "site/views/index";
 @import "site/layout";
 @import "site/_calendar";

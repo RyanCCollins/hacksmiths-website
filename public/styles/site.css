@@ -18222,15 +18222,17 @@ fieldset[disabled] .btn-twitter {
   opacity: 1.0;
   color: white; }
 
-section .who-we-are {
-  background-color: #f3f3f3; }
+.page-1-section {
+  background-color: #fff;
+  padding-bottom: 3em;
+  padding-top: 3em; }
+  .page-1-section .colored {
+    background-color: #f3f3f3; }
 
 .section-intro {
   padding-bottom: 2em;
+  margin-top: 0.5em;
   text-align: center; }
-
-.section-intro h1 {
-  margin-bottom: .25em; }
 
 .section-intro .buttons > .btn {
   margin-right: 10px; }
@@ -18244,11 +18246,9 @@ section .who-we-are {
   position: relative;
   z-index: 1; }
 
-section .page-1-section {
-  padding-bottom: 3em;
-  padding-top: 5em section .page-1-section section .page-1-section --featured;
-    padding-top-padding-bottom: 5em;
-    padding-top-padding-top: 5em; }
+.page-1-section&--featured {
+  padding-bottom: 5em;
+  padding-top: 5em; }
 
 /* The main layout file contains CSS that was transferred
  * From the uhub site.  A lot of this is important layout stuff

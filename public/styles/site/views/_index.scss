@@ -249,17 +249,20 @@
 
     }
 }
-section .who-we-are {
-  background-color: #f3f3f3;
+
+.page-1-section {
+  .colored {
+    background-color: #f3f3f3;
+  }
+  background-color: #fff;
+  padding-bottom: 3em;
+  padding-top: 3em
 }
 
 .section-intro {
     padding-bottom: 2em;
-    text-align: center
-}
-
-.section-intro h1 {
-    margin-bottom: .25em
+    margin-top: 0.5em;
+    text-align: center;
 }
 
 .section-intro .buttons>.btn {
@@ -277,14 +280,12 @@ section .who-we-are {
     z-index: 1
 }
 
-section {
+
   .page-1-section {
-      padding-bottom: 3em;
-      padding-top: 5em
+
 
       &&--featured {
           padding-bottom: 5em;
           padding-top: 5em
       }
   }
-}
