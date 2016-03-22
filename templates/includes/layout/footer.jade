@@ -21,17 +21,17 @@ footer.footer-section
             a(href='/events') Events
           li
             a(href='/gallery') Project Gallery
-          if !user
-            li
-              a(href='/signin') Sign in
-            li
-              a(href='/join') Join
-          else if user && !user.canAccessKeystone
-            li
-              a(href='/me') View your profile
-          else if user && user.canAccessKeystone
-            li
-              a(href='/keystone') Admin Area
+          //- if !user
+          //-   li
+          //-     a(href='/signin') Sign in
+          //-   li
+          //-     a(href='/join') Join
+          //- else if user && !user.canAccessKeystone
+          //-   li
+          //-     a(href='/me') View your profile
+          //- else if user && user.canAccessKeystone
+          //-   li
+          //-     a(href='/keystone') Admin Area
     .col-md-3
       h3.subheader Other
         ul
@@ -39,9 +39,9 @@ footer.footer-section
             a(href='/contact') Contact Us
           li
             a(href='/about') About us
-          li
-            a(href='/privacy') Privacy Policy
-          li
+          //li
+            //a(href='/privacy') Privacy Policy
+          
         
   .row
     p.slogan Hacksmiths | Helping People Help People
