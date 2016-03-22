@@ -325,7 +325,7 @@ User.add({
   rank: {
     type: Number,
     noedit: true,
-    default: true
+    default: 0
   },
   isTopContributor: {
     type: Boolean,
