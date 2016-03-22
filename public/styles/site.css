@@ -16416,6 +16416,9 @@ a[class^="dicon"] {
 .dicon-cc-remix:before {
   content: "\\1F54F"; }
 
+/* The styles were taken from the original layout by Scraig
+ *
+ */
 /*
 
     EXHO TEMPLATE  V1.0 BY SUPVIEW.BE
@@ -16429,6 +16432,10 @@ a[class^="dicon"] {
     05. Media Queries Settings
 
 */
+.page1, h1, h2, h3, h4, h5, p {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+/* Paragrah */
 p {
   color: #000 !important; }
 
@@ -16458,15 +16465,6 @@ p {
   font-weight: 700;
   src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGBgDywzySrQSFSEUM6OqW_g.woff") format("woff"); }
 
-/* 02. GENERALS SETTINGS ================================================== */
-/* Container  */
-/* Clear floats of children */
-/* Sides */
-/* Selected text Color */
-.page1, h1, h2, h3, h4, h5, p {
-  font-family: 'Source Sans Pro', sans-serif; }
-
-/* Paragrah */
 p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
@@ -16501,201 +16499,10 @@ p {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-/* Navigation Fixed */
-.cbp-af-header {
-  font-family: 'Source Sans Pro', sans-serif;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99999;
-  height: 140px;
-  overflow: hidden;
-  -webkit-transition: height 0.6s;
-  -moz-transition: height 0.6s;
-  transition: height 0.6s; }
-
-.cbp-af-header #logo img {
-  padding: 33px 20px 0px 0px;
-  max-width: 150px; }
-
-.cbp-af-header #nav a {
-  line-height: 60px; }
-
-/* Navigation effect on scroll down */
-.cbp-af-header.cbp-af-header-shrink {
-  height: 80px;
-  float: right;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-
-/* The button comes to the right place */
-.cbp-af-header.cbp-af-header-shrink .button {
-  margin-top: 30px;
-  display: block; }
-
-/* The links goes up */
-.cbp-af-header.cbp-af-header-shrink #nav a {
-  margin-top: -150px; }
-
-/* 04. PAGE 1 / HEADER SETTINGS ================================================== */
-.page1 {
-  background: url("/images/bg.jpg") #131313;
-  background-size: cover;
-  height: 100%;
-  position: relative; }
-
-.page1 h1 {
-  text-align: center;
-  padding: 0;
-  margin-top: 50px;
-  margin-bottom: 40px; }
-
-.page1 h2 {
-  color: #FFF;
-  letter-spacing: 0px;
-  text-align: center;
-  width: 100%;
-  padding-top: 30px;
-  font-weight: 400;
-  font-size: 70px; }
-
-/* Don't display the logo for Phone */
-.logo-phone {
-  display: none; }
-
-/* Huge Title */
-.huge-title {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  width: 100%;
-  height: 450px; }
-  @media screen and (min-width: break-small) {
-    .huge-title {
-      margin-top: 10px; } }
-  .huge-title h5 {
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    font-size: 26px; }
-
-/* Social Ico */
-.social-ico {
-  float: right;
-  margin-top: 40px; }
-
-.h5-main-text {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px; }
-
-.page1-logo {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  height: 85px; }
-
-.row-nav {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto; }
-
-.row-callout {
-  max-height: 300px; }
-
-.button-join-us {
-  margin-top: 45px;
-  text-align: center; }
-
-#countdown {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  font-size: 70px;
-  align: center;
-  color: #7acff0; }
-
-.h5-button-join-us {
-  margin-top: auto;
-  margin-bottom: auto;
-  font-weight: 600;
-  background-clip: padding-box;
-  background-color: #5ac6ff;
-  color: #FFF;
-  border-radius: 4px;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  margin: 15px auto;
-  padding: 10px 0 12px 0;
-  letter-spacing: 3px;
-  text-shadow: none;
-  text-transform: uppercase;
-  width: 300px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-
-/* 05. MEDIA QUERIES  ============================================ */
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 42px; }
-  h3 {
-    font-size: 32px; }
-  .page1-logo {
-    display: none; }
-  .page1-h2 {
-    font-size: 22px; }
-  .callout-text {
-    font-size: 16px; }
-  .h5-main.text {
-    width: 85%; }
-  .huge-title {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 100%;
-    height: 250px;
-    padding: 20px; }
-  #dragit img {
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    bottom: 80px;
-    right: 0; }
-  #showhide .trigger {
-    display: none;
-    left: -1000px; } }
-
-.callout {
-  margin-top: 20px;
-  background: rgba(15, 31, 56, 0.3);
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-.callout-text {
-  font-size: 40px;
-  opacity: 1.0;
-  color: white; }
-
+/* The main layout file contains CSS that was transferred
+ * From the uhub site.  A lot of this is important layout stuff
+ * So treat with caution if altering.
+ */
 address {
   margin-bottom: 18px;
   font-style: normal;
@@ -18226,91 +18033,9 @@ fieldset[disabled] .btn-twitter {
     background-color: #00b2f6;
     border-color: #00b2f6; }
 
-/*
-
-    EXHO TEMPLATE  V1.0 BY SUPVIEW.BE
-
-
-    01. Font Face
-    02. Generals Settings
-    03. Header Section Settings
-    04. Navigation Settings
-    04. Page1 / Header Section Settings
-    05. Media Queries Settings
-
-*/
-p {
-  color: #000 !important; }
-
-/* Mixin for vertical alignment */
-/* 01. FONT FACE ================================================== */
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 200;
-  src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGEzfSP8PFPIaW8d4wHl9LSw.woff") format("woff"); }
-
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlDLXPPWpYIJRcQ99gLLWTOQ.woff") format("woff"); }
-
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 600;
-  src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGNF2eBBnhZOFf_rblGEjGiI.woff") format("woff"); }
-
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGBgDywzySrQSFSEUM6OqW_g.woff") format("woff"); }
-
-/* 02. GENERALS SETTINGS ================================================== */
-/* Container  */
-/* Clear floats of children */
-/* Sides */
-/* Selected text Color */
-.page1, h1, h2, h3, h4, h5, p {
-  font-family: 'Source Sans Pro', sans-serif; }
-
-/* Paragrah */
-p {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: normal;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 30px; }
-
-.top-bar {
-  height: 80px;
-  background: transparent !important;
-  background-color: rgba(0, 0, 0, 0.9); }
-  .top-bar #logo {
-    height: 22px;
-    margin-left: 20px; }
-
-.top-bar-section ul li {
-  background: transparent; }
-
-.top-bar-section li:not(.has-form) a:not(.button) {
-  background: transparent; }
-
-.top-bar-right {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-.top-bar-left {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
+/* Import all of the various partial view
+ * Scss files here
+ */
 /* Navigation Fixed */
 .cbp-af-header {
   font-family: 'Source Sans Pro', sans-serif;
@@ -18425,15 +18150,6 @@ p {
   margin-top: 45px;
   text-align: center; }
 
-#countdown {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  font-size: 70px;
-  align: center;
-  color: #7acff0; }
-
 .h5-button-join-us {
   margin-top: auto;
   margin-bottom: auto;
@@ -18506,6 +18222,38 @@ p {
   opacity: 1.0;
   color: white; }
 
+section .who-we-are {
+  background-color: #f3f3f3; }
+
+.section-intro {
+  padding-bottom: 2em;
+  text-align: center; }
+
+.section-intro h1 {
+  margin-bottom: .25em; }
+
+.section-intro .buttons > .btn {
+  margin-right: 10px; }
+
+.section-intro .lead {
+  max-width: 738px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.section-content {
+  position: relative;
+  z-index: 1; }
+
+section .page-1-section {
+  padding-bottom: 3em;
+  padding-top: 5em section .page-1-section section .page-1-section --featured;
+    padding-top-padding-bottom: 5em;
+    padding-top-padding-top: 5em; }
+
+/* The main layout file contains CSS that was transferred
+ * From the uhub site.  A lot of this is important layout stuff
+ * So treat with caution if altering.
+ */
 address {
   margin-bottom: 18px;
   font-style: normal;

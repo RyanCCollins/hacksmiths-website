@@ -21,20 +21,24 @@ block content
 			.button-join-us.div-button
 				a(href='/contact')
 					h5.h5-button-join-us GET IN TOUCH
-	.page-intro: .container
-		h1.page-title About
-		p.lead The Hacksmiths are a group of software professionals working collaboratively in a virtual environment in an effort to solve real world problems through the development of software.
-		p.lead.small We build tools designed to help non-profit organizations streamline their philanthropic efforts, utilizing industry best practices and advanced software development methodologies.
-	.page-content
-		.section.highlight: .container
-			h2.text-center Founders
-			.row.about-organizers
-				.col-sm-3
-				each org in organizers
-					.col-sm-3
-						+organizer(org)
-				.col-sm-3
+	// Who we are section
+	section.who-we-are
+		.section-intro: .container
+			h1.page-title Who we Are
+			p.lead The Hacksmiths are a group of software professionals working collaboratively in a virtual environment in an effort to solve real world problems through the development of software.
+			p.lead.small We build tools designed to help non-profit organizations streamline their philanthropic efforts, utilizing industry best practices and advanced software development methodologies.
+		.section-content
+			.page-1-section.highlight: .container
+				h2.text-center Founders
+				.row.about-organizers
+					.col-sm-2
+					each org in organizers
+						.col-sm-5
+							+organizer(org)
+					.col-sm-2
+	
 
+		
 			//- CODE
 			.section
 				.row

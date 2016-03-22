@@ -1,0 +1,106 @@
+/* The styles were taken from the original layout by Scraig
+ *
+ */
+/*
+
+    EXHO TEMPLATE  V1.0 BY SUPVIEW.BE
+
+
+    01. Font Face
+    02. Generals Settings
+    03. Header Section Settings
+    04. Navigation Settings
+    04. Page1 / Header Section Settings
+    05. Media Queries Settings
+
+*/
+
+
+.page1, h1, h2, h3, h4, h5, p {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/* Paragrah */
+$primary-color:#7acff0;
+
+$text-gray:#bfbebe;
+
+$break-small:600px;
+$break-medium:768px;
+$break-large:1024px;
+p {
+  color: #000 !important;
+}
+/* Mixin for vertical alignment */
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* 01. FONT FACE ================================================== */
+
+@font-face{
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 200;
+    src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGEzfSP8PFPIaW8d4wHl9LSw.woff") format("woff");
+}
+
+@font-face{
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlDLXPPWpYIJRcQ99gLLWTOQ.woff") format("woff");
+}
+
+@font-face{
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGNF2eBBnhZOFf_rblGEjGiI.woff") format("woff");
+}
+
+@font-face{
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGBgDywzySrQSFSEUM6OqW_g.woff") format("woff");
+}
+p
+{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    color: rgba(255,255,255,0.80);
+    line-height: 30px;
+}
+
+.top-bar {
+  height: 80px;
+  background: transparent !important;
+  background-color: rgba(0,0,0,0.9);
+  #logo {
+    height:  22px;
+    margin-left: 20px;
+  }
+
+}
+
+.top-bar-section ul li {
+   background: transparent;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: transparent;
+}
+
+.top-bar-right {
+ @include vertical-align();
+}
+
+.top-bar-left {
+  @include vertical-align();
+}

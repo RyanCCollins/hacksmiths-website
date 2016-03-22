@@ -14,14 +14,14 @@ The main SCSS file for everything, yep
 @include foundation-everything;
 
 @import 'vendor/_entypo';
+@import 'site/main-layout';
 @import 'site/_layout';
 @import 'site/_buttons';
 
 
-
-// Site Styles
-// ===========
-
-// Add your own site style includes here
+/* Import all of the various partial view
+ * Scss files here
+ */
+@import "site/views/_index";
 @import "site/layout";
 @import "site/_calendar";
