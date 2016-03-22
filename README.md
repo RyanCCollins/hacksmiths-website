@@ -1,6 +1,6 @@
-# Hacksmiths Website
+# Hacksmiths Hackathon Coordinator Website
 
-API, CMS, and backend for the Hacksmiths website
+API, CMS, and backend for the Hacksmiths.io website
 
 ## Getting Started
 
@@ -60,7 +60,7 @@ In production, it's a good idea to run nginx seperately from within a separate D
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.  
 
 ## Acknowledgments
 
