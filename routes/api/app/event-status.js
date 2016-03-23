@@ -28,7 +28,7 @@ exports = module.exports = function(req, res) {
 				.where('state', 'past')
 				.sort('-startDate')
 				.exec(function(err, event) {
-					data.events.last = event ? event.toJSON() : false;
+					data.events.last = event ? event.toJSON() : {};
 					return next();
 				});
 		},
@@ -38,7 +38,7 @@ exports = module.exports = function(req, res) {
 				.sort('-startDate')
 				.populate('teams project sponsors')
 				.exec(function(err, event) {
-					data.events.next = event ? event.toJSON() : false;
+					data.events.next = event ? event.toJSON() : {};
 					console.log(event);
 					return next();
 				});
@@ -93,8 +93,8 @@ exports = module.exports = function(req, res) {
 				killSwitch: false
 			},
 			events: {
-				last: false,
-				next: false
+				last: {},
+				next: {}
 			},
 			rsvp: {
 				responded: false,
