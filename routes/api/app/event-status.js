@@ -44,9 +44,9 @@ exports = module.exports = function(req, res) {
 				});
 		},
 		function(next) {
-			if (!data.events.last) return next();
+			if (!data.events.next) return next();
 			keystone.list('Team').model.find()
-				.where('event', data.events.last)
+				.where('event', data.events.next)
 				.populate('members')
 				.sort('title')
 				.exec(function(err, teams) {
@@ -58,10 +58,10 @@ exports = module.exports = function(req, res) {
 		},
 		// function(next) {
 		// 	if (!data.events.next) return next();
-		// 	keystone.list('Schedule').model.find()
+		// 	keystone.list('Team').model.find()
 		// 		.where('event', data.events.next)
-		// 		.populate('items')
-		// 		.populate('who')
+		// 		.populate('members')
+		// 		.sort('title')
 		// 		.exec(function(err, scheduleItems) {
 		// 			data.scheduleItems.next = scheduleItems && scheduleItems.length ?
 		// 				scheduleItems.map(function(i) {
