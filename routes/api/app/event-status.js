@@ -39,20 +39,7 @@ exports = module.exports = function(req, res) {
 				.populate('teams project sponsors')
 				.exec(function(err, event) {
 					data.events.next = event ? event.toJSON() : false;
-					console.log("Returning the event: " + event);
-					return next();
-				});
-		},
-		function(next) {
-			if (!data.events.last) return next();
-			keystone.list('Team').model.find()
-				.where('event', data.events.last)
-				.populate('members')
-				.sort('title')
-				.exec(function(err, teams) {
-					data.teams.current = teams.map(function(i) {
-						return i.toJSON();
-					});
+					console.log("Returning the event: " + data.events.next);
 					return next();
 				});
 		},
@@ -108,7 +95,7 @@ exports = module.exports = function(req, res) {
 
 				title: event.title,
 				organization: event.organization,
-				featurImage: event.featureImage,
+				featureImage: event.featureImage,
 				sponsors: event.sponsors,
 
 				starts: event.startDate,
