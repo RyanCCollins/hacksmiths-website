@@ -56,20 +56,20 @@ exports = module.exports = function(req, res) {
 					return next();
 				});
 		},
-		function(next) {
-			if (!data.events.next) return next();
-			keystone.list('Schedule').model.find()
-				.where('event', data.events.next)
-				.populate('items')
-				.populate('who')
-				.exec(function(err, scheduleItems) {
-					data.scheduleItems.next = scheduleItems && scheduleItems.length ?
-						scheduleItems.map(function(i) {
-							return i.toJSON();
-						}) : false;
-					return next();
-				});
-		},
+		// function(next) {
+		// 	if (!data.events.next) return next();
+		// 	keystone.list('Schedule').model.find()
+		// 		.where('event', data.events.next)
+		// 		.populate('items')
+		// 		.populate('who')
+		// 		.exec(function(err, scheduleItems) {
+		// 			data.scheduleItems.next = scheduleItems && scheduleItems.length ?
+		// 				scheduleItems.map(function(i) {
+		// 					return i.toJSON();
+		// 				}) : false;
+		// 			return next();
+		// 		});
+		// },
 		function(next) {
 			if (!req.body.user) return next();
 			if (!data.events.next) return next();
