@@ -4,11 +4,11 @@ include ../../mixins/link
 
 block intro
 	.page-intro: .container
-		h1 Links
+		h1 Community Links
 		if data.tag
-			p.lead Community posted Links posted under <strong>#{data.tag.name}</strong>
+			p.lead Community links posted under <strong>#{data.tag.name}</strong>
 		else
-			p.lead Community posted links about software development, the community or anything else we think is important.
+			p.lead Community links about software development, the community or anything else we think is important.
 		//- .buttons
 			if !user
 				a(href='/join').btn.btn-primary Join Hacksmiths
