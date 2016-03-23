@@ -28,7 +28,7 @@ exports = module.exports = function(req, res) {
 				.where('state', 'past')
 				.sort('-startDate')
 				.exec(function(err, event) {
-					data.events.last = event ? event.toJSON() : {};
+					data.events.last = event ? event.toJSON() : false;
 					return next();
 				});
 		},
@@ -38,8 +38,21 @@ exports = module.exports = function(req, res) {
 				.sort('-startDate')
 				.populate('teams project sponsors')
 				.exec(function(err, event) {
-					data.events.next = event ? event.toJSON() : {};
-					console.log(event);
+					data.events.next = event ? event.toJSON() : false;
+					console.log("Returning the event: " + event);
+					return next();
+				});
+		},
+		function(next) {
+			if (!data.events.last) return next();
+			keystone.list('Team').model.find()
+				.where('event', data.events.last)
+				.populate('members')
+				.sort('title')
+				.exec(function(err, teams) {
+					data.teams.current = teams.map(function(i) {
+						return i.toJSON();
+					});
 					return next();
 				});
 		},
@@ -56,20 +69,6 @@ exports = module.exports = function(req, res) {
 					return next();
 				});
 		},
-		// function(next) {
-		// 	if (!data.events.next) return next();
-		// 	keystone.list('Team').model.find()
-		// 		.where('event', data.events.next)
-		// 		.populate('members')
-		// 		.sort('title')
-		// 		.exec(function(err, scheduleItems) {
-		// 			data.scheduleItems.next = scheduleItems && scheduleItems.length ?
-		// 				scheduleItems.map(function(i) {
-		// 					return i.toJSON();
-		// 				}) : false;
-		// 			return next();
-		// 		});
-		// },
 		function(next) {
 			if (!req.body.user) return next();
 			if (!data.events.next) return next();
@@ -93,8 +92,8 @@ exports = module.exports = function(req, res) {
 				killSwitch: false
 			},
 			events: {
-				last: {},
-				next: {}
+				last: false,
+				next: false
 			},
 			rsvp: {
 				responded: false,
@@ -109,6 +108,7 @@ exports = module.exports = function(req, res) {
 
 				title: event.title,
 				organization: event.organization,
+				featurImage: event.featureImage,
 				sponsors: event.sponsors,
 
 				starts: event.startDate,
