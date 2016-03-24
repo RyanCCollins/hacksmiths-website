@@ -3,6 +3,10 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
+	if (!req.body.data || !req.user) {
+		return;
+	}
+
 	console.log("User ID is", req.user._id);
 	console.log("The event is", req.body.data.event);
 
@@ -28,8 +32,14 @@ exports = module.exports = function(req, res) {
 					rsvp.set({
 						attending: req.body.data.attending
 					}).save(function(err) {
-						if (err) return res.apiResponse({ success: false, err: err });
-						return res.apiResponse({ success: true, attending: req.body.data.attending });
+						if (err) return res.apiResponse({
+							success: false,
+							err: err
+						});
+						return res.apiResponse({
+							success: true,
+							attending: req.body.data.attending
+						});
 					});
 
 				} else {
@@ -39,8 +49,13 @@ exports = module.exports = function(req, res) {
 						who: req.user,
 						attending: req.body.data.attending
 					}).save(function(err) {
-						if (err) return res.apiResponse({ success: false, err: err });
-						return res.apiResponse({ success: true });
+						if (err) return res.apiResponse({
+							success: false,
+							err: err
+						});
+						return res.apiResponse({
+							success: true
+						});
 					});
 
 				}

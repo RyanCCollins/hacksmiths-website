@@ -41,17 +41,23 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
-		// GraphQL
-	app.use('/api/graphql', graphqlHTTP({ schema: graphQLSchema, graphiql: true }));
+	// GraphQL
+	app.use('/api/graphql', graphqlHTTP({
+		schema: graphQLSchema,
+		graphiql: true
+	}));
 
-	app.use(subdomain({ base: IP, removeWWW: true}));
+	app.use(subdomain({
+		base: IP,
+		removeWWW: true
+	}));
 
 	// Allow cross-domain requests (development only)
 	if (process.env.NODE_ENV !== 'production') {
 		console.log('------------------------------------------------');
 		console.log('Notice: Enabling CORS for development.');
 		console.log('------------------------------------------------');
-		app.all('*', function (req, res, next) {
+		app.all('*', function(req, res, next) {
 			res.header('Access-Control-Allow-Origin', '*');
 			res.header('Access-Control-Allow-Methods', 'GET, POST');
 			res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -68,7 +74,7 @@ exports = module.exports = function(app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 
-		// Website
+	// Website
 	app.get('/', routes.views.index);
 	app.get('/events', routes.views.events);
 	app.get('/events/:event', routes.views.event);
@@ -102,10 +108,10 @@ exports = module.exports = function(app) {
 
 
 
-		// API
+	// API
 	app.all('/api*', keystone.middleware.api);
 	app.all('/api/me/event', routes.api.me.event);
-
+	app.all('/api/me/profile', routes.api.me.profile);
 
 	app.all('/api/app/');
 	app.all('/api/stats', routes.api.stats);
@@ -118,7 +124,8 @@ exports = module.exports = function(app) {
 	app.all('/api/app/signin-email', routes.api.app['signin-email']);
 	app.all('/api/app/signup-email', routes.api.app['signup-email']);
 	app.all('/api/app/signin-service', routes.api.app['signin-service']);
-	app.all('/api/app/signin-service-check', routes.api.app['signin-service-check']);
+	app.all('/api/app/signin-service-check', routes.api.app[
+		'signin-service-check']);
 	app.all('/api/app/signin-recover', routes.api.app['signin-recover']);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
