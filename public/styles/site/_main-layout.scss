@@ -330,3 +330,13 @@ $padding-levels: 12;
 @for $i from 1 to $padding-levels - 1 {
   .pad-#{$i} { padding: #{$i}em; }
 }
+
+
+.background-off-white {
+  background-color: #fafbfc;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}

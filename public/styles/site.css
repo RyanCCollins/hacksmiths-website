@@ -24106,6 +24106,13 @@ blockquote p {
 .pad-10 {
   padding: 10em; }
 
+.background-off-white {
+  background-color: #fafbfc; }
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0; }
+
 /* The main layout file contains CSS that was transferred
  * From the uhub site.  A lot of this is important layout stuff
  * So treat with caution if altering.
@@ -25540,9 +25547,7 @@ html, body {
   color: white; }
 
 .page-1-section {
-  background-color: #fff;
-  padding-bottom: 3em;
-  padding-top: 3em; }
+  background-color: #fff; }
   .page-1-section .colored {
     background-color: #f3f3f3; }
 

@@ -18,18 +18,19 @@ block content
 
 	// Who we are section
 	section.page-1-section.who-we-are
-		.section-intro: .container
-			h1.section-title Who We Are
-			p.lead The Hacksmiths are a group of software professionals working collaboratively in a virtual environment in an effort to solve real world problems through the development of software.
-		.section-content
-			.page-1-section.highlight: .container
-				h2.text-center Founders
-				.row.about-organizers
-					.col-sm-1
-					each org in organizers
-						.col-sm-5
-							+organizer(org)
-					.col-sm-1
+		.contain
+			.section-intro: .container
+				h1.section-title Who We Are
+				p.lead The Hacksmiths are a group of software professionals working collaboratively in a virtual environment in an effort to solve real world problems through the development of software.
+			.section-content
+				.page-1-section.highlight: .container
+					h2.text-center Founders
+					.row.about-organizers
+						.col-sm-1
+						each org in organizers
+							.col-sm-5
+								+organizer(org)
+						.col-sm-1
 			//- .row
 			//- 	.container
 			//- 		div.hr-title
@@ -41,33 +42,35 @@ block content
 			//- 			img(src=member.image, alt='Hacksmiths member - ' + member.name, width=40, height=40).img-circle
 	hr
 	section.page-1-section.what-we-do
-		.section-intro: .container
-			h1.section-title What We Do
-			p.lead We build tools designed to help non-profit organizations streamline their philanthropic efforts, utilizing industry best practices and advanced software development methodologies.
-		.section-content
-			.page-1-section.highlight: .container
-				.row
-					.col-md-12
-						.col-md-4
-							div.panel.radius.what-we-do-item
-								.panel-content
-									i.icon-technology.big-icon.centered
-									h4.text-center We Help People 
-									p Our first priority is to help people.  We provide the organizations we work with mission critical software to help people who help people.
-						.col-md-4
-							div.panel.radius.what-we-do-item
-								.panel-content
-									i.icon-shapes-1.big-icon.centered
-									h4.text-center We Work with Non Profits
-									p We work with non profit organizations who work with the sick and hungry to make their live's better.  Our platform was created out of neccesity and a desire to use our skills for good.  
-									
-						.col-md-4
-							div.panel.radius.what-we-do-item
-								.panel-content
-									i.icon-computer.big-icon.centered
-								h4.text-center We Build Software
-								p Our experienced developers are skilled in creating web, desktop and mobile software, advanced data collection and machine learning systems.
-								p We work from the ground up, designing and developing requirements custom tailored to the needs of the organizations we work with.
+		.contain
+			.section-intro: .container
+				h1.section-title What We Do
+				p.lead We build tools designed to help non-profit organizations streamline their philanthropic efforts, utilizing industry best practices and advanced software development methodologies.
+			.section-content
+				.page-1-section.highlight: .container
+					.row
+						.col-md-12
+							.col-md-4
+								div.panel.radius.what-we-do-item
+									.panel-content
+										i.icon-technology.big-icon.centered
+										h4.text-center We Help People 
+										p.text-gray Our first priority is to solve real problems and create tools to help real people.
+										p.text-gray We provide the organizations we work with mission critical software to help people who help people.
+							.col-md-4
+								div.panel.radius.what-we-do-item
+									.panel-content
+										i.icon-shapes-1.big-icon.centered
+										h4.text-center We Work with Non Profits
+										p.text-gray We work with non profit organizations who work with the sick and hungry to make their live's better.  Our platform was created out of neccesity and a desire to use our skills for good.  
+										
+							.col-md-4
+								div.panel.radius.what-we-do-item
+									.panel-content
+										i.icon-computer.big-icon.centered
+									h4.text-center We Build Software
+									p.text-gray Our experienced developers are skilled in creating web, desktop and mobile software, advanced data collection and machine learning systems.
+									p.text-gray We work from the ground up, designing and developing requirements custom tailored to the needs of the organizations we work with.
 	
 				.row
 					.col-md-12.space-3
@@ -78,23 +81,24 @@ block content
 										em Our mission is simple.  We use our skills in order to solve real problems.  We strive to implement cutting edge technologies and industry best practices in all of our work.
 				.row.space-3
 					.col-md-12.text-center
-						h3.pad-5 Non-profit?  Need our help?
+						h3.pad-1 Non-profit?  Need our help?
 						a(href='/contact')
 							div.button.large.radius Get in touch
 		hr
 		section.page-1-section.our-work
-			.section-intro: .container
-				h1.section-title Our Work
-				p.lead We build first class web and mobile software using the latest and greatest tech.
-			.section-content
-				.page-1-section.highlight: .container
-					.row
-						.col-md-12
-							.col-md-6
-							.col-md-6
+			.contain
+				.section-intro: .container
+					h1.section-title Our Work
+					p.lead We build first class web and mobile software using the latest and greatest tech.
+				.section-content
+					.page-1-section.highlight: .container
+						.row
+							.col-md-12
+								.col-md-6
+								.col-md-6
 							
 							
-		hr
+		//- hr
 		//- section.page-1-section.want-to-help
 		//- 	.section-intro: .container
 		//- 		h1.section-title Want to Help?
@@ -139,14 +143,15 @@ block content
 		//- 				.col-md-4
 	hr
 	section.page-1-section.twitter-feed
-		.section-intro: container
-			h1.section-title What People are Saying
-		.section-content
-			.row
-				.col-md-3
-				.col-md-6.text-center
-					a.twitter-timeline(href='https://twitter.com/search?q=%40teamhacksmiths', data-widget-id='712395084411568128') Tweets about @teamhacksmiths
-				.col-md-3
+		.contain
+			.section-intro: container
+				h1.section-title What People are Saying
+			.section-content
+				.row
+					.col-md-3
+					.col-md-6.text-center
+						a.twitter-timeline(href='https://twitter.com/search?q=%40teamhacksmiths', data-widget-id='712395084411568128') Tweets about @teamhacksmiths
+					.col-md-3
 
 block js
 	// twitter
