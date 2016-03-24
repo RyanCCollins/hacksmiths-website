@@ -8,7 +8,6 @@ exports = module.exports = function(req, res) {
 
 	var data = {
 		events: {},
-		scheduleItems: {},
 		teams: {},
 		rsvp: {}
 	};
@@ -115,7 +114,7 @@ exports = module.exports = function(req, res) {
 				spotsAvailable: event.spotsAvailable,
 				spotsRemaining: event.spotsRemaining,
 
-				scheduleItems: current ? data.scheduleItems.next : data.scheduleItems.last
+
 			};
 			eventData.hash = crypto.createHash('md5').update(JSON.stringify(
 				eventData)).digest('hex');

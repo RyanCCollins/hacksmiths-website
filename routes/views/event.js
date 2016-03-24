@@ -25,7 +25,7 @@ exports = module.exports = function(req, res) {
 				if (!event) return res.notfound('Event not found');
 
 				locals.event = event;
-				locals.event.populateRelated('scheduleItems[who] rsvps[who]', next);
+				locals.event.populateRelated('rsvps[who]', next);
 
 			});
 	});
