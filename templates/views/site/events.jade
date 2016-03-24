@@ -5,13 +5,13 @@ block intro
 	.container
 		.page-intro
 			h1.page-title Events
-			p.lead During each event, we work closely with a non-profit organization to create real software that will be used to help people across the world.  Want to help?
+			p.lead We are working closely with non profits and charitable organizations in an effort to use our skills for social good.
 				p.lead
-					if !user
-						a(href='/join').js-auth-trigger Join&nbsp;us&nbsp;
-					else
-						| RSVP&nbsp
-					| for our next event. Stay in the loop -
+					//- if !user
+					//- 	a(href='/join').js-auth-trigger Join&nbsp;us&nbsp;
+					//- else
+					//- 	| RSVP&nbsp
+					| Stay in the loop -
 					a(href='http://twitter.com/teamhacksmiths', target='_blank') follow us on twitter
 
 		if upcomingEvent
