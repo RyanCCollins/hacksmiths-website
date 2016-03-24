@@ -23845,742 +23845,6 @@ table.hover tr:nth-of-type(even):hover {
 .clearfix::after {
   clear: both; }
 
-@font-face {
-  font-family: "EntypoRegular";
-  src: url("../fonts/entypo/entypo.eot");
-  src: url("../fonts/entypo/entypo.eot#iefix") format("embedded-opentype"), url("../fonts/entypo/entypo.woff") format("woff"), url("../fonts/entypo/entypo.ttf") format("truetype"), url("../fonts/entypo/entypo.svg#EntypoRegular") format("svg");
-  font-style: normal;
-  font-weight: normal; }
-
-[class^="dicon"],
-[class*=" dicon"] {
-  position: relative;
-  display: inline-block;
-  font-family: "EntypoRegular";
-  font-size: 2em;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 0;
-  color: inherit;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  [class^="dicon"].dicon-hover:hover,
-  [class*=" dicon"].dicon-hover:hover {
-    color: inherit; }
-
-a[class^="dicon"] {
-  color: inherit; }
-  a[class^="dicon"]:hover {
-    color: inherit; }
-
-.dicon-phone:before {
-  content: "\\1F4DE"; }
-
-.dicon-mobile:before {
-  content: "\\1F4F1"; }
-
-.dicon-mouse:before {
-  content: "\\E789"; }
-
-.dicon-address:before {
-  content: "\\E723"; }
-
-.dicon-mail:before {
-  content: "\\2709"; }
-
-.dicon-paper-plane:before {
-  content: "\\1F53F"; }
-
-.dicon-pencil:before {
-  content: "\\270E"; }
-
-.dicon-feather:before {
-  content: "\\2712"; }
-
-.dicon-attach:before {
-  content: "\\1F4CE"; }
-
-.dicon-inbox:before {
-  content: "\\E777"; }
-
-.dicon-reply:before {
-  content: "\\E712"; }
-
-.dicon-reply-all:before {
-  content: "\\E713"; }
-
-.dicon-forward:before {
-  content: "\\27A6"; }
-
-.dicon-user:before {
-  content: "\\1F464"; }
-
-.dicon-users:before {
-  content: "\\1F465"; }
-
-.dicon-add-user:before {
-  content: "\\E700"; }
-
-.dicon-vcard:before {
-  content: "\\E722"; }
-
-.dicon-export:before {
-  content: "\\E715"; }
-
-.dicon-location:before {
-  content: "\\E724"; }
-
-.dicon-map:before {
-  content: "\\E727"; }
-
-.dicon-compass:before {
-  content: "\\E728"; }
-
-.dicon-direction:before {
-  content: "\\27A2"; }
-
-.dicon-hair-cross:before {
-  content: "\\1F3AF"; }
-
-.dicon-share:before {
-  content: "\\E73C"; }
-
-.dicon-shareable:before {
-  content: "\\E73E"; }
-
-.dicon-heart:before {
-  content: "\\2665"; }
-
-.dicon-heart-empty:before {
-  content: "\\2661"; }
-
-.dicon-star:before {
-  content: "\\2605"; }
-
-.dicon-star-empty:before {
-  content: "\\2606"; }
-
-.dicon-thumbs-up:before {
-  content: "\\1F44D"; }
-
-.dicon-thumbs-down:before {
-  content: "\\1F44E"; }
-
-.dicon-chat:before {
-  content: "\\E720"; }
-
-.dicon-comment:before {
-  content: "\\E718"; }
-
-.dicon-quote:before {
-  content: "\\275E"; }
-
-.dicon-home:before {
-  content: "\\2302"; }
-
-.dicon-popup:before {
-  content: "\\E74C"; }
-
-.dicon-search:before {
-  content: "\\1F50D"; }
-
-.dicon-flashlight:before {
-  content: "\\1F526"; }
-
-.dicon-print:before {
-  content: "\\E716"; }
-
-.dicon-bell:before {
-  content: "\\1F514"; }
-
-.dicon-link:before {
-  content: "\\1F517"; }
-
-.dicon-flag:before {
-  content: "\\2691"; }
-
-.dicon-cog:before {
-  content: "\\2699"; }
-
-.dicon-tools:before {
-  content: "\\2692"; }
-
-.dicon-trophy:before {
-  content: "\\1F3C6"; }
-
-.dicon-tag:before {
-  content: "\\E70C"; }
-
-.dicon-camera:before {
-  content: "\\1F4F7"; }
-
-.dicon-megaphone:before {
-  content: "\\1F4E3"; }
-
-.dicon-moon:before {
-  content: "\\263D"; }
-
-.dicon-palette:before {
-  content: "\\1F3A8"; }
-
-.dicon-leaf:before {
-  content: "\\1F342"; }
-
-.dicon-note:before {
-  content: "\\266A"; }
-
-.dicon-beamed-note:before {
-  content: "\\266B"; }
-
-.dicon-new:before {
-  content: "\\1F4A5"; }
-
-.dicon-graduation-cap:before {
-  content: "\\1F393"; }
-
-.dicon-book:before {
-  content: "\\1F4D5"; }
-
-.dicon-newspaper:before {
-  content: "\\1F4F0"; }
-
-.dicon-bag:before {
-  content: "\\1F45C"; }
-
-.dicon-airplane:before {
-  content: "\\2708"; }
-
-.dicon-lifebuoy:before {
-  content: "\\E788"; }
-
-.dicon-eye:before {
-  content: "\\E70A"; }
-
-.dicon-clock:before {
-  content: "\\1F554"; }
-
-.dicon-mic:before {
-  content: "\\1F3A4"; }
-
-.dicon-calendar:before {
-  content: "\\1F4C5"; }
-
-.dicon-flash:before {
-  content: "\\26A1"; }
-
-.dicon-thunder-cloud:before {
-  content: "\\26C8"; }
-
-.dicon-droplet:before {
-  content: "\\1F4A7"; }
-
-.dicon-cd:before {
-  content: "\\1F4BF"; }
-
-.dicon-briefcase:before {
-  content: "\\1F4BC"; }
-
-.dicon-air:before {
-  content: "\\1F4A8"; }
-
-.dicon-hourglass:before {
-  content: "\\23F3"; }
-
-.dicon-gauge:before {
-  content: "\\1F6C7"; }
-
-.dicon-language:before {
-  content: "\\1F394"; }
-
-.dicon-network:before {
-  content: "\\E776"; }
-
-.dicon-key:before {
-  content: "\\1F511"; }
-
-.dicon-battery:before {
-  content: "\\1F50B"; }
-
-.dicon-bucket:before {
-  content: "\\1F4FE"; }
-
-.dicon-magnet:before {
-  content: "\\E7A1"; }
-
-.dicon-drive:before {
-  content: "\\1F4FD"; }
-
-.dicon-cup:before {
-  content: "\\2615"; }
-
-.dicon-rocket:before {
-  content: "\\1F680"; }
-
-.dicon-brush:before {
-  content: "\\E79A"; }
-
-.dicon-suitcase:before {
-  content: "\\1F6C6"; }
-
-.dicon-traffic-cone:before {
-  content: "\\1F6C8"; }
-
-.dicon-globe:before {
-  content: "\\1F30E"; }
-
-.dicon-keyboard:before {
-  content: "\\2328"; }
-
-.dicon-browser:before {
-  content: "\\E74E"; }
-
-.dicon-publish:before {
-  content: "\\E74D"; }
-
-.dicon-progress-3:before {
-  content: "\\E76B"; }
-
-.dicon-progress-2:before {
-  content: "\\E76A"; }
-
-.dicon-progress-1:before {
-  content: "\\E769"; }
-
-.dicon-progress-0:before {
-  content: "\\E768"; }
-
-.dicon-light-down:before {
-  content: "\\1F505"; }
-
-.dicon-light-up:before {
-  content: "\\1F506"; }
-
-.dicon-adjust:before {
-  content: "\\25D1"; }
-
-.dicon-code:before {
-  content: "\\E714"; }
-
-.dicon-monitor:before {
-  content: "\\1F4BB"; }
-
-.dicon-infinity:before {
-  content: "\\221E"; }
-
-.dicon-light-bulb:before {
-  content: "\\1F4A1"; }
-
-.dicon-credit-card:before {
-  content: "\\1F4B3"; }
-
-.dicon-database:before {
-  content: "\\1F4F8"; }
-
-.dicon-voicemail:before {
-  content: "\\2707"; }
-
-.dicon-clipboard:before {
-  content: "\\1F4CB"; }
-
-.dicon-cart:before {
-  content: "\\E73D"; }
-
-.dicon-box:before {
-  content: "\\1F4E6"; }
-
-.dicon-ticket:before {
-  content: "\\1F3AB"; }
-
-.dicon-rss:before {
-  content: "\\E73A"; }
-
-.dicon-signal:before {
-  content: "\\1F4F6"; }
-
-.dicon-thermometer:before {
-  content: "\\1F4FF"; }
-
-.dicon-water:before {
-  content: "\\1F4A6"; }
-
-.dicon-sweden:before {
-  content: "\\F601"; }
-
-.dicon-line-graph:before {
-  content: "\\1F4C8"; }
-
-.dicon-pie-chart:before {
-  content: "\\25F4"; }
-
-.dicon-bar-graph:before {
-  content: "\\1F4CA"; }
-
-.dicon-area-graph:before {
-  content: "\\1F53E"; }
-
-.dicon-lock:before {
-  content: "\\1F512"; }
-
-.dicon-lock-open:before {
-  content: "\\1F513"; }
-
-.dicon-logout:before {
-  content: "\\E741"; }
-
-.dicon-login:before {
-  content: "\\E740"; }
-
-.dicon-check:before {
-  content: "\\2713"; }
-
-.dicon-cross:before {
-  content: "\\274C"; }
-
-.dicon-squared-minus:before {
-  content: "\\229F"; }
-
-.dicon-squared-plus:before {
-  content: "\\229E"; }
-
-.dicon-squared-cross:before {
-  content: "\\274E"; }
-
-.dicon-circled-minus:before {
-  content: "\\2296"; }
-
-.dicon-circled-plus:before {
-  content: "\\2295"; }
-
-.dicon-circled-cross:before {
-  content: "\\2716"; }
-
-.dicon-minus:before {
-  content: "\\2796"; }
-
-.dicon-plus:before {
-  content: "\\2795"; }
-
-.dicon-erase:before {
-  content: "\\232B"; }
-
-.dicon-block:before {
-  content: "\\1F6AB"; }
-
-.dicon-info:before {
-  content: "\\2139"; }
-
-.dicon-circled-info:before {
-  content: "\\E705"; }
-
-.dicon-help:before {
-  content: "\\2753"; }
-
-.dicon-circled-help:before {
-  content: "\\E704"; }
-
-.dicon-warning:before {
-  content: "\\26A0"; }
-
-.dicon-cycle:before {
-  content: "\\1F504"; }
-
-.dicon-cw:before {
-  content: "\\27F3"; }
-
-.dicon-ccw:before {
-  content: "\\27F2"; }
-
-.dicon-shuffle:before {
-  content: "\\1F500"; }
-
-.dicon-back:before {
-  content: "\\1F519"; }
-
-.dicon-level-down:before {
-  content: "\\21B3"; }
-
-.dicon-retweet:before {
-  content: "\\E717"; }
-
-.dicon-loop:before {
-  content: "\\1F501"; }
-
-.dicon-back-in-time:before {
-  content: "\\E771"; }
-
-.dicon-level-up:before {
-  content: "\\21B0"; }
-
-.dicon-switch:before {
-  content: "\\21C6"; }
-
-.dicon-numbered-list:before {
-  content: "\\E005"; }
-
-.dicon-add-to-list:before {
-  content: "\\E003"; }
-
-.dicon-layout:before {
-  content: "\\268F"; }
-
-.dicon-list:before {
-  content: "\\2630"; }
-
-.dicon-text-doc:before {
-  content: "\\1F4C4"; }
-
-.dicon-text-doc-inverted:before {
-  content: "\\E731"; }
-
-.dicon-doc:before {
-  content: "\\E730"; }
-
-.dicon-docs:before {
-  content: "\\E736"; }
-
-.dicon-landscape-doc:before {
-  content: "\\E737"; }
-
-.dicon-picture:before {
-  content: "\\1F304"; }
-
-.dicon-video:before {
-  content: "\\1F3AC"; }
-
-.dicon-music:before {
-  content: "\\1F3B5"; }
-
-.dicon-folder:before {
-  content: "\\1F4C1"; }
-
-.dicon-archive:before {
-  content: "\\E800"; }
-
-.dicon-trash:before {
-  content: "\\E729"; }
-
-.dicon-upload:before {
-  content: "\\1F4E4"; }
-
-.dicon-download:before {
-  content: "\\1F4E5"; }
-
-.dicon-save:before {
-  content: "\\1F4BE"; }
-
-.dicon-install:before {
-  content: "\\E778"; }
-
-.dicon-cloud:before {
-  content: "\\2601"; }
-
-.dicon-upload-cloud:before {
-  content: "\\E711"; }
-
-.dicon-bookmark:before {
-  content: "\\1F516"; }
-
-.dicon-bookmarks:before {
-  content: "\\1F4D1"; }
-
-.dicon-open-book:before {
-  content: "\\1F4D6"; }
-
-.dicon-play:before {
-  content: "\\25B6"; }
-
-.dicon-paus:before {
-  content: "\\2016"; }
-
-.dicon-record:before {
-  content: "\\25CF"; }
-
-.dicon-stop:before {
-  content: "\\25A0"; }
-
-.dicon-ff:before {
-  content: "\\23E9"; }
-
-.dicon-fb:before {
-  content: "\\23EA"; }
-
-.dicon-to-start:before {
-  content: "\\23EE"; }
-
-.dicon-to-end:before {
-  content: "\\23ED"; }
-
-.dicon-resize-full:before {
-  content: "\\E744"; }
-
-.dicon-resize-small:before {
-  content: "\\E746"; }
-
-.dicon-volume:before {
-  content: "\\23F7"; }
-
-.dicon-sound:before {
-  content: "\\1F50A"; }
-
-.dicon-mute:before {
-  content: "\\1F507"; }
-
-.dicon-flow-cascade:before {
-  content: "\\1F568"; }
-
-.dicon-flow-branch:before {
-  content: "\\1F569"; }
-
-.dicon-flow-tree:before {
-  content: "\\1F56A"; }
-
-.dicon-flow-line:before {
-  content: "\\1F56B"; }
-
-.dicon-flow-parallel:before {
-  content: "\\1F56C"; }
-
-.dicon-left-bold:before {
-  content: "\\E4AD"; }
-
-.dicon-down-bold:before {
-  content: "\\E4B0"; }
-
-.dicon-up-bold:before {
-  content: "\\E4AF"; }
-
-.dicon-right-bold:before {
-  content: "\\E4AE"; }
-
-.dicon-left:before {
-  content: "\\2B05"; }
-
-.dicon-down:before {
-  content: "\\2B07"; }
-
-.dicon-up:before {
-  content: "\\2B06"; }
-
-.dicon-right:before {
-  content: "\\27A1"; }
-
-.dicon-circled-left:before {
-  content: "\\E759"; }
-
-.dicon-circled-down:before {
-  content: "\\E758"; }
-
-.dicon-circled-up:before {
-  content: "\\E75B"; }
-
-.dicon-circled-right:before {
-  content: "\\E75A"; }
-
-.dicon-triangle-left:before {
-  content: "\\25C2"; }
-
-.dicon-triangle-down:before {
-  content: "\\25BE"; }
-
-.dicon-triangle-up:before {
-  content: "\\25B4"; }
-
-.dicon-triangle-right:before {
-  content: "\\25B8"; }
-
-.dicon-chevron-left:before {
-  content: "\\E75D"; }
-
-.dicon-chevron-down:before {
-  content: "\\E75C"; }
-
-.dicon-chevron-up:before {
-  content: "\\E75F"; }
-
-.dicon-chevron-right:before {
-  content: "\\E75E"; }
-
-.dicon-chevron-small-left:before {
-  content: "\\E761"; }
-
-.dicon-chevron-small-down:before {
-  content: "\\E760"; }
-
-.dicon-chevron-small-up:before {
-  content: "\\E763"; }
-
-.dicon-chevron-small-right:before {
-  content: "\\E762"; }
-
-.dicon-chevron-thin-left:before {
-  content: "\\E765"; }
-
-.dicon-chevron-thin-down:before {
-  content: "\\E764"; }
-
-.dicon-chevron-thin-up:before {
-  content: "\\E767"; }
-
-.dicon-chevron-thin-right:before {
-  content: "\\E766"; }
-
-.dicon-left-thin:before {
-  content: "\\2190"; }
-
-.dicon-down-thin:before {
-  content: "\\2193"; }
-
-.dicon-up-thin:before {
-  content: "\\2191"; }
-
-.dicon-right-thin:before {
-  content: "\\2192"; }
-
-.dicon-arrow-combo:before {
-  content: "\\E74F"; }
-
-.dicon-three-dots:before {
-  content: "\\23F6"; }
-
-.dicon-two-dots:before {
-  content: "\\23F5"; }
-
-.dicon-dot:before {
-  content: "\\23F4"; }
-
-.dicon-cc:before {
-  content: "\\1F545"; }
-
-.dicon-cc-by:before {
-  content: "\\1F546"; }
-
-.dicon-cc-nc:before {
-  content: "\\1F547"; }
-
-.dicon-cc-nc-eu:before {
-  content: "\\1F548"; }
-
-.dicon-cc-nc-jp:before {
-  content: "\\1F549"; }
-
-.dicon-cc-sa:before {
-  content: "\\1F54A"; }
-
-.dicon-cc-nd:before {
-  content: "\\1F54B"; }
-
-.dicon-cc-pd:before {
-  content: "\\1F54C"; }
-
-.dicon-cc-zero:before {
-  content: "\\1F54D"; }
-
-.dicon-cc-share:before {
-  content: "\\1F54E"; }
-
-.dicon-cc-remix:before {
-  content: "\\1F54F"; }
-
 /* The styles were taken from the original layout by Scraig
  *
  */
@@ -24737,6 +24001,82 @@ footer.footer-section-sticky {
   footer.footer-section-sticky p {
     color: #fff;
     margin-top: 50px; }
+
+.spacing {
+  margin: 50px; }
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  width: 100%; }
+
+.big-icon {
+  font-size: 3rem; }
+  .big-icon.centered {
+    text-align: center; }
+
+.what-we-do-item {
+  width: 100%; }
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.Aligner-item {
+  max-width: 50%; }
+
+.Aligner-item--top {
+  align-self: flex-start; }
+
+.Aligner-item--bottom {
+  align-self: flex-end; }
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’"; }
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+
+blockquote p {
+  display: inline; }
+
+.hr-title {
+  width: 100%;
+  height: 25px;
+  border-bottom: 1px solid #a0a8a8;
+  text-align: center; }
+
+.hr-title, span {
+  font-size: 30px;
+  background-color: #fff;
+  padding: 0 20px; }
+
+.how-it-works-list {
+  display: flex; }
+
+.how-it-works-item {
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 20%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style: none; }
+
+.circle-outline {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid black; }
 
 /* The main layout file contains CSS that was transferred
  * From the uhub site.  A lot of this is important layout stuff

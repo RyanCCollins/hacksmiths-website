@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var User = keystone.list('User');
 
 exports = module.exports = function(req, res) {
 
@@ -9,6 +10,7 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 	locals.title = 'Hacksmiths';
+
 
 	locals.organizers = [{
 		name: 'Ryan Collins',

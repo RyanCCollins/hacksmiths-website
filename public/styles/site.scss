@@ -14,7 +14,6 @@ The main SCSS file for everything, yep
 
 @include foundation-everything;
 
-@import 'vendor/_entypo';
 @import 'site/main-layout';
 @import 'site/_layout';
 @import 'site/_buttons';
