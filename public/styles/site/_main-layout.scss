@@ -289,11 +289,11 @@ blockquote p {
 
 }
 
-.hr-title, span {
-  font-size: 30px;
-  background-color: #fff;
-  padding: 0 20px;
-}
+// .hr-title, span {
+//   // font-size: 16px;
+//   background-color: #fff;
+//   padding: 0 20px;
+// }
 
 .how-it-works-list {
   display: flex;
@@ -316,4 +316,17 @@ blockquote p {
   height: 100px;
   border-radius: 50%;
   border: 2px solid black;
+}
+
+// Basic padding for elements.
+.contain {
+  padding: 4.375em 1.5em 7em;
+}
+
+// Creates convenience classes for padding levels
+// Example: pad-1 will pad by 1 em
+$padding-levels: 12;
+
+@for $i from 1 to $padding-levels - 1 {
+  .pad-#{$i} { padding: #{$i}em; }
 }

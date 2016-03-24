@@ -24055,11 +24055,6 @@ blockquote p {
   border-bottom: 1px solid #a0a8a8;
   text-align: center; }
 
-.hr-title, span {
-  font-size: 30px;
-  background-color: #fff;
-  padding: 0 20px; }
-
 .how-it-works-list {
   display: flex; }
 
@@ -24077,6 +24072,39 @@ blockquote p {
   height: 100px;
   border-radius: 50%;
   border: 2px solid black; }
+
+.contain {
+  padding: 4.375em 1.5em 7em; }
+
+.pad-1 {
+  padding: 1em; }
+
+.pad-2 {
+  padding: 2em; }
+
+.pad-3 {
+  padding: 3em; }
+
+.pad-4 {
+  padding: 4em; }
+
+.pad-5 {
+  padding: 5em; }
+
+.pad-6 {
+  padding: 6em; }
+
+.pad-7 {
+  padding: 7em; }
+
+.pad-8 {
+  padding: 8em; }
+
+.pad-9 {
+  padding: 9em; }
+
+.pad-10 {
+  padding: 10em; }
 
 /* The main layout file contains CSS that was transferred
  * From the uhub site.  A lot of this is important layout stuff
