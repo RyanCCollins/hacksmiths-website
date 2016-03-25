@@ -8,16 +8,15 @@ exports = module.exports = function(req, res) {
 	}
 
 	User.model.findById(req.body.user).exec(function(err, user) {
+
 		if (err || !user) return res.apiResponse({
 			success: false
 		});
 
 		locals.userData = {
-			profile: user["profile"],
-			notifications: user["notification"],
-			availability: user["availability"],
+			profile: user,
 		}
-
+		console.log(user);
 		return res.apiResponse({
 			success: true,
 			session: true,

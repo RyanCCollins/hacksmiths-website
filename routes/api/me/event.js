@@ -3,17 +3,14 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
-	if (!req.body.data || !req.user) {
-		return;
-	}
-
-	console.log("User ID is", req.user._id);
-	console.log("The event is", req.body.data.event);
 
 	RSVP.model.findOne()
 		.where('who', req.user._id)
 		.where('event', req.body.data.event)
 		.exec(function(err, rsvp) {
+			if (err || !user) return res.apiResponse({
+				success: false
+			});
 
 			if (req.body.statusOnly) {
 				console.log("==========statusOnly=============")
