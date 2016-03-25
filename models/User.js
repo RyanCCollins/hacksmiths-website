@@ -93,7 +93,7 @@ User.add({
       note: 'Get notified of new events by email'
     },
     mobile: {
-      type: Booleam,
+      type: Boolean,
       default: false,
       note: 'Get mobile notifications about new events and other things!'
     }
