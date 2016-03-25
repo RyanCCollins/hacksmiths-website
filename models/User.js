@@ -22,6 +22,9 @@ var deps = {
   mentoring: {
     'mentoring.available': true
   },
+  needsAMentor: {
+    'mentoring.needsAMentor': true
+  },
   github: {
     'services.github.isConfigured': true
   },
@@ -216,22 +219,12 @@ User.add({
       label: 'Is Available',
       index: true
     },
-    free: {
+    needsAMentor: {
       type: Boolean,
-      label: 'For Free',
-      dependsOn: deps.mentoring
+      label: 'Needs a mentor',
+      index: true
     },
-    paid: {
-      type: Boolean,
-      label: 'For Payment',
-      dependsOn: deps.mentoring
-    },
-    swap: {
-      type: Boolean,
-      label: 'For Swap',
-      dependsOn: deps.mentoring
-    },
-    have: {
+    experience: {
       type: String,
       label: 'Has...',
       dependsOn: deps.mentoring
@@ -239,7 +232,7 @@ User.add({
     want: {
       type: String,
       label: 'Wants...',
-      dependsOn: deps.mentoring
+      dependsOn: deps.needsAMentor
     }
   }
 }, 'Permissions', {
