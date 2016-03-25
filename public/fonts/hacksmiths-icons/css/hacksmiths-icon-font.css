@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'hacksmiths-icon-font';
-  src: url('../font/hacksmiths-icon-font.eot?97189255');
-  src: url('../font/hacksmiths-icon-font.eot?97189255#iefix') format('embedded-opentype'),
-       url('../font/hacksmiths-icon-font.woff2?97189255') format('woff2'),
-       url('../font/hacksmiths-icon-font.woff?97189255') format('woff'),
-       url('../font/hacksmiths-icon-font.ttf?97189255') format('truetype'),
-       url('../font/hacksmiths-icon-font.svg?97189255#hacksmiths-icon-font') format('svg');
+  src: url('../font/hacksmiths-icon-font.eot?24483857');
+  src: url('../font/hacksmiths-icon-font.eot?24483857#iefix') format('embedded-opentype'),
+       url('../font/hacksmiths-icon-font.woff2?24483857') format('woff2'),
+       url('../font/hacksmiths-icon-font.woff?24483857') format('woff'),
+       url('../font/hacksmiths-icon-font.ttf?24483857') format('truetype'),
+       url('../font/hacksmiths-icon-font.svg?24483857#hacksmiths-icon-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'hacksmiths-icon-font';
-    src: url('../font/hacksmiths-icon-font.svg?97189255#hacksmiths-icon-font') format('svg');
+    src: url('../font/hacksmiths-icon-font.svg?24483857#hacksmiths-icon-font') format('svg');
   }
 }
 */
@@ -205,3 +205,35 @@
 .icon-technology-4:before { content: '\e893'; } /* '' */
 .icon-technology-5:before { content: '\e894'; } /* '' */
 .icon-time:before { content: '\e895'; } /* '' */
+.icon-apple:before { content: '\e896'; } /* '' */
+.icon-arrow:before { content: '\e897'; } /* '' */
+.icon-business-1:before { content: '\e898'; } /* '' */
+.icon-cogwheel-1:before { content: '\e899'; } /* '' */
+.icon-coins:before { content: '\e89a'; } /* '' */
+.icon-computer-1:before { content: '\e89b'; } /* '' */
+.icon-computer-2:before { content: '\e89c'; } /* '' */
+.icon-computer-3:before { content: '\e89d'; } /* '' */
+.icon-computer-4:before { content: '\e89e'; } /* '' */
+.icon-computer-5:before { content: '\e89f'; } /* '' */
+.icon-computer-6:before { content: '\e8a0'; } /* '' */
+.icon-computer-7:before { content: '\e8a1'; } /* '' */
+.icon-computer-8:before { content: '\e8a2'; } /* '' */
+.icon-computer-9:before { content: '\e8a3'; } /* '' */
+.icon-computer-10:before { content: '\e8a4'; } /* '' */
+.icon-computer-11:before { content: '\e8a5'; } /* '' */
+.icon-computer-12:before { content: '\e8a6'; } /* '' */
+.icon-computer-13:before { content: '\e8a7'; } /* '' */
+.icon-education:before { content: '\e8a8'; } /* '' */
+.icon-eye:before { content: '\e8a9'; } /* '' */
+.icon-food-3:before { content: '\e8aa'; } /* '' */
+.icon-interface-1:before { content: '\e8ab'; } /* '' */
+.icon-multimedia-1:before { content: '\e8ac'; } /* '' */
+.icon-party-1:before { content: '\e8ad'; } /* '' */
+.icon-people-2:before { content: '\e8ae'; } /* '' */
+.icon-signature:before { content: '\e8af'; } /* '' */
+.icon-technology-8:before { content: '\e8b0'; } /* '' */
+.icon-technology-7:before { content: '\e8b1'; } /* '' */
+.icon-technology-6:before { content: '\e8b2'; } /* '' */
+.icon-technology-9:before { content: '\e8b3'; } /* '' */
+.icon-technology-10:before { content: '\e8b4'; } /* '' */
+.icon-technology-11:before { content: '\e8b5'; } /* '' */
