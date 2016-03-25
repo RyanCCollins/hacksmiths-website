@@ -89,12 +89,18 @@ User.add({
     },
     events: {
       type: Boolean,
-      default: true
+      default: true,
+      note: 'Get notified of new events by email'
     },
-    projects: {
-      type: Boolean,
-      default: true
+    mobile: {
+      type: Booleam,
+      default: false,
+      note: 'Get mobile notifications about new events and other things!'
     }
+    // projects: {
+    //   type: Boolean,
+    //   default: true
+    // }
   }
 }, 'Event Involvement', {
   availability: {

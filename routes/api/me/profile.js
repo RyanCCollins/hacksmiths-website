@@ -21,7 +21,7 @@ exports = module.exports = function(req, res) {
 			success: true,
 			session: true,
 			date: new Date().getTime(),
-			profile: locals.profile
+			profile: locals.userData.profile
 		});
 	});
 
