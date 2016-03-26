@@ -25572,6 +25572,11 @@ html, body {
   padding-bottom: 5em;
   padding-top: 5em; }
 
+.container-gray {
+  background-color: #e3e7e9;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
 .featured-image {
   max-height: 600px;
   max-width: 100%; }
