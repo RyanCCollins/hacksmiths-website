@@ -2,18 +2,25 @@ extends ../../layouts/default
 
 block intro
 	.page-intro: .container
+		div.mv-2
 		h1 Community Mentoring
-		p.lead Getting involved with a software project can be difficult.  There are skills that you are expected to have.  We find that the best way to gain those skills is through pracictal experience.  Our mentoring program can help you to get there!
+		p.lead Getting involved with a software project can be daunting.  
+		p.lead Not sure where to start?  That's okay!  We can match you up with an experienced mentor who you can work with to get the skills needed to succeed!
 	
 block content
 	.page-content: .container
-		img(src="/images/mentoring-photo-min.jpg").mv-2.img-responsive.img-rounded.featured-image
-		h2.text-center What is the Hacksmiths mentoring program?
+		div.Aligner
+			img(src="/images/mentoring-photo-min.jpg").mv-2.img-responsive.img-rounded.featured-image.Aligner-item
+		h2.text-center What is the Hacksmiths Mentoring Program?
 		i.icon-gesture-1.big-icon.centered
 		p.text-center Our mentoring program helps Junior software developers gain real experience working with a team leading up to a hackathon event
 		p.text-center If you want to work with us, but are not sure how, finding a mentor can be a great starting point!
 		hr.mv-2
 		.row
+			.col-sm-6: .tile
+				i.icon-eye.big-icon.centered
+				h3.text-center Find a Mentor
+				p If you are intested in helping out with our non profit projects, but are not sure you are ready, finding a mentor is a great way to get started.  Take a look at the list of available mentors and see if anyone has experience that you would like to gain.
 			.col-sm-6: .tile
 				i.icon-computer-12.big-icon.centered
 				h3.text-center Be a Mentor
@@ -24,21 +31,17 @@ block content
 					li you should have experience working on one or more Hacksmiths software projects.
 					li you don't need to be an expert in the field in order to be a mentor.  The biggest requirement is a desire to help others learn!
 				p Interested? <a href="/join">Become a member of Hacksmiths</a> and tick the 'Available for mentoring' box for your profile.
-
-			.col-sm-6: .tile
-				i.icon-eye.big-icon.centered
-				h3.text-center Find a Mentor
-				p If you are intested in helping out with our non profit projects, but are not sure you are ready, finding a mentor is a great way to get started.  Take a look at the list of available mentors and see if anyone has experience that you would like to gain.
-		.row
-			.col-sm-6
-				.text-center.bottom-align-text
-					a(href='/join') 
-						div.button.large.radius
-							| Become a mentor
+		.row.mv-2
 			.col-sm-6
 				.text-center.bottom-align-text
 					a(href='/members/mentors') 
 						div.button.large.radius
 							| View available mentors
+			.col-sm-6
+				.text-center.bottom-align-text
+					a(href='/join') 
+						div.button.large.radius
+							| Become a mentor
+
 		hr.mv-2
 		

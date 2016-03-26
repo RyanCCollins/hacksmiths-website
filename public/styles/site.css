@@ -25572,6 +25572,18 @@ html, body {
   padding-bottom: 5em;
   padding-top: 5em; }
 
+.featured-image {
+  max-height: 600px;
+  max-width: 100%; }
+
+.headerDivider {
+  border-left: 1px solid #38546d;
+  border-right: 1px solid #16222c;
+  height: 80px;
+  position: absolute;
+  right: 249px;
+  top: 10px; }
+
 /* The main layout file contains CSS that was transferred
  * From the uhub site.  A lot of this is important layout stuff
  * So treat with caution if altering.
