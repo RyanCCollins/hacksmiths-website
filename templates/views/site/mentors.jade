@@ -13,8 +13,8 @@ block content
 				thead.panel-heading
 					tr
 						th Name
-						th About
 						th Experience
+						th Project Involvement
 				tbody
 					each member in members
 						tr
@@ -23,6 +23,8 @@ block content
 									.pull-left: img(src=member.photo.exists ? member._.photo.thumbnail(80,80) : member.avatarUrl || '/images/avatar.png', width=40, height=40, alt=member.name.ful).img-responsive.img-circle
 									.media-body= member.name.full
 							td= member.mentoring.experience
+							// TODO: put a members projects on here.
+							//- td= member.projects
 							//- td.hidden-xs!= member.mentoring.free ? '<span class="entypo entypo-check"></span>' : null
 							//- td.hidden-xs!= member.mentoring.paid ? '<span class="entypo entypo-check"></span>' : null
 							//- td.hidden-xs!= member.mentoring.swap ? '<span class="entypo entypo-check"></span>' : null
