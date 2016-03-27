@@ -12,8 +12,7 @@ Settings.add({
   name: {
     type: String,
     noedit: true
-  },
-
+  }
 
 });
 

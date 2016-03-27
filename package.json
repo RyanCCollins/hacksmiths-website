@@ -29,6 +29,7 @@
     "socketio": "^1.0.0",
     "stylus": "^0.53.0",
     "subdomain": "^1.2.0",
+    "typeforce": "^1.6.2",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
