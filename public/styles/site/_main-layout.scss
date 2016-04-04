@@ -21,6 +21,31 @@ $dark-blue: #022F40;
 $light-gray: #C2C6A7;
 
 
+@mixin no-padding($side) {
+    @if $side == 'all' {
+        .no-padding {
+            padding: 0 !important;
+        }
+    } @else {
+        .no-padding-#{$side} {
+            padding-#{$side}: 0 !important;
+        }
+    }
+}
+
+@include no-padding("left");
+@include no-padding("right");
+@include no-padding("top");
+@include no-padding("bottom");
+@include no-padding("all");
+
+
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
 .page1 {
   overflow:hidden;
 }
@@ -123,11 +148,6 @@ p
     text-decoration: underline;
   }
   p {
-    line-height: 1rem;
-    @media screen and (max-width: 600px;) {
-      line-height: normal;
-    }
-
     padding-top: 2px;
     &.text-white {
       color: #fff !important;
