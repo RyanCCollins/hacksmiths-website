@@ -124,6 +124,10 @@ p
   }
   p {
     line-height: 1rem;
+    @media screen and (max-width: 600px;) {
+      line-height: normal;
+    }
+
     padding-top: 2px;
     &.text-white {
       color: #fff !important;

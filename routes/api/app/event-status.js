@@ -78,8 +78,8 @@ exports = module.exports = function(req, res) {
 				killSwitch: false
 			},
 			events: {
-				last: false,
-				next: false
+				last: {},
+				next: {}
 			},
 			rsvp: {
 				responded: false,
@@ -133,20 +133,6 @@ exports = module.exports = function(req, res) {
 					false;
 				response.rsvp.date = data.rsvp ? data.rsvp.changedAt : false;
 			}
-		}
-
-		if (data.user) {
-			response.user = {
-				date: new Date().getTime(),
-				userId: data.user.id,
-				name: {
-					first: data.user.name.first,
-					last: data.user.name.last,
-					full: data.user.name.full
-				},
-				email: data.user.email,
-				avatar: data.user.avatarUrl
-			};
 		}
 
 		res.apiResponse(response);
