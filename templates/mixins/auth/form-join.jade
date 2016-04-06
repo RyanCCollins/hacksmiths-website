@@ -46,7 +46,7 @@ mixin form-join(args)
 					.form-group(class=!args.modal ? checkFormError('website') : null)
 						label(for='website').sr-only Website (optional)
 						input(type='website', name='website', placeholder='Website (optional)', value=!args.modal ? form.website : null).form-control.form-control--last
-				button(type='submit').btn.btn-block.btn-primary.btn-submit Join
+					button(type='submit').btn.btn-block.btn-primary.btn-submit Join
 			p.auth-form-divider: span.auth-form-divider-text or
 				include ../../includes/social-signin
 			p.text-center.text-muted.mt-3
