@@ -6,19 +6,21 @@ block flash-messages
 
 block content
 	.container
+		.contain
 		.page-intro
 			p.lead Hi #{user.name.first}, these are your settings and&nbsp
 				a(href=user.url) profile details
-			//- if nextMeetup
+			if nextEvent
 				.alert.alert-info
 					span.entypo.entypo-calendar
-					|  The next meetup has been announced -
-					a(href=nextMeetup.url).alert-link= nextMeetup._.startDate.format('dddd D MMM YYYY')
+					|  The next event has been announced -
+					a(href=nextMeetup.url).alert-link= nextEvent._.startDate.format('dddd D MMM YYYY')
 		.page-content.tile.ph-2.pv-2.mb-2
 			+flash-messages(messages)
 			form(method='post', enctype='multipart/form-data', autocomplete='off', novalidate).form-horizontal
 				input(type='hidden', name='action', value='profile.details')
-				h3 Private Info
+				h2 Private Info
+				.mv-2
 				.form-group
 					label.col-sm-2.control-label Name
 					.col-sm-10: .form-row
@@ -133,23 +135,27 @@ block content
 						.col-sm-10
 							input(type='text', name='mentoring.want', placeholder='eg; DevOps, Project Management', value= user.mentoring.want).form-control
 				hr.mv-2
-				button(type='submit', data-loading-text="Saving...").btn.btn-primary Save profile
-
-		.ui-reveal
-			.ui-reveal__initial
-				button(type='button').btn.btn-link.ui-reveal__trigger Change Password
-			.ui-reveal__hidden
-				form(method='post', autocomplete='off')
-					input(type='hidden', name='action', value='profile.password')
-					h3 Change password
-					.form-group
-						label(for='change-passwordNew').sr-only New Password
-						input(type='password', name='password', placeholder='New Password', id='change-passwordNew').form-control
-					.form-group
-						label(for='change-passwordConfirm').sr-only Confirm Password
-						input(type='password', name='password_confirm', placeholder='Confirm Password', id='signin-passwordConfirm').form-control
-					.form-group
-						button(type='submit', data-loading-text="Changing...").btn.btn-primary Change
+				.col-md-4
+				.col-md-4.text-center
+					button(type='submit', data-loading-text="Saving...").button.large.radius Save profile
+				.col-md-4
+		hr.mv-2
+		.row		
+			.ui-reveal
+				.ui-reveal__initial
+					button(type='button').btn.btn-link.ui-reveal__trigger Change Password
+				.ui-reveal__hidden
+					form(method='post', autocomplete='off')
+						input(type='hidden', name='action', value='profile.password')
+						h3 Change password
+						.form-group
+							label(for='change-passwordNew').sr-only New Password
+							input(type='password', name='password', placeholder='New Password', id='change-passwordNew').form-control
+						.form-group
+							label(for='change-passwordConfirm').sr-only Confirm Password
+							input(type='password', name='password_confirm', placeholder='Confirm Password', id='signin-passwordConfirm').form-control
+						.form-group
+							button(type='submit', data-loading-text="Changing...").button.large.radius Change
 
 block js
 	script(src='/js/views/me.js')
