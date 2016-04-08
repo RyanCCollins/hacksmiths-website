@@ -10,9 +10,9 @@ mixin event(event)
 				.calendar__year=event._.startDate.format('YYYY')
 		.event-content
 			if event.featureImage.exists
-				.col-md-12.text-center
-					.image-wrap: img(src=event._.featureImage.fit(750,450)).img-responsive
-			
+				.col-md-4
+				.col-md-8
+					.image-wrap.image-center: img(src=event._.featureImage.fit(750,450)).img-responsive
 			h2.mv-5= event.title
 			h5.mb-1=event._.startDate.format('dddd D MMM YYYY')
 				|  from #{event._.startDate.format('h:mma')} - #{event._.endDate.format('h:mma')}
@@ -20,7 +20,10 @@ mixin event(event)
 				p!= event.description
 			if event.marketingInfo
 				p!= event.marketingInfo
-
+		if event.organization.exists
+			hr.mv-2
+			h2!= event.organization.name
+				
 		if event.state == 'active'
 			hr.mv-2
 			if user

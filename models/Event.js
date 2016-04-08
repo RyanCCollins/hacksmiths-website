@@ -32,7 +32,7 @@ Event.add({
 		many: false,
 		initial: true,
 		required: true,
-		note: 'Enter the name of the organization who we are sponsoring. Supports HTML.'
+		note: 'Select the name of the organization that we are sponsoring for the event.'
 	},
 	project: {
 		type: Types.Relationship,
