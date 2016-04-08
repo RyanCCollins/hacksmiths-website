@@ -74,25 +74,6 @@ Project.add({
     note: 'Are there any events associated with this project?'
   }
 }, 'Info', {
-  url: {
-    type: Types.Url,
-    note: 'Full website URL for the actual website for the project, including http://'
-  },
-  repoUrl: {
-    type: Types.Url,
-    note: 'The main github project repo URL, including http://'
-  },
-  childRepos: {
-    category: {
-      type: Types.Relationship,
-      ref: 'Nanodegree',
-      many: false
-    },
-    url: {
-      type: Types.Url,
-      note: 'A github repository URL for other parts of the project if any.'
-    }
-  },
   stats: {
     type: Types.Relationship,
     ref: 'ProjectStats',

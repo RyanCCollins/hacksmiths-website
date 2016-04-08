@@ -186,7 +186,7 @@ Event.schema.pre('save', function(next) {
 		event.state = 'draft';
 	}
 	// event date plus one day is after today, it's a past event
-	else if (moment().isAfter(moment(event.startDate).add('day', 1))) {
+	else if (moment().isAfter(moment(event.endDate).add('day', 1))) {
 		event.state = 'past';
 	}
 	// publish date is after today, it's an active event

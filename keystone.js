@@ -102,7 +102,7 @@ keystone.set('nav', {
 	'members': ['users', 'organizations', 'teams', 'roles', 'skills',
 		'nanodegrees', 'settings'
 	],
-	'projects': ['projects', 'events', 'teams', 'schedule-items', 'rsvps',
+	'projects': ['projects', 'events', 'teams', 'project-repos', 'rsvps',
 		'inquiries', 'galleries'
 	],
 

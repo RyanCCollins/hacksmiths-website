@@ -81,67 +81,10 @@ var eventType = new GraphQL.GraphQLObjectType({
 			spotsAvailable: {
 				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLBoolean)
 			},
-			scheduleItems: {
-				type: new GraphQL.GraphQLList(scheduleItemType),
-				resolve: function resolve(source) {
-					return ScheduleItem.model.find().where('event', source.id).exec();
-				}
-			},
 			rsvps: {
 				type: new GraphQL.GraphQLList(rsvpType),
 				resolve: function resolve(source) {
 					return RSVP.model.find().where('event', source.id).exec();
-				}
-			}
-		};
-	}
-});
-
-var scheduleItemType = new GraphQL.GraphQLObjectType({
-	name: 'ScheduleItem',
-	fields: function fields() {
-		return {
-			id: {
-				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID),
-				description: 'The id of the scheduleItem.'
-			},
-			name: {
-				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLString),
-				description: 'The title of the scheduleItem.'
-			},
-			event: {
-				type: new GraphQL.GraphQLNonNull(eventType),
-				description: 'The event the scheduleItem is scheduled for',
-				resolve: function resolve(source, args, info) {
-					return Event.model.findById(source.event).exec();
-				}
-			},
-			who: {
-				type: new GraphQL.GraphQLList(userType),
-				description: 'A list of at least one User running the scheduleItem',
-				resolve: function resolve(source, args, info) {
-					return User.model.find().where('_id')['in'](source.who).exec();
-				}
-			},
-			description: {
-				type: GraphQL.GraphQLString
-			},
-			slides: {
-				type: keystoneTypes.link,
-				resolve: function resolve(source) {
-					return {
-						raw: source.slides,
-						format: source._.slides.format
-					};
-				}
-			},
-			link: {
-				type: keystoneTypes.link,
-				resolve: function resolve(source) {
-					return {
-						raw: source.link,
-						format: source._.link.format
-					};
 				}
 			}
 		};
@@ -166,12 +109,6 @@ var userType = new GraphQL.GraphQLObjectType({
 						email: source.email,
 						gravatarUrl: source._.email.gravatarUrl
 					};
-				}
-			},
-			scheduleItems: {
-				type: new GraphQL.GraphQLList(scheduleItemType),
-				resolve: function resolve(source) {
-					return ScheduleItem.model.find().where('who', source.id).exec();
 				}
 			},
 			rsvps: {
@@ -256,55 +193,44 @@ var queryRootType = new GraphQL.GraphQLObjectType({
 				return getEvent(args.id);
 			}
 		},
-		scheduleItem: {
-			type: scheduleItemType,
-			args: {
-				id: {
-					description: 'id of the scheduleItem',
-					type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID)
-				}
-			},
-			resolve: function resolve(_, args) {
-				return ScheduleItem.model.findById(args.id).exec();
+	},
+	organization: {
+		type: organizationType,
+		args: {
+			id: {
+				description: 'id of the organization',
+				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID)
 			}
 		},
-		organization: {
-			type: organizationType,
-			args: {
-				id: {
-					description: 'id of the organization',
-					type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID)
-				}
-			},
-			resolve: function resolve(_, args) {
-				return Organization.model.findById(args.id).exec();
+		resolve: function resolve(_, args) {
+			return Organization.model.findById(args.id).exec();
+		}
+	},
+	user: {
+		type: userType,
+		args: {
+			id: {
+				description: 'id of the user',
+				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID)
 			}
 		},
-		user: {
-			type: userType,
-			args: {
-				id: {
-					description: 'id of the user',
-					type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID)
-				}
-			},
-			resolve: function resolve(_, args) {
-				return User.model.findById(args.id).exec();
+		resolve: function resolve(_, args) {
+			return User.model.findById(args.id).exec();
+		}
+	},
+	rsvp: {
+		type: rsvpType,
+		args: {
+			id: {
+				description: 'id of the RSVP',
+				type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID)
 			}
 		},
-		rsvp: {
-			type: rsvpType,
-			args: {
-				id: {
-					description: 'id of the RSVP',
-					type: new GraphQL.GraphQLNonNull(GraphQL.GraphQLID)
-				}
-			},
-			resolve: function resolve(_, args) {
-				return RSVP.model.findById(args.id).exec();
-			}
+		resolve: function resolve(_, args) {
+			return RSVP.model.findById(args.id).exec();
 		}
 	}
+}
 });
 
 module.exports = new GraphQL.GraphQLSchema({
