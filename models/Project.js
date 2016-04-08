@@ -57,11 +57,6 @@ Project.add({
     many: true,
     noedit: true
   },
-  rolesNeeded: {
-    type: Types.Relationship,
-    ref: 'Role',
-    many: true
-  },
   spotlight: {
     type: Types.Boolean,
     default: false,
@@ -97,15 +92,17 @@ Project.relationship({
   ref: 'User',
   refPath: 'projects'
 });
+Project.relationship({
+  path: 'urls',
+  ref: 'ProjectRepo',
+  refPath: 'project'
+})
 
 // Pull out avatar image
 Project.schema.virtual('logoUrl').get(function() {
   if (this.photo.exists) return this._.photo.thumbnail(120, 120);
 });
 
-Project.schema.methods.getStatsFromAPI = function() {
-
-}
 
 Project.schema.methods.refreshStats = function(callback) {
   var project = this;

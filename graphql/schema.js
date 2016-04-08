@@ -5,7 +5,6 @@ var keystoneTypes = require('./keystoneTypes');
 
 var keystone = require('keystone');
 var Event = keystone.list('Event');
-var ScheduleItem = keystone.list('ScheduleItem');
 var User = keystone.list('User');
 var RSVP = keystone.list('RSVP');
 var Organization = keystone.list('Organization');
@@ -230,7 +229,6 @@ var queryRootType = new GraphQL.GraphQLObjectType({
 			return RSVP.model.findById(args.id).exec();
 		}
 	}
-}
 });
 
 module.exports = new GraphQL.GraphQLSchema({

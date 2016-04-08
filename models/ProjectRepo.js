@@ -22,7 +22,7 @@ ProjectRepo.add({
     many: false,
     ref: 'Project',
     note: 'Which project does the repository belong to?',
-    inital: true,
+    initial: true,
     required: true
   },
   url: {
@@ -32,6 +32,16 @@ ProjectRepo.add({
     note: 'What is the main URL of the repository?'
   },
 });
+
+// ProjectRepo.schema.virtual('totalCommits').get(function() {
+//   var github = new GithubApi({
+//     version: "3.0.0",
+//     debug: true,
+//     protocol: "https",
+//     host: "api.github.com",
+//
+//   })
+// });
 
 ProjectRepo.defaultColumns = 'project, url'
 ProjectRepo.register();
