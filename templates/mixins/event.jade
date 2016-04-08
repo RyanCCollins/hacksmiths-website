@@ -9,16 +9,17 @@ mixin event(event)
 				.calendar__date=event._.startDate.format('DD')
 				.calendar__year=event._.startDate.format('YYYY')
 		.event-content
+			if event.featureImage.exists
+				.col-md-12.text-center
+					.image-wrap: img(src=event._.featureImage.fit(750,450)).img-responsive
+			
 			h2.mv-5= event.title
 			h5.mb-1=event._.startDate.format('dddd D MMM YYYY')
 				|  from #{event._.startDate.format('h:mma')} - #{event._.endDate.format('h:mma')}
-			if event._.featureImage.exists
-				.image-wrap: img(src=event._.featureImage.fit(750,450)).img-responsive
-				p Hello world
-			else
-				p Hello
 			if event.description
 				p!= event.description
+			if event.marketingInfo
+				p!= event.marketingInfo
 
 		if event.state == 'active'
 			hr.mv-2
@@ -41,7 +42,7 @@ mixin event(event)
 			hr
 			.text-center
 				.h1.text-muted.mb-0= event.totalRSVPs
-				.lead.text-muted people #{event.state == 'active' ? "are attending" : "attended"} this event
+				.lead.text-muted people #{event.state == 'active' ? "are helping" : "helped"} with this event
 			if event.state == 'past'
 				ul.list-unstyled.list-inline.text-center
 					for rsvp in event.rsvps

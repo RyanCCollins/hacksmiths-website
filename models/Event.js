@@ -246,7 +246,7 @@ Event.schema.set('toJSON', {
 		return _.pick(doc, '_id', 'title', 'startDate', 'featureImage', 'sponsors',
 			'endDate', 'place', 'map',
 			'description', 'marketingInfo', 'registrationStartDate',
-			'registrationEndDate', 'project', 'organization',
+			'registrationEndDate', 'project', 'organization', 'teams',
 			'spotsRemaining', 'remainingRSVPs');
 	}
 });
