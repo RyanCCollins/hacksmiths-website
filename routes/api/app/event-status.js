@@ -26,6 +26,7 @@ exports = module.exports = function(req, res) {
 			keystone.list('Event').model.findOne()
 				.where('state', 'past')
 				.sort('-startDate')
+				.populate('teams project sponsors organization')
 				.exec(function(err, event) {
 					data.events.last = event ? event.toJSON() : false;
 					return next();
