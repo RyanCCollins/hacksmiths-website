@@ -58,7 +58,6 @@ Event.add({
 		type: Types.CloudinaryImage,
 		initial: true
 	},
-
 	sponsors: {
 		type: Types.Relationship,
 		ref: 'Organization',
@@ -244,8 +243,11 @@ Event.schema.methods.notifyAttendees = function(req, res, next) {
 
 Event.schema.set('toJSON', {
 	transform: function(doc, rtn, options) {
-		return _.pick(doc, '_id', 'title', 'startDate', 'endDate', 'place', 'map',
-			'description', 'spotsRemaining', 'remainingRSVPs');
+		return _.pick(doc, '_id', 'title', 'startDate', 'featureImage', 'sponsors',
+			'endDate', 'place', 'map',
+			'description', 'marketingInfo', 'registrationStartDate',
+			'registrationEndDate', 'project', 'organization',
+			'spotsRemaining', 'remainingRSVPs');
 	}
 });
 
