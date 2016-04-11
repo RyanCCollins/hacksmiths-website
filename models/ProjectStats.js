@@ -6,25 +6,17 @@ var Types = keystone.Field.Types;
  * =====================
  */
 
-var ProjectStats = new keystone.List('ProjectStats', {
+var ProjectRepoStats = new keystone.List('ProjectRepoStats', {
   nocreate: true,
   noedit: true
 });
 
-ProjectStats.add({
+ProjectRepoStats.add({
   project: {
     type: Types.Relationship,
     many: false,
     ref: 'Project'
   },
-  totalCommits: {
-    type: Number
-  },
-  topContributors: {
-    type: Types.Relationship,
-    ref: 'User',
-    many: true
-  }
 });
 
 ProjectStats.relationship({
@@ -32,6 +24,7 @@ ProjectStats.relationship({
   ref: 'Project',
   refPath: 'stats'
 });
+
 
 ProjectStats.defaultColumns = 'project';
 ProjectStats.register();

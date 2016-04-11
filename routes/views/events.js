@@ -14,13 +14,13 @@ exports = module.exports = function(req, res) {
 
 	view.query('upcomingEvent',
 		Event.model.findOne()
-			.where('state', 'active')
-			.sort('-eventStartDate'), '');
+		.where('state', 'active')
+		.sort('-eventStartDate'), '');
 
 	view.query('pastEvents',
 		Event.model.find()
-			.where('state', 'past')
-			.sort('-eventStartDate'), '');
+		.where('state', 'past')
+		.sort('-eventStartDate'), '');
 
 	view.on('render', function(next) {
 
@@ -28,7 +28,7 @@ exports = module.exports = function(req, res) {
 
 		RSVP.model.findOne()
 			.where('who', req.user._id)
-			.where('event', locals.upcomingMeetup)
+			.where('event', locals.upcomingEvent)
 			.exec(function(err, rsvp) {
 				locals.rsvpStatus = {
 					rsvped: rsvp ? true : false,
