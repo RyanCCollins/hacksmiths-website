@@ -103,7 +103,7 @@ keystone.set('nav', {
 		'nanodegrees', 'settings'
 	],
 	'projects': ['projects', 'events', 'teams', 'project-repos', 'rsvps',
-		'inquiries', 'galleries', 'project-stats'
+		'inquiries', 'galleries', 'project-repo-stats'
 	],
 
 	'blog': ['posts', 'post-categories', 'post-comments'],
