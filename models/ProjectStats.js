@@ -19,12 +19,12 @@ ProjectRepoStats.add({
   },
 });
 
-ProjectStats.relationship({
+ProjectRepoStats.relationship({
   path: 'project',
   ref: 'Project',
   refPath: 'stats'
 });
 
 
-ProjectStats.defaultColumns = 'project';
-ProjectStats.register();
+ProjectRepoStats.defaultColumns = 'project';
+ProjectRepoStats.register();
