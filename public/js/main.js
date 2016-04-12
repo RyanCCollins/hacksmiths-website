@@ -200,4 +200,4 @@ if (!$("html").hasClass("touch")) {
 }
 
 // Initialize foundation
-$(document).foundation();
+$(document).foundation(console.log('Initialized'));

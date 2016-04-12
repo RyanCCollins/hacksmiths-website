@@ -558,13 +558,18 @@ $tooltip-radius: $global-radius;
 // 36. Top Bar
 // -----------
 // _settings.scss
-$topbar-bg-color: rgba(0,0,0,0);
+$topbar-bg-color: rgb(6, 7, 26);
 
-$topbar-padding: 0.5rem;
-$topbar-background: rgba(0,0,0,0);
+$topbar-padding: 0.0;
+$topbar-background: $topbar-bg-color;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
 
 $topbar-dropdown-bg: rgba(0,0,0,0);
+
+$topbar-height: rem-calc(80);
+// $topbar-link-font-size: rem-calc(15);
+// $tabbar-height: rem-calc(65);
+// $tabbar-hamburger-icon-top: rem-calc(16);
