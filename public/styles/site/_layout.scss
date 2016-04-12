@@ -1765,3 +1765,12 @@ cite {
         margin-left: -0.5em
     }
 }
+
+.tile {
+    background-color: white;
+    border-radius: .15em;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+    padding: 1em;
+    position: relative;
+    z-index: 2
+}

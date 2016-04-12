@@ -68,20 +68,8 @@ Project.add({
     ref: 'Event',
     note: 'Are there any events associated with this project?'
   }
-}, 'Info', {
-  stats: {
-    type: Types.Relationship,
-    ref: 'ProjectStats',
-    many: true,
-    noedit: true
-  }
 });
 
-Project.relationship({
-  path: 'stats',
-  ref: 'ProjectStats',
-  refPath: 'project'
-});
 Project.relationship({
   path: 'events',
   ref: 'Event',
