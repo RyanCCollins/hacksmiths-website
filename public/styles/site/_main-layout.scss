@@ -105,14 +105,14 @@ p {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("https://fonts.googleapis.com/css?family=Roboto");
+  src: url(https://fonts.googleapis.com/css?family=Open+Sans);
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  font-weight: 700;
+  font-family: 'Lato';
+  font-weight: 400;
   font-style: normal;
-  src:url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700");
+  src: url(https://fonts.googleapis.com/css?family=Lato);
 }
 
 p
@@ -120,8 +120,12 @@ p
   font-family: 'Open Sans';
 }
 
-.display{
-  font-family: 'Playfair Display';
+.text-gray {
+  color: rgb(77, 77, 77) !important;
+}
+
+.text-blue {
+  color: #2199e8;
 }
 
 .top-bar {
@@ -136,6 +140,8 @@ p
 
 .top-bar-section ul li {
    background: transparent;
+   top: 0;
+   margin-top: 0;
 }
 
 .top-bar ul li a {
@@ -145,11 +151,12 @@ p
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
-  background: transparent;
+  height: 80px;
+  margin-top: 0;
 }
 
-.top-bar-right {
- @include vertical-align();
+.top-bar-right ul li a{
+  @include vertical-align();
 }
 
 .top-bar-left {
@@ -173,7 +180,7 @@ p
     &.text-white {
       color: #fff !important;
       line-height: 1.0;
-      text-align: justify;
+      text-align: left;
     }
     &.slogan {
       color: #8d9093;

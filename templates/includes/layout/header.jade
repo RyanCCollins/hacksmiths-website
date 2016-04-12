@@ -1,17 +1,20 @@
-.top-bar
- .top-bar-left
-   ul.menu
-    a(href='/')
-      img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
-  .top-bar-right
-    ul.menu
-      li
+nav.top-bar(data-topbar='', role='navigation')
+  div.top-bar-left
+    ul.menu.title-area
+      li.name
+        a(href='/')
+          img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
+      li.toggle-topbar.menu-icon
+        a(href='#')
+  section.top-bar-section
+    ul.right
+      li(class=(section === 'events' ? 'active' : '' ))
         a(href='/events') Events
-      li
+      li(class=(section === 'members' ? 'active' : '' ))
         a(href='/members') Members
-      li
+      li(class=(section === 'blog' ? 'active' : '' ))
         a(href='/blog') Blog
-      li
+      li(class=(section === 'about' ? 'active' : '' ))
         a(href='/about') About
         if !user 
           li
@@ -19,10 +22,39 @@
           li
             a(href='/join') Join
         else
-          li.has-dropwdown
+          li.has-dropdown
+            a(href='#') Me
             ul.dropdown
               li
                 a(href='/me') My Profile
-            if user && user.isAdmin
               li
-                a(href='/keystone') Admin Area
+                a(href='/signout') Sign Out
+              if user && user.isAdmin
+                li
+                  a(href='/keystone') Admin Area
+
+//- nav.top-bar(data-topbar='', role='navigation')
+//-   ul.title-area
+//-     li.name
+//-       h1
+//-         a(href='#') My Site
+//-     // Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+//-     li.toggle-topbar.menu-icon
+//-       a(href='#')
+//-         span Menu
+//-   section.top-bar-section
+//-     // Right Nav Section
+//-     ul.right
+//-       li.active
+//-         a(href='#') Right Button Active
+//-       li.has-dropdown
+//-         a(href='#') Right Button Dropdown
+//-         ul.dropdown
+//-           li
+//-             a(href='#') First link in dropdown
+//-           li.active
+//-             a(href='#') Active link in dropdown
+//-     // Left Nav Section
+//-     ul.left
+//-       li
+//-         a(href='#') Left Nav Button

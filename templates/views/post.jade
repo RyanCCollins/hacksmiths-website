@@ -1,29 +1,71 @@
 extends ../layouts/default
 
 block content
-	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-		article
-			p: a(href='/blog') &larr; back to the blog
-			hr
-			if !data.post
-				h2 Invalid Post.
-			else
-				header
-					h1= data.post.title
-					h5 Posted 
+	a(href='/blog').text-muted &larr; Back to the blog
+	.container.mv-2
+		.col-sm-8.col-sm-offset-2.tile
+			article.full-post
+				if !data.post
+					h2 Invalid Post.
+				else
+					header
+						if data.post.state != 'published' && user.isAdmin
+							.mt-1: .alert.alert-danger This Post has not been published yet.
+								a(href='/keystone/posts/' + data.post.id).alert-link Open Keystone
+								|  to publish it.
+				
+					h1.blog-post__title= data.post.title
+					p.blog-post__byline Posted
+						if data.post.author
+							|  by&nbsp;
+							a(href='/members', rel='author')=data.post.author.name.full
 						if data.post.publishedDate
-							| on #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
+							|  on #{data.post._.publishedDate.format('MMMM D, YYYY')}
 						if data.post.categories && data.post.categories.length
-							| in 
+							|  in&nbsp;
 							each cat, cat_i in data.post.categories
 								a(href='/blog/' + cat.key)= cat.name
 								if cat_i < data.post.categories.length - 1
-									| , 
+									| ,&nbsp;
 								else
-									|  
-						if data.post.author
-							| by #{data.post.author.name.first}
-				.post
-					if data.post.image.exists
-						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
-					!= data.post.content.full
+									|&nbsp;
+
+					//- sharing buttons
+					.share-buttons
+						span.share-button
+							.fb-like(data-href="http://www.hacksmiths.io/blog/post/" + data.post.slug, data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+						span.share-button
+							a(href="https://twitter.com/share", data-via="Hacksmiths", data-hashtags="Hacksmiths", data-count="button", data-dnt="true").twitter-share-button Tweet
+						span.share-button
+							.g-plusone(data-size="medium")
+				if data.post.image.exists
+					.post-image.mv-3: img(src=data.post._.image.fit(720,420)).img-responsive.img-thumbnail
+				!= data.post.content.full
+
+					//- Comment
+					.comments
+					if data.post.comments.length
+						h4.mb-1=data.post.comments.length == 0 ? 'Be the first to reply' : plural(data.post.comments.length, '* comment', '* comments')
+						for comment in data.post.comments
+							if comment.author
+								.comment.media
+									.pull-left
+										img(src=comment.author.photo.exists ? comment.author._.photo.thumbnail(60,60) : '/images/placeholders/user-60x60.jpg', alt=comment.author.name.full, width=40, height=40).media-object.img-circle
+									.media-body
+										h6.mt-0
+											=comment.author.name.full
+											span.text-muted  &middot; #{moment(comment.publishedOn).fromNow()}
+										!=comment.content.html
+					if user
+						form(method='post').comment-form.mt-5
+							input(type='hidden', name='action', value='create-comment')
+							.media
+								.pull-left
+									img(src=user.photo.exists ? user._.photo.thumbnail(60,60) : '/images/placeholders/user-60x60.jpg', alt=user.name.full, width=40, height=40).img-responsive.img-circle
+								.media-body
+									textarea(placeholder='Add your comment...', name='content').form-control
+									.mv-1
+										button(type='submit').btn.btn-success Submit
+block js
+	script(src='/js/common/share.js')
+	script(src="https://apis.google.com/js/plusone.js")

@@ -198,3 +198,6 @@ if (!$("html").hasClass("touch")) {
   $(window).scroll(parallaxPosition);
   parallaxPosition();
 }
+
+// Initialize foundation
+$(document).foundation();
