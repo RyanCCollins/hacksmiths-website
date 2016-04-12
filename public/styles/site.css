@@ -23909,22 +23909,29 @@ p {
   font-weight: 700;
   src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGBgDywzySrQSFSEUM6OqW_g.woff") format("woff"); }
 
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css?family=Roboto"); }
+
 p {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: normal;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 30px; }
+  font-family: 'Open Sans'; }
 
 .top-bar {
   height: 80px;
-  background: transparent !important;
-  background-color: rgba(0, 0, 0, 0.9); }
+  background-color: #0c1e34; }
   .top-bar #logo {
     height: 22px;
     margin-left: 20px; }
 
 .top-bar-section ul li {
   background: transparent; }
+
+.top-bar ul li a {
+  color: #79d2f6;
+  text-transform: uppercase;
+  font-family: 'Open Sans'; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: transparent; }
@@ -25005,7 +25012,7 @@ hr {
 .lead {
   color: #000;
   margin-bottom: .75em;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 300;
   line-height: 1.4; }
 
@@ -26481,7 +26488,7 @@ hr {
 .lead {
   color: #000;
   margin-bottom: .75em;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 300;
   line-height: 1.4; }
 
