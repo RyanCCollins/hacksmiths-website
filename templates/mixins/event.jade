@@ -11,13 +11,14 @@ mixin event(event)
 		.event-content
 			if event.featureImage.exists
 					.image-wrap: img(src=event._.featureImage.fit(750,450)).img-responsive.center-block
-			h2.mv-3.text-center= event.title
-			h5.mb-1.text-center=event._.startDate.format('dddd D MMM YYYY')
-				|  from #{event._.startDate.format('h:mma')} - #{event._.endDate.format('h:mma')}
-			if event.description
-				p.text-center!= event.description
-			if event.marketingInfo
-				p.text-center!= event.marketingInfo
+			.col-sm-8.col-sm-offset-2.text-center
+				h1.mv-2.display.text-center= event.title
+				h5.mb-1.text-center=event._.startDate.format('dddd D MMM YYYY')
+					|  from #{event._.startDate.format('h:mma')} - #{event._.endDate.format('h:mma')}
+				if event.description
+					p.text-center!= event.description
+				if event.marketingInfo
+					p.text-center!= event.marketingInfo
 		if event.organization
 			hr.mv-2
 			h2!= event.organization.name
@@ -30,7 +31,7 @@ mixin event(event)
 						span.text-thin (#{plural(event.spotsRemaining, '* spot left', '* spots left')})
 					//include ../includes/attendance-toggle
 				else
-					.alert.alert-success.mb-0.text-center No spots available...
+					.alert.alert-success.mb-0.text-center No spots left...
 
 			else
 				#next-event(data-id=event.id)
@@ -40,7 +41,7 @@ mixin event(event)
 					else
 						.alert.alert-success.mb-0.text-center No spots left...
 		else if event.totalRSVPs
-			hr
+			hr.mv-2
 			.text-center
 				.h1.text-muted.mb-0= event.totalRSVPs
 				.lead.text-muted people #{event.state == 'active' ? "are helping" : "helped"} with this event

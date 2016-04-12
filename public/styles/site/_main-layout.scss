@@ -108,9 +108,20 @@ p {
   src: url("https://fonts.googleapis.com/css?family=Roboto");
 }
 
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  font-style: normal;
+  src:url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700");
+}
+
 p
 {
   font-family: 'Open Sans';
+}
+
+.display{
+  font-family: 'Playfair Display';
 }
 
 .top-bar {

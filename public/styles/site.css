@@ -23915,8 +23915,17 @@ p {
   font-weight: 400;
   src: url("https://fonts.googleapis.com/css?family=Roboto"); }
 
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700"); }
+
 p {
   font-family: 'Open Sans'; }
+
+.display {
+  font-family: 'Playfair Display'; }
 
 .top-bar {
   height: 80px;
@@ -25399,6 +25408,135 @@ cite {
 
 .comments .comment h6 span {
   font-weight: 300; }
+
+.timeline {
+  padding-bottom: 6em;
+  padding-top: 3em;
+  position: relative; }
+
+.timeline:before,
+.timeline:after {
+  content: " ";
+  display: table; }
+
+.timeline:after {
+  clear: both; }
+
+.timeline:before,
+.timeline:after {
+  content: " ";
+  display: table; }
+
+.timeline:after {
+  clear: both; }
+
+.timeline-path {
+  bottom: 0;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-left: -0.125em;
+  position: absolute;
+  top: 0;
+  width: .25em;
+  z-index: 1; }
+
+.timeline-path:before,
+.timeline-path:after {
+  width: 1em;
+  height: 1em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  margin-left: -0.5em;
+  position: absolute;
+  z-index: 3; }
+
+.timeline-path:before {
+  top: -1em; }
+
+.timeline-path:after {
+  bottom: -1em; }
+
+.timeline-item-node {
+  width: 10%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 25px; }
+
+.timeline-item-node:after {
+  -webkit-box-shadow: 0 0 0 4px #f7f7f7;
+  box-shadow: 0 0 0 4px #f7f7f7;
+  width: 1em;
+  height: 1em;
+  background-color: #f7f7f7;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  content: "";
+  margin-top: -0.5em;
+  position: absolute;
+  z-index: 3; }
+
+.timeline-item-inner {
+  background-color: white;
+  border-radius: .15em;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+  color: #555;
+  display: block;
+  padding: 1em; }
+
+.timeline-item-inner:hover,
+.timeline-item-inner:focus {
+  color: #555;
+  outline: none;
+  text-decoration: none; }
+
+.timeline-item-inner:hover h3,
+.timeline-item-inner:focus h3 {
+  text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .timeline-path {
+    left: 5px; }
+  .timeline-item {
+    margin-top: 30px;
+    position: relative;
+    float: right;
+    margin-left: 5px;
+    padding-left: 20px; }
+  .timeline-item .timeline-item-node {
+    left: 0;
+    width: 20px; }
+  .timeline-item .timeline-item-node:after {
+    margin-left: -0.5em; } }
+
+@media (min-width: 768px) {
+  .timeline-item--offset {
+    float: right;
+    height: 6em;
+    width: 40%; }
+  .timeline-item {
+    margin-top: 3em;
+    position: relative;
+    width: 50%; }
+  .timeline-item--odd {
+    clear: left;
+    float: left;
+    padding-right: 5%; }
+  .timeline-item--odd .timeline-item-node {
+    right: 0; }
+  .timeline-item--odd .timeline-item-node:after {
+    margin-right: -0.5em;
+    right: 0; }
+  .timeline-item--even {
+    clear: right;
+    float: right;
+    padding-left: 5%; }
+  .timeline-item--even .timeline-item-node {
+    left: 0; }
+  .timeline-item--even .timeline-item-node:after {
+    margin-left: -0.5em; } }
 
 .btn-main {
   color: #FFFFFF;
@@ -26883,6 +27021,135 @@ cite {
 
 .comments .comment h6 span {
   font-weight: 300; }
+
+.timeline {
+  padding-bottom: 6em;
+  padding-top: 3em;
+  position: relative; }
+
+.timeline:before,
+.timeline:after {
+  content: " ";
+  display: table; }
+
+.timeline:after {
+  clear: both; }
+
+.timeline:before,
+.timeline:after {
+  content: " ";
+  display: table; }
+
+.timeline:after {
+  clear: both; }
+
+.timeline-path {
+  bottom: 0;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-left: -0.125em;
+  position: absolute;
+  top: 0;
+  width: .25em;
+  z-index: 1; }
+
+.timeline-path:before,
+.timeline-path:after {
+  width: 1em;
+  height: 1em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  margin-left: -0.5em;
+  position: absolute;
+  z-index: 3; }
+
+.timeline-path:before {
+  top: -1em; }
+
+.timeline-path:after {
+  bottom: -1em; }
+
+.timeline-item-node {
+  width: 10%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 25px; }
+
+.timeline-item-node:after {
+  -webkit-box-shadow: 0 0 0 4px #f7f7f7;
+  box-shadow: 0 0 0 4px #f7f7f7;
+  width: 1em;
+  height: 1em;
+  background-color: #f7f7f7;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  content: "";
+  margin-top: -0.5em;
+  position: absolute;
+  z-index: 3; }
+
+.timeline-item-inner {
+  background-color: white;
+  border-radius: .15em;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+  color: #555;
+  display: block;
+  padding: 1em; }
+
+.timeline-item-inner:hover,
+.timeline-item-inner:focus {
+  color: #555;
+  outline: none;
+  text-decoration: none; }
+
+.timeline-item-inner:hover h3,
+.timeline-item-inner:focus h3 {
+  text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .timeline-path {
+    left: 5px; }
+  .timeline-item {
+    margin-top: 30px;
+    position: relative;
+    float: right;
+    margin-left: 5px;
+    padding-left: 20px; }
+  .timeline-item .timeline-item-node {
+    left: 0;
+    width: 20px; }
+  .timeline-item .timeline-item-node:after {
+    margin-left: -0.5em; } }
+
+@media (min-width: 768px) {
+  .timeline-item--offset {
+    float: right;
+    height: 6em;
+    width: 40%; }
+  .timeline-item {
+    margin-top: 3em;
+    position: relative;
+    width: 50%; }
+  .timeline-item--odd {
+    clear: left;
+    float: left;
+    padding-right: 5%; }
+  .timeline-item--odd .timeline-item-node {
+    right: 0; }
+  .timeline-item--odd .timeline-item-node:after {
+    margin-right: -0.5em;
+    right: 0; }
+  .timeline-item--even {
+    clear: right;
+    float: right;
+    padding-left: 5%; }
+  .timeline-item--even .timeline-item-node {
+    left: 0; }
+  .timeline-item--even .timeline-item-node:after {
+    margin-left: -0.5em; } }
 
 .calendar {
   background-color: white;
