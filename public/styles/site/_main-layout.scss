@@ -155,7 +155,8 @@ p
   margin-top: 0;
 }
 
-.top-bar-right ul li a{
+.top-bar-right ul li a
+{
   @include vertical-align();
 }
 
