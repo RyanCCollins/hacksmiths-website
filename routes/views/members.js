@@ -45,6 +45,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		locals.leaderIDs = _.pluck(locals.leaders, 'id');
 		locals.topContributorsIDs = _.pluck(locals.topContributors, 'id');
+		console.log('Leader IDs: ' + locals.leaderIDs);
 		next();
 	});
 
@@ -59,6 +60,7 @@ exports = module.exports = function(req, res) {
 			.where('_id').nin(locals.topContributorsIDs)
 			.exec(function(err, community) {
 				if (err) res.err(err);
+				console.log(community);
 				locals.community = community;
 				next();
 			});
