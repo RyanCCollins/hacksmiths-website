@@ -4,11 +4,11 @@ block flash-messages
 	//- !!! intentionally left blank
 
 block intro
-	.page-intro: .container
+	.page-intro: .contain
 		h1.page-title Hacksmiths
-		p.lead The people who make the Hacksmiths possible.
+		p.lead The people who keep the Hacksmiths running.&nbsp&nbsp
 			if !user
-				a(href='/join').js-auth-trigger Add your tile
+				a(href='/join').js-auth-trigger Signup to add your tile.
 
 mixin member(member)
 	- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');

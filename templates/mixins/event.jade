@@ -3,11 +3,12 @@ mixin event(event)
 	- var today = new Date();
 
 	.tile.ph-1.pv-1
-		.event-calendar.calendar.hidden-xs.hidden-sm(class=event.state == 'past' ? 'calendar--past' : null)
-			.calendar__header=event._.startDate.format('MMM')
-			.calendar__body
-				.calendar__date=event._.startDate.format('DD')
-				.calendar__year=event._.startDate.format('YYYY')
+		.contain
+			.event-calendar.calendar.hidden-xs.hidden-sm(class=event.state == 'past' ? 'calendar--past' : null)
+				.calendar__header=event._.startDate.format('MMM')
+				.calendar__body
+					.calendar__date=event._.startDate.format('DD')
+					.calendar__year=event._.startDate.format('YYYY')
 		.event-content
 			if event.featureImage.exists
 					.image-wrap: img(src=event._.featureImage.fit(750,450)).img-responsive.center-block
@@ -21,7 +22,11 @@ mixin event(event)
 					p.text-center!= event.marketingInfo
 		if event.organization
 			hr.mv-2
-			h2!= event.organization.name
+			.row
+				.col-md-12.text-center
+				h2 About the organization
+				img(src=event.organization._.logo).img-thumbnail.pull-left
+				h2!= event.organization.name
 				
 		if event.state == 'active'
 			hr.mv-2

@@ -6,12 +6,12 @@ mixin post(post)
 			.post-summary
 				.post-byline
 					.post-author: a(href='/blog/post/' + post.slug)=post.author.name.full
-					//- .date-stamp: em=moment(post.publishedDate).fromNow()
+					.date-stamp: em=moment(post.publishedDate).fromNow()
 
 				h4(itemprop='name').post-title.mv-1
 					a(href='/blog/post/' + post.slug, itemprop='url')=post.title
 				.post-content-brief(itemprop='description')!= post.content.brief
-	//-article(role="article", itemscope itemtype="http://schema.org/BlogPosting").blog-post
+	article(role="article", itemscope itemtype="http://schema.org/BlogPosting").blog-post
 		.blog-post__date.illustrative-heading
 			span.illustrative-heading__line
 			span.illustrative-heading__text

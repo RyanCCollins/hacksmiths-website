@@ -23,11 +23,11 @@ mixin post(post)
 			p.read-more: a(href='/blog/post/' + post.slug) Read more...
 
 block intro
-	.container
+	.contain.text-center
 		h1= data.category ? data.category.name : 'Blog'
-
+		p.lead Welcome to the blog of Hacksmiths.  This blog is mantained by our members.
 block content
-	.container: .row
+	.contain: .row
 		.col-sm-8.col-md-9
 			if filters.category && !data.category
 				h3.text-muted Invalid Category.

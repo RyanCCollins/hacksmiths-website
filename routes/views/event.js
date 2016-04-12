@@ -1,7 +1,8 @@
 var keystone = require('keystone'),
 	moment = require('moment'),
 	Event = keystone.list('Event'),
-	RSVP = keystone.list('RSVP');
+	RSVP = keystone.list('RSVP'),
+	Organization = keystone.list('Organization');
 
 exports = module.exports = function(req, res) {
 
@@ -12,7 +13,7 @@ exports = module.exports = function(req, res) {
 	locals.page.title = 'Events - Hacksmiths';
 
 	locals.rsvpStatus = {};
-
+	locals.organization = {};
 
 	// LOAD the Meetup
 
@@ -25,8 +26,7 @@ exports = module.exports = function(req, res) {
 				if (!event) return res.notfound('Event not found');
 
 				locals.event = event;
-				locals.event.populateRelated('rsvps[who]', next);
-
+				locals.event.populateRelated('rsvps[who] organization', next);
 			});
 	});
 
@@ -49,6 +49,7 @@ exports = module.exports = function(req, res) {
 			});
 
 	});
+
 
 
 	view.render('site/event');
