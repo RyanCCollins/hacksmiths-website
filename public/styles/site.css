@@ -23873,9 +23873,6 @@ table.hover tr:nth-of-type(even):hover {
 .page1 {
   overflow: hidden; }
 
-.page1, h1, h2, h3, h4, h5, p {
-  font-family: 'Source Sans Pro', sans-serif; }
-
 .big-gap {
   height: 200px; }
 
@@ -23884,46 +23881,6 @@ p {
   color: #000 !important; }
 
 /* Mixin for vertical alignment */
-/* 01. FONT FACE ================================================== */
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 200;
-  src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGEzfSP8PFPIaW8d4wHl9LSw.woff") format("woff"); }
-
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlDLXPPWpYIJRcQ99gLLWTOQ.woff") format("woff"); }
-
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 600;
-  src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGNF2eBBnhZOFf_rblGEjGiI.woff") format("woff"); }
-
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url("http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGBgDywzySrQSFSEUM6OqW_g.woff") format("woff"); }
-
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.googleapis.com/css?family=Open+Sans); }
-
-@font-face {
-  font-family: 'Lato';
-  font-weight: 400;
-  font-style: normal;
-  src: url(https://fonts.googleapis.com/css?family=Lato); }
-
-p {
-  font-family: 'Open Sans'; }
-
 .text-gray {
   color: #4d4d4d !important; }
 
@@ -23945,8 +23902,7 @@ p {
   font-size: 20px;
   margin-top: 0px;
   padding-top: 0px;
-  top: 0;
-  font-family: 'Open Sans'; }
+  top: 0; }
 
 .top-bar-left {
   position: relative;
