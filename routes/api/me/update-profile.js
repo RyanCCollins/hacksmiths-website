@@ -19,6 +19,4 @@ exports = module.exports = function(req, res) {
 	person.save(function() {
 
 	});
-
-
 }
