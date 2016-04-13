@@ -18,21 +18,21 @@ html
               a(href='/members') Members
             li(class=(section === 'blog' ? 'active' : '' ))
               a(href='/blog') Blog
-            li(class=(section === 'about' ? 'active' : '' ))
-              a(href='/about') About
-              if !user 
-                li
-                  a(href='/signin') Signin
-                li
-                  a(href='/join') Join
-              else
-                li.has-dropdown
-                  a(href='#') Me
-                  ul.dropdown
-                    li
-                      a(href='/me') My Profile
-                    li
-                      a(href='/signout') Sign Out
-                    if user && user.isAdmin
-                      li
-                        a(href='/keystone') Admin Area
+            //- li(class=(section === 'about' ? 'active' : '' ))
+            //-   a(href='/about') About
+            //-   if !user 
+            //-     li
+            //-       a(href='/signin') Signin
+            //-     li
+            //-       a(href='/join') Join
+            //-   else
+            //-     li.has-dropdown
+            //-       a(href='#') Me
+            //-       ul.dropdown
+            //-         li
+            //-           a(href='/me') My Profile
+            //-         li
+            //-           a(href='/signout') Sign Out
+            //-         if user && user.isAdmin
+            //-           li
+            //-             a(href='/keystone') Admin Area
