@@ -23935,11 +23935,7 @@ p {
 
 .top-bar ul li a {
   color: #79d2f6;
-  text-transform: uppercase;
-  font-size: 20px;
-  margin-top: 0px;
-  padding-top: 0px;
-  top: 0; }
+  text-transform: uppercase; }
 
 .top-bar-left {
   position: relative;
@@ -25591,7 +25587,7 @@ fieldset[disabled] .btn-main.active {
 /* 04. PAGE 1 / HEADER SETTINGS ================================================== */
 /* background setup */
 .background {
-  background: url("/images/hackathon.jpg") #131313;
+  background: url("/images/bg.jpg") #131313;
   background-repeat: no-repeat;
   /* custom background-position */
   background-position: 50% 50%;
