@@ -20,6 +20,8 @@ $baby-blue: #118AB2;
 $dark-blue: #022F40;
 $light-gray: #C2C6A7;
 
+$break-small: 500px;
+$break-medium: 800px;
 
 @mixin no-padding($side) {
     @if $side == 'all' {
@@ -137,8 +139,13 @@ p {
 .top-bar ul li a {
   color: #79d2f6;
   text-transform: uppercase;
-  @media screen and (min-width: 600px) {
-    
+  font-size: rem-calc(18px);
+  @media screen and (max-width: 728px) {
+    font-size: rem-calc(12px);
+    margin-left: 5px;
+  }
+  @media screen and (max-width: $break-medium) {
+    font-size: rem-calc(14px);
   }
 }
 
@@ -148,11 +155,6 @@ p {
 
 .top-bar-section li:not(.has-form) a:not(.button) {
 
-
-}
-
-.top-bar-right ul li a
-{
 
 }
 
