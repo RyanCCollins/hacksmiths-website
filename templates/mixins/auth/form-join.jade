@@ -13,6 +13,7 @@ mixin form-join(args)
 				button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
 				h4.modal-title Join Hacksmiths
 		div(class=args.modal ? 'modal-body' : null)
+			.col-md-8.col-md-offset-2
 			p.lead.text-center
 			form(method='post', action='/join', autocomplete='off', novalidate).auth-form
 				input(type='hidden', name='action', value='join')

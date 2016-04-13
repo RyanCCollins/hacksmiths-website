@@ -1,11 +1,11 @@
 extends ../layouts/default
 
 block intro
-	.container.text-centered
-		h1 Contact Us
+	.contain
+		h1.text-centered Contact Us
 
 block content
-	.container
+	.contain
 		if inquirySubmitted
 			h3 Thanks for getting in touch.
 		else
@@ -36,5 +36,5 @@ block content
 							label Message
 							textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
 						.form-actions
-							button(type='submit').btn.btn-primary Send
+							button(type='submit').button.large.radius Send
 				.col-sm-2.col-md-3
