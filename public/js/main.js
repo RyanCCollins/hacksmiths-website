@@ -111,7 +111,7 @@ call fullscreenFix() if .fullscreen content changes */
 function fullscreenFix() {
   var h = $('body').height();
   // set .fullscreen height
-  $(".content-b").each(function(i) {
+  $(".content-sub").each(function(i) {
     if ($(this).innerHeight() > h) {
       $(this).closest(".fullscreen").addClass("overflow");
     }
@@ -147,6 +147,10 @@ function backgroundResize() {
     if (contW > imgW) {
       imgW = contW;
       imgH = imgW / ratio;
+    }
+
+    if (contH > imgH) {
+      console.log('Too Big');
     }
     //
     path.data("resized-imgW", imgW);
@@ -197,6 +201,10 @@ if (!$("html").hasClass("touch")) {
   //$(window).focus(parallaxPosition);
   $(window).scroll(parallaxPosition);
   parallaxPosition();
+}
+
+function calculateImageContentHeight() {
+  $('.content-main').height =
 }
 
 // Initialize foundation
