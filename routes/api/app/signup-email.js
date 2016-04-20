@@ -119,16 +119,7 @@ exports = module.exports = function(req, res) {
 
 				state: 'enabled',
 
-				website: req.body.website,
-
 				isVerified: false,
-
-				notifications: {
-					posts: req.body.alertsNotifications,
-					events: req.body.alertsNotifications
-				},
-
-				services: {}
 			};
 
 			// console.log('[api.app.signup]  - New user data:', userData );
