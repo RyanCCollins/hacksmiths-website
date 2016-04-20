@@ -50,8 +50,7 @@ exports = module.exports = function(req, res) {
 		// Perform basic validation
 		function(next) {
 
-			if (!req.body.email || !req.body.password || !req.body['name.first'] || !
-				req.body['name.last']) {
+			if (!req.body.email || !req.body.password || !req.body.name) {
 				console.log('[api.app.siginup] - Failed signing up.');
 				console.log(
 					'------------------------------------------------------------');
