@@ -50,7 +50,11 @@ exports = module.exports = function(req, res) {
 		// Perform basic validation
 		function(next) {
 
+<<<<<<< HEAD
 			if (!req.body.email || !req.body.password || !req.body.name) {
+=======
+			if (!req.body.email || !req.body.password || !req.body.fullname) {
+>>>>>>> master
 				console.log('[api.app.siginup] - Failed signing up.');
 				console.log(
 					'------------------------------------------------------------');
@@ -105,26 +109,21 @@ exports = module.exports = function(req, res) {
 			console.log(
 				'------------------------------------------------------------');
 
+			var arrayOfNames = req.body.fullname.split(' ')
+			var firstName = arrayOfNames[0];
+			var lastName = arrayOfNames[1];
+
 			var userData = {
 				name: {
-					first: req.body['name.first'],
-					last: req.body['name.last']
+					first: firstName,
+					last: lastName
 				},
 				email: req.body.email,
 				password: req.body.password,
 
 				state: 'enabled',
 
-				website: req.body.website,
-
 				isVerified: false,
-
-				notifications: {
-					posts: req.body.alertsNotifications,
-					events: req.body.alertsNotifications
-				},
-
-				services: {}
 			};
 
 			// console.log('[api.app.signup]  - New user data:', userData );
