@@ -4,17 +4,14 @@ import RSVPStore from '../stores/RSVPStore';
 export default class HelpingApp extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-
-    };
+    this.renderHeading = this.bind(this.renderHeading, this);
   }
 
   getInitialState() {
-    return (
+    return {
       isReady: RSVPStore.isLoaded(),
       helpers: RSVPStore.getHelpers()
-    )
+    };
   }
 
   componentDidMount() {
@@ -40,7 +37,7 @@ export default class HelpingApp extends React.Component {
   }
 
   render() {
-    const helpingList;
+    let helperList = [];
 
     if (this.state.isReady) {
       helperList = this.state.helpers.map(function(person) {
@@ -62,12 +59,12 @@ export default class HelpingApp extends React.Component {
     return (
       <div>
         <section
-          className="helping"
+          className="helping">
           { this.renderHeading() }
           <ul
             className="list-unstyled list-inline text-center attendees-list"
           ></ul>
-        ></section>
+        </section>
       </div>
     );
   }

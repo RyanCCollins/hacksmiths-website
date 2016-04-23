@@ -60,7 +60,7 @@ RSVPStore.extend({
       cancelRefresh();
       // request the update from the API
       request
-        .get(`/api/event/${hacksmiths.currentEventId}`)
+        .get('/api/event/${hacksmiths.currentEventId}')
         .end((err, res) => {
           if (err) {
             console.log('Error with the AJAX request: ', err)
@@ -69,7 +69,7 @@ RSVPStore.extend({
             loaded = true;
             event = res.body.event;
             rsvp = res.body.rsvp;
-            helpers = res.body.helpers;
+            helpers = res.body.attending;
             RSVPStore.notifyChange();
           }
           RSVPStore.queueEventRefresh();
