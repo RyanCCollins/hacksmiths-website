@@ -162,7 +162,7 @@ block content
 			#react-helping-app
 
 block js
-	script(src='bundle.js')
+	script(src='/client/build/bundle.js')
 	if event
 		script.
 			hacksmiths.currentEventId = !{JSON.stringify(event.id)};
