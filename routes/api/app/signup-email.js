@@ -6,7 +6,6 @@ var keystone = require('keystone'),
 exports = module.exports = function(req, res) {
 
 	var locals = {
-
 		newUser: false
 	};
 
@@ -50,11 +49,7 @@ exports = module.exports = function(req, res) {
 		// Perform basic validation
 		function(next) {
 
-<<<<<<< HEAD
-			if (!req.body.email || !req.body.password || !req.body.name) {
-=======
 			if (!req.body.email || !req.body.password || !req.body.fullname) {
->>>>>>> master
 				console.log('[api.app.siginup] - Failed signing up.');
 				console.log(
 					'------------------------------------------------------------');

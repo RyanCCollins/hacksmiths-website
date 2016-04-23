@@ -30,6 +30,7 @@ const common = {
       include: PATHS.app
     }, {
       test: /\.jsx?$/,
+      exclude: /(node_modules|bower_components)/,
       loaders: ['babel?cacheDirectory'],
       include: PATHS.app
     }]

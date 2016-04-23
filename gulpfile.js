@@ -12,6 +12,7 @@ var react = require('gulp-react');
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.js");
+var gutil = require("gulp-util");
 
 var paths = {
 	'src': ['./models/**/*.js', './routes/**/*.js', 'keystone.js', 'package.json'],
