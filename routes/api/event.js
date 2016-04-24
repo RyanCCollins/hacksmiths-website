@@ -57,6 +57,7 @@ exports = module.exports = function(req, res) {
 						rtn.attendees = _.compact(results.map(function(rsvp) {
 							if (!rsvp.who) return;
 							return {
+								id: rsvp.who._id,
 								url: rsvp.who.isPublic ? rsvp.who.url : false,
 								photo: rsvp.who.photo.exists ? rsvp.who._.photo.thumbnail(80, 80) : rsvp
 									.who.avatarUrl || '/images/avatar.png',
