@@ -112,6 +112,7 @@ exports = module.exports = function(app) {
 	app.all('/api*', keystone.middleware.api);
 	app.all('/api/me/event', routes.api.me.event);
 	app.all('/api/me/profile', routes.api.me.profile);
+	app.post('/api/me/profile/update', routes.api.me["update-profile"]);
 
 	app.all('/api/app/');
 	app.all('/api/stats', routes.api.stats);
