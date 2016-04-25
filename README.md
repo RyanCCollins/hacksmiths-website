@@ -63,8 +63,7 @@ In production, it's a good idea to run nginx seperately from within a separate D
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.  
 
 ## Acknowledgments
-
-*
+Many thanks to the awesome team behind KeystoneJS!
 
 ## Troubleshooting
 If you have any issues getting setup, there are a few things that you can try.First of all, the app will not run without environment variables.  Follow the steps above in the "Environment Variable Setup" section.
