@@ -36,7 +36,8 @@ exports = module.exports = function(req, res) {
 							return {
 								id: rsvp.who._id,
 								url: rsvp.who.isPublic ? rsvp.who.url : false,
-								photo: rsvp.who.photo.exists ? rsvp.who._.photo.thumbnail(80, 80) : rsvp
+								photo: rsvp.who._.photo.exists ? rsvp.who._.photo.thumbnail(80,
+										80) : rsvp
 									.who.avatarUrl || '/images/avatar.png',
 								name: rsvp.who.name
 							};
