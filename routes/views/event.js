@@ -11,12 +11,10 @@ exports = module.exports = function(req, res) {
 
 	locals.section = 'events';
 	locals.page.title = 'Events - Hacksmiths';
-
 	locals.rsvpStatus = {};
 	locals.organization = {};
 
-	// LOAD the Meetup
-
+	// Find and load the Event
 	view.on('init', function(next) {
 		Event.model.findOne()
 			.where('key', req.params.event)
@@ -30,9 +28,7 @@ exports = module.exports = function(req, res) {
 			});
 	});
 
-
 	// LOAD an RSVP
-
 	view.on('init', function(next) {
 
 		if (!req.user || !locals.event) return next();
@@ -49,8 +45,6 @@ exports = module.exports = function(req, res) {
 			});
 
 	});
-
-
 
 	view.render('site/event');
 
