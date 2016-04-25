@@ -82,15 +82,12 @@ exports = module.exports = function(req, res) {
 				spotsAvailable: event.spotsAvailable,
 				spotsRemaining: event.spotsRemaining,
 
-
 			};
-
 			return eventData;
 		};
 
 		if (data.event) {
 			response.event = parseEvent(data.event, data.active);
-
 			if (data.user) {
 				response.rsvp.responded = data.rsvp ? true : false;
 				response.rsvp.attending = data.rsvp && data.rsvp.attending ? true :
@@ -98,8 +95,6 @@ exports = module.exports = function(req, res) {
 				response.rsvp.date = data.rsvp ? data.rsvp.changedAt : false;
 			}
 		}
-
 		res.apiResponse(response);
 	});
-
 };

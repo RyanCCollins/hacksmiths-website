@@ -1,4 +1,4 @@
-# Hacksmiths Hackathon Coordinator Website
+# Hacksmiths Website
 
 API, CMS, and backend for the Hacksmiths.io website
 
@@ -28,7 +28,6 @@ gulp
 Which should open up your browser automatically.  If for some reason it does not, you can navigate to http://localhost:3000 to see the site.
 
 
-
 ## Deployment
 
 Deployment is similiar to setup, except that this app can run inside of its docker container.
@@ -50,7 +49,6 @@ In production, it's a good idea to run nginx seperately from within a separate D
 * NodeJS
 * Bower
 * Docker
-* 
 * Gulp
 * KeystoneJS
 
@@ -63,7 +61,7 @@ In production, it's a good idea to run nginx seperately from within a separate D
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.  
 
 ## Acknowledgments
-Many thanks to the awesome team behind KeystoneJS!
+Many thanks to the awesome team behind KeystoneJS!  Their wonderful CMS and other open source software was inspiration for this site.
 
 ## Troubleshooting
 If you have any issues getting setup, there are a few things that you can try.First of all, the app will not run without environment variables.  Follow the steps above in the "Environment Variable Setup" section.
