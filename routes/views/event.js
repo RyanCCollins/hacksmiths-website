@@ -32,7 +32,6 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 
 		if (!req.user || !locals.event) return next();
-
 		RSVP.model.findOne()
 			.where('who', req.user._id)
 			.where('event', locals.event)
@@ -43,7 +42,6 @@ exports = module.exports = function(req, res) {
 				};
 				return next();
 			});
-
 	});
 
 	view.render('site/event');

@@ -26,6 +26,7 @@ exports = module.exports = function(req, res) {
 			RSVP.model.find()
 				.where('event', returnValues.event.id)
 				.where('participating', true)
+				.populate('who')
 				.exec(function(err, results) {
 					if (err) {
 						console.log('Error loading participants.', err);
@@ -33,6 +34,7 @@ exports = module.exports = function(req, res) {
 					if (results) {
 						returnValues.participants = _.compact(results.map(function(rsvp) {
 							if (!rsvp.who) return;
+
 							return {
 								id: rsvp.who._id,
 								url: rsvp.who.isPublic ? rsvp.who.url : false,
