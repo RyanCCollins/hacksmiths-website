@@ -6,61 +6,39 @@ var RSVP = keystone.list('RSVP');
 
 exports = module.exports = function(req, res) {
 	var eventId = req.params.id;
-	var rtn = {
+	var returnValues = {
 		event: {},
-		attendees: [],
-		rsvp: {
-			exists: false,
-			attending: false
-		}
-	};
+		attendees: []
+	}
 
 	async.series([
 		function(next) {
-			keystone.list('Event').model.findById(eventId, function(err, event) {
+			Event.model.findById(eventId, function(err, event) {
 				if (err) {
-					console.log('Error finding event: ', err);
+					console.log('There was an error finding the event: ', err)
 				}
-				rtn.event = event;
+				returnValues.event = event;
 				return next();
 			});
 		},
-
 		function(next) {
-			if (!rtn.event || !req.user) return next();
-			keystone.list('RSVP').model.findOne()
-				.where('who', req.user.id)
-				.where('event', rtn.event.id)
-				.exec(function(err, rsvp) {
-					if (err) {
-						console.log('Error finding current user RSVP', err);
-					}
-					if (rsvp) {
-						rtn.rsvp.exists = true;
-						rtn.rsvp.attending = rsvp.attending;
-					}
-					return next(err);
-				});
-		},
-
-		function(next) {
-			if (!rtn.event) return next();
-			keystone.list('RSVP').model.find()
-				.where('event', rtn.event.id)
+			if (!returnValues.event) return next();
+			RSVP.model.find()
+				.where('event', returnValues.event.id)
 				.where('attending', true)
-				.populate('who')
 				.exec(function(err, results) {
 					if (err) {
-						console.log('Error loading attendee RSVPs', err);
+						console.log('Error loading attendees.', err);
 					}
 					if (results) {
-						rtn.attendees = _.compact(results.map(function(rsvp) {
+						returnValues.attendees = _.compact(results.map(function(rsvp) {
 							if (!rsvp.who) return;
 							return {
 								id: rsvp.who._id,
 								url: rsvp.who.isPublic ? rsvp.who.url : false,
-								photo: rsvp.who.photo.exists ? rsvp.who._.photo.thumbnail(80, 80) : rsvp
-									.who.avatarUrl || '/images/avatar.png',
+								photo: rsvp.who.photo.exists ?
+									rsvp.who._.photo.thumbnail(80, 80) : rsvp.who.avatarUrl ||
+									'/images/avatar.png',
 								name: rsvp.who.name
 							};
 						}));
@@ -70,8 +48,8 @@ exports = module.exports = function(req, res) {
 		},
 	], function(err) {
 		if (err) {
-			rtn.err = err;
+			returnValues.err = err;
 		}
-		res.json(rtn);
+		res.json(returnValues);
 	});
 };

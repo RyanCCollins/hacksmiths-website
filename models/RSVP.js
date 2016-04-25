@@ -9,11 +9,36 @@ var Types = keystone.Field.Types;
 var RSVP = new keystone.List('RSVP');
 
 RSVP.add({
-	event: { type: Types.Relationship, ref: 'Event', required: true, initial: true, index: true },
-	who: { type: Types.Relationship, ref: 'User', required: true, initial: true, index: true },
-	attending: { type: Types.Boolean, index: true },
-	createdAt: { type: Date, noedit: true, collapse: true, default: Date.now },
-	changedAt: { type: Date, noedit: true, collapse: true }
+	event: {
+		type: Types.Relationship,
+		ref: 'Event',
+		required: true,
+		initial: true,
+		index: true
+	},
+	who: {
+		type: Types.Relationship,
+		ref: 'User',
+		required: true,
+		initial: true,
+		index: true
+	},
+	attending: {
+		type: Types.Boolean,
+		index: true,
+		default: true
+	},
+	createdAt: {
+		type: Date,
+		noedit: true,
+		collapse: true,
+		default: Date.now
+	},
+	changedAt: {
+		type: Date,
+		noedit: true,
+		collapse: true
+	}
 });
 
 
