@@ -23,7 +23,7 @@ RSVP.add({
 		initial: true,
 		index: true
 	},
-	attending: {
+	participating: {
 		type: Types.Boolean,
 		index: true,
 		default: true

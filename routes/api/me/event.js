@@ -3,7 +3,6 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
-
 	RSVP.model.findOne()
 		.where('who', req.user._id)
 		.where('event', req.body.data.event)
@@ -12,53 +11,35 @@ exports = module.exports = function(req, res) {
 				success: false
 			});
 
-			if (req.body.statusOnly) {
-				console.log("==========statusOnly=============")
-
-				return res.apiResponse({
-					success: true,
-					rsvped: rsvp ? true : false,
-					attending: rsvp && rsvp.attending ? true : false
+			if (rsvp) {
+				rsvp.set({
+					participating: req.body.data.participating
+				}).save(function(err) {
+					if (err) return res.apiResponse({
+						success: false,
+						err: err
+					});
+					return res.apiResponse({
+						success: true,
+						participating: req.body.data.participating
+					});
 				});
 
 			} else {
 
-				if (rsvp) {
-					console.log("==========rsvp=============");
-					console.log("req.body.attending", req.body);
-					rsvp.set({
-						attending: req.body.data.attending
-					}).save(function(err) {
-						if (err) return res.apiResponse({
-							success: false,
-							err: err
-						});
-						return res.apiResponse({
-							success: true,
-							attending: req.body.data.attending
-						});
+				new RSVP.model({
+					event: req.body.data.event,
+					who: req.user,
+					participating: req.body.data.participating
+				}).save(function(err) {
+					if (err) return res.apiResponse({
+						success: false,
+						err: err
 					});
-
-				} else {
-					console.log("==========saving to rsvp model=============");
-					new RSVP.model({
-						event: req.body.data.event,
-						who: req.user,
-						attending: req.body.data.attending
-					}).save(function(err) {
-						if (err) return res.apiResponse({
-							success: false,
-							err: err
-						});
-						return res.apiResponse({
-							success: true
-						});
+					return res.apiResponse({
+						success: true
 					});
-
-				}
-
+				});
 			}
-
 		});
-
 }

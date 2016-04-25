@@ -21,7 +21,7 @@ exports = module.exports = function(req, res) {
 	view.query('rsvps.history',
 		RSVP.model.find()
 		.where('who', req.user)
-		.where('attending', true)
+		.where('participating', true)
 		.populate('event')
 		.sort('-createdAt')
 	);

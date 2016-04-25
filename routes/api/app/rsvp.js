@@ -14,7 +14,7 @@ exports = module.exports = function(req, res) {
 
 				if (rsvp) {
 
-					if (req.body.attending == 'false' && req.body.cancel == 'true') {
+					if (req.body.participating == 'false' && req.body.cancel == 'true') {
 						console.log('[api.app.rsvp] - Existing RSVP found, deleting...');
 						rsvp.remove(function(err) {
 							if (err) return res.apiResponse({ success: false, err: err });
@@ -24,7 +24,7 @@ exports = module.exports = function(req, res) {
 					} else {
 						console.log('[api.app.rsvp] - Existing RSVP found, updating...');
 						rsvp.set({
-							attending: req.body.attending == 'true',
+							participating: req.body.participating == 'true',
 							changedAt: req.body.changed
 						}).save(function(err) {
 							if (err) return res.apiResponse({ success: false, err: err });
@@ -40,7 +40,7 @@ exports = module.exports = function(req, res) {
 					new RSVP.model({
 						event: req.body.event,
 						who: user,
-						attending: req.body.attending == 'true',
+						participating: req.body.participating == 'true',
 						changedAt: req.body.changed
 					}).save(function(err) {
 						if (err) return res.apiResponse({ success: false, err: err });

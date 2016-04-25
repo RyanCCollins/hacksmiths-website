@@ -1,7 +1,7 @@
 import react from 'react';
 import RSVPStore from '../stores/RSVPStore';
 
-export default class HelpingApp extends React.Component {
+export default class ParticipatingApp extends React.Component {
   constructor(props) {
     super(props);
     this.renderHeading = this.bind(this.renderHeading, this);
@@ -10,7 +10,7 @@ export default class HelpingApp extends React.Component {
   getInitialState() {
     return {
       isReady: RSVPStore.isLoaded(),
-      helpers: RSVPStore.getHelpers()
+      participants: RSVPStore.getParticipants()
     };
   }
 
@@ -25,22 +25,22 @@ export default class HelpingApp extends React.Component {
   updateStateFromStore() {
     this.setState({
       isReady: RSVPStore.isLoaded(),
-      helpers: RSVPStore.getHelpers()
+      participants: RSVPStore.getParticipants()
     });
   }
 
   renderHeading() {
     if (!this.state.isReady) return <h3 className="heading-with-line">...</h3>
-    var count = this.state.helpers ? this.state.helpers.length : '...';
+    var count = this.state.participants ? this.state.participants.length : '...';
     var plural = count === 1 ? ' person is' : 'people are';
     return <h3 className="heading-with-line"> { count + plural } </h3>;
   }
 
   render() {
-    let helperList = [];
+    let participantList = [];
 
     if (this.state.isReady) {
-      helperList = this.state.helpers.map(function(person) {
+      participantList = this.state.participants.map(function(person) {
         return (
           <li key={ person.id }>
             <a href={ person.url }>
@@ -59,10 +59,10 @@ export default class HelpingApp extends React.Component {
     return (
       <div>
         <section
-          className="helping">
+          className="participating">
           { this.renderHeading() }
           <ul
-            className="list-unstyled list-inline text-center attendees-list"
+            className="list-unstyled list-inline text-center participants-list"
           ></ul>
         </section>
       </div>

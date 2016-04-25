@@ -7,9 +7,8 @@ const RSVPStore = new Store();
 let loaded = false;
 let event = {};
 let rsvp = {};
-let helpers = [];
+let participants = [];
 
-// 5 second refresh interval
 const REFRESH_INTERVAL = 5000;
 let refreshTimeout = null;
 
@@ -27,18 +26,18 @@ RSVPStore.extend({
       return rsvp;
     },
 
-    getHelpers(callback) {
-      return helpers;
+    getParticipants(callback) {
+      return participants;
     },
 
-    rsvp(attending, callback) {
+    rsvp(participating, callback) {
       cancelRefresh();
       request
         .post('/api/me/event')
         .send({
           data: {
             event: hacksmiths.currentEventId,
-            attending
+            participating: true
           }
         })
         .end((err, res) => {
@@ -69,7 +68,7 @@ RSVPStore.extend({
             loaded = true;
             event = res.body.event;
             rsvp = res.body.rsvp;
-            helpers = res.body.attending;
+            participants = res.body.participating;
             RSVPStore.notifyChange();
           }
           RSVPStore.queueEventRefresh();

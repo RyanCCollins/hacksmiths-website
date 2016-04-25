@@ -209,7 +209,7 @@ Event.schema.methods.refreshRSVPs = function(callback) {
 	var event = this;
 	keystone.list('RSVP').model.count()
 		.where('event').in([event.id])
-		.where('attending', true)
+		.where('participating', true)
 		.exec(function(err, count) {
 			if (err) return callback(err);
 			event.totalRSVPs = count;
@@ -217,20 +217,20 @@ Event.schema.methods.refreshRSVPs = function(callback) {
 		});
 };
 
-Event.schema.methods.notifyAttendees = function(req, res, next) {
+Event.schema.methods.notifyParticipants = function(req, res, next) {
 	var event = this;
 	keystone.list('User').model.find().where('notifications.events', true).exec(
-		function(err, attendees) {
+		function(err, participants) {
 			if (err) return next(err);
-			if (!attendees.length) {
+			if (!participants.length) {
 				next();
 			} else {
-				attendees.forEach(function(attendee) {
+				participants.forEach(function(participant) {
 					new keystone.Email('new-event').send({
-						attendee: attendee,
+						participant: participant,
 						event: event,
 						subject: 'New event: ' + event.name,
-						to: attendee.email,
+						to: participant.email,
 						from: {
 							name: 'hacksmiths',
 							email: 'event@hacksmiths.com'

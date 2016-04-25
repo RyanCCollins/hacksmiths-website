@@ -8,7 +8,7 @@ exports = module.exports = function(req, res) {
 	var eventId = req.params.id;
 	var returnValues = {
 		event: {},
-		attendees: []
+		participants: []
 	}
 
 	async.series([
@@ -25,13 +25,13 @@ exports = module.exports = function(req, res) {
 			if (!returnValues.event) return next();
 			RSVP.model.find()
 				.where('event', returnValues.event.id)
-				.where('attending', true)
+				.where('participating', true)
 				.exec(function(err, results) {
 					if (err) {
-						console.log('Error loading attendees.', err);
+						console.log('Error loading participants.', err);
 					}
 					if (results) {
-						returnValues.attendees = _.compact(results.map(function(rsvp) {
+						returnValues.participants = _.compact(results.map(function(rsvp) {
 							if (!rsvp.who) return;
 							return {
 								id: rsvp.who._id,

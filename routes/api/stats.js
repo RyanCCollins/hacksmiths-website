@@ -22,13 +22,13 @@ exports = module.exports = function(req, res) {
 				.exec(function(err, event) {
 
 					RSVP.model.count({
-						event: event,
-						attending: true
-					})
-					.exec(function(err, count) {
-						stats.rsvps = count;
-						return next();
-					});
+							event: event,
+							participating: true
+						})
+						.exec(function(err, count) {
+							stats.rsvps = count;
+							return next();
+						});
 
 				});
 

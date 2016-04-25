@@ -31,7 +31,7 @@ mixin event(event)
 		if event.state == 'active'
 			hr.mv-2
 			if user
-				if event.spotsAvailable || rsvpStatus.rsvped && rsvpStatus.attending
+				if event.spotsAvailable || rsvpStatus.rsvped && rsvpStatus.participating
 					h4.hero-button-title Can you help?
 						span.text-thin (#{plural(event.spotsRemaining, '* spot left', '* spots left')})
 					//include ../includes/attendance-toggle
@@ -49,14 +49,14 @@ mixin event(event)
 			hr.mv-2
 			.text-center
 				.h1.text-muted.mb-0= event.totalRSVPs
-				.lead.text-muted people #{event.state == 'active' ? "are helping" : "helped"} with this event
+				.lead.text-muted people #{event.state == 'active' ? "are participating" : "participated"} with this event
 			if event.state == 'past'
 				ul.list-unstyled.list-inline.text-center
 					for rsvp in event.rsvps
 						if rsvp.who
-							- var attendee = rsvp.who;
-							if attendee.isPublic
-								li: a(href=attendee.url, title=attendee.name.full)
-									img(src=attendee.photo.exists ? attendee._.photo.thumbnail(80,80) : attendee.avatarUrl || '/images/avatar.png', width=40, height=40, alt=attendee.name.full).img-circle
+							- var participant = rsvp.who;
+							if participant.isPublic
+								li: a(href=participant.url, title=participant.name.full)
+									img(src=participant.photo.exists ? participant._.photo.thumbnail(80,80) : participant.avatarUrl || '/images/avatar.png', width=40, height=40, alt=participant.name.full).img-circle
 							else
-								li(title=attendee.name.full): img(src=attendee.photo.exists ? attendee._.photo.thumbnail(80,80) : attendee.avatarUrl || '/images/avatar.png', width=40, height=40, alt=attendee.name.full).img-circle
+								li(title=participant.name.full): img(src=participant.photo.exists ? participant._.photo.thumbnail(80,80) : participant.avatarUrl || '/images/avatar.png', width=40, height=40, alt=participant.name.full).img-circle

@@ -32,7 +32,7 @@ exports = module.exports = function(req, res) {
 			.exec(function(err, rsvp) {
 				locals.rsvpStatus = {
 					rsvped: rsvp ? true : false,
-					attending: rsvp && rsvp.attending ? true : false
+					participating: rsvp && rsvp.participating ? true : false
 				};
 				return next();
 			});

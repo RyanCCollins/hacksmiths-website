@@ -5882,7 +5882,7 @@ nav:after {
     font-size: 14.3px
 }
 
-.attending {
+.participating {
     margin-top: 4em
 }
 
@@ -5914,11 +5914,11 @@ nav:after {
     margin-right: -50%
 }
 
-.attendees-list {
+.participants-list {
     margin-top: 4em
 }
 
-.attendees-list li {
+.participants-list li {
     margin: .25em 0
 }
 

@@ -50,7 +50,7 @@ exports = module.exports = function(req, res) {
 			event: {},
 			rsvp: {
 				responded: false,
-				attending: false
+				participating: false
 			},
 			user: false
 		};
@@ -90,7 +90,8 @@ exports = module.exports = function(req, res) {
 			response.event = parseEvent(data.event, data.active);
 			if (data.user) {
 				response.rsvp.responded = data.rsvp ? true : false;
-				response.rsvp.attending = data.rsvp && data.rsvp.attending ? true :
+				response.rsvp.participating = data.rsvp && data.rsvp.participating ?
+					true :
 					false;
 				response.rsvp.date = data.rsvp ? data.rsvp.changedAt : false;
 			}

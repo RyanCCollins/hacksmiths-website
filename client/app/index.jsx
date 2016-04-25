@@ -1,10 +1,10 @@
 import react from 'react';
-import HelpingApp from './components/HelpingApp';
+import ParticipantApp from './components/ParticipantApp';
 
-let helpingAppTarget = document.getElementById('react-helping-app');
+let participantAppTarget = document.getElementById('react-participant-app');
 
-if (helpingAppTarget) {
+if (participatingAppTarget) {
   ReactDOM.render(
-    <HelpingApp />,
-    helpingAppTarget);
+    <ParticipantApp />,
+    participantAppTarget);
 }
