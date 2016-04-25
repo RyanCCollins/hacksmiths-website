@@ -49,7 +49,7 @@ mixin event(event)
 			hr.mv-2
 			.text-center
 				.h1.text-muted.mb-0= event.totalRSVPs
-				.lead.text-muted people #{event.state == 'active' ? "are participating" : "participated"} with this event
+				.lead.text-muted People #{event.state == 'active' ? "are participating" : "participated"} in this event
 			if event.state == 'past'
 				ul.list-unstyled.list-inline.text-center
 					for rsvp in event.rsvps
