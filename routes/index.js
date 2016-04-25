@@ -65,16 +65,13 @@ exports = module.exports = function(app) {
 		});
 	}
 
-	// Views
-	//app.get('/*', routes.views.comingsoon);
-
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 
-	// Website
+	// Routes specifically for the website
 	app.get('/', routes.views.index);
 	app.get('/events', routes.views.events);
 	app.get('/events/:event', routes.views.event);
@@ -97,18 +94,16 @@ exports = module.exports = function(app) {
 	app.all('/forgot-password', routes.views.session['forgot-password']);
 	app.all('/reset-password/:key', routes.views.session['reset-password']);
 
-	// Authentication
+	// Authentication routes
 	app.all('/auth/confirm', routes.auth.confirm);
 	app.all('/auth/app', routes.auth.app);
 	app.all('/auth/:service', routes.auth.service);
 
-	// User
+	// User routes
 	app.all('/me*', middleware.requireUser);
 	app.all('/me', routes.views.me);
 
-
-
-	// API
+	// API routes
 	app.all('/api*', keystone.middleware.api);
 	app.all('/api/me/event', routes.api.me.event);
 	app.all('/api/me/profile', routes.api.me.profile);
@@ -118,7 +113,7 @@ exports = module.exports = function(app) {
 	app.all('/api/stats', routes.api.stats);
 	app.all('/api/event/:id', routes.api.event);
 
-	// API - App
+	// API - App for the iOS app
 	app.all('/api/app/event-status', routes.api.app['event-status']);
 	app.all('/api/app/rsvp', routes.api.app.rsvp);
 	app.all('/api/app/members', routes.api.app.members);
@@ -128,8 +123,5 @@ exports = module.exports = function(app) {
 	app.all('/api/app/signin-service-check', routes.api.app[
 		'signin-service-check']);
 	app.all('/api/app/signin-recover', routes.api.app['signin-recover']);
-
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 };
