@@ -21,8 +21,6 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
-var graphqlHTTP = require('express-graphql');
-var graphQLSchema = require('../graphql/schema');
 var IP = process.env.IP || '192.168.33.10';
 var subdomain = require('subdomain');
 
@@ -41,11 +39,6 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
-	// GraphQL
-	app.use('/api/graphql', graphqlHTTP({
-		schema: graphQLSchema,
-		graphiql: true
-	}));
 
 	app.use(subdomain({
 		base: IP,
