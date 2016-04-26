@@ -7,6 +7,7 @@ var RSVP = keystone.list('RSVP');
 exports = module.exports = function(req, res) {
 	var eventId = req.params.id;
 	var returnValues = {
+		success: false,
 		event: {},
 		participants: []
 	}
@@ -32,6 +33,7 @@ exports = module.exports = function(req, res) {
 						console.log('Error loading participants.', err);
 					}
 					if (results) {
+
 						returnValues.participants = _.compact(results.map(function(rsvp) {
 							if (!rsvp.who) return;
 
@@ -50,6 +52,9 @@ exports = module.exports = function(req, res) {
 	], function(err) {
 		if (err) {
 			returnValues.err = err;
+			returnValues.success = false;
+		} else {
+			returnValues.sucess = true;
 		}
 		res.json(returnValues);
 	});
