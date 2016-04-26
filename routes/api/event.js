@@ -7,7 +7,6 @@ var RSVP = keystone.list('RSVP');
 exports = module.exports = function(req, res) {
 	var eventId = req.params.id;
 	var returnValues = {
-		success: false,
 		event: {},
 		participants: []
 	}
