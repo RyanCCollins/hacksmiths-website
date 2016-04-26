@@ -119,7 +119,6 @@ Event.add({
 		default: '',
 		note: 'Post a geocode location, or a url.'
 	},
-
 	maxRSVPs: {
 		type: Number,
 		default: 20
@@ -128,7 +127,6 @@ Event.add({
 		type: Number,
 		noedit: true
 	},
-
 	state: {
 		type: Types.Select,
 		options: 'draft, scheduled, active, past',
