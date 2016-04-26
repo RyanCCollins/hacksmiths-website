@@ -7,14 +7,27 @@ var Types = keystone.Field.Types;
  */
 
 var Role = new keystone.List('Role', {
-    track: true,
-    autokey: { from: 'title', path: 'key', unique: true },
-    map: { name: 'title' }
+  track: true,
+  autokey: {
+    from: 'title',
+    path: 'key',
+    unique: true
+  },
+  map: {
+    name: 'title'
+  }
 });
 
 Role.add({
-    title: { type: String, required: true, initial: true },
-    description: {type: Types.Markdown, height: 200}
+  title: {
+    type: String,
+    required: true,
+    initial: true
+  },
+  description: {
+    type: Types.Markdown,
+    height: 200
+  }
 });
 
 
@@ -23,8 +36,16 @@ Role.add({
  * =============
  */
 
-Role.relationship({ref: 'User', refPath:'roles', path:'members'});
-Role.relationship({ref: 'Team', refPath: 'roles', path: 'team'});
+Role.relationship({
+  ref: 'User',
+  refPath: 'roles',
+  path: 'members'
+});
+Role.relationship({
+  ref: 'Team',
+  refPath: 'roles',
+  path: 'team'
+});
 
 /**
  * Registration

@@ -7,11 +7,18 @@ var Types = keystone.Field.Types;
  */
 
 var LinkTag = new keystone.List('LinkTag', {
-	autokey: { from: 'name', path: 'key', unique: true }
+	autokey: {
+		from: 'name',
+		path: 'key',
+		unique: true
+	}
 });
 
 LinkTag.add({
-	name: { type: String, required: true }
+	name: {
+		type: String,
+		required: true
+	}
 });
 
 
@@ -20,7 +27,11 @@ LinkTag.add({
  * =============
  */
 
-LinkTag.relationship({ ref: 'Link', refPath: 'tags', path: 'links' });
+LinkTag.relationship({
+	ref: 'Link',
+	refPath: 'tags',
+	path: 'links'
+});
 
 
 /**

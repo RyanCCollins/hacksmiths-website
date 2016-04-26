@@ -8,11 +8,18 @@ var Types = keystone.Field.Types;
 
 var PostCategory = new keystone.List('PostCategory', {
 	track: true,
-	autokey: { from: 'name', path: 'key', unique: true }
+	autokey: {
+		from: 'name',
+		path: 'key',
+		unique: true
+	}
 });
 
 PostCategory.add({
-	name: { type: String, required: true }
+	name: {
+		type: String,
+		required: true
+	}
 });
 
 
@@ -21,7 +28,11 @@ PostCategory.add({
  * =============
  */
 
-PostCategory.relationship({ ref: 'Post', refPath: 'categories', path: 'posts' });
+PostCategory.relationship({
+	ref: 'Post',
+	refPath: 'categories',
+	path: 'posts'
+});
 
 
 /**

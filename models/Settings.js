@@ -13,7 +13,6 @@ Settings.add({
     type: String,
     noedit: true
   }
-
 });
 
 modelToJSON(Settings);

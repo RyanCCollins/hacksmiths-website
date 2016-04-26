@@ -8,15 +8,26 @@ var Types = keystone.Field.Types;
 
 var Organization = new keystone.List('Organization', {
 	track: true,
-	autokey: { path: 'key', from: 'name', unique: true }
+	autokey: {
+		path: 'key',
+		from: 'name',
+		unique: true
+	}
 });
 
 Organization.add({
-	name: { type: String, index: true },
-	logo: { type: Types.CloudinaryImage },
+	name: {
+		type: String,
+		index: true
+	},
+	logo: {
+		type: Types.CloudinaryImage
+	},
 	website: Types.Url,
 	isHiring: Boolean,
-	description: { type: Types.Markdown },
+	description: {
+		type: Types.Markdown
+	},
 	location: Types.Location
 });
 
@@ -26,12 +37,16 @@ Organization.add({
  * =============
  */
 
-Organization.relationship({ ref: 'User', refPath: 'organization', path: 'members' });
+Organization.relationship({
+	ref: 'User',
+	refPath: 'organization',
+	path: 'members'
+});
 
 
 // Pull out avatar image
 Organization.schema.virtual('logoUrl').get(function() {
-    if (this.logo.exists) return this._.logo.thumbnail(120,120);
+	if (this.logo.exists) return this._.logo.thumbnail(120, 120);
 });
 
 /**

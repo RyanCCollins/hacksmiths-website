@@ -12,19 +12,47 @@ var Inquiry = new keystone.List('Inquiry', {
 });
 
 Inquiry.add({
-	name: { type: Types.Name, required: true },
-	email: { type: Types.Email, required: true },
-	organization: { type: String },
-	phone: {type: String},
-	inquiryType: { type: Types.Select, options: [
-		{ value: 'join', label: 'I would like to join your cause!' },
-		{ value: 'services', label: 'I have a project idea for you.' },
-		{ value: 'message', label: 'I have a message for you.' },
-		{ value: 'sponsor', label: 'I would like to sponsor your events.' },
-		{ value: 'other', label: 'Something else...' }
-	] },
-	message: { type: Types.Markdown, required: true },
-	createdAt: { type: Date, default: Date.now }
+	name: {
+		type: Types.Name,
+		required: true
+	},
+	email: {
+		type: Types.Email,
+		required: true
+	},
+	organization: {
+		type: String
+	},
+	phone: {
+		type: String
+	},
+	inquiryType: {
+		type: Types.Select,
+		options: [{
+			value: 'join',
+			label: 'I would like to join your cause!'
+		}, {
+			value: 'services',
+			label: 'I have a project idea for you.'
+		}, {
+			value: 'message',
+			label: 'I have a message for you.'
+		}, {
+			value: 'sponsor',
+			label: 'I would like to sponsor your events.'
+		}, {
+			value: 'other',
+			label: 'Something else...'
+		}]
+	},
+	message: {
+		type: Types.Markdown,
+		required: true
+	},
+	createdAt: {
+		type: Date,
+		default: Date.now
+	}
 });
 
 Inquiry.schema.pre('save', function(next) {
@@ -46,7 +74,8 @@ Inquiry.schema.methods.sendNotificationEmail = function(callback) {
 
 	var inquiry = this;
 
-	keystone.list('User').model.find().where('isAdmin', true).exec(function(err, admins) {
+	keystone.list('User').model.find().where('isAdmin', true).exec(function(err,
+		admins) {
 
 		if (err) return callback(err);
 

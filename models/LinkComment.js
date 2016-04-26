@@ -11,10 +11,24 @@ var LinkComment = new keystone.List('LinkComment', {
 });
 
 LinkComment.add({
-	link: { type: Types.Relationship, ref: 'Link', index: true },
-	author: { type: Types.Relationship, ref: 'User', index: true },
-	date: { type: Types.Date, default: Date.now, index: true },
-	content: { type: Types.Markdown }
+	link: {
+		type: Types.Relationship,
+		ref: 'Link',
+		index: true
+	},
+	author: {
+		type: Types.Relationship,
+		ref: 'User',
+		index: true
+	},
+	date: {
+		type: Types.Date,
+		default: Date.now,
+		index: true
+	},
+	content: {
+		type: Types.Markdown
+	}
 });
 
 
