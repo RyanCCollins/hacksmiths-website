@@ -1,38 +1,19 @@
 html
   body
-    // LARGE SCREEN TOP BAR MENU
-    section.navigation-section
-      nav.top-bar(data-topbar='', role='navigation')
-        div.top-bar-left
-          ul.menu.title-area
-            li.name
-              a(href='/')
-                img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
-            li.toggle-topbar.menu-icon
-              a(href='#')
-        section.top-bar-section
-          ul.right
-            li(class=(section === 'events' ? 'active' : '' ))
-              a(href='/events') Events
-            li(class=(section === 'members' ? 'active' : '' ))
-              a(href='/members') Members
-            li(class=(section === 'blog' ? 'active' : '' ))
-              a(href='/blog') Blog
-            //- li(class=(section === 'about' ? 'active' : '' ))
-            //-   a(href='/about') About
-            //-   if !user 
-            //-     li
-            //-       a(href='/signin') Signin
-            //-     li
-            //-       a(href='/join') Join
-            //-   else
-            //-     li.has-dropdown
-            //-       a(href='#') Me
-            //-       ul.dropdown
-            //-         li
-            //-           a(href='/me') My Profile
-            //-         li
-            //-           a(href='/signout') Sign Out
-            //-         if user && user.isAdmin
-            //-           li
-            //-             a(href='/keystone') Admin Area
+  .title-bar(data-responsive-toggle='example-menu', data-hide-for='medium')
+    button.menu-icon(type='button', data-toggle='')
+    .title-bar-title Menu
+  #example-menu.top-bar
+    .top-bar-left
+      ul.menu.title-area
+        li.name
+          a(href='/')
+            img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
+    section.top-bar-section
+      ul.right
+        li(class=(section === 'events' ? 'active' : '' ))
+          a(href='/events') Events
+        li(class=(section === 'members' ? 'active' : '' ))
+          a(href='/members') Members
+        li(class=(section === 'blog' ? 'active' : '' ))
+          a(href='/blog') Blog
