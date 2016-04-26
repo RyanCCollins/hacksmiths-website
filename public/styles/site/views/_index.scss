@@ -6,34 +6,34 @@ $break-medium: 768px;
 
 /* background setup */
 .background {
-    background: url('/images/bg.jpg')#131313;
-    background-repeat:no-repeat;
-    /* custom background-position */
-    background-position:50% 50%;
-    /* ie8- graceful degradation */
-    background-position:50% 50%\9 !important;
+  background: url('/images/bg.jpg')#131313;
+  background-repeat:no-repeat;
+  /* custom background-position */
+  background-position:50% 50%;
+  /* ie8- graceful degradation */
+  background-position:50% 50%\9 !important;
 }
 
 /* fullscreen setup */
 html, body {
-    /* give this to all tags from html to .fullscreen */
-    height:100%;
+  /* give this to all tags from html to .fullscreen */
+  height:100%;
 }
 .fullscreen,
 .content-main {
-  width:100%;
-  // height: auto;
-  -webkit-background-size: cover; /* Add in these */
-  -moz-background-size: cover;    /* four lines to */
-  -o-background-size: cover;      /* remove the white space*/
-  background-size: cover;         /* around images */
-  min-height: 100%;
-    overflow:hidden;
+width:100%;
+// height: auto;
+-webkit-background-size: cover; /* Add in these */
+-moz-background-size: cover;    /* four lines to */
+-o-background-size: cover;      /* remove the white space*/
+background-size: cover;         /* around images */
+min-height: 100%;
+  overflow:hidden;
 }
 .fullscreen.overflow,
 .fullscreen.overflow .content-main {
-    height:auto;
-    min-height:100%;
+  height:auto;
+  min-height:100%;
 }
 
 /* content centering styles */
@@ -44,10 +44,10 @@ html, body {
   width: 100%;
 }
 .content-sub {
-	display:table-cell;
+  display:table-cell;
   position:relative;
-	vertical-align:middle;
-	text-align:center;
+  vertical-align:middle;
+  text-align:center;
 }
 
 @mixin vertical-align($position: relative) {
@@ -64,113 +64,109 @@ html, body {
   text-transform: uppercase;
   margin-top: 5px;
   font-size: 24px;
- // Style from small to medium 500px-768px
- @media screen and (max-width: $break-small) {
+  // Style from small to medium 500px-768px
+  @media screen and (max-width: $break-small) {
    font-size: 16px;
- }
- // Style from small to medium 500px-768px
- @media screen and (max-width: $break-medium) {
+  }
+  // Style from small to medium 500px-768px
+  @media screen and (max-width: $break-medium) {
    font-size: 20px;
- }
+  }
 
 }
 
 // The big header on main page
 .main-header h2 {
-    color: #FFF;
-    letter-spacing: 0px;
-    text-align: center;
-    width: 100%;
-    padding-top: 30px;
-    font-weight: 400;
-    font-size: 88px;
-    text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 0px;
+  text-align: center;
+  width: 100%;
+  padding-top: 30px;
+  font-weight: 400;
+  font-size: 88px;
+  text-transform: uppercase;
 
-    // Style from small to medium 500px-768px
-    @media screen and (max-width: $break-small) {
-      font-size: 42px;
-    }
-    // Style from small to medium 500px-768px
-    @media screen and (max-width: $break-medium) {
-      font-size: 60px;
-    }
+  // Style from small to medium 500px-768px
+  @media screen and (max-width: $break-small) {
+    font-size: 42px;
+  }
+  // Style from small to medium 500px-768px
+  @media screen and (max-width: $break-medium) {
+    font-size: 60px;
+  }
 }
 
 
 .main-header
 
-.h5-main-text
-{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+.h5-main-text {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
-.page1-logo
-{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    height: 85px;
+.page1-logo {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 85px;
 }
 
-.row-nav
-{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+.row-nav {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .row-callout {
-    max-height: 300px
+  max-height: 300px
 }
 
 .button-join-us {
-    margin-top: 45px;
-    text-align: center;
+  margin-top: 45px;
+  text-align: center;
 }
 
-.h5-button-join-us
-{
-    margin-top: auto;
-    margin-bottom: auto;;
-    font-weight: 600;
-    background-clip: padding-box;
-    background-color: #5ac6ff;
-    color: #FFF;
-    border-radius: 4px;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    margin: 15px auto;
-    padding: 10px 0 12px 0;
-    letter-spacing: 3px;
-    text-shadow: none;
-    text-transform: uppercase;
-    width: 300px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+.h5-button-join-us {
+  margin-top: auto;
+  margin-bottom: auto;;
+  font-weight: 600;
+  background-clip: padding-box;
+  background-color: #5ac6ff;
+  color: #FFF;
+  border-radius: 4px;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 15px auto;
+  padding: 10px 0 12px 0;
+  letter-spacing: 3px;
+  text-shadow: none;
+  text-transform: uppercase;
+  width: 300px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 
 .callout {
-    margin-top:20px;
-    background:rgba(15, 31, 56, .3);
-    @include vertical-align();
+  margin-top:20px;
+  background:rgba(15, 31, 56, .3);
+  @include vertical-align();
 }
 
 .callout-text {
-    font-size: 40px;
-    opacity: 1.0;
-    color: white;
+  font-size: 40px;
+  opacity: 1.0;
+  color: white;
 
-    @media screen and (min-width: $break-small) {
+  @media screen and (min-width: $break-small) {
 
-    }
+  }
 }
 
 .page-1-section {
@@ -181,38 +177,38 @@ html, body {
 }
 
 .section-intro {
-    padding-bottom: 2em;
-    margin-top: 0.5em;
-    text-align: center;
+  padding-bottom: 2em;
+  margin-top: 0.5em;
+  text-align: center;
 }
 
 .section-intro .buttons>.btn {
-    margin-right: 10px
+  margin-right: 10px
 }
 
 .section-intro .lead {
-    max-width: 738px;
-    margin-left: auto;
-    margin-right: auto
+  max-width: 738px;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .section-content {
-    position: relative;
-    z-index: 1
+  position: relative;
+  z-index: 1
 }
 
 
-  .page-1-section {
+.page-1-section {
 
 
-      &&--featured {
-          padding-bottom: 5em;
-          padding-top: 5em
-      }
-  }
+    &&--featured {
+        padding-bottom: 5em;
+        padding-top: 5em
+    }
+}
 
-  .container-gray {
-    background-color: #e3e7e9;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+.container-gray {
+  background-color: #e3e7e9;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
