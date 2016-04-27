@@ -1,19 +1,23 @@
 html
 	body
-	.title-bar(data-responsive-toggle='example-menu', data-hide-for='medium')
-		button.menu-icon(type='button', data-toggle='')
-		.title-bar-title Menu
-	#example-menu.top-bar
-		.top-bar-left
-			ul.menu.title-area
-				li.name
-					a(href='/')
-						img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
-	section.top-bar-section
-			ul.right
-				li(class=(section === 'events' ? 'active' : '' ))
-					a(href='/events') Events
-				li(class=(section === 'members' ? 'active' : '' ))
-					a(href='/members') Members
-				li(class=(section === 'blog' ? 'active' : '' ))
-					a(href='/blog') Blog
+	.off-canvas-wrapper
+		.off-canvas-wrapper-inner(data-off-canvas-wrapper='')
+			.title-bar(data-responsive-toggle='widemenu', data-hide-for-medium)
+				.title-bar-left
+					button.menu-icon(type='button', data-open='offCanvasLeft')
+					span.title-bar-title Hacksmiths
+			#example-menu.top-bar
+				.top-bar-left
+					ul.menu.title-area
+						li.name
+							a(href='/')
+								img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
+				section.top-bar-section
+					ul.right
+						li(class=(section === 'events' ? 'active' : '' ))
+							a(href='/events') Events
+						li(class=(section === 'members' ? 'active' : '' ))
+							a(href='/members') Members
+						li(class=(section === 'blog' ? 'active' : '' ))
+							a(href='/blog') Blog
+		.off-canvas-content(data-off-canvas-content='')

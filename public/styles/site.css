@@ -25650,6 +25650,9 @@ html, body {
   @media screen and (max-width: 768px) {
     .main-header h4 {
       font-size: 20px; } }
+  @media screen and (max-width: 440px) {
+    .main-header h4 {
+      font-size: 14px; } }
 
 .main-header h2 {
   color: #FFF;
@@ -25666,6 +25669,9 @@ html, body {
   @media screen and (max-width: 768px) {
     .main-header h2 {
       font-size: 60px; } }
+  @media screen and (max-width: 440px) {
+    .main-header h2 {
+      font-size: 36px; } }
 
 .main-header
 .h5-main-text {
@@ -25714,6 +25720,10 @@ html, body {
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
+  @media screen and (max-width: break-xs) {
+    .h5-button-join-us {
+      width: 200px;
+      font-size: 20px; } }
 
 .callout {
   margin-top: 20px;
