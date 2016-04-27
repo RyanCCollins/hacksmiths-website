@@ -67,7 +67,9 @@ window.signinModalTrigger = function signinModalTrigger(e) {
 
 	// only focus the first field on large devices where showing
 	// the keyboard isn't a jarring experience
-
+	if ($(window).width() >= 768) {
+		initialPane.find('input[type!=hidden],textarea').eq(0).click().focus();
+	}
 
 	if (from) {
 		$authmodal.find('[name="from"]').val(from);
