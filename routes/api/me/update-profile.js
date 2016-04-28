@@ -7,7 +7,7 @@ exports = module.exports = function(req, res) {
 		user: {}
 	}
 
-	User.findByID(req.body.user).exec(function(err, person) {
+	User.findById(req.body.user).exec(function(err, person) {
 		if (err || !person) return res.apiResponse({
 			success: false
 		});
