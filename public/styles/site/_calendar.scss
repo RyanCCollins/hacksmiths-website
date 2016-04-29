@@ -1,14 +1,14 @@
 .calendar {
-    background-color: white;
-    border-radius: .15em;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
-    text-align: center;
-    text-transform: uppercase;
-    width: 100px
+  background-color: white;
+  border-radius: .15em;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+  text-align: center;
+  text-transform: uppercase;
+  width: 100px
 }
 
 .calendar--past {
-    color: #999
+ color: #999
 }
 
 .calendar--past .calendar__header {
