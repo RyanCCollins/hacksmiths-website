@@ -1,40 +1,15 @@
 extends ../layouts/default
+include ../mixins/form-contact
 
 block intro
-	.contain
-		h1.text-centered Contact Us
-
-block content
-	.contain
+	.container
+		.page-intro
+			h1.text-center Contact Us
+			+flash-messages(messages)
+	
+	.page-content
 		if inquirySubmitted
 			h3 Thanks for getting in touch.
 		else
-			.row
-				.col-sm-2.col-md-3
-				.col-sm-8.col-md-6
-					form(method='post', action='/contact', autocomplete='off', novalidate)
-						input(type='hidden', name='action', value='contact')
-						.form-group(class=validationErrors.name ? 'has-error' : null)
-							label Name
-							input(type='text', name='name.full', value=formData['name.full']).form-control
-						.form-group(class=validationErrors.email ? 'has-error' : null)
-							label Email
-							input(type='email', name='email', value=formData.email).form-control
-						.form-group
-							label Phone
-							input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
-						.form-group
-							label Organization
-							input(type='text', name='organization', value=formData.organization, placeholder='(optional)').form-control
-						.form-group(class=validationErrors.inquiryType ? 'has-error' : null)
-							label What are you contacting us about?
-							select(name='inquiryType').form-control
-								option(value='') (select one)
-								each type in inquiryTypes
-									option(value=type.value, selected=formData.inquiryType == type.value)= type.label
-						.form-group(class=validationErrors.message ? 'has-error' : null)
-							label Message
-							textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
-						.form-actions
-							button(type='submit').button.large.radius Send
-				.col-sm-2.col-md-3
+			.contain
+				+form-contact({ modal: false, initial: 'contact' })

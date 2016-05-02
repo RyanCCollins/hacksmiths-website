@@ -16,7 +16,7 @@ mixin form-reset(args)
 					data-dismiss="modal"
 					aria-hidden="true") &times;
 				h4.modal-title Reset password
-		div(class=args.modal ? 'modal-body' : null)
+		div(class=args.modal ? 'modal-body' : 'col-md-6 col-md-offset-3')
 			form.auth-form.form-signin(
 				method='post'
 				action='/reset-password/' + key
@@ -33,5 +33,5 @@ mixin form-reset(args)
 						placeholder='Password'
 						id='signin-password'
 						value='')
-				button.btn.btn-block.btn-primary.btn-submit(type='submit') Reset password
+				button.button.block.expand.radius(type='submit') Reset password
 			

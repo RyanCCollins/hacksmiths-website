@@ -1,5 +1,6 @@
 include ../mixins/flash-messages
 include ../mixins/auth/auth-forms
+include ../mixins/form-contact
 
 doctype html
 //if lt IE 7
@@ -72,7 +73,22 @@ html.no-js(lang='en', itemscope='', itemtype='http://schema.org/Product')
 
   //- HTML BODY
   body
-    // Site header
+    //- // Site header
+    //- .off-canvas-wrapper
+    //-   .off-canvas-wrapper-inner(data-off-canvas-wrapper='')
+    //-     div(id='offCanvas', data-off-canvas='').off-canvas.position-left
+    //-       button.close-button(aria-label='Close Menu', type='button', data-close='')
+    //-         span(aria-hidden='true') &times;
+    //-       ul.vertical-menu
+    //-         li
+    //-           a(href='/events') Events
+    //-       
+    //-       
+    //- .off-canvas-content
+    //-   .title-bar(data-responsive-toggle='widemenu', data-hide-for-medium)
+    //-     .title-bar-left
+    //-       button.menu-icon(type='button', data-toggle='offCanvas')
+    //-       span.title-bar-title Hacksmiths
     include ../includes/layout/header
 
     //- NOTE:
@@ -95,6 +111,10 @@ html.no-js(lang='en', itemscope='', itemtype='http://schema.org/Product')
       include ../includes/layout/footer
 
     block modal
+      #modal-contact(tabindex="-1", role="dialog", aria-labelledby="contact", aria-hidden="true").modal.fade
+        .modal-dialog
+          .modal-content
+            +form-contact({ modal: true, initial: 'contact' })
     if !user
       #modal-auth(tabindex="-1", role="dialog", aria-labelledby="signin", aria-hidden="true").modal.fade
         .modal-dialog
