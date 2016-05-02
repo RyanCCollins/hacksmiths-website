@@ -13,7 +13,7 @@ block content
 					h2 Hacksmiths
 					h4.sub-header Helping People Help People
 					.button-join-us.div-button
-						a(href='/contact')
+						a(href='/contact').js-contact-trigger
 							h5.h5-button-join-us GET IN TOUCH
 
 	// Who we are section
@@ -81,7 +81,7 @@ block content
 				.row.space-3
 					.col-md-12.text-center
 						h3.pad-1 Non-profit?  Need our help?
-						a(href='/contact')
+						a(href='/contact').js-contact-trigger
 							div.button.large.radius Get in touch
 		hr
 		section.page-1-section.our-work
@@ -99,15 +99,17 @@ block content
 								.col-md-6
 								.col-md-6
 							
-							
-		hr
-		section.page-1-section.want-to-help
-			.section-intro: .contain
-				h1.section-title Want to Help?
-				p.lead Right now, we are beta testing our platform with the first group of developers.  We will be looking for new people to help out with our next project.
-				p.lead Until then, keep working hard and send us a message if you want an invite to our community and we'll do our best to find a spot for you.
-				a(href='/contact')
-					div.mv-2.button.large.radius.center Send a message
+		if !user				
+			hr
+			section.page-1-section.want-to-help
+				.section-intro: .contain
+					h1.section-title Want to Help?
+					p.lead Right now, we are beta testing our platform with the first group of developers.  We will be looking for new people to help out with our next project.
+					p.lead Until then, keep working hard and send us a message if you want an invite to our community and we'll do our best to find a spot for you.
+					a(href='/signin', data-from='/', data-initial='signin').js-auth-trigger
+						div.mv-2.button.large.radius.center Sign In
+					a(href='/join').js-auth-trigger
+						div.mv-2.button.large.radius.center Join Us
 			//- .section-content
 			//- 	.page-1-section.highlight: .container
 			//- 		.row

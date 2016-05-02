@@ -183,18 +183,18 @@ p {
     }
     &.slogan {
       color: #8d9093;
-      font-size: 1.8rem;
-      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      margin: 0 0 1.5rem;
     }
     &.follow-me {
       color: #8f9296;
-      font-size: 0.975rem;
+      font-size: 0.875rem;
       margin: 0;
     }
     &.copyright {
       color: #8f9296;
       font-size: 0.875rem;
-      padding-top:4rem;
+      padding-top:2rem;
     }
   }
   ul.social-icons {
@@ -243,6 +243,10 @@ p {
     margin: 12px auto 0;
     opacity: .5;
     transition: all .2s ease-in-out
+  }
+  .subheader {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
 

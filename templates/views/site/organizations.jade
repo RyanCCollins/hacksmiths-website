@@ -3,10 +3,10 @@ extends ../../layouts/default
 include ../../mixins/organization
 
 block intro
-	.page-intro: .container
+	.page-intro: .contain
 		h1 Organizations
-		p.The organizations that we sponsor or who sponsor us.  Should your organization be here?
-		//- .buttons
+		p.lead The Non Profit organizations that we work with.
+		.buttons
 			if !user
 				a(href='/join').btn.btn-primary Join Hacksmiths
 			a(href='/members').btn.btn-default View Members
@@ -16,8 +16,8 @@ block content
 	.page-content: .container
 		.organizations
 			if organizations.length
-				each org, i in organizations
-					if i
+				each org, index in organizations
+					if index
 						hr
 					+organization(org)
 			else

@@ -1,5 +1,6 @@
 include ../mixins/flash-messages
 include ../mixins/auth/auth-forms
+include ../mixins/form-contact
 
 doctype html
 //if lt IE 7
@@ -95,6 +96,10 @@ html.no-js(lang='en', itemscope='', itemtype='http://schema.org/Product')
       include ../includes/layout/footer
 
     block modal
+      #modal-contact(tabindex="-1", role="dialog", aria-labelledby="contact", aria-hidden="true").modal.fade
+        .modal-dialog
+          .modal-content
+            +form-contact({ modal: true, initial: 'contact' })
     if !user
       #modal-auth(tabindex="-1", role="dialog", aria-labelledby="signin", aria-hidden="true").modal.fade
         .modal-dialog

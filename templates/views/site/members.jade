@@ -7,8 +7,8 @@ block intro
 	.page-intro: .contain
 		h1.page-title Hacksmiths
 		p.lead The people who keep the Hacksmiths running.&nbsp&nbsp
-			//if !user
-				//a(href='/join').js-auth-trigger Signup to add your tile.
+			if !user
+				a(href='/join').js-auth-trigger Sign up to join us
 
 mixin member(member)
 	- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');
