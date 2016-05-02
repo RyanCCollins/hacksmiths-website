@@ -17,145 +17,145 @@ block content
 					a(href=nextEvent.url).alert-link= nextEvent._.startDate.format('dddd D MMM YYYY')
 		.page-content.tile.ph-2.pv-2.mb-2
 			+flash-messages(messages)
-			form(method='post', enctype='multipart/form-data', autocomplete='off', novalidate).form-horizontal
-				input(type='hidden', name='action', value='profile.details')
-				h2 Private Info
-				.mv-2
-				.form-group
-					label.col-sm-2.control-label Name
-					.col-sm-10: .form-row
-						.col-xs-6: input(type='text', name='name.first' value=user.name.first).form-control
-						.col-xs-6: input(type='text', name='name.last' value=user.name.last).form-control
-				.form-group
-					label.col-sm-2.control-label Email
-					.col-sm-10: input(type='email', name='email' value=user.email).form-control
-				.form-group
-					strong.col-sm-2.control-label Notify me
-					.col-sm-10
-						.checkbox: label
-							input(type='checkbox', name='notifications.events' value='true' checked=user.notifications.events)
-							|  When there is a new event
-						.checkbox: label
-							input(type='checkbox', name='notifications.posts' value='true' checked=user.notifications.posts)
-							|  When there is a new post
-						.checkbox: label
-							input(type='checkbox', name='notifications.projects' value='true' checked=user.notifications.posts)
-							|  When there is a new project
-				hr.mv-2
-				h3 Your Services
-				p.help-block.mb-2 You can authenticate yourself on the Hacksmiths website with any of the services you connect. When connected, links to your Accounts will be displayed on your profile.  In order to integrate with some parts of this site, you will need to authenticate your Udacity and/or Github acconts.
-					a(href='/privacy') Please read our Privacy Policy for more information.
-				br
+			.container
+				.row
+					.col-sm-10.col-sm-offset-1
+						form(method='post', enctype='multipart/form-data', autocomplete='off', novalidate).form-horizontal
+							input(type='hidden', name='action', value='profile.details')
+							h2.text-center Private Info
+							.mv-2
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Name
+								.col-sm-10: .form-row
+									.col-xs-6: input(type='text', name='name.first' value=user.name.first).form-control
+									.col-xs-6: input(type='text', name='name.last' value=user.name.last).form-control
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Email
+								.col-sm-10: input(type='email', name='email' value=user.email).form-control
+							.form-group.col-sm-12
+								strong.col-sm-2.control-label Notify me
+								.col-sm-10
+									.checkbox: label
+										input(type='checkbox', name='notifications.events' value='true' checked=user.notifications.events)
+										|  When there is a new event
+									.checkbox: label
+										input(type='checkbox', name='notifications.posts' value='true' checked=user.notifications.posts)
+										|  When there is a new post
+									.checkbox: label
+										input(type='checkbox', name='notifications.projects' value='true' checked=user.notifications.posts)
+										|  When there is a new project
+							hr.mv-2
+							h3.text-center Your Services
+							.col-sm-8.col-sm-offset-2
+								p.help-block.mb-2 You can authenticate yourself on the Hacksmiths website with any of the services you connect. When connected, links to your Accounts will be displayed on your profile.
+									a(href='/privacy') &nbsp Please read our Privacy Policy for more information.
+								br
 
-				if !user.services.github.isConfigured
-					.form-group
-						label.col-sm-2.control-label Github
-						.col-sm-10
-							a(href='/auth/github', title='Connect your Github account').btn.btn-block.btn-github
-								span.entypo-social.entypo-github
-								|  Connect your Github account
-				if !user.services.twitter.isConfigured
-					.form-group
-						label.col-sm-2.control-label Twitter
-						.col-sm-10
-							a(href='/auth/twitter', title='Connect your Twitter account').btn.btn-block.btn-twitter
-								span.entypo-social.entypo-twitter
-								|  Connect your Twitter account
-
-
-				//- Configured Services
-
-				if user.services.github.isConfigured || user.services.twitter.isConfigured
-					hr.line-dashed
-				if user.services.github.isConfigured
-					.form-group
-						label.col-sm-2.control-label Github
-						.col-sm-10.text-muted.faux-label
-							span.entypo-social.entypo-github
-							|  Your account is connected.
-							a(href='?disconnect=github', title='Revoke authorization of your Github account') Disconnect
-				if user.services.twitter.isConfigured
-					.form-group
-						label.col-sm-2.control-label Twitter
-						.col-sm-10.text-muted.faux-label
-							span.entypo-social.entypo-twitter
-							|  Your account is connected.
-							a(href='?disconnect=twitter', title='Revoke authorization of your Twitter account') Disconnect
-
+							if !user.services.github.isConfigured
+								.form-group.col-sm-12
+									.col-sm-8.col-sm-offset-2
+										a(href='/auth/github', title='Connect your Github account').btn.btn-block.btn-social.btn-github
+											span.fa.fa-github
+											.text-center Connect your Github account
+							if !user.services.twitter.isConfigured
+								.form-group.col-sm-12
+									.col-sm-8.col-sm-offset-2
+										a(href='/auth/twitter', title='Connect your Twitter account').btn.btn-block.btn-social.btn-twitter
+											span.fa.fa-twitter
+											.text-center Connect your Twitter account
+							
+							if user.services.github.isConfigured || user.services.twitter.isConfigured
+								hr.line-dashed
+							if user.services.github.isConfigured
+								.form-group.col-sm-12
+									label.col-sm-2.control-label Github
+									.col-sm-10.text-muted.faux-label
+										span.entypo-social.entypo-github
+										|  Your account is connected.
+										a(href='?disconnect=github', title='Revoke authorization of your Github account') Disconnect
+							if user.services.twitter.isConfigured
+								.form-group.col-sm-12
+									label.col-sm-2.control-label Twitter
+									.col-sm-10.text-muted.faux-label
+										span.entypo-social.entypo-twitter
+										|  Your account is connected.
+										a(href='?disconnect=twitter', title='Revoke authorization of your Twitter account') Disconnect
 
 
-				//- Public Info
 
-				hr.mv-2
-				h3 Public Info
-				.form-group
-					label.col-sm-2 Public
-					.col-sm-10
-						label.checkbox-inline
-							input(type='checkbox', name='isPublic', value='true', checked=user.isPublic ? 'true' : null)
-							|  Show my profile on the Hacksmiths website
-				.form-group
-					label.col-sm-2.control-label Website
-					.col-sm-10: input(type='text', name='website' value=user.website).form-control
-				.form-group
-					label.col-sm-2.control-label Bio
-						br
-						.text-muted (markdown)
-					.col-sm-10
-						textarea(name='bio', rows=5).form-control=user.bio.md
+							//- Public Info
 
-				.form-group
-					label.col-sm-2.control-label Photo
-					.col-sm-10
-						if user.photo.exists
-							.row
-								.col-sm-3: img(src=user._.photo.thumbnail(120,120)).img-responsive
-								.col-sm-9: input(type='file', name='photo_upload')
-						else
-							input(type='file', name='photo_upload')
-				.form-group
-					label.col-sm-2.control-label Mentoring
-					.col-sm-10
-						.checkbox: label
-							input(type='checkbox', name='mentoring.available', value='true', checked=user.mentoring.available)
-							|  Available as a mentor
-				.mentoring-fields
-					.form-group
-						label.col-sm-2.control-label I have experience in...
-						.col-sm-10
-							input(type='text', name='mentoring.experience', placeholder='eg; Rails, React, Agile, Scrum', value=user.mentoring.experience).form-control
-					.form-group
-						label.col-sm-2.control-label I need a mentor
-						.col-sm-10
-							.checkbox: label
-								input(type='checkbox', name='mentoring.needsAMentor', value='true' checked=user.mentoring.needsAMentor)
-								| Looking for a mentor
-					.form-group
-						label.col-sm-2.control-label I want experience with...
-						.col-sm-10
-							input(type='text', name='mentoring.want', placeholder='eg; DevOps, Project Management', value= user.mentoring.want).form-control
-				hr.mv-2
-				.col-md-4
-				.col-md-4.text-center
-					button(type='submit', data-loading-text="Saving...").button.large.radius Save profile
-				.col-md-4
-		hr.mv-2
-		.row		
-			.ui-reveal
-				.ui-reveal__initial
-					button(type='button').btn.btn-link.ui-reveal__trigger Change Password
-				.ui-reveal__hidden
-					form(method='post', autocomplete='off')
-						input(type='hidden', name='action', value='profile.password')
-						h3 Change password
-						.form-group
-							label(for='change-passwordNew').sr-only New Password
-							input(type='password', name='password', placeholder='New Password', id='change-passwordNew').form-control
-						.form-group
-							label(for='change-passwordConfirm').sr-only Confirm Password
-							input(type='password', name='password_confirm', placeholder='Confirm Password', id='signin-passwordConfirm').form-control
-						.form-group
-							button(type='submit', data-loading-text="Changing...").button.large.radius Change
+							hr.mv-2
+							h3.text-center Public Info
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Public
+								.col-sm-10
+									label.checkbox-inline
+										input(type='checkbox', name='isPublic', value='true', checked=user.isPublic ? 'true' : null)
+										|  Show my profile on the Hacksmiths website
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Website
+								.col-sm-10: input(type='text', name='website' value=user.website).form-control
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Bio
+									br
+									.text-muted (markdown)
+								.col-sm-10
+									textarea(name='bio', rows=5).form-control=user.bio.md
+
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Photo
+								.col-sm-10
+									if user.photo.exists
+										.row
+											.col-sm-3: img(src=user._.photo.thumbnail(120,120)).img-responsive
+											.col-sm-9: input(type='file', name='photo_upload')
+									else
+										input(type='file', name='photo_upload')
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Mentoring
+								.col-sm-10
+									.checkbox: label
+										input(type='checkbox', name='mentoring.available', value='true', checked=user.mentoring.available)
+										|  Available as a mentor
+							.mentoring-fields
+								.form-group.col-sm-12
+									label.col-sm-2.control-label I have experience in...
+									.col-sm-10
+										input(type='text', name='mentoring.experience', placeholder='eg; Rails, React, Agile, Scrum', value=user.mentoring.experience).form-control
+								.form-group.col-sm-12
+									label.col-sm-2.control-label I need a mentor
+									.col-sm-10
+										.checkbox: label
+											input(type='checkbox', name='mentoring.needsAMentor', value='true' checked=user.mentoring.needsAMentor)
+											| Looking for a mentor
+								.form-group.col-sm-12
+									label.col-sm-2.control-label I want experience with...
+									.col-sm-10
+										input(type='text', name='mentoring.want', placeholder='eg; DevOps, Project Management', value= user.mentoring.want).form-control
+							hr.mv-2
+							.col-md-4
+							.col-md-4.text-center
+								button(type='submit', data-loading-text="Saving...").button.large.radius Save profile
+							.col-md-4
+					hr.mv-2
+					.row
+						.col-sm-10.col-sm-offset-1
+							.ui-reveal
+								.ui-reveal__initial.text-center
+									button(type='button').btn.btn-link.ui-reveal__trigger Change Password
+								.ui-reveal__hidden
+									form(method='post', autocomplete='off')
+										input(type='hidden', name='action', value='profile.password')
+										h3 Change password
+										.form-group.col-sm-12
+											label(for='change-passwordNew').sr-only New Password
+											input(type='password', name='password', placeholder='New Password', id='change-passwordNew').form-control
+										.form-group.col-sm-12
+											label(for='change-passwordConfirm').sr-only Confirm Password
+											input(type='password', name='password_confirm', placeholder='Confirm Password', id='signin-passwordConfirm').form-control
+										.form-group.col-sm-12.text-center
+											button(type='submit', data-loading-text="Changing...").button.large.radius Change
 
 block js
 	script(src='/js/views/me.js')
