@@ -12,8 +12,8 @@ mixin form-signin(args)
 			.modal-header
 				button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
 				h4.modal-title Sign into Hacksmiths
-		.container
-			div(class=args.modal ? 'modal-body' : null)
+		.form
+			div(class=args.modal ? 'modal-body' : 'col-md-6 col-md-offset-3')
 				form(method='post', action='/signin', role='signin', novalidate).auth-form
 					input(type='hidden', name='action', value='signin')
 					input(type='hidden', name='target', value=!args.modal ? form.target : page.path)
@@ -36,12 +36,13 @@ mixin form-signin(args)
 						.form-group(class=!args.modal ? checkFormError('password') : null)
 							label(for='signin-password').sr-only Password
 							input(type='password', name='password', placeholder='Password', id='signin-password', value='').form-control.form-control--last
-					button(type='submit').btn.btn-block.btn-primary.btn-submit Sign in
-		p.auth-form-divider: span.auth-form-divider-text or
-		include ../../includes/social-signin
-			
-		.row.text-muted.mt-3.text-center
-			.col-sm-8 Don't have an account? 
-				a(href=args.modal ? js : '/join', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'join' : null) Join Hacksmiths
-			.col-sm-4.text-right
-				a(href=args.modal ? js : '/forgot-password', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'password' : null) Forgot password?
+					.form-actions.text-center
+						button(type='submit').button.block.expand.radius Sign in
+					p.auth-form-divider: span.auth-form-divider-text or
+					include ../../includes/social-signin
+						
+					.row.text-muted.mt-3.text-center
+						.col-sm-8 Don't have an account? 
+							a(href=args.modal ? js : '/join', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'join' : null) Join Hacksmiths
+						.col-sm-4.text-right
+							a(href=args.modal ? js : '/forgot-password', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'password' : null) Forgot password?

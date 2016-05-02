@@ -1,11 +1,11 @@
 extends ../layouts/default
 
 block intro
-	.container
-		h1 Gallery
+	.contain
+		h1.text-center Project Galleries
 	
 block content
-	.container
+	.contain.text-center
 		if galleries.length
 			each gallery in galleries
 				h2= gallery.name

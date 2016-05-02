@@ -4,19 +4,20 @@ The main SCSS file for everything, yep
 
 @charset 'UTF-8';
 
+
 @import 'bootstrap/bootstrap.scss';
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/bootstrap-social/bootstrap-social.scss";
 @import "../../bower_components/animatewithsass/animate.scss";
 
 @import 'site/main_settings';
 @import "../../bower_components/foundation/scss/foundation";
 @import "../../bower_components/foundation-sites/scss/foundation";
 
-
 @include foundation-everything;
 
 @import 'site/main-layout';
 @import 'site/_layout';
-@import 'site/_buttons';
 
 
 /* Import all of the various partial view

@@ -39,19 +39,9 @@ $('.ui-reveal__hide').click(function() {
 });
 
 
-
-// Signin / Join Modal
-// ------------------------------
-
-// init
 var $authmodal = $('#modal-auth');
 var authmodalPanes = $authmodal.find('.auth-box');
 
-// start on the right pane
-// defaults to "join"
-// options "signin" | "join" | "password"
-
-// MAKESHIFT WAY TO EXPOSE JQUERY AUTH LOGIC TO REACT
 window.signinModalTrigger = function signinModalTrigger(e) {
 
 	e.preventDefault();
@@ -65,8 +55,6 @@ window.signinModalTrigger = function signinModalTrigger(e) {
 	authmodalPanes.addClass('hidden');
 	initialPane.removeClass('hidden');
 
-	// only focus the first field on large devices where showing
-	// the keyboard isn't a jarring experience
 	if ($(window).width() >= 768) {
 		initialPane.find('input[type!=hidden],textarea').eq(0).click().focus();
 	}
@@ -75,6 +63,35 @@ window.signinModalTrigger = function signinModalTrigger(e) {
 		$authmodal.find('[name="from"]').val(from);
 	}
 }
+
+// init
+var $contactmodal = $('#modal-contact');
+var contactmodalPanes = $authmodal.find('.auth-box');
+
+window.contactFormTrigger = function contactFormTrigger(e) {
+	e.preventDefault();
+
+	var initial = $(this).data("initial") || 'join';
+	var initialPane = $authmodal.find('.modal-pane-' + initial);
+	var from = $(this).data("from");
+
+	$contactmodal.modal('show');
+
+	contactmodalPanes.addClass('hidden');
+	initialPane.removeClass('hidden');
+
+	if ($(window).width() >= 768) {
+		initialPane.find('input[type!=hidden],textarea').eq(0).click().focus();
+	}
+
+	if (from) {
+		$authmodal.find('[name="from"]').val(from);
+	}
+
+
+}
+
+$('.js-contact-trigger').on('click', contactFormTrigger)
 
 $("[href='#modal-auth'], [data-modal='auth'], .js-auth-trigger").on('click',
 	signinModalTrigger);

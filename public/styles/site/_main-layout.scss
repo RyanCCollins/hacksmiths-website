@@ -21,7 +21,7 @@ $dark-blue: #022F40;
 $light-gray: #C2C6A7;
 
 $break-small: 500px;
-$break-medium: 800px;
+$break-medium: 900px;
 
 @mixin no-padding($side) {
     @if $side == 'all' {
@@ -147,6 +147,9 @@ p {
   @media screen and (max-width: $break-medium) {
     font-size: rem-calc(14px);
   }
+  @media screen and (max-width: 820) {
+     padding: 2px;
+  }
 }
 
 .top-bar ul li > a {
@@ -183,18 +186,18 @@ p {
     }
     &.slogan {
       color: #8d9093;
-      font-size: 1.8rem;
-      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      margin: 0 0 1.5rem;
     }
     &.follow-me {
       color: #8f9296;
-      font-size: 0.975rem;
+      font-size: 0.875rem;
       margin: 0;
     }
     &.copyright {
       color: #8f9296;
       font-size: 0.875rem;
-      padding-top:4rem;
+      padding-top:2rem;
     }
   }
   ul.social-icons {
@@ -243,6 +246,10 @@ p {
     margin: 12px auto 0;
     opacity: .5;
     transition: all .2s ease-in-out
+  }
+  .subheader {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
 
