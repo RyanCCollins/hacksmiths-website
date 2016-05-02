@@ -23,8 +23,8 @@ mixin form-contact(args)
           .form-group(class=!args.modal && validationErrors.message ? 'has-error' : null)
             label Message
             textarea(name='message', placeholder='Leave us a message...' rows=4).form-control=args.modal ? null : formData.message
-      .form-actions.text-center
-        button(type='submit').button.expand.radius Send
+        .form-actions.text-center
+          button(type='submit').button.expand.radius Send
       //- form(method='post')
       //-   input(type='hidden', name='action', value='contact')
       //-   .form-group(class=!args.modal && validationErrors.name ? 'has-error' : null)
