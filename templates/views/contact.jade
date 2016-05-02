@@ -1,15 +1,17 @@
 extends ../layouts/default
 include ../mixins/form-contact
 
-block intro
-	.container
+block flash-message
+	//It's blank for a reason (to give you a hook for flash messages)
+
+block content
+	.contain
 		.page-intro
 			h1.text-center Contact Us
 			+flash-messages(messages)
-	
-	.page-content
-		if inquirySubmitted
-			h3.text-center Thanks for getting in touch.
-		else
-			.contain
-				+form-contact({ modal: false, initial: 'contact' })
+		.page-content
+			if inquirySubmitted
+				h3.text-center Thanks for getting in touch.
+			else
+				.contain
+					+form-contact({ modal: false, initial: 'contact' })

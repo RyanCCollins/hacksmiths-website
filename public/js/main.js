@@ -41,9 +41,7 @@ $('.ui-reveal__hide').click(function() {
 
 var $authmodal = $('#modal-auth');
 var authmodalPanes = $authmodal.find('.auth-box');
-
 window.signinModalTrigger = function signinModalTrigger(e) {
-
 	e.preventDefault();
 
 	var initial = $(this).data("initial") || 'join';
@@ -51,7 +49,6 @@ window.signinModalTrigger = function signinModalTrigger(e) {
 	var from = $(this).data("from");
 
 	$authmodal.modal('show');
-
 	authmodalPanes.addClass('hidden');
 	initialPane.removeClass('hidden');
 

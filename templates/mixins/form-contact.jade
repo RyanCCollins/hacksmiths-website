@@ -3,7 +3,8 @@ mixin form-contact(args)
     if args.modal
       .modal-header
         button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
-        h4.modal-title Contact Hacksmiths
+        h4.modal-title.text-center Contact Hacksmiths
+        p.lead.text-center What can we do for you?
     div(class=args.modal ? 'modal-body' : 'col-md-4 col-md-offset-4')
       form(method='post', action='/contact', autocomplete='off', novalidate)
         input(type='hidden', name='action', value='contact')
