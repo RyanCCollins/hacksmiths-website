@@ -78,7 +78,7 @@ min-height: 100%;
     font-size: 14px;
   }
 
-  @include fadeInUp($duration: 0.75s, $delay: 3.0s);
+  @include fadeInUp($duration: 0.75s, $delay: 2.25s);
 
 }
 
