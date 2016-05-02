@@ -1,9 +1,9 @@
 extends ../layouts/default
 
 block intro
-	.contain
-		h1.text-center Project Galleries
-	
+  .contain
+    h1.text-center Project Galleries
+  
 block content
 	.contain.text-center
 		if galleries.length
@@ -11,7 +11,7 @@ block content
 				h2= gallery.name
 					if gallery.publishedDate
 						.pull-right.text-muted= gallery._.publishedDate.format('Do MMM YYYY')
-				
+        
 				.row.gallery-images
 					if gallery.heroImage.exists
 						.col-sm-4.col-md-4.gallery-image: img(src=gallery._.heroImage.limit(680,680)).img-rounded

@@ -217,3 +217,7 @@ if (!$("html").hasClass("touch")) {
 	$(window).scroll(parallaxPosition);
 	parallaxPosition();
 }
+
+$(document).ready(function(){
+    $('.loading').hide();
+});
