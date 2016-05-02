@@ -23776,7 +23776,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
-  background: #E1E0E9;
+  background: #DCDCDD;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -24992,7 +24992,7 @@ legend {
   padding: 1.25rem;
   margin: 1.125rem 0; }
   .fieldset legend {
-    background: #E1E0E9;
+    background: #DCDCDD;
     padding: 0 0.1875rem;
     margin: 0;
     margin-left: -0.1875rem; }
@@ -25285,7 +25285,7 @@ select {
     font-size: 0.9rem;
     float: left; }
     .button-group .button:not(:last-child) {
-      border-right: 1px solid #E1E0E9; }
+      border-right: 1px solid #DCDCDD; }
   .button-group.tiny .button {
     font-size: 0.6rem; }
   .button-group.small .button {
@@ -25597,7 +25597,7 @@ select {
   margin-right: 0.75rem; }
 
 .dropdown-pane {
-  background-color: #E1E0E9;
+  background-color: #DCDCDD;
   border: 1px solid #cacaca;
   border-radius: 0;
   display: block;
@@ -25947,7 +25947,7 @@ body {
 .off-canvas-content,
 .off-canvas-content {
   min-height: 100%;
-  background: #E1E0E9;
+  background: #DCDCDD;
   transition: transform 0.5s ease;
   backface-visibility: hidden;
   z-index: 1;
@@ -28032,7 +28032,7 @@ cite {
   font-style: normal; }
 
 .panel-colored {
-  background-color: #9a3131;
+  background-color: #C5392B;
   min-height: 333px; }
   .panel-colored p {
     color: white !important; }
@@ -28894,7 +28894,7 @@ html, body {
   padding-top: 5em; }
 
 .panel-light-content {
-  color: #C4BBB8; }
+  color: #C5C3C6; }
 
 .container-dark-blue {
   background-color: #2C4066;
@@ -29792,7 +29792,7 @@ cite {
   font-style: normal; }
 
 .panel-colored {
-  background-color: #9a3131;
+  background-color: #C5392B;
   min-height: 333px; }
   .panel-colored p {
     color: white !important; }
