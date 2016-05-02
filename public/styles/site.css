@@ -28032,7 +28032,8 @@ cite {
   font-style: normal; }
 
 .panel-colored {
-  background-color: #3386EE; }
+  background-color: #9a3131;
+  min-height: 333px; }
   .panel-colored p {
     color: white !important; }
   .panel-colored h4 {
@@ -29791,7 +29792,8 @@ cite {
   font-style: normal; }
 
 .panel-colored {
-  background-color: #3386EE; }
+  background-color: #9a3131;
+  min-height: 333px; }
   .panel-colored p {
     color: white !important; }
   .panel-colored h4 {
