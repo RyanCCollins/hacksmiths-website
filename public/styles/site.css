@@ -28893,6 +28893,9 @@ html, body {
   padding-bottom: 5em;
   padding-top: 5em; }
 
+nav.top-bar.expanded {
+  z-index: 1000; }
+
 .panel-light-content {
   color: #C5C3C6; }
 

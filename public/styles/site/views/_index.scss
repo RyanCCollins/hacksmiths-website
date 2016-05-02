@@ -224,6 +224,10 @@ min-height: 100%;
     }
 }
 
+nav.top-bar.expanded {
+  z-index: 1000;
+}
+
 .panel-light-content {
   color: #C5C3C6;
 }
