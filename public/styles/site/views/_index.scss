@@ -13,6 +13,7 @@ $break-medium: 768px;
   background-position:50% 50%;
   /* ie8- graceful degradation */
   background-position:50% 50%\9 !important;
+  @include fadeIn($duration: 0.5s, $delay: 0.0);
 }
 
 /* fullscreen setup */
@@ -78,7 +79,7 @@ min-height: 100%;
     font-size: 14px;
   }
 
-  @include fadeInUp($duration: 0.5s, $delay: 2.5s);
+  @include fadeInUp($duration: 0.5s, $delay: 1.5s);
 
 }
 
@@ -95,7 +96,7 @@ min-height: 100%;
   font-size: 88px;
   text-transform: uppercase;
 
-  @include fadeInUp($duration: 0.5s, $delay: 1.5s);
+  @include fadeInUp($duration: 0.5s, $delay: 1.0s);
 
   // Style from small to medium 500px-768px
   @media screen and (max-width: $break-small) {
@@ -138,7 +139,7 @@ min-height: 100%;
 
 .h5-button-join-us {
   margin-top: auto;
-  margin-bottom: auto;;
+  margin-bottom: auto;
   font-weight: 600;
   background-clip: padding-box;
   background-color: #5ac6ff;
@@ -163,7 +164,7 @@ min-height: 100%;
     font-size: 20px;
   }
 
-  @include fadeIn($duration: 1.5s, $delay: 4.0s);
+  @include fadeIn($duration: 1.5s, $delay: 3.0s);
 
 }
 
