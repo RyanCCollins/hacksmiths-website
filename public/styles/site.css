@@ -28032,9 +28032,9 @@ cite {
   font-style: normal; }
 
 .member {
-  background-color: white;
-  border-radius: .15em;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+  background-color: rgba(242, 244, 255, 0.75);
+  border-radius: .25em;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
   margin-bottom: 10px; }
@@ -29744,9 +29744,9 @@ cite {
   font-style: normal; }
 
 .member {
-  background-color: white;
-  border-radius: .15em;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+  background-color: rgba(242, 244, 255, 0.75);
+  border-radius: .25em;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
   margin-bottom: 10px; }
