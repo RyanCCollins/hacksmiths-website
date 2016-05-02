@@ -6,16 +6,17 @@ block intro
 		.page-intro
 			h1.page-title Events
 			p.lead We are working closely with non profits and charitable organizations in an effort to use our skills for social good.
-				p.lead
-					//- if !user
-					//- 	a(href='/join').js-auth-trigger Join&nbsp;us&nbsp;
-					//- else
-					//- 	| RSVP&nbsp
-					| Stay in the loop -&nbsp
-					a(href='http://twitter.com/teamhacksmiths', target='_blank') follow us on twitter
+			p.lead Stay in the loop -&nbsp
+				a(href='http://twitter.com/teamhacksmiths', target='_blank') follow us on twitter
 
 		if upcomingEvent
 			+event(upcomingEvent)
+		else
+			h3.text-center There are no upcoming events.
+			if !user
+				p.lead.text-center Want to participate in our next event? &nbsp
+					a(href='/join').js-auth-trigger Join&nbsp;us&nbsp;
+			
 block content
 	.page-content: .container
 		.timeline
