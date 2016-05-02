@@ -1113,14 +1113,27 @@ cite {
     font-style: normal
 }
 
+.panel-colored {
+  p {
+    color: white !important;
+  }
+
+  h4 {
+    color: white !important;
+    text-align: center;
+  }
+
+  background-color: #3386EE;
+
+}
 
 .member {
-    background-color: rgba(242, 244, 255, 0.75);
-    border-radius: .25em;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 10px;
+  background-color: white;
+  border-radius: .25em;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .member-section {
