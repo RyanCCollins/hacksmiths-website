@@ -492,36 +492,10 @@ a.media:hover .media-heading {
     padding-left: 5px;
     padding-right: 5px
 }
-//
-// .social-signup-buttons .signup-button .entypo-social {
-//     font-size: 40px;
-//     vertical-align: middle
-// }
-//
-// .social-signup-buttons .signup-button .btn {
-//     position: relative
-// }
-//
-// .social-signup-buttons .signup-button .btn:hover,
-// .social-signup-buttons .signup-button .btn:focus {
-//     top: -1px
-// }
-//
-// .social-signup-buttons .signup-button .btn:active {
-//     top: 1px
-// }
-//
-// .signup-button__text {
-//     display: none
-// }
-//
-// @media (min-width:992px) {
-//     .signup-button__text {
-//         display: inline-block;
-//         vertical-align: middle;
-//         margin-left: 6px
-//     }
-// }
+
+.form-actions {
+  margin-top: 15px;
+}
 
 .auth-form-divider {
     color: #999;

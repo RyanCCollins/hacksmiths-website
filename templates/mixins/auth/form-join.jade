@@ -49,7 +49,7 @@ mixin form-join(args)
 						.form-actions.text-center
 							button(type='submit').button.expand.radius Join
 				p.auth-form-divider: span.auth-form-divider-text or
-					include ../../includes/social-signin
+				include ../../includes/social-signin
 				p.text-center.text-muted.mt-3
 					| Already have an account?
 					a(href=args.modal ? js : '/signin', rel=args.modal ? 'modal-pane' : null, data-modal-pane=args.modal ? 'signin' : null) Sign in
