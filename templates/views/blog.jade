@@ -1,26 +1,27 @@
 extends ../layouts/default
 
 mixin post(post)
-  .post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-    h2: a(href='/blog/post/' + post.slug)= post.title
-    p.lead.text-muted Posted 
-      if post.publishedDate
-        | on #{post._.publishedDate.format('MMMM Do, YYYY')} 
-      if post.categories && post.categories.length
-        | in 
-        each cat, i in post.categories
-          a(href='/blog/' + cat.key)= cat.name
-          if i < post.categories.length - 1
-            | , 
-          else
-            |  
-      if post.author
-        | by #{post.author.name.first}
-    if post.image.exists
-      img(src=post._.image.fit(160,160)).img.pull-right
-    p!= post.content.brief
-    if post.content.extended
-      p.read-more: a(href='/blog/post/' + post.slug) Read more...
+  .tile
+    .post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+      h2: a(href='/blog/post/' + post.slug)= post.title
+      p.lead.text-muted Posted 
+        if post.publishedDate
+          | on #{post._.publishedDate.format('MMMM Do, YYYY')} 
+        if post.categories && post.categories.length
+          | in 
+          each cat, i in post.categories
+            a(href='/blog/' + cat.key)= cat.name
+            if i < post.categories.length - 1
+              | , 
+            else
+              |  
+        if post.author
+          | by #{post.author.name.first}
+      if post.image.exists
+        img(src=post._.image.fit(160,160)).img.pull-right
+      p!= post.content.brief
+      if post.content.extended
+        p.read-more: a(href='/blog/post/' + post.slug) Read more...
 
 block intro
   .contain.text-center

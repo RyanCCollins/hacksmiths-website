@@ -2,7 +2,9 @@ mixin organizer(org)
 	.organizer
 		.organizer__header
 			.img-wrapper
-				img(src=org.image, alt='Hacksmiths organizer - ' + org.name, width=40, height=40).img-circle
+				img(src=org.image, alt='Hacksmiths organizer - ' + org.name, width=80, height=80).img-circle
 			h4.organizer__name=org.name
 			p.organizer__twitter: a(href='https://twitter.com/' + org.twitter, target='_blank') @#{org.twitter}
-		p.mv-0=org.title
+			if org.github
+				p.organizer__github: a(href='https://github.com/' + org.github, target='_blank') #{org.github}
+		p.organizer-info=org.title

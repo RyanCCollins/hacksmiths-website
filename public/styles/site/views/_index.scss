@@ -56,7 +56,7 @@ min-height: 100%;
   margin-right: auto;
   display: block;
   height: 85px;
-  @include fadeInUp($duration: 1.0s, $delay: 1.0s);
+  @include fadeInUp($duration: 0.5s, $delay: 0.5s);
 }
 
 // The small header on the main page
@@ -78,7 +78,7 @@ min-height: 100%;
     font-size: 14px;
   }
 
-  @include fadeInUp($duration: 1.0s, $delay: 3.0s);
+  @include fadeInUp($duration: 0.5s, $delay: 2.5s);
 
 }
 
@@ -95,7 +95,7 @@ min-height: 100%;
   font-size: 88px;
   text-transform: uppercase;
 
-  @include fadeInUp($duration: 1.0s, $delay: 2.0s);
+  @include fadeInUp($duration: 0.5s, $delay: 1.5s);
 
   // Style from small to medium 500px-768px
   @media screen and (max-width: $break-small) {
@@ -185,10 +185,7 @@ min-height: 100%;
 }
 
 .page-1-section {
-  .colored {
-    background-color: #f3f3f3;
-  }
-  background-color: #fff;
+
 }
 
 .section-intro {
@@ -212,9 +209,13 @@ min-height: 100%;
   z-index: 1
 }
 
+.organizer-info {
+  padding: 10px;
+  color: white !important;
+  font-size: 1.0rem;
+}
 
 .page-1-section {
-
 
     &&--featured {
         padding-bottom: 5em;
@@ -222,8 +223,13 @@ min-height: 100%;
     }
 }
 
-.container-gray {
-  background-color: #e3e7e9;
+.panel-light-content {
+  color: #C4BBB8;
+}
+
+.container-dark-blue {
+  background-color: #2C4066;
+  color: white;
   padding-top: 50px;
   padding-bottom: 50px;
 }
