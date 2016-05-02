@@ -26949,9 +26949,12 @@ p {
     .top-bar ul li a {
       font-size: 0.75rem;
       margin-left: 5px; } }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     .top-bar ul li a {
       font-size: 0.875rem; } }
+  @media screen and (max-width: 820) {
+    .top-bar ul li a {
+      padding: 2px; } }
 
 .top-bar-left {
   position: relative;

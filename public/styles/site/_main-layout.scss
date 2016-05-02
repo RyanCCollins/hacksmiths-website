@@ -21,7 +21,7 @@ $dark-blue: #022F40;
 $light-gray: #C2C6A7;
 
 $break-small: 500px;
-$break-medium: 800px;
+$break-medium: 900px;
 
 @mixin no-padding($side) {
     @if $side == 'all' {
@@ -146,6 +146,9 @@ p {
   }
   @media screen and (max-width: $break-medium) {
     font-size: rem-calc(14px);
+  }
+  @media screen and (max-width: 820) {
+     padding: 2px;
   }
 }
 
