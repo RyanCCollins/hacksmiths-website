@@ -1,16 +1,16 @@
 extends ../../layouts/default
 
 block flash-messages
-//It's blank for a reason (to give you a hook for flash messages)
+	//-It's blank for a reason (to give you a hook for flash messages)
 
 block content
-	.container
+	.contain
 		.page-intro
 			h1 Join Hacksmiths
 			+flash-messages(messages)
-		.page-content
-			+auth-forms({ modal: false, initial: 'join' })
-
+		.container
+			.page-content
+				+auth-forms({ modal: false, initial: 'join' })
 block js
 	script.
 		jQuery(function($) {

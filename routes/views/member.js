@@ -13,10 +13,10 @@ exports = module.exports = function(req, res) {
 
 
 	// Load the Member
-
 	view.on('init', function(next) {
 		User.model.findOne()
 		.where('key', req.params.member)
+		.populate('events')
 		.exec(function(err, member) {
 			if (err) return res.err(err);
 			if (!member) {

@@ -4,13 +4,13 @@ block flash-messages
 	//- intentionally blank
 
 block content
-	.container-xs
+	.contain
 		.page-intro
-			h1 Sign into Hacksmiths
+			h1 Sign Into Hacksmiths
 			+flash-messages(messages)
-		.page-content
-			+auth-forms({ modal: false, initial: 'signin' })
-
+		.container
+			.page-content
+				+auth-forms({ modal: false, initial: 'signin' })
 block js
 	script.
 		jQuery(function($) {

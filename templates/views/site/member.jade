@@ -35,17 +35,17 @@ block content
 							if member.bio.html
 								!= member.bio.html
 					.member-section.member__additional-info
-						h5.text-caps Projects Participation
+						h5.text-caps Event Participation
 						ul.list-unstyled.mt-1
-						if member.projects && member.projects.length
-							each project in member.projects
+						if member.events && member.events.length
+							each event in member.events
 								li.media
-									if project.featureImage.exists
+									if event.featureImage.exists
 									.pull-left
-										img(src=project._.featureImage.thumbnail(40,40), alt=project.title).img-responsive.img-square
+										img(src=event._.featureImage.thumbnail(40,40), alt=event.title).img-responsive.img-square
 								.media-body
-									h5: a(href=project.githubURL)=project.title
-									!=project.about.html
+									h5: a(href=event.githubURL)=event.title
+									!=event.about.html
 						else
 							.media-body
-									h5: No event participation here yet :(.
+									h5 No event participation here yet!
