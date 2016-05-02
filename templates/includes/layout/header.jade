@@ -14,10 +14,20 @@ html
 								img(alt='Hacksmiths logo', id='logo', src='/images/hacksmiths-logo-text.png')
 				section.top-bar-section
 					ul.right
+						li(class=(section === 'home' ? 'active' : '' ))
+							a(href='/') Home
 						li(class=(section === 'events' ? 'active' : '' ))
 							a(href='/events') Events
 						li(class=(section === 'members' ? 'active' : '' ))
 							a(href='/members') Members
 						li(class=(section === 'blog' ? 'active' : '' ))
 							a(href='/blog') Blog
+						if user
+							li
+								a(href='/me') My Profile
+						else
+							li
+								a(href='/join').js-auth-trigger Join
+							li
+								a(href='/signin').js-auth-trigger Sign in
 		.off-canvas-content(data-off-canvas-content='')
