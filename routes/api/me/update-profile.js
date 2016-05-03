@@ -6,8 +6,8 @@ exports = module.exports = function(req, res) {
 	locals = {
 		user: {}
 	}
-	
-	User.findById(req.body.user.id).exec(function(err, person) {
+
+	User.model.findById(req.body.user.id).exec(function(err, person) {
 		if (err || !person) return res.apiResponse({
 			success: false
 		});
