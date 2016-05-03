@@ -15,10 +15,12 @@ exports = module.exports = function(req, res) {
 		console.log('Updating the user profile');
 
 		for (var key in req.body.user) {
-			person[key] = req.body.user[key];
+			if (key != "id") {
+				person[key] = req.body.user[key];
+			}
 		}
 
-		user.save(function(err) {
+		person.save(function(err) {
 			if (err) return res.apiResponse({
 				success: false
 			});

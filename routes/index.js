@@ -48,7 +48,7 @@ exports = module.exports = function(app) {
 	// Allow cross-domain requests (development only)
 	if (process.env.NODE_ENV !== 'production') {
 		console.log('------------------------------------------------');
-		console.log('Notice: Enabling CORS for development.');
+		console.log('Notice: CORS is enabled while in development mode.');
 		console.log('------------------------------------------------');
 		app.all('*', function(req, res, next) {
 			res.header('Access-Control-Allow-Origin', '*');
