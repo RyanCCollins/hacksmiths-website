@@ -7,6 +7,7 @@ block flash-messages
 block content
 	.container
 		.contain
+			+flash-messages(messages)
 		.page-intro
 			p.lead Hi #{user.name.first}, these are your settings and&nbsp
 				a(href=user.url) profile details
@@ -16,7 +17,6 @@ block content
 					|  The next event has been announced -
 					a(href=nextEvent.url).alert-link= nextEvent._.startDate.format('dddd D MMM YYYY')
 		.page-content.tile.ph-2.pv-2.mb-2
-			+flash-messages(messages)
 			.container
 				.row
 					.col-sm-10.col-sm-offset-1
