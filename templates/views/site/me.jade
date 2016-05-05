@@ -14,12 +14,12 @@ block content
 			if siteWideAlert 
 				.alert.alert-info
 					p!=utils.htmlToText(siteWideAlert.message)
-					p Posted by #{siteWideAlert.author.name.first} #{siteWideAlert.author.name.last}
+					p Posted by #{siteWideAlert.author.name.first} #{siteWideAlert.author.name.last} on #{siteWideAlert._.publishedDate.format('dddd D MMM YYYY')}
 			if nextEvent
 				.alert.alert-info
 					span.entypo.entypo-calendar
 					|  The next event has been announced -
-					a(href=nextEvent.url).alert-link= nextEvent._.startDate.format('dddd D MMM YYYY')
+					a(href=nextEvent.url).alert-link= nextEvent._.startDate.format('MM/DD/YYYY')
 		.page-content.tile.ph-2.pv-2.mb-2
 			.container
 				.row
