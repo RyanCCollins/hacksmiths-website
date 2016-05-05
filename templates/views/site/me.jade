@@ -11,8 +11,8 @@ block content
 		.page-intro
 			p.lead Hi #{user.name.first}, these are your settings and&nbsp
 				a(href=user.url) profile details
-			if siteWideMessage
-				.alert.alert-info siteWideMessage.message
+			if siteWideAlert
+				.alert.alert-info utils.htmlToText(siteWideAlert.message)
 			if nextEvent
 				.alert.alert-info
 					span.entypo.entypo-calendar
@@ -160,4 +160,4 @@ block content
 											button(type='submit', data-loading-text="Changing...").button.large.radius Change
 
 block js
-	script(src='/js/views/me.js')
+	script(src='/js/pages/me.js')

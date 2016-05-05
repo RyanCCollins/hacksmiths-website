@@ -3,7 +3,8 @@ var keystone = require('keystone'),
 	moment = require('moment');
 
 var Event = keystone.list('Event'),
-	RSVP = keystone.list('RSVP');
+	RSVP = keystone.list('RSVP'),
+	SiteWideAlert = keystone.list('SiteWideAlert');
 
 exports = module.exports = function(req, res) {
 
@@ -12,6 +13,7 @@ exports = module.exports = function(req, res) {
 
 	locals.section = 'me';
 	locals.page.title = 'Settings - Hacksmiths';
+	locals.siteWideAlert = {};
 
 	view.query('nextEvent',
 		Event.model.findOne()
@@ -25,6 +27,21 @@ exports = module.exports = function(req, res) {
 		.populate('event')
 		.sort('-createdAt')
 	);
+
+	view.on('init', function(next) {
+		SiteWideAlert.model.findOne()
+			.where('state', 'published')
+			.sort('-publishedDate')
+			.exec(function(err, results){
+				if (err || !results) {
+					console.log(err);
+				} else {
+					console.log('Results found: ' + results);
+					locals.siteWideAlert = results;
+				}
+
+		});
+	});
 
 
 	view.on('post', {
