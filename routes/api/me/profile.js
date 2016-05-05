@@ -8,7 +8,6 @@ exports = module.exports = function(req, res) {
 	}
 
 	User.model.findById(req.body.user).exec(function(err, user) {
-
 		if (err || !user) return res.apiResponse({
 			success: false
 		});
