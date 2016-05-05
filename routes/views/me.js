@@ -50,7 +50,7 @@ exports = module.exports = function(req, res) {
 
 		req.user.getUpdateHandler(req).process(req.body, {
 			fields: 'name, email, notifications.events, notifications.posts,' +
-				'website, isPublic, bio, photo,' +
+				'website, isPublic, bio, photo, availability.isAvailableForEvents, availability.description,' +
 				'mentoring.available, mentoring.needsAMentor, mentoring.experience, mentoring.want',
 			flashErrors: true
 		}, function(err) {

@@ -37,8 +37,8 @@ block content
 					.member-section.member__additional-info
 						h5.text-caps Event Participation
 						ul.list-unstyled.mt-1
-						if member.events && member.events.length
-							each event in member.events
+						if events && events.length
+							each event in events
 								li.media
 									if event.featureImage.exists
 									.pull-left

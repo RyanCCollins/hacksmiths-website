@@ -25,33 +25,29 @@ exports = module.exports = function(req, res) {
 			});
 	});
 
-
 	// Load Leaderboard
-
 	view.on('init', function(next) {
 		User.model.find()
-			.sort('-rank name.first')
-			.where('istopContributor', true)
+			.sort('name.first')
+			.where('isTopContributor', true)
 			.exec(function(err, contributors) {
 				if (err) res.err(err);
+				console.log(contributors);
 				locals.topContributors = contributors;
 				next();
 			});
 	});
 
-
 	// Pluck IDs for filtering Community
-
 	view.on('init', function(next) {
-		locals.leaderIDs = _.pluck(locals.leaders, 'id');
-		locals.topContributorsIDs = _.pluck(locals.topContributors, 'id');
+		locals.leaderIDs = _.pluck(locals.leaders, '_id');
+		locals.topContributorsIDs = _.pluck(locals.topContributors, '_id');
 		console.log('Leader IDs: ' + locals.leaderIDs);
+		console.log('Top Contributor IDS: ', locals.topContributorsIDs)
 		next();
 	});
 
-
 	// Load Community
-
 	view.on('init', function(next) {
 		User.model.find()
 			.sort('-lastRSVP')
@@ -65,7 +61,6 @@ exports = module.exports = function(req, res) {
 				next();
 			});
 	});
-
 
 	view.render('site/members');
 };

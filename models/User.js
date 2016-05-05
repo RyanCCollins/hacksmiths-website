@@ -3,6 +3,7 @@ var crypto = require('crypto');
 var keystone = require('keystone');
 var createHash = require('create-hash');
 var Types = keystone.Field.Types;
+var RSVP = keystone.List('RSVP');
 
 /**
  * Users Model
@@ -155,6 +156,12 @@ User.add({
     explanation: {
       type: Types.Html,
       note: 'Give a brief description of your availability.',
+      dependsOn: deps.isAvailableForEvents,
+      hidden: true
+    },
+    description: {
+      type: Types.Markdown,
+      note: 'Give a brief description of your availability',
       dependsOn: deps.isAvailableForEvents
     }
   },
@@ -325,7 +332,6 @@ User.add({
   isTopContributor: {
     type: Boolean,
     default: false,
-    noedit: true
   },
   totalHatTips: {
     type: Number,
@@ -425,6 +431,12 @@ User.schema.virtual('url').get(function() {
   return '/member/' + this.key;
 });
 
+User.schema.virtual('totalEventContributions').get(function(){
+  RSVP.model.find().where('who', this.id).exec(function(error, rsvps) {
+    return rsvps.count;
+  });
+});
+
 // Provide access to Keystone
 User.schema.virtual('canAccessKeystone').get(function() {
   return this.isAdmin;
@@ -489,10 +501,6 @@ User.schema.method.verifyEmail = function(callback) {
       }
     }, callback);
   });
-}
-
-User.schema.method.setRank = function() {
-
 }
 
 /**

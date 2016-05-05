@@ -17,7 +17,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		User.model.findOne()
 		.where('key', req.params.member)
-		.populate('events')
+		.populate('projects')
 		.exec(function(err, member) {
 			if (err) return res.err(err);
 			if (!member) {
@@ -31,7 +31,11 @@ exports = module.exports = function(req, res) {
 
 
 	view.on('init', function(next) {
-		RSVP.model.findOne()
+		RSVP.model.find().where('who', locals.member.id).exec(function(error, events) {
+			if (error) return res.err(err);
+			locals.events = events;
+			next();
+		});
 	});
 
 	// Set the page title and populate related documents

@@ -87,8 +87,21 @@ block content
 
 
 
-							//- Public Info
-
+							hr.mv-2
+							h3.text-center Event Involvement
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Available
+								.col-sm-10
+									label.checkbox-inline
+										input(type='checkbox', name="availability.isAvailableForEvents", value='true', checked=user.availability.isAvailableForEvents ? 'true' : null)
+										| Available for events in the future
+							.form-group.col-sm-12
+								label.col-sm-2.control-label Explanation of Availability
+									br
+									.text-muted (markdown)
+								.col-sm-10
+									textarea(name='availability.description', placeholder="Tell us about your background and what you would want to do to help.  Our only requirements right now is a desire to use your skills for good." rows=5).form-control=user.availability.description.md
+									
 							hr.mv-2
 							h3.text-center Public Info
 							.form-group.col-sm-12
