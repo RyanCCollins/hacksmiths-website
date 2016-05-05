@@ -14,7 +14,7 @@ block content
 			if siteWideAlert 
 				.alert.alert-info
 					p!=utils.htmlToText(siteWideAlert.message)
-					p Posted by siteWideAlert.author.name
+					p Posted by #{siteWideAlert.author.name.first} #{siteWideAlert.author.name.last}
 			if nextEvent
 				.alert.alert-info
 					span.entypo.entypo-calendar
