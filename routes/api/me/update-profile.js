@@ -14,6 +14,7 @@ exports = module.exports = function(req, res) {
 
 		console.log('Updating the user profile');
 
+
 		for (var key in req.body.user) {
 			if (key != "id") {
 				person[key] = req.body.user[key];
