@@ -13,7 +13,6 @@ exports = module.exports = function(req, res) {
 
 	locals.section = 'me';
 	locals.page.title = 'Settings - Hacksmiths';
-	locals.siteWideAlert = {};
 
 	view.query('nextEvent',
 		Event.model.findOne()
@@ -26,23 +25,24 @@ exports = module.exports = function(req, res) {
 		.where('participating', true)
 		.populate('event')
 		.sort('-createdAt')
+		.populate('author')
 	);
 
 	view.on('init', function(next) {
 		SiteWideAlert.model.findOne()
 			.where('state', 'published')
 			.sort('-publishedDate')
-			.exec(function(err, results){
-				if (err || !results) {
-					console.log(err);
+			.populate('author')
+			.exec(function(error, results){
+				if (error || !results) {
+					console.log(error);
+					next(error);
 				} else {
-					console.log('Results found: ' + results);
 					locals.siteWideAlert = results;
+					next();
 				}
-
-		});
+			});
 	});
-
 
 	view.on('post', {
 		action: 'profile.details'

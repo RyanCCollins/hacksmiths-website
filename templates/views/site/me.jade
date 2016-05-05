@@ -11,8 +11,10 @@ block content
 		.page-intro
 			p.lead Hi #{user.name.first}, these are your settings and&nbsp
 				a(href=user.url) profile details
-			if siteWideAlert
-				.alert.alert-info utils.htmlToText(siteWideAlert.message)
+			if siteWideAlert 
+				.alert.alert-info
+					p!=utils.htmlToText(siteWideAlert.message)
+					p Posted by siteWideAlert.author.name
 			if nextEvent
 				.alert.alert-info
 					span.entypo.entypo-calendar

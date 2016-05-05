@@ -2,6 +2,7 @@ var keystone = require('keystone'),
 	moment = require('moment');
 
 var User = keystone.list('User');
+var RSVP = keystone.list('RSVP');
 
 exports = module.exports = function(req, res) {
 
@@ -28,6 +29,10 @@ exports = module.exports = function(req, res) {
 		});
 	});
 
+
+	view.on('init', function(next) {
+		RSVP.model.findOne()
+	});
 
 	// Set the page title and populate related documents
 
