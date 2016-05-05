@@ -11,6 +11,8 @@ block content
 		.page-intro
 			p.lead Hi #{user.name.first}, these are your settings and&nbsp
 				a(href=user.url) profile details
+			if siteWideMessage
+				.alert.alert-info siteWideMessage.message
 			if nextEvent
 				.alert.alert-info
 					span.entypo.entypo-calendar
