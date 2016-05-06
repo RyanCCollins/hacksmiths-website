@@ -31,24 +31,24 @@ exports = module.exports = function(req, res) {
 	});
 
 
-	view.on('init', function(next) {
-		RSVP.model.find()
-			.where('who', locals.member.id)
-			.exec(function(error, rsvps) {
-				if (error) return res.err(err);
-				locals.rsvps = rsvps;
-				next();
-		});
-	});
-
-	view.on('init', function(next){
-		Event.model.find()
-			.where('id').in(locals.rsvps)
-			.exec(function(error, results) {
-				locals.events = results;
-				next();
-			});
-	});
+	// view.on('init', function(next) {
+	// 	RSVP.model.find()
+	// 		.where('who', locals.member.id)
+	// 		.exec(function(error, rsvps) {
+	// 			if (error) return res.err(err);
+	// 			locals.rsvps = rsvps;
+	// 			next();
+	// 	});
+	// });
+	//
+	// view.on('init', function(next){
+	// 	Event.model.find()
+	// 		.where('id').in(locals.rsvps)
+	// 		.exec(function(error, results) {
+	// 			locals.events = results;
+	// 			next();
+	// 		});
+	// });
 
 	// Set the page title and populate related documents
 
