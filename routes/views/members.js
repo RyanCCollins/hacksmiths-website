@@ -25,11 +25,16 @@ exports = module.exports = function(req, res) {
 			});
 	});
 
+	view.on('init', function(next){
+		locals.leaderIDs = _.pluck(locals.leaders, '_id');
+	});
+
 	// Load Leaderboard
 	view.on('init', function(next) {
 		User.model.find()
 			.sort('name.first')
 			.where('isTopContributor', true)
+			.where('_id').nin(locals.leaderIDs)
 			.exec(function(err, contributors) {
 				if (err) res.err(err);
 				console.log(contributors);
@@ -40,7 +45,6 @@ exports = module.exports = function(req, res) {
 
 	// Pluck IDs for filtering Community
 	view.on('init', function(next) {
-		locals.leaderIDs = _.pluck(locals.leaders, '_id');
 		locals.topContributorsIDs = _.pluck(locals.topContributors, '_id');
 		console.log('Leader IDs: ' + locals.leaderIDs);
 		console.log('Top Contributor IDS: ', locals.topContributorsIDs)
