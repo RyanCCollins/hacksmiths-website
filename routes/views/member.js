@@ -43,7 +43,7 @@ exports = module.exports = function(req, res) {
 
 	view.on('init', function(next){
 		Event.model.find()
-			.where('id', locals.rsvps)
+			.where('id').in(locals.rsvps)
 			.exec(function(error, results) {
 				locals.events = results;
 				next();
