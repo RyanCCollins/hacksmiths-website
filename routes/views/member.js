@@ -34,7 +34,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		RSVP.model.find()
 			.where('who', locals.member.id)
-			.exec(function(error, events) {
+			.exec(function(error, rsvps) {
 				if (error) return res.err(err);
 				locals.rsvps = rsvps;
 				next();
