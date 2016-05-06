@@ -27,6 +27,7 @@ exports = module.exports = function(req, res) {
 
 	view.on('init', function(next){
 		locals.leaderIDs = _.pluck(locals.leaders, '_id');
+		next();
 	});
 
 	// Load Leaderboard

@@ -34,18 +34,18 @@ block content
 											=githubUsername
 							if member.bio.html
 								!= member.bio.html
-					.member-section.member__additional-info
-						h5.text-caps Event Participation
-						ul.list-unstyled.mt-1
-						if events && events.length
-							each event in events
-								li.media
-									if event.featureImage.exists
-									.pull-left
-										img(src=event._.featureImage.thumbnail(40,40), alt=event.title).img-responsive.img-square
-								.media-body
-									h5: a(href=event.githubURL)=event.title
-									!=event.about.html
+					//- .member-section.member__additional-info
+					//- 	h5.text-caps Event Participation
+					//- 	ul.list-unstyled.mt-1
+					//- 	if events && events.length
+					//- 		each event in events
+					//- 			li.media
+					//- 				if event.featureImage.exists
+					//- 				.pull-left
+					//- 					img(src=event._.featureImage.thumbnail(40,40), alt=event.title).img-responsive.img-square
+					//- 			.media-body
+					//- 				h5: a(href=event.githubURL)=event.title
+					//- 				!=event.about.html
 						else
 							.media-body
 									h5 No event participation here yet!
