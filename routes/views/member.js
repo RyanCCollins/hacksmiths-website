@@ -31,10 +31,13 @@ exports = module.exports = function(req, res) {
 
 
 	view.on('init', function(next) {
-		RSVP.model.find().where('who', locals.member.id).exec(function(error, events) {
-			if (error) return res.err(err);
-			locals.events = events;
-			next();
+		RSVP.model.find()
+			.where('who', locals.member.id)
+			.populate('event')
+			.exec(function(error, events) {
+				if (error) return res.err(err);
+				locals.events = events;
+				next();
 		});
 	});
 
