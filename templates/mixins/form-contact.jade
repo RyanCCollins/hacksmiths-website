@@ -25,7 +25,7 @@ mixin form-contact(args)
             label What are you contacting us about?
             select(name='inquryType').form-control
               option(value='') (Select one)
-              each type in inquireTypes
+              each type in inquiryTypes
                 option(value=type.value, selected=formData.inquiryType=type.value)= type.label
           .form-group(class=!args.modal && validationErrors.message ? 'has-error' : null)
             label Message
