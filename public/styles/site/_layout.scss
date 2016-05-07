@@ -1138,7 +1138,7 @@ cite {
 }
 
 .member-section {
-    padding: 1em
+    padding: 1em;
 }
 
 .member__photo img {
@@ -1149,17 +1149,18 @@ cite {
 }
 
 .member__title {
-    margin: 0
+    margin: 0;
+    text-align: center;
 }
 
 .member__title>a {
-    color: #222
+    color: #222;
 }
 
 .member__bio {
     margin-top: .5em;
     color: #555;
-    font-size: 13px
+    font-size: 13px;
 }
 
 .members-list {
@@ -1263,7 +1264,7 @@ cite {
 .member.member--profile .member__additional-info {
     margin-top: 1em;
     padding: 1.5em;
-    border-top: 1px solid #eee
+    border-top: 1px solid #eee;
 }
 
 .member.member--profile .date {
@@ -1273,7 +1274,7 @@ cite {
     border: 1px solid #999;
     border-radius: .2em;
     color: #999;
-    text-align: center
+    text-align: center;
 }
 
 .member.member--profile .date small {
