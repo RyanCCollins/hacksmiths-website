@@ -1,7 +1,5 @@
-$( function() {
-	var $container = $('.members-list');
-	$container.imagesLoaded( function() {
-		$container.masonry({ itemSelector: '.member-item' });
-	});
-	$('.is-tooltip').tooltip();
+$('.members-list').masonry({
+  // options
+  itemSelector: '.member-item',
+  columnWidth: 200
 });

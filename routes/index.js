@@ -39,7 +39,6 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
-
 	app.use(subdomain({
 		base: IP,
 		removeWWW: true
