@@ -26,10 +26,10 @@ mixin member(member)
 					.member__accounts.hidden-xs
 						if twitterUsername
 							a(href='https://twitter.com/' + twitterUsername, target='_blank', data-toggle='tooltip', data-title='@' + twitterUsername, data-placement='top', data-container='#members').member__account.member__account--twitter.is-tooltip
-								span.entypo-social.entypo-twitter
+								span.fa.fa-twitter
 						if githubUsername
 							a(href='https://github.com/' + githubUsername, target='_blank', data-toggle='tooltip', data-title=githubUsername, data-placement='top', data-container='#members').member__account.member__account--github.is-tooltip
-								span.entypo-social.entypo-github
+								span.fa.fa-github
 block content
 	.container
 		+flash-messages(messages)
