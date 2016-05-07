@@ -21,12 +21,12 @@ mixin form-contact(args)
           .form-group
             label Organization
             input(type='text', name='organization', value=args.modal ? null : formData.organization, placeholder='(Optional)').form-control
-          .form-group(class=!args.modal && validationErrors.message ? 'has-error' : null)
-            label What are you contacting us about?
-            select(name='inquryType').form-control
-              option(value='') (Select one)
-              each type in inquiryTypes
-                option(value=type.value, selected=formData.inquiryType == type.value)= type.label
+          //- .form-group(class=!args.modal && validationErrors.message ? 'has-error' : null)
+          //-   label What are you contacting us about?
+          //-   select(name='inquryType').form-control
+          //-     option(value='') (Select one)
+          //-     each type in inquiryTypes
+          //-       option(value=type.value, selected=formData.inquiryType == type.value)= type.label
           .form-group(class=!args.modal && validationErrors.message ? 'has-error' : null)
             label Message
             textarea(name='message', placeholder='Leave us a message...' rows=4).form-control=args.modal ? null : formData.message
