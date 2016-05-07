@@ -25,6 +25,7 @@
     "foundation": "^5.5.3",
     "jquery.countdown": "^2.1.0",
     "animatewithsass": "^3.2.2",
-    "bootstrap-social": "^5.0.0"
+    "bootstrap-social": "^5.0.0",
+    "SpinKit": "spinkit#^1.2.5"
   }
 }

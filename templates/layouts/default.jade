@@ -90,22 +90,23 @@ html.no-js(lang='en', itemscope='', itemtype='http://schema.org/Product')
     //-       button.menu-icon(type='button', data-toggle='offCanvas')
     //-       span.title-bar-title Hacksmiths
     include ../includes/layout/header
-
+    
+    if section == 'home'
+      include ../includes/loading
     //- NOTE:
     //- There is no .container wrapping class around body blocks to allow more flexibility in design.
     //- Remember to include it in your templates when you override the intro and content blocks!
 
     //- The Intro block appears above flash messages (used for temporary information display)
     block intro
-
+      
     //- Flash messages allow you to display once-off status messages to users, e.g. form
     //- validation errors, success messages, etc.
     block flash-messages
       +flash-messages(messages)
 
     block content
-      .loading
-        div(data-loader='wave')
+
 
     //- FOOTER
     block footer

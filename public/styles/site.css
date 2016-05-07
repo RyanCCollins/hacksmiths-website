@@ -23401,6 +23401,27 @@ th.hide-for-touch {
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+/*
+ *  Usage:
+ *
+      <div class="sk-spinner sk-spinner-pulse"></div>
+ *
+ */
+.sk-spinner-pulse {
+  width: 40px;
+  height: 40px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-pulseScaleOut 1.0s infinite ease-in-out; }
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1);
+    opacity: 0; } }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
    * 1. Set default font family to sans-serif.
@@ -28041,7 +28062,7 @@ cite {
     text-align: center; }
 
 .member {
-  background-color: white;
+  background-color: #f1f0fb;
   border-radius: .25em;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
   position: relative;
@@ -28102,7 +28123,8 @@ cite {
   margin-top: 2em; }
 
 .member.member--card .member__accounts {
-  margin-top: 1em; }
+  margin-top: 1em;
+  text-align: center; }
 
 .member.member--card .member__accounts a {
   margin-right: 5px;
@@ -28547,49 +28569,41 @@ cite {
  * Scss files here
  */
 /* 04. PAGE 1 / HEADER SETTINGS ================================================== */
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  z-index: 999;
+  height: 40px;
+  width: 40px;
+  margin-left: -20px;
+  margin-top: -20px; }
+
+#loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+#loading .spinner {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: auto; }
+
 /* background setup */
 .background {
+  min-height: 100%;
   background: url("/images/bg.jpg") #131313;
   background-repeat: no-repeat;
   /* custom background-position */
   background-position: 50% 50%;
   /* ie8- graceful degradation */
-  background-position: 50% 50% \9  !important;
-  -webkit-animation-name: fadeIn;
-  -moz-animation-name: fadeIn;
-  -ms-animation-name: fadeIn;
-  -o-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -ms-animation-iteration-count: 1;
-  -o-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-duration: 0.5s;
-  -moz-animation-duration: 0.5s;
-  -ms-animation-duration: 0.5s;
-  -o-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-delay: 0;
-  -moz-animation-delay: 0;
-  -ms-animation-delay: 0;
-  -o-animation-delay: 0;
-  animation-delay: 0;
-  -webkit-animation-timing-function: ease;
-  -moz-animation-timing-function: ease;
-  -ms-animation-timing-function: ease;
-  -o-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden; }
+  background-position: 50% 50% \9  !important; }
 
 /* fullscreen setup */
 html, body {
@@ -28608,6 +28622,7 @@ html, body {
   background-size: cover;
   /* around images */
   min-height: 100%;
+  top: -80;
   overflow: hidden; }
 
 .fullscreen.overflow,
@@ -29805,7 +29820,7 @@ cite {
     text-align: center; }
 
 .member {
-  background-color: white;
+  background-color: #f1f0fb;
   border-radius: .25em;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
   position: relative;
@@ -29866,7 +29881,8 @@ cite {
   margin-top: 2em; }
 
 .member.member--card .member__accounts {
-  margin-top: 1em; }
+  margin-top: 1em;
+  text-align: center; }
 
 .member.member--card .member__accounts a {
   margin-right: 5px;

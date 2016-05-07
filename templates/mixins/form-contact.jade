@@ -32,26 +32,3 @@ mixin form-contact(args)
             textarea(name='message', placeholder='Leave us a message...' rows=4).form-control=args.modal ? null : formData.message
         .form-actions.text-center
           button(type='submit').button.expand.radius Send
-      //- form(method='post')
-      //-   input(type='hidden', name='action', value='contact')
-      //-   .form-group(class=!args.modal && validationErrors.name ? 'has-error' : null)
-      //-     label Name
-      //-     input(type='text', name='name.full', value=args.modal ? null : formData['name.full']).form-control
-      //-   .form-group(class=!args.modal && validationErrors.email ? 'has-error' : null)
-      //-     label Email
-      //-     input(type='email', name='email', value=args.modal ? null : formData.email).form-control
-      //-   .form-group
-      //-     label Phone
-      //-     input(type='text', name='phone', value=args.modal ? null : formData.phone, placeholder='(optional)').form-control
-      //-   .form-group
-      //-     label Organization
-      //-     input(type='text', name='organization', value=args.modal ? null : formData.organization, placeholder='(optional)').form-control
-      //-   .form-group(class=!args.modal && validationErrors.inquiryType ? 'has-error' : null)
-      //-     label What are you contacting us about?
-      //-     select(name='inquiryType').form-control
-      //-       option(value='') (select one)
-      //-       each type in inquiryTypes
-      //-         option(value=type.value, selected=formData.inquiryType == type.value)= type.label
-      //-   .form-group(class=validationErrors.message ? 'has-error' : null)
-      //-     label Message
-      //-     textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message

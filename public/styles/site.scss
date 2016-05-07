@@ -13,6 +13,7 @@ The main SCSS file for everything, yep
 @import 'site/main_settings';
 @import "../../bower_components/foundation/scss/foundation";
 @import "../../bower_components/foundation-sites/scss/foundation";
+@import '../../bower_components/spinkit/scss/spinners/5-pulse';
 
 @include foundation-everything;
 

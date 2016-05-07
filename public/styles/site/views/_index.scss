@@ -5,15 +5,45 @@ $break-medium: 768px;
 
 /* 04. PAGE 1 / HEADER SETTINGS ================================================== */
 
+
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  z-index: 999;
+  height: 40px;
+  width: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+#loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#loading .spinner {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: auto;
+}
 /* background setup */
 .background {
+  min-height: 100%;
   background: url('/images/bg.jpg')#131313;
   background-repeat:no-repeat;
   /* custom background-position */
   background-position:50% 50%;
   /* ie8- graceful degradation */
   background-position:50% 50%\9 !important;
-  @include fadeIn($duration: 0.5s, $delay: 0.0);
+  // @include fadeIn($duration: 0.5s, $delay: 0.0);
 }
 
 /* fullscreen setup */
@@ -23,13 +53,13 @@ html, body {
 }
 .fullscreen,
 .content-main {
-width:100%;
-// height: auto;
--webkit-background-size: cover; /* Add in these */
--moz-background-size: cover;    /* four lines to */
--o-background-size: cover;      /* remove the white space*/
-background-size: cover;         /* around images */
-min-height: 100%;
+  width:100%;
+  -webkit-background-size: cover; /* Add in these */
+  -moz-background-size: cover;    /* four lines to */
+  -o-background-size: cover;      /* remove the white space*/
+  background-size: cover;         /* around images */
+  min-height: 100%;
+  top: -80;
   overflow:hidden;
 }
 .fullscreen.overflow,
