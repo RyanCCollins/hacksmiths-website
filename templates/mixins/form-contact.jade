@@ -26,7 +26,7 @@ mixin form-contact(args)
             select(name='inquryType').form-control
               option(value='') (Select one)
               each type in inquiryTypes
-                option(value=type.value, selected=formData.inquiryType=type.value)= type.label
+                option(value=type.value, selected=formData.inquiryType == type.value)= type.label
           .form-group(class=!args.modal && validationErrors.message ? 'has-error' : null)
             label Message
             textarea(name='message', placeholder='Leave us a message...' rows=4).form-control=args.modal ? null : formData.message
