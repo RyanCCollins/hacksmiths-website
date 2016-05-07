@@ -1129,7 +1129,7 @@ cite {
 }
 
 .member {
-  background-color: white;
+  background-color: rgb(241, 240, 251);
   border-radius: .25em;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 0 rgba(0, 0, 0, 0.04);
   position: relative;
@@ -1196,7 +1196,7 @@ cite {
 
 .grid-sizer,
 .member-item {
-    width: 33%
+    width: 33%;
 }
 
 .members-group+.members-group {
@@ -1216,11 +1216,11 @@ cite {
 }
 
 .member.member--card .member__account--twitter:hover {
-    color: #00abec
+    color: #00abec;
 }
 
 .member.member--card .member__account--github:hover {
-    color: #333
+    color: #333;
 }
 
 .member.member--profile .member__info {

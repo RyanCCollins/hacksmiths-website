@@ -3,4 +3,5 @@ $(window).bind('load', function(){
 	  // options
 	  itemSelector: '.member-item',
 	});
+	$('is-tooltip').tooltip();
 });
