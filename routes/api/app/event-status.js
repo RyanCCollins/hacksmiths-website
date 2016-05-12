@@ -16,7 +16,7 @@ exports = module.exports = function(req, res) {
 		function(next) {
 			keystone.list('Event').model.findOne()
 				.sort('-startDate')
-				.populate('team project sponsors organization')
+				.populate('organization')
 				.exec(function(err, event) {
 					if (event) {
 						data.event = event.toJSON();
@@ -63,7 +63,6 @@ exports = module.exports = function(req, res) {
 				title: event.title,
 				organization: event.organization,
 				featureImage: event.featureImage,
-				sponsors: event.sponsors,
 
 				starts: event.startDate,
 				ends: event.endDate,
@@ -73,9 +72,6 @@ exports = module.exports = function(req, res) {
 				place: event.place,
 				map: event.map,
 
-				teams: event.teams,
-
-				project: event.project,
 				description: keystone.utils.cropString(keystone.utils.htmlToText(event
 					.description), 250, '...', true),
 
