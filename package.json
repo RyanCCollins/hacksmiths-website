@@ -23,7 +23,6 @@
     "moment": "^2.11.2",
     "newrelic": "^1.25.4",
     "node-github": "0.0.3",
-    "node-markdown": "^0.1.1",
     "node-sass-middleware": "^0.9.7",
     "npm-install-webpack-plugin": "^2.0.2",
     "passport": "^0.3.2",
