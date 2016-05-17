@@ -24,9 +24,9 @@ mixin event(event)
 				hr.mv-2
 				.row
 					.col-md-12.text-center
-					h2 About the organization
-					img(src=event.organization._.logo).img-thumbnail.pull-left
-					h2!= event.organization.name
+						h2 About the Organization
+						img(src=event.organization._.logo).img-thumbnail.pull-left
+						h2!= event.organization.name
 				
 		if event.state == 'active'
 			hr.mv-2
