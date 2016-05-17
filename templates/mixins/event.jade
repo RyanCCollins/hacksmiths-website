@@ -20,6 +20,7 @@ mixin event(event)
 					p.text-center!= event.description
 				if event.marketingInfo
 					p.text-center!= event.marketingInfo
+				.mv-2
 			if event.organization
 				hr.mv-2
 				.row
@@ -28,7 +29,7 @@ mixin event(event)
 						img(src=event.organization._.logo.fit(300, 300)).img-thumbnail.pull-left
 						h4.pull-right!= event.organization.name
 						p.pull-right.mv-2!= utils.htmlToText(event.organization.description.md)
-				
+				.mv-2
 		if event.state == 'active'
 			hr.mv-2
 			if user
