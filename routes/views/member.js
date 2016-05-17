@@ -18,6 +18,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		User.model.findOne()
 		.where('key', req.params.member)
+		.where('isPublic', true)
 		.populate('projects')
 		.exec(function(err, member) {
 			if (err) return res.err(err);

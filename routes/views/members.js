@@ -35,6 +35,7 @@ exports = module.exports = function(req, res) {
 		User.model.find()
 			.sort('name.first')
 			.where('isTopContributor', true)
+			.where('isPublic', true)
 			.where('_id').nin(locals.leaderIDs)
 			.exec(function(err, contributors) {
 				if (err) res.err(err);
