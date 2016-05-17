@@ -18,6 +18,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		Event.model.findOne()
 			.where('key', req.params.event)
+			.populate('organization')
 			.exec(function(err, event) {
 
 				if (err) return res.err(err);
