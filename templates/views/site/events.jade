@@ -30,7 +30,7 @@ block content
 						h4= event.title
 						p!=utils.cropString( utils.htmlToText(event.description), 240, '...', true )
 						hr
-						p!=utils.cropString( utils.htmlToText(event.marketingInfo), 240 '...', true )
+						p!=utils.cropString( utils.htmlToText(event.marketingInfo), 240, '...', true )
 
 		if !upcomingEvent && !pastEvents.length
 			h3.text-muted There are no events yet.
