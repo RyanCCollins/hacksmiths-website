@@ -24,11 +24,10 @@ mixin event(event)
 			if event.organization
 				hr.mv-2
 				.row
-					.col-md-12.text-center.mv-2
-						h2 About the Organization
-						img(src=event.organization._.logo.fit(300, 300)).img-thumbnail.pull-left
-						h4.pull-right!= event.organization.name
-						p.pull-right.mv-2!= utils.htmlToText(event.organization.description.md)
+					.col-md-8.col-md-offset-2.text-center.mv-2
+						h2!=event.organization.name
+						img(src=event.organization._.logo.fit(300, 300)).img-thumbnail
+						p.mv-2!= utils.htmlToText(event.organization.description.md)
 				.mv-2
 		if event.state == 'active'
 			hr.mv-2
