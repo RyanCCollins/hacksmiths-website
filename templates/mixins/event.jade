@@ -20,13 +20,13 @@ mixin event(event)
 					p.text-center!= event.description
 				if event.marketingInfo
 					p.text-center!= event.marketingInfo
-		//- if event.organization
-		//- 	hr.mv-2
-		//- 	.row
-		//- 		.col-md-12.text-center
-		//- 		h2 About the organization
-		//- 		img(src=event.organization._.logo).img-thumbnail.pull-left
-		//- 		h2!= event.organization.name
+			if event.organization
+				hr.mv-2
+				.row
+					.col-md-12.text-center
+					h2 About the organization
+					img(src=event.organization._.logo).img-thumbnail.pull-left
+					h2!= event.organization.name
 				
 		if event.state == 'active'
 			hr.mv-2
@@ -58,5 +58,3 @@ mixin event(event)
 							if participant.isPublic
 								li: a(href=participant.url, title=participant.name.full)
 									img(src=participant.photo.exists ? participant._.photo.thumbnail(80,80) : participant.avatarUrl || '/images/avatar.png', width=40, height=40, alt=participant.name.full).img-circle
-							else
-								li(title=participant.name.full): img(src=participant.photo.exists ? participant._.photo.thumbnail(80,80) : participant.avatarUrl || '/images/avatar.png', width=40, height=40, alt=participant.name.full).img-circle
