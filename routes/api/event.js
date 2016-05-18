@@ -13,7 +13,7 @@ exports = module.exports = function(req, res) {
 
 	async.series([
 		function(next) {
-			Event.model.findById(eventId, function(err, event) {
+			Event.model.findById(eventId).populate('organization project').exec(function(err, event) {
 				if (err) {
 					console.log('There was an error finding the event: ', err)
 				}

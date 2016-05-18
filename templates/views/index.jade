@@ -152,25 +152,73 @@ block content
 	hr
 	section.page-1-section.twitter-feed
 		.contain
-			.section-intro: container
-				h1.section-title What People are Saying
-			.section-content
-				.row
-					.col-md-3
-					.col-md-6.text-center
-						a.twitter-timeline(href='https://twitter.com/search?q=%40teamhacksmiths', data-widget-id='712395084411568128') Tweets about @teamhacksmiths
-					.col-md-3
+			.col-sm-6.text-center
+				blockquote.twitter-tweet(data-lang='en')
+					p(lang='en', dir='ltr')
+						| The beginning of our first project for 
+						a(href='https://twitter.com/BenefitBrownies') @BenefitBrownies
+						| . Food Drivr, web and iOS app for donating excess food 
+					a(href='https://t.co/iHBUT8oVPo') pic.twitter.com/iHBUT8oVPo
+					| — hacksmiths (@teamhacksmiths) 
+			.col-sm-6.text-center
+				blockquote.twitter-tweet(data-lang='en')
+					p(lang='en', dir='ltr')
+						| Impressed by the work of these Nanodegree Graduates! 
+						a(href='https://twitter.com/teamhacksmiths') @teamhacksmiths
+						|  takes on food waste: 
+						a(href='https://t.co/NNG8Hk6RgA') https://t.co/NNG8Hk6RgA
+						a(href='https://t.co/3wNeSWn6fB') pic.twitter.com/3wNeSWn6fB
+				
+			.orbit(role='region', aria-label='Favorite Space Pictures', data-orbit='')
+				ul.orbit-container
+					button.orbit-previous
+						span.show-for-sr Previous Slide
+							| ◀︎
+					button.orbit-next
+						span.show-for-sr Next Slide
+							| ▶︎
+					li.is-active.orbit-slide
+
+						a(href='https://twitter.com/teamhacksmiths/status/716433410869174274') April 3, 2016
+					li.orbit-slide
+						.col-sm-6.col-sm-offset-3.text-center
+							blockquote.twitter-tweet(data-lang='en')
+								p(lang='en', dir='ltr')
+									| Impressed by the work of these Nanodegree Graduates! 
+									a(href='https://twitter.com/teamhacksmiths') @teamhacksmiths
+									|  takes on food waste: 
+									a(href='https://t.co/NNG8Hk6RgA') https://t.co/NNG8Hk6RgA
+									a(href='https://t.co/3wNeSWn6fB') pic.twitter.com/3wNeSWn6fB
+								| — Udacity (@udacity) 
+							a(href='https://twitter.com/udacity/status/728233859037446144') May 5, 2016
+					li.orbit-slide
+
+					li.orbit-slide
+
+				nav.orbit-bullets
+					button.is-active(data-slide='0')
+						span.show-for-sr First slide details.
+						span.show-for-sr Current Slide
+					button(data-slide='1')
+						span.show-for-sr Second slide details.
+					button(data-slide='2')
+						span.show-for-sr Third slide details.
+					button(data-slide='3')
+						span.show-for-sr Fourth slide details.
+
 	section.page-1-section.participating
 		.contain
 			#react-participant-app
 
 block js
+	script#twitter-wjs(type='text/javascript', src='//platform.twitter.com/widgets.js')
 	script(src='/client/build/bundle.js')
 	script(src='/js/pages/index.js')
 	if event
 		script.
 			hacksmiths.currentEventId = !{JSON.stringify(event.id)};
 	// twitter
+	
 	script.
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 				
