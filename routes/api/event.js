@@ -53,7 +53,7 @@ exports = module.exports = function(req, res) {
 			returnValues.err = err;
 			returnValues.success = false;
 		} else {
-			returnValues.sucess = true;
+			returnValues.success = true;
 		}
 		res.json(returnValues);
 	});
