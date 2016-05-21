@@ -5,11 +5,19 @@ var keystone = require('keystone'),
 
   exports = module.exports = function(req, res) {
 
-    var findNextEvent = function() {
+    /* Find the next event, either by an optional id or
+     * Where the voting is in progress.
+     */
+    var findEvent = function(id) {
+      if (id !== undefined) {
+        return Event.model.findById(id)
+          .exec();
+      } else {
         return Event.model.findOne()
                 .where('state', 'votingInProgress')
                 .where('requiresVote', true)
                 .exec();
+      }
     }
 
     var fetchUser = function(id) {
@@ -33,7 +41,7 @@ var keystone = require('keystone'),
     fetchUser(req.body.user)
       .then(function(user) {
         theUser = user;
-      return findNextEvent();
+          return findNextEvent(req.body.event);
     }).then(function(event) {
       return createIdea(idea, theUser, event);
     }).then(function(error) {

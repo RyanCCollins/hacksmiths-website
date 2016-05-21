@@ -183,6 +183,7 @@ Event.schema.virtual('spotsAvailable').get(function() {
 
 Event.schema.pre('save', function(next) {
 	var event = this;
+
 	// no published date, it's a draft event
 	if (!event.publishedDate) {
 		event.state = 'draft';
@@ -190,6 +191,10 @@ Event.schema.pre('save', function(next) {
 	// event date plus one day is after today, it's a past event
 	else if (moment().isAfter(moment(event.endDate).add('day', 1))) {
 		event.state = 'past';
+	}
+	/* If there is a vote in progress, set that as the state*/
+	if (event.requiresVote) {
+		event.state = 'voteInProgress';
 	}
 	// publish date is after today, it's an active event
 	else if (moment().isAfter(event.publishedDate)) {
