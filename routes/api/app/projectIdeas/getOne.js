@@ -4,7 +4,7 @@ var keystone = require('keystone'),
 exports = module.exports = function(req, res) {
   var projectIdeaID = req.params.id;
   var getOneIdea = function(id) {
-    return ProjectIdea.findById(id).exec();
+    return ProjectIdea.model.findById(id).exec();
   };
 
   getOneIdea(projectIdeaID).then(function(idea) {

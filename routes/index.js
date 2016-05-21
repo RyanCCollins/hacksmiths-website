@@ -112,7 +112,7 @@ exports = module.exports = function(app) {
 	app.get('/api/app/project-ideas/:id', routes.api.app.projectIdeas.getOne);
 	app.patch('/api/app/project-ideas/:id', routes.api.app.projectIdeas.update);
 	app.post('/api/app/project-ideas', routes.api.app.projectIdeas.create);
-	app.delete('/api/app/project-ideas/:id', routes.api.app.projectIdeas.delete)
+	app.delete('/api/app/project-ideas/:id', routes.api.app.projectIdeas.delete);
 
 	app.post('/api/app/idea/create', routes.api.app.createIdea);
 	// API - App for the iOS app

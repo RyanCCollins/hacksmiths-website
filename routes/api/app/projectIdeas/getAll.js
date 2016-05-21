@@ -4,7 +4,7 @@ var keystone = require('keystone'),
 exports = module.exports = function(req, res) {
 
   var getAllProjectIdeas = function() {
-    return ProjectIdea.find().exec();
+    return ProjectIdea.model.find().exec();
   };
 
   getAllProjectIdeas().then(function(ideas) {
