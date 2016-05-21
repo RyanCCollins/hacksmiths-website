@@ -1,9 +1,7 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-var ProjectIdeaVote = new keystone.List('ProjectIdeaVote', {
-  nocreate: true
-});
+var ProjectIdeaVote = new keystone.List('ProjectIdeaVote');
 
 ProjectIdeaVote.add({
   idea: {

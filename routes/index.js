@@ -101,10 +101,12 @@ exports = module.exports = function(app) {
 	app.all('/api/me/profile', routes.api.me.profile);
 	app.post('/api/me/profile/update', routes.api.me["update-profile"]);
 
+
 	app.all('/api/app/');
 	app.all('/api/stats', routes.api.stats);
 	app.all('/api/event/:id', routes.api.event);
 
+	app.post('/api/app/idea/create', routes.api.app.createIdea);
 	// API - App for the iOS app
 	app.all('/api/app/event-status', routes.api.app['event-status']);
 	app.all('/api/app/rsvp', routes.api.app.rsvp);
