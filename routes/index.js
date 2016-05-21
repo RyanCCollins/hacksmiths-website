@@ -108,7 +108,7 @@ exports = module.exports = function(app) {
 
 
 	/* Creating Ideas for projects from API */
-	app.get('/api/app/project-ideas', routes.api.projectIdeas.getAll);
+	app.get('/api/app/project-ideas', routes.api.app.projectIdeas.getAll);
 	app.get('/api/app/project-ideas/:id', routes.api.app.projectIdeas.getOne);
 	app.patch('/api/app/project-ideas/:id', routes.api.app.projectIdeas.update);
 	app.post('/api/app/project-ideas', routes.api.app.projectIdeas.create);
