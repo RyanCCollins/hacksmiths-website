@@ -29,7 +29,7 @@ var keystone = require('keystone'),
 
     var createIdea = function(idea, user, event) {
       return new ProjectIdea.model({
-        user: user,
+        createdBy: user,
         idea: idea,
         event: event
       }).save();

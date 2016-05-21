@@ -3,13 +3,13 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
-  var getAllProjectIdeas = function() {
-    return ProjectIdea.model.find().exec();
-  };
-
-  getAllProjectIdeas().then(function(ideas) {
-    var ideaJSON = ideas.toJSON();
-    return res.apiResponse({ success: true, ideas: ideaJSON })
+  ProjectIdea.model.find().exec()
+    .then(function(ideas) {
+      var ideaMap = [];
+      var ideas = ideas.map(function(idea, index) {
+        ideaMap[index] = idea;
+      });
+    return res.apiResponse({ success: true, ideas: ideaMap })
   }).catch(function(error) {
     return res.apiResponse({ success: false, error: error });
   });
