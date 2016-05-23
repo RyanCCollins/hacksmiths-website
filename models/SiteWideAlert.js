@@ -3,14 +3,14 @@ var Types = keystone.Field.Types;
 
 var SiteWideAlert = new keystone.List('SiteWideAlert', {
   map: {
-		name: 'title'
-	},
-	track: true,
-	autokey: {
-		path: 'slug',
-		from: 'title',
-		unique: true
-	}
+    name: 'title'
+  },
+  track: true,
+  autokey: {
+    path: 'slug',
+    from: 'title',
+    unique: true
+  }
 });
 
 SiteWideAlert.add({
@@ -42,6 +42,10 @@ SiteWideAlert.add({
     index: true
   }
 });
+
+SiteWideAlert.schema.methods.notification = function(req, res, next) {
+  
+}
 
 SiteWideAlert.defaultSort = '-publishedDate';
 SiteWideAlert.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';

@@ -1,37 +1,60 @@
 var async = require('async'),
   keystone = require('keystone'),
+  Event = keystone.list('Event'),
   ProjectIdeaVote = keystone.list('ProjectIdeaVote'),
   ProjectIdea = keystone.list('ProjectIdea'),
+  Promise = require('bluebird'),
   User = keystone.list('User');
 
 exports = module.exports = function(req, res) {
 
+  var findEvent = function() {
+    return Event.model.findOne()
+      .where('state', 'votingInProgress')
+      .sort('-startDate')
+      .exec().then(function(event) {
+        return findProjectIdea(event);
+      }, function(err) {
+
+      }).then(function(idea) {
+
+      }, function(err) {
+
+      }).then(function(vote) {
+
+      })
+  }
+
+  var findProjectIdea = function(event) {
+    return ProjectIdea.model.findOne().where('event', event).exec();
+  }
+
+  var findProjectIdeaVotes = function(idea) {
+    return ProjectIdeaVotes.model.find().where('idea')
+  }
+
+  async.series([
+    function(next) {
+      return next();
+    }
+  ], function(err) {
+    if (err) {
+      returnValues.err = err;
+      returnValues.success = false;
+    } else {
+      returnValues.success = true;
+    }
+    res.json(returnValues);
+  });
+
   User.model.findById(req.body.user).exec(function(err, user) {
     if (err || !user) return res.apiResponse({ success: false });
-
+    var projectIdea = ProjectIdea.findById(req.body.idea);
     ProjectIdeaVote.findOne()
       .where('createdBy', user)
       .where('idea', req.body.idea)
       .exec(function(err, vote) {
         if (vote) {
-          if (req.body.for) {
-
-          }
-        } else {
-
-        }
-      })
-
-  });
-
-
-  User.model.findById(req.body.user).exec(function(err, user) {
-    if (err || !user) return res.apiResponse({ success: false });
-    ProjectIdea.findOne()
-      .where('author', user)
-      .where('event', req.body.event)
-      .exec(function(err, idea) {
-        if (idea) {
           if (req.body.cancel == 'true') {
 
           }
@@ -39,50 +62,5 @@ exports = module.exports = function(req, res) {
 
         }
       })
-    RSVP.model.findOne()
-      .where('who', user)
-      .where('event', req.body.event)
-      .exec(function(err, rsvp) {
-
-        if (rsvp) {
-
-          if (req.body.participating == 'false' && req.body.cancel == 'true') {
-            console.log('[api.app.rsvp] - Existing RSVP found, deleting...');
-            rsvp.remove(function(err) {
-              if (err) return res.apiResponse({ success: false, err: err });
-              console.log('[api.app.rsvp] - Deleted RSVP.');
-              return res.apiResponse({ success: true });
-            });
-          } else {
-            console.log('[api.app.rsvp] - Existing RSVP found, updating...');
-            rsvp.set({
-              participating: req.body.participating == 'true',
-              changedAt: req.body.changed
-            }).save(function(err) {
-              if (err) return res.apiResponse({ success: false, err: err });
-              console.log('[api.app.rsvp] - Updated RSVP.');
-              return res.apiResponse({ success: true });
-            });
-          }
-
-        } else {
-
-          console.log('[api.app.rsvp] - No RSVP found, creating...');
-
-          new RSVP.model({
-            event: req.body.event,
-            who: user,
-            participating: req.body.participating == 'true',
-            changedAt: req.body.changed
-          }).save(function(err) {
-            if (err) return res.apiResponse({ success: false, err: err });
-            console.log('[api.app.rsvp] - Created RSVP.');
-            return res.apiResponse({ success: true });
-          });
-
-        }
-
-      });
   });
-
 }

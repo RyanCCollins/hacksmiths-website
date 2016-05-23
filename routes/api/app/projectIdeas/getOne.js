@@ -6,7 +6,7 @@ exports = module.exports = function(req, res) {
   var getOneIdea = function(id) {
     return ProjectIdea.model.findById(id).exec();
   };
-  
+
   getOneIdea(projectIdeaID).then(function(idea) {
     var ideaJSON = idea.toJSON();
     return res.apiResponse({ success: true, idea: ideaJSON });
