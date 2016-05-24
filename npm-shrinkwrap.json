@@ -79,6 +79,11 @@
       "from": "anymatch@>=1.3.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-1.3.0.tgz"
     },
+    "apn": {
+      "version": "1.7.5",
+      "from": "apn@latest",
+      "resolved": "https://registry.npmjs.org/apn/-/apn-1.7.5.tgz"
+    },
     "archy": {
       "version": "1.0.0",
       "from": "archy@>=1.0.0 <2.0.0",
@@ -1485,9 +1490,9 @@
       "resolved": "https://registry.npmjs.org/block-stream/-/block-stream-0.0.8.tgz"
     },
     "bluebird": {
-      "version": "2.9.26",
-      "from": "bluebird@2.9.26",
-      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-2.9.26.tgz"
+      "version": "3.4.0",
+      "from": "bluebird@latest",
+      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.4.0.tgz"
     },
     "bn.js": {
       "version": "4.11.0",
@@ -5181,6 +5186,11 @@
       "from": "mquery@1.6.3",
       "resolved": "https://registry.npmjs.org/mquery/-/mquery-1.6.3.tgz",
       "dependencies": {
+        "bluebird": {
+          "version": "2.9.26",
+          "from": "bluebird@2.9.26",
+          "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-2.9.26.tgz"
+        },
         "sliced": {
           "version": "0.0.5",
           "from": "sliced@0.0.5",
@@ -5411,6 +5421,11 @@
           "resolved": "https://registry.npmjs.org/yakaa/-/yakaa-1.0.1.tgz"
         }
       }
+    },
+    "node-forge": {
+      "version": "0.6.39",
+      "from": "node-forge@>=0.6.20 <0.7.0",
+      "resolved": "https://registry.npmjs.org/node-forge/-/node-forge-0.6.39.tgz"
     },
     "node-github": {
       "version": "0.0.3",

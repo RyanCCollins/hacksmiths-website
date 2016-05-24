@@ -31,7 +31,7 @@ Event.add({
 		ref: 'Organization',
 		many: false,
 		initial: true,
-		required: true,
+		required: false,
 		note: 'Select the name of the organization that we are sponsoring for the event.'
 	},
 	project: {
@@ -39,6 +39,13 @@ Event.add({
 		ref: 'Project',
 		many: false,
 		initial: true
+	},
+	requiresVote: {
+		type: Boolean,
+		initial: true,
+		default: false,
+		label: 'Setup Vote',
+		note: 'Should we setup a vote for the project for this event?'
 	},
 	description: {
 		type: Types.Html,
@@ -68,7 +75,6 @@ Event.add({
 		ref: 'Team',
 		many: true
 	},
-
 	registrationStartDate: {
 		type: Types.Datetime,
 		required: true,
@@ -85,7 +91,6 @@ Event.add({
 		width: 'short',
 		note: 'e.g. 2014-07-15 / 9:00pm'
 	},
-
 	startDate: {
 		type: Types.Datetime,
 		required: true,
@@ -102,7 +107,6 @@ Event.add({
 		width: 'short',
 		note: 'e.g. 2014-07-15 / 6:00pm'
 	},
-
 	place: {
 		type: String,
 		required: false,
@@ -129,7 +133,7 @@ Event.add({
 	},
 	state: {
 		type: Types.Select,
-		options: 'draft, scheduled, active, past',
+		options: 'draft, scheduled, votingInProgress, active, past',
 		noedit: true
 	},
 	publishedDate: {
@@ -179,6 +183,7 @@ Event.schema.virtual('spotsAvailable').get(function() {
 
 Event.schema.pre('save', function(next) {
 	var event = this;
+
 	// no published date, it's a draft event
 	if (!event.publishedDate) {
 		event.state = 'draft';
@@ -186,6 +191,10 @@ Event.schema.pre('save', function(next) {
 	// event date plus one day is after today, it's a past event
 	else if (moment().isAfter(moment(event.endDate).add('day', 1))) {
 		event.state = 'past';
+	}
+	/* If there is a vote in progress, set that as the state*/
+	if (event.requiresVote) {
+		event.state = 'voteInProgress';
 	}
 	// publish date is after today, it's an active event
 	else if (moment().isAfter(event.publishedDate)) {
