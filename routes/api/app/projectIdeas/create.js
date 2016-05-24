@@ -8,7 +8,7 @@ var keystone = require('keystone'),
     /* Find the next event, either by an optional id or
      * Where the voting is in progress.
      */
-    var findEvent = function(id) {
+    var findNextEvent = function(id) {
       if (id !== undefined) {
         return Event.model.findById(id).exec();
       } else {
@@ -30,7 +30,9 @@ var keystone = require('keystone'),
     var createIdea = function(idea, user, event) {
       return new ProjectIdea.model({
         createdBy: user,
-        idea: idea,
+        title: idea.title,
+        description: idea.description,
+        additionalInformation: idea.additionalInformation || "",
         event: event
       }).save();
     }
@@ -43,10 +45,9 @@ var keystone = require('keystone'),
           return findNextEvent(req.body.event);
     }).then(function(event) {
       return createIdea(idea, theUser, event);
-    }).then(function(error) {
-      if (error) {
-        console.log("Errror: ", err)
-        return res.apiResponse({ success: false, error: error });
+    }).then(function(idea) {
+      if (!idea) {
+        return res.apiResponse({ success: false, error: "An unknown error occurred" })
       } else {
         return res.apiResponse({ success: true })
       }
