@@ -13,7 +13,14 @@ exports = module.exports = function(req, res) {
     return idea.update(params).exec();
   };
 
+  var userError = function(message) {
+    return message;
+  };
+
   userPromise.then(function(user) {
+    if (!user) {
+      throw userError("User not found.")
+    }
     return projectIdea;
   }).catch(function(error) {
     return res.apiResponse({ success: false, error: error });
@@ -24,5 +31,5 @@ exports = module.exports = function(req, res) {
   }).catch(function() {
     return res.apiResponse({ success: false, error: "An error occured while updating the project idea."})
   });
-  
+
 };
