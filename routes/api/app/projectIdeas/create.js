@@ -42,7 +42,10 @@ var keystone = require('keystone'),
     fetchUser(req.body.user)
       .then(function(user) {
         theUser = user;
-          return findNextEvent(req.body.event);
+        if (!theUser) {
+          throw "Not authenticated."
+        }
+        return findNextEvent(req.body.event);
     }).then(function(event) {
       return createIdea(idea, theUser, event);
     }).then(function(idea) {
