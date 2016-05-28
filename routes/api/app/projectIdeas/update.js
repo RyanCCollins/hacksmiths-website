@@ -10,6 +10,10 @@ exports = module.exports = function(req, res) {
   var userPromise = User.model.findById(user).exec();
   var projectIdea = ProjectIdea.model.findById(id).exec();
   var updateIdea = function(idea, params) {
+    var ideaParams = params;
+    ideaParams.description = {
+      md: params.description
+    };
     return idea.update(params).exec();
   };
 

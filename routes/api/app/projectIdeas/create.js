@@ -31,7 +31,9 @@ var keystone = require('keystone'),
       return new ProjectIdea.model({
         createdBy: user,
         title: idea.title,
-        description: idea.description,
+        description: {
+          md: idea.description
+        },
         additionalInformation: idea.additionalInformation || "",
         event: event
       }).save();
