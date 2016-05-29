@@ -35,5 +35,4 @@ exports = module.exports = function(req, res) {
   }).catch(function() {
     return res.apiResponse({ success: false, error: "An error occured while updating the project idea."})
   });
-
 };

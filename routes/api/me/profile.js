@@ -7,7 +7,10 @@ exports = module.exports = function(req, res) {
 		userData: {}
 	}
 
-	User.model.findById(req.body.user).exec(function(err, user) {
+	User.model
+		.findById(req.body.user)
+		.populate('enrollments areasOfExpertise')
+		.exec(function(err, user) {
 		if (err || !user) return res.apiResponse({
 			success: false
 		});
