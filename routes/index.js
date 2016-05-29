@@ -107,6 +107,9 @@ exports = module.exports = function(app) {
 	app.all('/api/event/:id', routes.api.event);
 
 
+	/* Lookup lists for selection in App */
+	app.get('/api/app/nanodegrees', routes.api.app.nanodegree.getAll);
+
 	/* Creating Ideas for projects from API */
 	app.get('/api/app/project-ideas', routes.api.app.projectIdeas.getAll);
 	app.get('/api/app/project-ideas/:id', routes.api.app.projectIdeas.getOne);
