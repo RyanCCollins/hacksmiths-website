@@ -11,7 +11,7 @@ exports = module.exports = function(req, res) {
       id: result._id,
       title: result.title,
       description: keystone.utils.cropString(keystone.utils.htmlToText(result
-        .description), 250, '...', true),
+        .description.html), 250, '...', true),
       key: result.key,
       link: result.link,
       updatedAt: result.updatedAt,
