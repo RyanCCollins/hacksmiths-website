@@ -219,11 +219,13 @@ User.add({
   mentoring: {
     available: {
       type: Boolean,
+      default: false,
       label: 'Is Available',
       index: true
     },
     needsAMentor: {
       type: Boolean,
+      default: false,
       label: 'Needs a mentor',
       index: true
     },
