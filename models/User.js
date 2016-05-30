@@ -434,6 +434,12 @@ User.schema.virtual('url').get(function() {
   return '/member/' + this.key;
 });
 
+User.schema.virtual('bioText').get(function() {
+  var bio = this.bio.html;
+  var parsedBio = keystone.utils.htmlToText(bio);
+  return bio;
+})
+
 User.schema.virtual('totalEventContributions').get(function(){
   RSVP.model.find().where('who', this.id).exec(function(error, rsvps) {
     return rsvps.count;
