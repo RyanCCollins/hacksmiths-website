@@ -80,7 +80,8 @@ User.add({
     note: 'Full website URL, including http://'
   },
   bio: {
-    type: Types.Markdown
+    type: Types.Markdown,
+    default: ""
   },
   gravatar: {
     type: String,
