@@ -26,8 +26,8 @@ mixin event(event)
 				.row
 					.col-md-8.col-md-offset-2.text-center.mv-2
 						h2!=event.organization.name
-						if event.logo.exists
-							img(src=event.organization._.logo.fit(300, 300)).img-thumbnail
+						//- if event.logo.exists
+						//- 	img(src=event.organization._.logo.fit(300, 300)).img-thumbnail
 						p.mv-2!= utils.htmlToText(event.organization.description.md)
 				.mv-2
 		if event.state == 'active'
