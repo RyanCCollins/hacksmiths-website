@@ -54,7 +54,7 @@ var keystone = require('keystone'),
       if (!idea) {
         return res.apiResponse({ success: false, error: "An unknown error occurred" })
       } else {
-        return res.apiResponse({ success: true })
+        return res.apiResponse({ success: true, idea: idea })
       }
     }).catch(function(err) {
       console.log("Error: ", err)
