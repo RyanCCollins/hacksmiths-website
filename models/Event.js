@@ -193,7 +193,7 @@ Event.schema.pre('save', function(next) {
 		event.state = 'past';
 	}
 	/* If there is a vote in progress, set that as the state*/
-	if (event.requiresVote) {
+	else if (event.requiresVote) {
 		event.state = 'votingInProgress';
 	}
 	// publish date is after today, it's an active event
