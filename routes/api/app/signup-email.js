@@ -2,12 +2,18 @@ var keystone = require('keystone'),
 	async = require('async'),
 	_ = require('underscore'),
 	User = keystone.list('User');
+	secrets = require('../../../lib/auth/secrets'),
+	auth = require('../../../lib/auth/auth');
 
 exports = module.exports = function(req, res) {
 
 	var locals = {
 		newUser: false
 	};
+
+	var getAuthToken = function(user) {
+		return auth.hmac(user.id, secrets.tokenSecret);
+	}
 
 	// Function to handle signin
 	var doSignIn = function() {
@@ -19,9 +25,13 @@ exports = module.exports = function(req, res) {
 			console.log('[api.app.signup]  - Successfully signed in.');
 			console.log(
 				'------------------------------------------------------------');
+			var authToken = getAuthToken(user);
+			user.authHash = auth.hash(authToken);
+
 			return res.apiResponse({
 				success: true,
 				session: true,
+				authToken: authToken,
 				date: new Date().getTime(),
 				userId: user.id
 			});
@@ -117,7 +127,7 @@ exports = module.exports = function(req, res) {
 				password: req.body.password,
 
 				state: 'enabled',
-
+				
 				isVerified: false,
 			};
 
