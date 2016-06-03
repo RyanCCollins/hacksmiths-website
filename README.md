@@ -92,5 +92,5 @@ nvm use 4.2.4
 ```
 
 ### Screenshots
-![Dashboard](http://postimg.org/image/p8c88yniz/)
+![Dashboard]https://raw.githubusercontent.com/RyanCCollins/hacksmiths-website/master/Screen%20Shot%202016-06-03%20at%203.53.53%20PM.png)
 ![Landing Page](http://postimg.org/image/csuo6kd5n/)
