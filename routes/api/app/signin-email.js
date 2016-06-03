@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var secrets = require('../../../lib/auth/secrets');
+var auth = require('../../../lib/auth/auth');
 exports = module.exports = function(req, res) {
 
 	if (!req.body.username || !req.body.password) return res.apiResponse({ success: false });
