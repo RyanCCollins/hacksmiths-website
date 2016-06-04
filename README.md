@@ -1,4 +1,6 @@
-# Hacksmiths Website
+![Hacksmiths Logo](https://rawgit.com/teamhacksmiths/food-drivr-backend/master/.github/assets/hacksmiths-logo.png)
+
+# Hacksmiths Website and API
 
 API, CMS, and backend for the Hacksmiths.io website
 
@@ -88,3 +90,7 @@ To use a specific NodeJS version, you need to have nvm install the correct versi
 nvm install 4.2.4
 nvm use 4.2.4
 ```
+
+### Screenshots
+![Dashboard](https://raw.githubusercontent.com/RyanCCollins/hacksmiths-website/master/Screen%20Shot%202016-06-03%20at%203.53.53%20PM.png)
+![Landing Page](https://raw.githubusercontent.com/RyanCCollins/hacksmiths-website/master/Screen%20Shot%202016-06-03%20at%203.55.37%20PM.png)
