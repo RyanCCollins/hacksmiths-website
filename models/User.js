@@ -101,7 +101,10 @@ User.add({
       type: Boolean,
       default: false,
       note: 'Get mobile notifications about new events and other things!'
-    }
+    },
+    deviceToken: {
+      type: String,
+    },
   }
 }, 'Event Involvement', {
   availability: {
