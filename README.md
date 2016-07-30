@@ -95,3 +95,6 @@ nvm use 4.2.4
 ![landing](https://raw.githubusercontent.com/RyanCCollins/hacksmiths-website/master/Screen%20Shot%202016-06-05%20at%204.40.37%20PM_imac2013_front.png)
 ![Dashboard](https://raw.githubusercontent.com/RyanCCollins/hacksmiths-website/master/Screen%20Shot%202016-06-05%20at%204.41.03%20PM_imac2013_right.png)
 ![members page](https://raw.githubusercontent.com/RyanCCollins/hacksmiths-website/master/Screen%20Shot%202016-06-05%20at%204.40.48%20PM_imac2013_left.png)
+
+## Timeline / Todos
+* [ ] Update to React, Redux & Relay	
